@@ -12,6 +12,21 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publikuj\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -33,6 +48,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="BCrypt.Net-Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
+      <HintPath>..\packages\BCrypt.Net-Core.1.6.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +64,92 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ConsumableMaterialForm\Presenter\ConsumableMaterialPresenter.cs" />
+    <Compile Include="ConsumableMaterialForm\View\ConsumableMaterial.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="ConsumableMaterialForm\View\ConsumableMaterial.Designer.cs">
+      <DependentUpon>ConsumableMaterial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConsumableMaterialForm\View\IConsumableMaterial.cs" />
+    <Compile Include="CurrentUser.cs" />
+    <Compile Include="LoginForm\DTO\UserCredentialsInput.cs" />
+    <Compile Include="LoginForm\Presenter\LoginFormPresenter.cs" />
+    <Compile Include="LoginForm\View\ILoginView.cs" />
+    <Compile Include="LoginForm\View\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm\View\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Presenters\MainForm\MainViewPresenter.cs" />
+    <Compile Include="MainForm\Presenters\Tabs\User\UsersTabPresenter.cs" />
+    <Compile Include="MainForm\Presenters\Tabs\Warehouse\WarehouseTabPresenter.cs" />
+    <Compile Include="MainForm\Views\Tabs\Contractors\ContractorsTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\Contractors\ContractorsTab.Designer.cs">
+      <DependentUpon>ContractorsTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Views\MainView\IMainView.cs" />
+    <Compile Include="MainForm\Views\MainView\MainView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm\Views\MainView\MainView.Designer.cs">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\CRM\CRMTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\CRM\CRMTab.Designer.cs">
+      <DependentUpon>CRMTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\Services\ServicesTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\Services\ServicesTab.Designer.cs">
+      <DependentUpon>ServicesTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\Users\IUsersTabView.cs" />
+    <Compile Include="MainForm\Views\Tabs\Users\UsersTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\Users\UsersTab.Designer.cs">
+      <DependentUpon>UsersTab.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\Warehouse\IWarehouseTab.cs" />
+    <Compile Include="MainForm\Views\Tabs\Warehouse\WarehouseTab.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="MainForm\Views\Tabs\Warehouse\WarehouseTab.Designer.cs">
+      <DependentUpon>WarehouseTab.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ConsumableMaterialForm\View\ConsumableMaterial.resx">
+      <DependentUpon>ConsumableMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm\View\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Views\Tabs\Contractors\ContractorsTab.resx">
+      <DependentUpon>ContractorsTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Views\MainView\MainView.resx">
+      <DependentUpon>MainView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Views\Tabs\CRM\CRMTab.resx">
+      <DependentUpon>CRMTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Views\Tabs\Services\ServicesTab.resx">
+      <DependentUpon>ServicesTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Views\Tabs\Users\UsersTab.resx">
+      <DependentUpon>UsersTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Views\Tabs\Warehouse\WarehouseTab.resx">
+      <DependentUpon>WarehouseTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +158,9 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -77,7 +175,70 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MainForm\" />
+    <Folder Include="MainForm\Models\Tabs\" />
+    <Folder Include="MainForm\Views\Tabs\Statistics\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\statistics.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\warehouse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\services.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\crm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\contractors.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarRepairShop.Domain\CarRepairShop.Domain.csproj">
+      <Project>{f5f0aa3f-3a29-4727-836e-8260e60c7b03}</Project>
+      <Name>CarRepairShop.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarRepairShop.Repos\CarRepairShop.Repositories.csproj">
+      <Project>{67440a41-043a-4ea6-84a9-9327bbdecf26}</Project>
+      <Name>CarRepairShop.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CarRepairShop.Utilities\CarRepairShop.Utilities.csproj">
+      <Project>{3536c72f-d0a4-4c43-a178-15f013eac1c0}</Project>
+      <Name>CarRepairShop.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mechanicGif.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\key.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 i x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
