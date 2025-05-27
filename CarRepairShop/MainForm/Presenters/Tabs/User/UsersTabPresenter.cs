@@ -40,7 +40,6 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
 
         private void DebounceElapsed(object sender, EventArgs e) => _view.LoadUsersToGrid(_filteredUsersList);
 
-
         private void FilterUsers(object sender, EventArgs e)
         {
             _filteredUsersList = _usersList;

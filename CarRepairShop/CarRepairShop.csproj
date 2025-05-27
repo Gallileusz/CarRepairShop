@@ -72,6 +72,22 @@
       <DependentUpon>ConsumableMaterial.cs</DependentUpon>
     </Compile>
     <Compile Include="ConsumableMaterialForm\View\IConsumableMaterial.cs" />
+    <Compile Include="Contractors\CarForm\Presenter\CarFormPresenter.cs" />
+    <Compile Include="Contractors\CarForm\View\CarForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractors\CarForm\View\CarForm.Designer.cs">
+      <DependentUpon>CarForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contractors\CarForm\View\ICarForm.cs" />
+    <Compile Include="Contractors\ContractorForm\Presenter\ContractorFormPresenter.cs" />
+    <Compile Include="Contractors\ContractorForm\View\ContractorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Contractors\ContractorForm\View\ContractorForm.Designer.cs">
+      <DependentUpon>ContractorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Contractors\ContractorForm\View\IContractorForm.cs" />
     <Compile Include="CurrentUser.cs" />
     <Compile Include="LoginForm\DTO\UserCredentialsInput.cs" />
     <Compile Include="LoginForm\Presenter\LoginFormPresenter.cs" />
@@ -83,6 +99,7 @@
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm\Presenters\MainForm\MainViewPresenter.cs" />
+    <Compile Include="MainForm\Presenters\Tabs\Contractors\ContractorTabPresenter.cs" />
     <Compile Include="MainForm\Presenters\Tabs\User\UsersTabPresenter.cs" />
     <Compile Include="MainForm\Presenters\Tabs\Warehouse\WarehouseTabPresenter.cs" />
     <Compile Include="MainForm\Views\Tabs\Contractors\ContractorsTab.cs">
@@ -98,6 +115,7 @@
     <Compile Include="MainForm\Views\MainView\MainView.Designer.cs">
       <DependentUpon>MainView.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\Views\Tabs\Contractors\IContractorsTab.cs" />
     <Compile Include="MainForm\Views\Tabs\CRM\CRMTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -128,6 +146,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ConsumableMaterialForm\View\ConsumableMaterial.resx">
       <DependentUpon>ConsumableMaterial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractors\CarForm\View\CarForm.resx">
+      <DependentUpon>CarForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Contractors\ContractorForm\View\ContractorForm.resx">
+      <DependentUpon>ContractorForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm\View\LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -239,6 +263,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

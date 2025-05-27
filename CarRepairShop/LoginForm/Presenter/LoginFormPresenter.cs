@@ -11,7 +11,7 @@ namespace CarRepairShop.LoginForm.Presenter
     {
         private readonly ILoginView _view;
         private readonly GenericRepository _genericRepo;
-        private string _cachedLogin;
+
         public LoginFormPresenter(ILoginView view)
         {
             _view = view;

@@ -25,5 +25,9 @@ CREATE TABLE ConsumableMaterials (
     ID INT PRIMARY KEY IDENTITY(1,1),
     Name NVARCHAR(255) NOT NULL,
     Quantity INT NOT NULL);";
+
+        const string FuelTypes = @"CREATE TABLE FuelTypes (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(255) NOT NULL);";
     }
 }

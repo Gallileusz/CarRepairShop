@@ -10,9 +10,8 @@
 
 namespace CarRepairShop.Properties {
     using System;
-    using System.Runtime.CompilerServices;
-
-
+    
+    
     /// <summary>
     ///   Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
     /// </summary>
@@ -72,6 +71,15 @@ namespace CarRepairShop.Properties {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu .
+        /// </summary>
+        internal static string CachedLogin {
+            get {
+                return ResourceManager.GetString("CachedLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap contractors {
@@ -127,6 +135,16 @@ namespace CarRepairShop.Properties {
         internal static System.Drawing.Bitmap mechanicGif {
             get {
                 object obj = ResourceManager.GetObject("mechanicGif", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap search {
+            get {
+                object obj = ResourceManager.GetObject("search", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

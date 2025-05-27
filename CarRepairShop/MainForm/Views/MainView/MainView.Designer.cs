@@ -30,6 +30,7 @@
         {
             this.pnlNavigation = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.btnSettings = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnUsers = new System.Windows.Forms.Button();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -39,11 +40,10 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnServices = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pnlBody = new System.Windows.Forms.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
             this.btnCRM = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.btnContractors = new System.Windows.Forms.Button();
+            this.pnlBody = new System.Windows.Forms.Panel();
             this.pnlNavigation.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -80,6 +80,20 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(100, 66);
             this.panel7.TabIndex = 7;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSettings.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSettings.Image = global::CarRepairShop.Properties.Resources.settings;
+            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnSettings.Location = new System.Drawing.Point(-5, -2);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(107, 65);
+            this.btnSettings.TabIndex = 0;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSettings.UseVisualStyleBackColor = true;
             // 
             // panel6
             // 
@@ -190,39 +204,6 @@
             this.panel2.Size = new System.Drawing.Size(100, 64);
             this.panel2.TabIndex = 2;
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnContractors);
-            this.panel1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(1, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 64);
-            this.panel1.TabIndex = 1;
-            // 
-            // pnlBody
-            // 
-            this.pnlBody.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBody.Location = new System.Drawing.Point(0, 62);
-            this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(1026, 513);
-            this.pnlBody.TabIndex = 2;
-            // 
-            // btnSettings
-            // 
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Image = global::CarRepairShop.Properties.Resources.settings;
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSettings.Location = new System.Drawing.Point(-5, -2);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(107, 65);
-            this.btnSettings.TabIndex = 0;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            // 
             // btnCRM
             // 
             this.btnCRM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -237,6 +218,16 @@
             this.btnCRM.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCRM.UseVisualStyleBackColor = true;
             this.btnCRM.Click += new System.EventHandler(this.btnCRM_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.btnContractors);
+            this.panel1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.White;
+            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(100, 64);
+            this.panel1.TabIndex = 1;
             // 
             // btnContractors
             // 
@@ -253,14 +244,24 @@
             this.btnContractors.UseVisualStyleBackColor = true;
             this.btnContractors.Click += new System.EventHandler(this.btnContractors_Click);
             // 
+            // pnlBody
+            // 
+            this.pnlBody.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlBody.Location = new System.Drawing.Point(0, 62);
+            this.pnlBody.Name = "pnlBody";
+            this.pnlBody.Size = new System.Drawing.Size(1026, 549);
+            this.pnlBody.TabIndex = 2;
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 575);
+            this.ClientSize = new System.Drawing.Size(1026, 611);
             this.Controls.Add(this.pnlBody);
             this.Controls.Add(this.pnlNavigation);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.MinimumSize = new System.Drawing.Size(1042, 650);
             this.Name = "MainView";
             this.Text = "Car repair shop CRUD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
