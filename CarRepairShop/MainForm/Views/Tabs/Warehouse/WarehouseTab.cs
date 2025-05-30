@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CarRepairShop.Domain.Entities;
+using CarRepairShop.MainForm.Views.Tabs.Warehouse;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using CarRepairShop.Domain.Entities;
-using CarRepairShop.MainForm.Views.Tabs.Warehouse;
 
 namespace CarRepairShop.MainForm.Views.Tabs.CRM
 {
@@ -42,6 +42,14 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             InitializeComponent();
             Debounce.Stop();
             _presenter = new Presenters.Tabs.Warehouse.WarehouseTabPresenter(this);
+        }
+
+        public void UnableButtonsIfNoPermissions()
+        {
+            var hasEditPermission = AppSettings.CurrentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.Permissions.AllowEdit);
+            btnAdd.Enabled = hasEditPermission;
+            btnEdit.Enabled = hasEditPermission;
+            btnDelete.Enabled = hasEditPermission;
         }
 
         public void ShowMessage(string message) => MessageBox.Show(message);

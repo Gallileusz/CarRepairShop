@@ -1,9 +1,11 @@
-﻿using System;
+﻿using CarRepairShop.Domain.Entities;
+using CarRepairShop.MainForm.Views.Tabs.Contractors;
+using CarRepairShop.Utilities.Permissions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using CarRepairShop.Domain.Entities;
-using CarRepairShop.MainForm.Views.Tabs.Contractors;
+using Permissions = CarRepairShop.Utilities.Permissions.Permissions;
 
 namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
 {
@@ -156,6 +158,18 @@ namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
             Debounce.Start();
 
             SearchModelNameChanged?.Invoke(sender, e);
+        }
+
+        public void UnableButtonsIfUserDoesntHavePermissions()
+        {
+            var shouldBeEnabled = AppSettings.CurrentUser.HasPermission(PermissionTabs.Contractors, Permissions.AllowEdit);
+
+            btnAddContractor.Enabled = shouldBeEnabled;
+            btnEditContractor.Enabled = shouldBeEnabled;
+            btnDeleteContractor.Enabled = shouldBeEnabled;
+            btnAddVehicle.Enabled = shouldBeEnabled;
+            btnEditVehicle.Enabled = shouldBeEnabled;
+            btnDeleteVehicle.Enabled = shouldBeEnabled;
         }
     }
 }

@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CarRepairShop.ConsumableMaterialForm.View;
+﻿using CarRepairShop.ConsumableMaterialForm.View;
 using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Views.Tabs.Warehouse;
 using CarRepairShop.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CarRepairShop.MainForm.Presenters.Tabs.Warehouse
 {
@@ -124,6 +124,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Warehouse
 
             _view.LoadMaterialsToGrid(_consumableMaterials);
             _view.LoadMaterialTypesToCombobox(_materialTypes.OrderBy(x => x.ID).ToList());
+            _view.UnableButtonsIfNoPermissions();
 
             _view.SelectedMaterialTypeChanged += FilterMaterials;
         }

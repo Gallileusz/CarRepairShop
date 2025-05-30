@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CarRepairShop.Utilities.SingleInputForm.View;
+using System;
 using System.Windows.Forms;
-using CarRepairShop.Utilities.SingleInputForm.View;
 
 namespace CarRepairShop.Utilities.SingleInputForm.Presenter
 {
@@ -33,7 +33,7 @@ namespace CarRepairShop.Utilities.SingleInputForm.Presenter
         private void Close(object sender, FormClosingEventArgs e)
         {
             if (_isConfirmed == false)
-                _value = string.Empty;
+                _value = null;
         }
 
         private void Load(object sender, EventArgs e)

@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CarRepairShop.MainForm.Presenters.MainForm;
+using CarRepairShop.Utilities.ControlUtilities;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
-using CarRepairShop.MainForm.Presenters.MainForm;
-using CarRepairShop.Utilities.ControlUtilities;
 
 namespace CarRepairShop.MainForm.Views.MainView
 {
@@ -13,6 +13,7 @@ namespace CarRepairShop.MainForm.Views.MainView
         public event EventHandler ServicesTabButtonClicked;
         public event EventHandler UsersTabButtonClicked;
         public event EventHandler WarehouseTabButtonClicked;
+        public event EventHandler SettingsButtonClicked;
 
         public MainView()
         {
@@ -33,8 +34,8 @@ namespace CarRepairShop.MainForm.Views.MainView
         public void ShowTab(UserControl contractorsTab)
         {
             pnlBody.Controls.Clear();
-            pnlBody.Controls.Add(contractorsTab);
             contractorsTab.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(contractorsTab);
         }
 
         private void btnContractors_Click(object sender, EventArgs e)
@@ -42,25 +43,37 @@ namespace CarRepairShop.MainForm.Views.MainView
             ContractorTabButtonClicked?.Invoke(sender, e);
             HighlightButton(sender as Button);
         }
+
         private void btnCRM_Click(object sender, EventArgs e)
         {
             CRMTabButtonClicked?.Invoke(sender, e);
             HighlightButton(sender as Button);
         }
+
         private void btnServices_Click(object sender, EventArgs e)
         {
             ServicesTabButtonClicked?.Invoke(sender, e);
             HighlightButton(sender as Button);
         }
+
         private void btnWarehouse_Click(object sender, EventArgs e)
         {
             WarehouseTabButtonClicked?.Invoke(sender, e);
             HighlightButton(sender as Button);
         }
+
         private void btnUsers_Click(object sender, EventArgs e)
         {
             UsersTabButtonClicked?.Invoke(sender, e);
             HighlightButton(sender as Button);
         }
+
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            SettingsButtonClicked?.Invoke(sender, e);
+            HighlightButton(sender as Button);
+        }
+
+        public void ShowMessage(string message) => MessageBox.Show(message);
     }
 }

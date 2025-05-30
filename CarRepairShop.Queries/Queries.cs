@@ -29,5 +29,58 @@ CREATE TABLE ConsumableMaterials (
         const string FuelTypes = @"CREATE TABLE FuelTypes (
     ID INT PRIMARY KEY IDENTITY(1,1),
     Name NVARCHAR(255) NOT NULL);";
+
+        const string Languages = @"
+CREATE TABLE Languages (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    Name NVARCHAR(255) NOT NULL,
+    CultureCode NVARCHAR(255) NOT NULL);";
+
+        const string AddLanguages = @"
+SET IDENTITY_INSERT Languages ON;
+
+INSERT INTO Languages (ID, Name, CultureCode) VALUES (1, 'English', 'en-US');
+INSERT INTO Languages (ID, Name, CultureCode) VALUES (2, 'Polski', 'pl-PL');
+
+SET IDENTITY_INSERT Languages OFF;";
+
+        const string DefaultSettings = @"
+CREATE TABLE DefaultSettings (
+    ID INT PRIMARY KEY IDENTITY(1,1),
+    PasswordHash NVARCHAR(255) NOT NULL);";
+
+        const string InsertDefaultSettings = @"
+SET IDENTITY_INSERT DefaultSettings ON;
+
+INSERT INTO DefaultSettings (ID, PasswordHash) VALUES (1, '$2b$10$xsvHerooVxU4SRVW0WjipuFweipWo4mh9lAiuG6.azcx3ebUhlZ96');
+
+SET IDENTITY_INSERT DefaultSettings OFF;";
+
+        const string CreatePermissionsTable = @"
+CREATE TABLE [dbo].[Permissions] (
+    [ID] INT IDENTITY(1,1) PRIMARY KEY,
+    [Name] NVARCHAR(100) NOT NULL UNIQUE
+);";
+
+        const string AddPermissions = @"
+INSERT INTO [dbo].[Permissions] ([Name]) VALUES 
+('Contractors'),
+('CRM'),
+('Services'),
+('Warehouse'),
+('Statistics'),
+('Users'),
+('Settings');";
+
+        const string CreateUserPermissionsTable = @"
+CREATE TABLE [dbo].[UserPermissions] (
+    [ID] INT IDENTITY(1,1) PRIMARY KEY,
+    [UserID] INT NOT NULL,
+    [PermissionID] INT NOT NULL,
+    [AllowDisplay] BIT NOT NULL DEFAULT 0,
+    [AllowEdit] BIT NOT NULL DEFAULT 0,
+    CONSTRAINT FK_UserPermissions_Users FOREIGN KEY ([UserID]) REFERENCES [dbo].[Users]([ID]) ON DELETE CASCADE,
+    CONSTRAINT FK_UserPermissions_Permissions FOREIGN KEY ([PermissionID]) REFERENCES [dbo].[Permissions]([ID]) ON DELETE CASCADE
+);";
     }
 }

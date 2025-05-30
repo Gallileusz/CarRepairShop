@@ -1,4 +1,4 @@
-﻿namespace CarRepairShop.Utilities.UserInfoForm.View
+﻿namespace CarRepairShop.Users.UserInfoForm.View
 {
     partial class UsersInfoForm
     {

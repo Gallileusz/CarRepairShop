@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CarRepairShop.Contractors.CarForm.View;
+﻿using CarRepairShop.Contractors.CarForm.View;
 using CarRepairShop.Domain.Entities;
 using CarRepairShop.Repositories;
 using CarRepairShop.Utilities.SingleInputForm.View;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CarRepairShop.Contractors.CarForm.Presenter
 {
@@ -38,6 +38,8 @@ namespace CarRepairShop.Contractors.CarForm.Presenter
         {
             var form = new SingleInputForm("Podaj nazwę typu paliwa", string.Empty);
             form.ShowDialog();
+
+            if (form.Value == null) return;
 
             var name = form.Value;
 

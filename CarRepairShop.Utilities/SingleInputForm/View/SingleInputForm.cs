@@ -5,10 +5,12 @@ namespace CarRepairShop.Utilities.SingleInputForm.View
 {
     public partial class SingleInputForm : Form, ISingleInputForm
     {
+        private Presenter.SingleInputFormPresenter _presenter;
+
         public event EventHandler FormLoaded;
         public event FormClosingEventHandler FormIsClosing;
         public event EventHandler OKButtonClicked;
-        private Presenter.SingleInputFormPresenter _presenter;
+
         public string FormTitle
         {
             get => this.Text;

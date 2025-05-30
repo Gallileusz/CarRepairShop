@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CarRepairShop.Domain.Entities;
+using System;
 using System.Collections.Generic;
-using CarRepairShop.Domain.Entities;
 
 namespace CarRepairShop.MainForm.Views.Tabs.Contractors
 {
@@ -33,5 +33,6 @@ namespace CarRepairShop.MainForm.Views.Tabs.Contractors
         string SearchedCarModelName { get; }
         void ShowMessage(string message);
         bool ConfirmAction(string message, string title);
+        void UnableButtonsIfUserDoesntHavePermissions();
     }
 }

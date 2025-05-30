@@ -10,7 +10,9 @@ namespace CarRepairShop.MainForm.Views.MainView
         event EventHandler ServicesTabButtonClicked;
         event EventHandler UsersTabButtonClicked;
         event EventHandler WarehouseTabButtonClicked;
+        event EventHandler SettingsButtonClicked;
         void ShowTab(UserControl contractorsTab);
+        void ShowMessage(string message);
         void HighlightButton(Button clickedButton);
     }
 }

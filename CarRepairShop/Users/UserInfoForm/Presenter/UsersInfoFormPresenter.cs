@@ -1,14 +1,13 @@
-﻿using System;
+﻿using CarRepairShop.Users.UserInfoForm.View;
+using System;
 using System.Windows.Forms;
-using CarRepairShop.Domain.Entities;
-using CarRepairShop.Utilities.UserInfoForm.View;
 
-namespace CarRepairShop.Utilities.UserInfoForm.Presenter
+namespace CarRepairShop.Users.UserInfoForm.Presenter
 {
     public class UsersInfoFormPresenter
     {
         private readonly IUsersInfoForm _view;
-        private Users _user;
+        private Domain.Entities.Users _user;
         private bool _isConfirmed = false;
 
         public UsersInfoFormPresenter(IUsersInfoForm view)
@@ -36,7 +35,7 @@ namespace CarRepairShop.Utilities.UserInfoForm.Presenter
                 _user = null;
         }
 
-        public void SetUser(Users user) => _user = user;
+        public void SetUser(Domain.Entities.Users user) => _user = user;
 
         private void OnCancelClicked(object sender, EventArgs e)
         {
@@ -49,7 +48,7 @@ namespace CarRepairShop.Utilities.UserInfoForm.Presenter
             _isConfirmed = true;
 
             if (_user == null)
-                _user = new Users();
+                _user = new Domain.Entities.Users();
 
             _user.Name = _view.UserName;
             _user.Surname = _view.UserSurname;
@@ -57,6 +56,6 @@ namespace CarRepairShop.Utilities.UserInfoForm.Presenter
             _view.CloseForm();
         }
 
-        public Users GetUser() => _user;
+        public Domain.Entities.Users GetUser() => _user;
     }
 }

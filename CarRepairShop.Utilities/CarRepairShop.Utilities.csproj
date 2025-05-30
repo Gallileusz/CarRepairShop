@@ -46,8 +46,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComboboxForm\Presenter\ComboboxFormPresenter.cs" />
+    <Compile Include="ComboboxForm\View\ComboboxForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ComboboxForm\View\ComboboxForm.Designer.cs">
+      <DependentUpon>ComboboxForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ComboboxForm\View\IComboboxForm.cs" />
     <Compile Include="ControlUtilities\ButtonUtilities.cs" />
     <Compile Include="ControlUtilities\DataGridViewUtilities.cs" />
+    <Compile Include="Permissions\Permissions.cs" />
+    <Compile Include="Permissions\PermissionTabs.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SingleInputForm\Presenter\SingleInputFormPresenter.cs" />
@@ -58,14 +68,9 @@
     <Compile Include="SingleInputForm\View\SingleInputForm.Designer.cs">
       <DependentUpon>SingleInputForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserInfoForm\Presenter\UsersInfoFormPresenter.cs" />
-    <Compile Include="UserInfoForm\View\IUsersInfoForm.cs" />
-    <Compile Include="UserInfoForm\View\UsersInfoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserInfoForm\View\UsersInfoForm.Designer.cs">
-      <DependentUpon>UsersInfoForm.cs</DependentUpon>
-    </Compile>
+    <EmbeddedResource Include="ComboboxForm\View\ComboboxForm.resx">
+      <DependentUpon>ComboboxForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -77,9 +82,6 @@
     </Compile>
     <EmbeddedResource Include="SingleInputForm\View\SingleInputForm.resx">
       <DependentUpon>SingleInputForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserInfoForm\View\UsersInfoForm.resx">
-      <DependentUpon>UsersInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -94,7 +96,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ComboboxForm\Model\" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CarRepairShop.Domain\CarRepairShop.Domain.csproj">
       <Project>{f5f0aa3f-3a29-4727-836e-8260e60c7b03}</Project>

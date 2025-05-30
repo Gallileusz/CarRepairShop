@@ -355,7 +355,7 @@
             this.dgvContractors.ReadOnly = true;
             this.dgvContractors.RowHeadersVisible = false;
             this.dgvContractors.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContractors.Size = new System.Drawing.Size(520, 304);
+            this.dgvContractors.Size = new System.Drawing.Size(520, 298);
             this.dgvContractors.TabIndex = 0;
             this.dgvContractors.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContractors_CellClick);
             // 

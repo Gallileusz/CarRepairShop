@@ -1,9 +1,9 @@
-﻿using System;
+﻿using CarRepairShop.Contractors.CarForm.Presenter;
+using CarRepairShop.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using CarRepairShop.Contractors.CarForm.Presenter;
-using CarRepairShop.Domain.Entities;
 
 namespace CarRepairShop.Contractors.CarForm.View
 {

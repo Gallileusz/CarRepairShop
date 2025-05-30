@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CarRepairShop.Domain.Entities;
+using System;
 using System.Collections.Generic;
-using CarRepairShop.Domain.Entities;
 
 namespace CarRepairShop.MainForm.Views.Tabs.Warehouse
 {
@@ -20,5 +20,6 @@ namespace CarRepairShop.MainForm.Views.Tabs.Warehouse
         MaterialTypes SearchedMaterialType { get; }
         void ShowMessage(string message);
         bool ConfirmAction(string message, string title);
+        void UnableButtonsIfNoPermissions();
     }
 }

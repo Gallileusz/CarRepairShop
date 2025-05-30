@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CarRepairShop.Contractors.CarForm.View;
+﻿using CarRepairShop.Contractors.CarForm.View;
 using CarRepairShop.Contractors.ContractorForm.View;
 using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Views.Tabs.Contractors;
 using CarRepairShop.Repositories;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 {
@@ -130,6 +130,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
             _view.LoadContractorsToGrid(_contractors);
             _view.LoadContractorsCarsToGrid(_cars.Where(x => x.ContractorID == _contractors.FirstOrDefault().ID).ToList());
+            _view.UnableButtonsIfUserDoesntHavePermissions();
 
             _view.ContractorSelectionChanged += ContractorChanged;
             _view.SearchBrandNameChanged += FilterCars;

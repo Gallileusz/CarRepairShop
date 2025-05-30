@@ -45,9 +45,13 @@
   <ItemGroup>
     <Compile Include="Entities\Contractors.cs" />
     <Compile Include="Entities\ContractorsCars.cs" />
+    <Compile Include="Entities\DefaultSettings.cs" />
     <Compile Include="Entities\FuelTypes.cs" />
+    <Compile Include="Entities\Languages.cs" />
     <Compile Include="Entities\MaterialTypes.cs" />
+    <Compile Include="Entities\Permissions.cs" />
     <Compile Include="Entities\UserCredentials.cs" />
+    <Compile Include="Entities\UserPermissions.cs" />
     <Compile Include="Entities\Users.cs" />
     <Compile Include="Entities\ConsumableMaterials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

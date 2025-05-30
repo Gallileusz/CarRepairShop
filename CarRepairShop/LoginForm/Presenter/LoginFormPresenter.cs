@@ -1,9 +1,10 @@
-﻿using System;
-using System.Linq;
-using System.Windows.Forms;
-using CarRepairShop.Domain.Entities;
+﻿using CarRepairShop.Domain.Entities;
 using CarRepairShop.LoginForm.View;
 using CarRepairShop.Repositories;
+using System;
+using System.Linq;
+using System.Threading;
+using System.Windows.Forms;
 
 namespace CarRepairShop.LoginForm.Presenter
 {
@@ -44,7 +45,7 @@ namespace CarRepairShop.LoginForm.Presenter
             if (string.IsNullOrEmpty(_view.UserCredentials.Login) || string.IsNullOrEmpty(_view.UserCredentials.Password))
             {
                 _view.ShowMessage("Proszę wprowadzić login i hasło.");
-                CacheLogin(false);
+                Cache(false);
                 return;
             }
 
@@ -53,20 +54,22 @@ namespace CarRepairShop.LoginForm.Presenter
             if (credentials == null || !BCrypt.Net.BCrypt.Verify(_view.UserCredentials.Password, credentials.PasswordHash))
             {
                 _view.ShowMessage("Nieprawidłowy login lub hasło.");
-                CacheLogin(false);
+                Cache(false);
                 return;
             }
 
-            CurrentUser.SetUser(_genericRepo.GetAll<Users>().FirstOrDefault(x => x.ID == credentials.UserID));
+            AppSettings.CurrentUser.SetUser(_genericRepo.GetAll<Domain.Entities.Users>().FirstOrDefault(x => x.ID == credentials.UserID));
 
-            CacheLogin(true);
+            Cache(true);
             _view.CloseLoginForm();
             _view.SetDialogResult(DialogResult.OK);
         }
 
-        private void CacheLogin(bool success)
+        private void Cache(bool success)
         {
             Properties.Settings.Default.CachedLogin = _view.CacheCheckboxSelected && success ? _view.Login : string.Empty;
+            Properties.Settings.Default.Language = Thread.CurrentThread.CurrentUICulture.ToString();
+            AppSettings.CurrentUser.Language = Thread.CurrentThread.CurrentUICulture.ToString();
             Properties.Settings.Default.Save();
         }
     }

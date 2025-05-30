@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
 
-namespace CarRepairShop.Utilities.UserInfoForm.View
+namespace CarRepairShop.Users.UserInfoForm.View
 {
     public interface IUsersInfoForm
     {

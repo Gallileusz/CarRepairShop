@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CarRepairShop.MainForm.Presenters.Tabs.User;
+using CarRepairShop.MainForm.Views.Tabs.Users;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
-using CarRepairShop.MainForm.Presenters.Tabs.User;
-using CarRepairShop.MainForm.Views.Tabs.Users;
 
 namespace CarRepairShop.MainForm.Views.Tabs.CRM
 {
@@ -28,10 +28,10 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
         public event EventHandler EditUserButtonClicked;
         public event EventHandler DeleteUserButtonClicked;
         public event EventHandler FormLoaded;
-        public event EventHandler ChangePasswordButtonClicked;
         public event EventHandler SearchNameChanged;
         public event EventHandler SearchSurameChanged;
         public event EventHandler DebounceTimerElapsed;
+        public event EventHandler PermissionButtonClicked;
 
         public UsersTab()
         {
@@ -48,8 +48,18 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             dgvUsers.Columns[nameof(Domain.Entities.Users.Name)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvUsers.Columns[nameof(Domain.Entities.Users.Surname)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvUsers.Columns[nameof(Domain.Entities.Users.ID)].Visible = false;
-            if (!CurrentUser.Data.Admin)
+            if (!AppSettings.CurrentUser.Data.Admin)
                 dgvUsers.Columns[nameof(Domain.Entities.Users.Admin)].Visible = false;
+        }
+
+        public void UnableButtonsIfNoPermissions()
+        {
+            bool hasEditPermission = AppSettings.CurrentUser.HasPermission(Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.Permissions.AllowEdit);
+
+            btnAdd.Enabled = hasEditPermission;
+            btnEdit.Enabled = hasEditPermission;
+            btnDelete.Enabled = hasEditPermission;
+            btnPermissions.Enabled = AppSettings.CurrentUser.IsAdmin;
         }
 
         public void ShowMessage(string message) => MessageBox.Show(message);
@@ -64,7 +74,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
 
         private void btnDelete_Click(object sender, EventArgs e) => DeleteUserButtonClicked?.Invoke(sender, e);
 
-        private void btnChangePassword_Click(object sender, EventArgs e) => ChangePasswordButtonClicked?.Invoke(sender, e);
+        private void btnPermissions_Click(object sender, EventArgs e) => PermissionButtonClicked?.Invoke(sender, e);
 
         private void Debounce_Tick(object sender, EventArgs e)
         {

@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
-using CarRepairShop.Domain.Entities;
 
-namespace CarRepairShop.Utilities.UserInfoForm.View
+namespace CarRepairShop.Users.UserInfoForm.View
 {
     public partial class UsersInfoForm : Form, IUsersInfoForm
     {
@@ -13,7 +12,7 @@ namespace CarRepairShop.Utilities.UserInfoForm.View
 
         private Presenter.UsersInfoFormPresenter _presenter;
 
-        public UsersInfoForm(Users user)
+        public UsersInfoForm(Domain.Entities.Users user)
         {
             InitializeComponent();
             _presenter = new Presenter.UsersInfoFormPresenter(this);
@@ -32,7 +31,7 @@ namespace CarRepairShop.Utilities.UserInfoForm.View
             set => txtSurname.Text = value;
         }
 
-        public Users GetUser() => _presenter.GetUser();
+        public Domain.Entities.Users GetUser() => _presenter.GetUser();
 
         public void CloseForm() => this.Close();
 

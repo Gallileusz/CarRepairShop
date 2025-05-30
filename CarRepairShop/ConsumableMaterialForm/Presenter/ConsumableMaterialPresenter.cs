@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using CarRepairShop.ConsumableMaterialForm.View;
+﻿using CarRepairShop.ConsumableMaterialForm.View;
 using CarRepairShop.Domain.Entities;
 using CarRepairShop.Repositories;
 using CarRepairShop.Utilities.SingleInputForm.View;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CarRepairShop.ConsumableMaterialForm.Presenter
 {
@@ -48,6 +48,8 @@ namespace CarRepairShop.ConsumableMaterialForm.Presenter
         {
             var form = new SingleInputForm("Podaj nazwę materiału", string.Empty);
             form.ShowDialog();
+
+            if (form.Value == null) return;
 
             var name = form.Value;
 

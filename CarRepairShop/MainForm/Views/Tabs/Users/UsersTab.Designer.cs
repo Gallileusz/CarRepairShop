@@ -31,7 +31,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnDelete = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -39,7 +39,6 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             this.panel5 = new System.Windows.Forms.Panel();
             this.btnAdd = new System.Windows.Forms.Button();
             this.dgvUsers = new System.Windows.Forms.DataGridView();
-            this.btnChangePassword = new System.Windows.Forms.Button();
             this.pnlSeparator = new System.Windows.Forms.Panel();
             this.gbName = new System.Windows.Forms.GroupBox();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -48,12 +47,16 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.Debounce = new System.Windows.Forms.Timer(this.components);
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnPermissions = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsers)).BeginInit();
             this.gbName.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -139,35 +142,18 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             this.dgvUsers.Name = "dgvUsers";
             this.dgvUsers.ReadOnly = true;
             this.dgvUsers.RowHeadersVisible = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvUsers.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvUsers.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dgvUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsers.Size = new System.Drawing.Size(597, 452);
             this.dgvUsers.TabIndex = 1;
-            // 
-            // btnChangePassword
-            // 
-            this.btnChangePassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnChangePassword.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePassword.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F);
-            this.btnChangePassword.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnChangePassword.Image = global::CarRepairShop.Properties.Resources.key;
-            this.btnChangePassword.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnChangePassword.Location = new System.Drawing.Point(40, 370);
-            this.btnChangePassword.Name = "btnChangePassword";
-            this.btnChangePassword.Size = new System.Drawing.Size(85, 79);
-            this.btnChangePassword.TabIndex = 0;
-            this.btnChangePassword.Text = "Change password";
-            this.btnChangePassword.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnChangePassword.UseVisualStyleBackColor = true;
-            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // pnlSeparator
             // 
@@ -182,7 +168,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             this.gbName.Controls.Add(this.txtName);
             this.gbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.gbName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbName.Location = new System.Drawing.Point(6, 174);
+            this.gbName.Location = new System.Drawing.Point(6, 240);
             this.gbName.Name = "gbName";
             this.gbName.Size = new System.Drawing.Size(150, 58);
             this.gbName.TabIndex = 19;
@@ -213,7 +199,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             this.lblFilters.AutoSize = true;
             this.lblFilters.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.lblFilters.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblFilters.Location = new System.Drawing.Point(3, 146);
+            this.lblFilters.Location = new System.Drawing.Point(3, 212);
             this.lblFilters.Name = "lblFilters";
             this.lblFilters.Size = new System.Drawing.Size(60, 18);
             this.lblFilters.TabIndex = 23;
@@ -224,7 +210,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             this.groupBox1.Controls.Add(this.txtSurname);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.groupBox1.ForeColor = System.Drawing.Color.SteelBlue;
-            this.groupBox1.Location = new System.Drawing.Point(8, 238);
+            this.groupBox1.Location = new System.Drawing.Point(8, 304);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(150, 58);
             this.groupBox1.TabIndex = 24;
@@ -244,11 +230,44 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             this.Debounce.Interval = 500;
             this.Debounce.Tick += new System.EventHandler(this.Debounce_Tick);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.Controls.Add(this.btnPermissions);
+            this.panel3.Font = new System.Drawing.Font("Segoe UI Emoji", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel3.ForeColor = System.Drawing.Color.Black;
+            this.panel3.Location = new System.Drawing.Point(0, 144);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(163, 33);
+            this.panel3.TabIndex = 25;
+            // 
+            // btnPermissions
+            // 
+            this.btnPermissions.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnPermissions.Image = global::CarRepairShop.Properties.Resources.edit;
+            this.btnPermissions.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPermissions.Location = new System.Drawing.Point(-1, -4);
+            this.btnPermissions.Name = "btnPermissions";
+            this.btnPermissions.Size = new System.Drawing.Size(183, 48);
+            this.btnPermissions.TabIndex = 0;
+            this.btnPermissions.Text = "Edit permissions";
+            this.btnPermissions.UseVisualStyleBackColor = true;
+            this.btnPermissions.Click += new System.EventHandler(this.btnPermissions_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Coral;
+            this.panel4.Location = new System.Drawing.Point(0, 185);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(163, 2);
+            this.panel4.TabIndex = 26;
+            // 
             // UsersTab
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnChangePassword);
+            this.Controls.Add(this.panel4);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.lblFilters);
             this.Controls.Add(this.lblActions);
@@ -269,6 +288,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             this.gbName.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,7 +303,6 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView dgvUsers;
-        private System.Windows.Forms.Button btnChangePassword;
         private System.Windows.Forms.Panel pnlSeparator;
         private System.Windows.Forms.GroupBox gbName;
         private System.Windows.Forms.TextBox txtName;
@@ -292,5 +311,8 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtSurname;
         private System.Windows.Forms.Timer Debounce;
+        private Panel panel3;
+        private Button btnPermissions;
+        private Panel panel4;
     }
 }

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
             this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -47,136 +48,93 @@
             // 
             // lblTitle
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            resources.ApplyResources(this.lblTitle, "lblTitle");
             this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblTitle.Location = new System.Drawing.Point(130, 199);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(106, 31);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "LOG IN";
             // 
             // panel2
             // 
+            resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Controls.Add(this.btnLogin);
-            this.panel2.Location = new System.Drawing.Point(87, 359);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(200, 39);
-            this.panel2.TabIndex = 3;
             // 
             // btnLogin
             // 
+            resources.ApplyResources(this.btnLogin, "btnLogin");
             this.btnLogin.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(-13, -8);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(228, 53);
-            this.btnLogin.TabIndex = 4;
-            this.btnLogin.Text = "LOG IN";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // lblQuit
             // 
-            this.lblQuit.AutoSize = true;
-            this.lblQuit.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            resources.ApplyResources(this.lblQuit, "lblQuit");
             this.lblQuit.ForeColor = System.Drawing.Color.Red;
-            this.lblQuit.Location = new System.Drawing.Point(168, 407);
             this.lblQuit.Name = "lblQuit";
-            this.lblQuit.Size = new System.Drawing.Size(35, 18);
-            this.lblQuit.TabIndex = 4;
-            this.lblQuit.Text = "Quit";
             this.lblQuit.Click += new System.EventHandler(this.lblQuit_Click);
             // 
             // txtLogin
             // 
+            resources.ApplyResources(this.txtLogin, "txtLogin");
             this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtLogin.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtLogin.Location = new System.Drawing.Point(72, 251);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(236, 24);
-            this.txtLogin.TabIndex = 5;
             // 
             // txtPassword
             // 
+            resources.ApplyResources(this.txtPassword, "txtPassword");
             this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.txtPassword.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtPassword.Location = new System.Drawing.Point(72, 301);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(236, 24);
-            this.txtPassword.TabIndex = 6;
             // 
             // panel4
             // 
+            resources.ApplyResources(this.panel4, "panel4");
             this.panel4.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel4.Location = new System.Drawing.Point(35, 331);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(294, 2);
-            this.panel4.TabIndex = 8;
             // 
             // cbCacheLogin
             // 
-            this.cbCacheLogin.AutoSize = true;
+            resources.ApplyResources(this.cbCacheLogin, "cbCacheLogin");
             this.cbCacheLogin.BackColor = System.Drawing.Color.White;
             this.cbCacheLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbCacheLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 48F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cbCacheLogin.Location = new System.Drawing.Point(314, 259);
-            this.cbCacheLogin.Margin = new System.Windows.Forms.Padding(0);
             this.cbCacheLogin.Name = "cbCacheLogin";
-            this.cbCacheLogin.Size = new System.Drawing.Size(15, 14);
-            this.cbCacheLogin.TabIndex = 9;
             this.cbCacheLogin.UseVisualStyleBackColor = false;
             // 
             // pbPassword
             // 
+            resources.ApplyResources(this.pbPassword, "pbPassword");
             this.pbPassword.Image = global::CarRepairShop.Properties.Resources.key;
-            this.pbPassword.Location = new System.Drawing.Point(35, 300);
             this.pbPassword.Name = "pbPassword";
-            this.pbPassword.Size = new System.Drawing.Size(30, 30);
-            this.pbPassword.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbPassword.TabIndex = 2;
             this.pbPassword.TabStop = false;
             // 
             // pbLogin
             // 
+            resources.ApplyResources(this.pbLogin, "pbLogin");
             this.pbLogin.Image = global::CarRepairShop.Properties.Resources.users;
-            this.pbLogin.Location = new System.Drawing.Point(35, 249);
             this.pbLogin.Name = "pbLogin";
-            this.pbLogin.Size = new System.Drawing.Size(30, 30);
-            this.pbLogin.TabIndex = 1;
             this.pbLogin.TabStop = false;
             // 
             // panel1
             // 
+            resources.ApplyResources(this.panel1, "panel1");
             this.panel1.BackColor = System.Drawing.Color.SteelBlue;
             this.panel1.BackgroundImage = global::CarRepairShop.Properties.Resources.mechanicGif;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(366, 194);
-            this.panel1.TabIndex = 0;
             // 
             // panel3
             // 
+            resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel3.Location = new System.Drawing.Point(35, 281);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(294, 2);
-            this.panel3.TabIndex = 10;
             // 
             // LoginForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(366, 440);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.cbCacheLogin);
             this.Controls.Add(this.panel4);
@@ -191,8 +149,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.Name = "LoginForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LoginForm";
             this.Load += new System.EventHandler(this.LoginForm_Load);
             this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoginForm_KeyPress);
             this.panel2.ResumeLayout(false);
