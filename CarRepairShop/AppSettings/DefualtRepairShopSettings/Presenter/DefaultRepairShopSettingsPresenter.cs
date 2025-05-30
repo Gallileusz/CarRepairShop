@@ -46,7 +46,11 @@ namespace CarRepairShop.AppSettings.DefualtRepairShopSettings.Presenter
             _view.CloseForm();
         }
 
-        private void Cancel(object sender, EventArgs e) => _isConfirmed = false;
+        private void Cancel(object sender, EventArgs e)
+        {
+            _isConfirmed = false;
+            _view.CloseForm();
+        }
 
         private bool IsNewPasswordInvalid(string firstField, string secondField)
         {

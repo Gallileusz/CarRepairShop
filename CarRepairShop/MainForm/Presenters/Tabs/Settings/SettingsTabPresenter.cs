@@ -90,6 +90,8 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Settings
 
             if (form.NewPassword == null) return;
 
+            if (string.IsNullOrEmpty(form.NewPassword)) return;
+
             var defaultSettings = _genericRepo.GetAll<DefaultSettings>().FirstOrDefault();
             defaultSettings.PasswordHash = BCrypt.Net.BCrypt.HashPassword(form.NewPassword);
 
