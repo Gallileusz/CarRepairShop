@@ -1,6 +1,7 @@
 ﻿using CarRepairShop.MainForm.Views.MainView;
 using CarRepairShop.MainForm.Views.Tabs.ContractorsTab;
 using CarRepairShop.MainForm.Views.Tabs.CRM;
+using CarRepairShop.MainForm.Views.Tabs.Services;
 using CarRepairShop.MainForm.Views.Tabs.Settings;
 using CarRepairShop.Utilities.Permissions;
 using System;

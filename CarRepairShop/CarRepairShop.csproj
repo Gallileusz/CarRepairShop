@@ -109,6 +109,7 @@
     </Compile>
     <Compile Include="MainForm\Presenters\MainForm\MainViewPresenter.cs" />
     <Compile Include="MainForm\Presenters\Tabs\Contractors\ContractorTabPresenter.cs" />
+    <Compile Include="MainForm\Presenters\Tabs\Services\ServicesTabPresenter.cs" />
     <Compile Include="MainForm\Presenters\Tabs\Settings\SettingsTabPresenter.cs" />
     <Compile Include="MainForm\Presenters\Tabs\User\UsersTabPresenter.cs" />
     <Compile Include="MainForm\Presenters\Tabs\Warehouse\WarehouseTabPresenter.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="MainForm\Views\Tabs\CRM\CRMTab.Designer.cs">
       <DependentUpon>CRMTab.cs</DependentUpon>
     </Compile>
+    <Compile Include="MainForm\Views\Tabs\Services\IServicesTab.cs" />
     <Compile Include="MainForm\Views\Tabs\Services\ServicesTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -161,6 +163,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Presenter\ServicesFormPresenter.cs" />
+    <Compile Include="Services\View\IServicesForm.cs" />
+    <Compile Include="Services\View\SerivcesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Services\View\SerivcesForm.Designer.cs">
+      <DependentUpon>SerivcesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Users\PermissionsForm\Model\PermissionModel.cs" />
     <Compile Include="Users\PermissionsForm\Presenter\PermissionsFormPresenter.cs" />
     <Compile Include="Users\PermissionsForm\View\IPermissionsView.cs" />
@@ -208,6 +218,12 @@
     <EmbeddedResource Include="MainForm\Views\Tabs\CRM\CRMTab.resx">
       <DependentUpon>CRMTab.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Views\Tabs\Services\ServicesTab.en-US.resx">
+      <DependentUpon>ServicesTab.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm\Views\Tabs\Services\ServicesTab.pl-PL.resx">
+      <DependentUpon>ServicesTab.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm\Views\Tabs\Services\ServicesTab.resx">
       <DependentUpon>ServicesTab.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +246,15 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Services\View\SerivcesForm.en-US.resx">
+      <DependentUpon>SerivcesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\View\SerivcesForm.pl-PL.resx">
+      <DependentUpon>SerivcesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Services\View\SerivcesForm.resx">
+      <DependentUpon>SerivcesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Users\PermissionsForm\View\PermissionsForm.resx">
       <DependentUpon>PermissionsForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +278,7 @@
   <ItemGroup>
     <Folder Include="MainForm\Models\Tabs\" />
     <Folder Include="MainForm\Views\Tabs\Statistics\" />
+    <Folder Include="Services\Model\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\edit.png" />

@@ -117,4 +117,490 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="pnlSeparator.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 130</value>
+  </data>
+  <data name="pnlSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>163, 2</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pnlSeparator.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.Name" xml:space="preserve">
+    <value>pnlSeparator</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlSeparator.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblActions.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblActions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="lblActions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 4</value>
+  </data>
+  <data name="lblActions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 18</value>
+  </data>
+  <data name="lblActions.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="lblActions.Text" xml:space="preserve">
+    <value>Actions:</value>
+  </data>
+  <data name="&gt;&gt;lblActions.Name" xml:space="preserve">
+    <value>lblActions</value>
+  </data>
+  <data name="&gt;&gt;lblActions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblActions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblActions.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnDeleteService.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnDeleteService.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnDeleteService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-5, -8</value>
+  </data>
+  <data name="btnDeleteService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 48</value>
+  </data>
+  <data name="btnDeleteService.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnDeleteService.Text" xml:space="preserve">
+    <value>Delete service</value>
+  </data>
+  <data name="btnDeleteService.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteService.Name" xml:space="preserve">
+    <value>btnDeleteService</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteService.Parent" xml:space="preserve">
+    <value>pnlButtonDelete</value>
+  </data>
+  <data name="&gt;&gt;btnDeleteService.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlButtonDelete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Emoji, 9.75pt</value>
+  </data>
+  <data name="pnlButtonDelete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>5, 91</value>
+  </data>
+  <data name="pnlButtonDelete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>159, 33</value>
+  </data>
+  <data name="pnlButtonDelete.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonDelete.Name" xml:space="preserve">
+    <value>pnlButtonDelete</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonDelete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonDelete.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonDelete.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="btnEditService.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnEditService.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnEditService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-4, -8</value>
+  </data>
+  <data name="btnEditService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 48</value>
+  </data>
+  <data name="btnEditService.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnEditService.Text" xml:space="preserve">
+    <value>Edit service</value>
+  </data>
+  <data name="btnEditService.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;btnEditService.Name" xml:space="preserve">
+    <value>btnEditService</value>
+  </data>
+  <data name="&gt;&gt;btnEditService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnEditService.Parent" xml:space="preserve">
+    <value>pnlButtonEdit</value>
+  </data>
+  <data name="&gt;&gt;btnEditService.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlButtonEdit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Emoji, 9.75pt</value>
+  </data>
+  <data name="pnlButtonEdit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 58</value>
+  </data>
+  <data name="pnlButtonEdit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>160, 33</value>
+  </data>
+  <data name="pnlButtonEdit.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonEdit.Name" xml:space="preserve">
+    <value>pnlButtonEdit</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonEdit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonEdit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonEdit.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="btnAddService.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="btnAddService.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="btnAddService.Location" type="System.Drawing.Point, System.Drawing">
+    <value>-2, -4</value>
+  </data>
+  <data name="btnAddService.Size" type="System.Drawing.Size, System.Drawing">
+    <value>168, 48</value>
+  </data>
+  <data name="btnAddService.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnAddService.Text" xml:space="preserve">
+    <value>Add service</value>
+  </data>
+  <data name="btnAddService.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="&gt;&gt;btnAddService.Name" xml:space="preserve">
+    <value>btnAddService</value>
+  </data>
+  <data name="&gt;&gt;btnAddService.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnAddService.Parent" xml:space="preserve">
+    <value>pnlButtonAdd</value>
+  </data>
+  <data name="&gt;&gt;btnAddService.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pnlButtonAdd.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI Emoji, 9.75pt</value>
+  </data>
+  <data name="pnlButtonAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 25</value>
+  </data>
+  <data name="pnlButtonAdd.Size" type="System.Drawing.Size, System.Drawing">
+    <value>161, 33</value>
+  </data>
+  <data name="pnlButtonAdd.TabIndex" type="System.Int32, mscorlib">
+    <value>19</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonAdd.Name" xml:space="preserve">
+    <value>pnlButtonAdd</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonAdd.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonAdd.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pnlButtonAdd.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="txtServiceName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 19</value>
+  </data>
+  <data name="txtServiceName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 22</value>
+  </data>
+  <data name="txtServiceName.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;txtServiceName.Name" xml:space="preserve">
+    <value>txtServiceName</value>
+  </data>
+  <data name="&gt;&gt;txtServiceName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtServiceName.Parent" xml:space="preserve">
+    <value>gbServiceName</value>
+  </data>
+  <data name="&gt;&gt;txtServiceName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbServiceName.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="gbServiceName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 169</value>
+  </data>
+  <data name="gbServiceName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 58</value>
+  </data>
+  <data name="gbServiceName.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="gbServiceName.Text" xml:space="preserve">
+    <value>Service name:</value>
+  </data>
+  <data name="&gt;&gt;gbServiceName.Name" xml:space="preserve">
+    <value>gbServiceName</value>
+  </data>
+  <data name="&gt;&gt;gbServiceName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbServiceName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbServiceName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblFilters.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblFilters.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="lblFilters.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 142</value>
+  </data>
+  <data name="lblFilters.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 18</value>
+  </data>
+  <data name="lblFilters.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="lblFilters.Text" xml:space="preserve">
+    <value>Filters:</value>
+  </data>
+  <data name="&gt;&gt;lblFilters.Name" xml:space="preserve">
+    <value>lblFilters</value>
+  </data>
+  <data name="&gt;&gt;lblFilters.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFilters.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblFilters.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <metadata name="Debounce.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="groupBox5.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="groupBox5.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+  </data>
+  <data name="groupBox5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 366</value>
+  </data>
+  <data name="groupBox5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>532, 1</value>
+  </data>
+  <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="groupBox5.Text" xml:space="preserve">
+    <value>Contractor cars:</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
+    <value>groupBox5</value>
+  </data>
+  <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgv.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left, Right</value>
+  </data>
+  <data name="dgv.Location" type="System.Drawing.Point, System.Drawing">
+    <value>163, 0</value>
+  </data>
+  <data name="dgv.Size" type="System.Drawing.Size, System.Drawing">
+    <value>538, 370</value>
+  </data>
+  <data name="dgv.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;dgv.Name" xml:space="preserve">
+    <value>dgv</value>
+  </data>
+  <data name="&gt;&gt;dgv.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgv.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgv.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbInactive.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbInactive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 78</value>
+  </data>
+  <data name="rbInactive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 20</value>
+  </data>
+  <data name="rbInactive.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="rbInactive.Text" xml:space="preserve">
+    <value>Inactive only</value>
+  </data>
+  <data name="&gt;&gt;rbInactive.Name" xml:space="preserve">
+    <value>rbInactive</value>
+  </data>
+  <data name="&gt;&gt;rbInactive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbInactive.Parent" xml:space="preserve">
+    <value>gbStatuses</value>
+  </data>
+  <data name="&gt;&gt;rbInactive.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="rbActive.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbActive.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 52</value>
+  </data>
+  <data name="rbActive.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 20</value>
+  </data>
+  <data name="rbActive.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="rbActive.Text" xml:space="preserve">
+    <value>Active only</value>
+  </data>
+  <data name="&gt;&gt;rbActive.Name" xml:space="preserve">
+    <value>rbActive</value>
+  </data>
+  <data name="&gt;&gt;rbActive.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbActive.Parent" xml:space="preserve">
+    <value>gbStatuses</value>
+  </data>
+  <data name="&gt;&gt;rbActive.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="rbAll.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="rbAll.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="rbAll.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 26</value>
+  </data>
+  <data name="rbAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 20</value>
+  </data>
+  <data name="rbAll.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="rbAll.Text" xml:space="preserve">
+    <value>&lt;-- All --&gt;</value>
+  </data>
+  <data name="&gt;&gt;rbAll.Name" xml:space="preserve">
+    <value>rbAll</value>
+  </data>
+  <data name="&gt;&gt;rbAll.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;rbAll.Parent" xml:space="preserve">
+    <value>gbStatuses</value>
+  </data>
+  <data name="&gt;&gt;rbAll.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="gbStatuses.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 9.75pt</value>
+  </data>
+  <data name="gbStatuses.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 233</value>
+  </data>
+  <data name="gbStatuses.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 111</value>
+  </data>
+  <data name="gbStatuses.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="gbStatuses.Text" xml:space="preserve">
+    <value>Service status:</value>
+  </data>
+  <data name="&gt;&gt;gbStatuses.Name" xml:space="preserve">
+    <value>gbStatuses</value>
+  </data>
+  <data name="&gt;&gt;gbStatuses.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbStatuses.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbStatuses.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>701, 370</value>
+  </data>
+  <data name="&gt;&gt;Debounce.Name" xml:space="preserve">
+    <value>Debounce</value>
+  </data>
+  <data name="&gt;&gt;Debounce.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>ServicesTab</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

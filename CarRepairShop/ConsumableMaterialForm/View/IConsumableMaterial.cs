@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CarRepairShop.Domain.Entities;
+using System;
 using System.Collections.Generic;
-using CarRepairShop.Domain.Entities;
 
 namespace CarRepairShop.ConsumableMaterialForm.View
 {
