@@ -1,7 +1,7 @@
-﻿using System;
-using System.Windows.Forms;
-using CarRepairShop.LoginForm.DTO;
+﻿using CarRepairShop.LoginForm.DTO;
 using CarRepairShop.LoginForm.Presenter;
+using System;
+using System.Windows.Forms;
 
 namespace CarRepairShop.LoginForm.View
 {
@@ -26,6 +26,7 @@ namespace CarRepairShop.LoginForm.View
         public event EventHandler LoginButtonClicked;
         public event EventHandler QuitLabelClicked;
         public event EventHandler FormIsLoaded;
+        public event EventHandler<KeyPressEventArgs> EnterButtonClicked;
 
         public LoginForm()
         {
@@ -45,10 +46,6 @@ namespace CarRepairShop.LoginForm.View
 
         private void LoginForm_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(this, e);
 
-        private void LoginForm_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == '\r')
-                LoginButtonClicked?.Invoke(this, e);
-        }
+        private void LoginForm_KeyPress(object sender, KeyPressEventArgs e) => EnterButtonClicked?.Invoke(this, e);
     }
 }

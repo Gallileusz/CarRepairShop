@@ -82,5 +82,34 @@ CREATE TABLE [dbo].[UserPermissions] (
     CONSTRAINT FK_UserPermissions_Users FOREIGN KEY ([UserID]) REFERENCES [dbo].[Users]([ID]) ON DELETE CASCADE,
     CONSTRAINT FK_UserPermissions_Permissions FOREIGN KEY ([PermissionID]) REFERENCES [dbo].[Permissions]([ID]) ON DELETE CASCADE
 );";
+
+        const string CreateCRMTable = @"
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CRM_Task' AND xtype='U')
+BEGIN
+    CREATE TABLE [dbo].[CRM_Task] (
+        [TaskID] INT IDENTITY(1,1) PRIMARY KEY,
+        [MechanicID] INT NOT NULL,
+        [ContractorID] INT NOT NULL,
+        [CarID] INT NOT NULL,
+        [Comment] NVARCHAR(MAX) NULL,
+        [StartDate] DATETIME NOT NULL,
+        [Completed] BIT NOT NULL,
+        [EndDate] DATETIME NULL,
+        [Price] FLOAT NOT NULL
+    );
+END
+";
+
+        const string CreateCRMMappingsTable = @"
+IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CRM_Services' AND xtype='U')
+BEGIN
+    CREATE TABLE [dbo].[CRM_Services] (
+        [ID] INT IDENTITY(1,1) PRIMARY KEY,
+        [TaskID] INT NOT NULL,
+        [ServiceID] INT NOT NULL,
+        [Quantity] INT NOT NULL
+    );
+END
+";
     }
 }

@@ -25,6 +25,7 @@ namespace CarRepairShop.LoginForm.Presenter
             _view.LoginButtonClicked += Login;
             _view.QuitLabelClicked += Quit;
             _view.FormIsLoaded += Load;
+            _view.EnterButtonClicked += LoginByEnterClick;
         }
 
         private void Load(object sender, EventArgs e)
@@ -37,12 +38,19 @@ namespace CarRepairShop.LoginForm.Presenter
 
         private void Quit(object sender, EventArgs e) => Application.Exit();
 
+        private void LoginByEnterClick(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r')
+                Login(sender, e);
+        }
+
         private void Login(object sender, EventArgs e)
         {
             var login = _view.UserCredentials.Login;
             var password = _view.UserCredentials.Password;
 
-            if (string.IsNullOrEmpty(_view.UserCredentials.Login) || string.IsNullOrEmpty(_view.UserCredentials.Password))
+            if (string.IsNullOrEmpty(_view.UserCredentials.Login)
+                || string.IsNullOrEmpty(_view.UserCredentials.Password))
             {
                 _view.ShowMessage("Proszę wprowadzić login i hasło.");
                 Cache(false);
@@ -51,7 +59,8 @@ namespace CarRepairShop.LoginForm.Presenter
 
             var credentials = _genericRepo.GetAll<UserCredentials>().FirstOrDefault(c => c.Login == _view.UserCredentials.Login);
 
-            if (credentials == null || !BCrypt.Net.BCrypt.Verify(_view.UserCredentials.Password, credentials.PasswordHash))
+            if (credentials == null
+                || !BCrypt.Net.BCrypt.Verify(_view.UserCredentials.Password, credentials.PasswordHash))
             {
                 _view.ShowMessage("Nieprawidłowy login lub hasło.");
                 Cache(false);

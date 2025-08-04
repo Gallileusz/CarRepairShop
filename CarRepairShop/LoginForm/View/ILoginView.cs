@@ -1,6 +1,6 @@
-﻿using System;
+﻿using CarRepairShop.LoginForm.DTO;
+using System;
 using System.Windows.Forms;
-using CarRepairShop.LoginForm.DTO;
 
 namespace CarRepairShop.LoginForm.View
 {
@@ -8,6 +8,7 @@ namespace CarRepairShop.LoginForm.View
     {
         event EventHandler FormIsLoaded;
         event EventHandler LoginButtonClicked;
+        event EventHandler<KeyPressEventArgs> EnterButtonClicked;
         event EventHandler QuitLabelClicked;
         bool CacheCheckboxSelected { get; set; }
         string Login { get; set; }

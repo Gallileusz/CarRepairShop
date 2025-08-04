@@ -1,8 +1,8 @@
-﻿using System;
+﻿using CarRepairShop.MainForm.Views.MainView;
+using System;
 using System.Globalization;
 using System.Threading;
 using System.Windows.Forms;
-using CarRepairShop.MainForm.Views.MainView;
 
 namespace CarRepairShop
 {
