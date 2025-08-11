@@ -14,20 +14,34 @@ namespace CarRepairShop.Utilities.ComboboxForm.View
         public event EventHandler FormIsClosing;
         public event EventHandler ButtonOkClicked;
 
-        public string Title { get => this.Text; set => this.Text = value; }
-        public string ComboboxDisplayValue { get; set; }
-        public string ComboboxValueMember { get; set; }
-
-        public object SelectedItem
-        {
-            get => cmb.SelectedItem;
-            set => cmb.SelectedItem = value;
-        }
-
         public ComboboxForm(IEnumerable<object> entities, object toSelect = null)
         {
             InitializeComponent();
             _presenter = new ComboboxFormPresenter(this, entities.ToList(), toSelect);
+        }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public string Title
+        {
+            get => this.Text;
+            set => this.Text = value;
+        }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public string ComboboxDisplayValue { get; set; }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public string ComboboxValueMember { get; set; }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public object SelectedItem
+        {
+            get => cmb.SelectedItem;
+            set => cmb.SelectedItem = value;
         }
 
         private void ComboboxForm_FormClosing(object sender, FormClosingEventArgs e) => FormIsClosing?.Invoke(sender, e);

@@ -28,285 +28,299 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTab));
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnChangelog = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnSources = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnAcknowledgements = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnAboutThisProject = new System.Windows.Forms.Button();
-            this.txt = new System.Windows.Forms.TextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnGitHub = new System.Windows.Forms.Button();
-            this.lblVersion = new System.Windows.Forms.Label();
-            this.lblVersionTitle = new System.Windows.Forms.Label();
-            this.pnlNavigation = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel5.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel6.SuspendLayout();
-            this.pnlNavigation.SuspendLayout();
-            this.SuspendLayout();
+            panel1 = new System.Windows.Forms.Panel();
+            pnlNavigation = new System.Windows.Forms.Panel();
+            panel5 = new System.Windows.Forms.Panel();
+            btnSources = new System.Windows.Forms.Button();
+            panel4 = new System.Windows.Forms.Panel();
+            btnAcknowledgements = new System.Windows.Forms.Button();
+            panel7 = new System.Windows.Forms.Panel();
+            btnChangelog = new System.Windows.Forms.Button();
+            panel3 = new System.Windows.Forms.Panel();
+            btnAboutThisProject = new System.Windows.Forms.Button();
+            txt = new System.Windows.Forms.TextBox();
+            panel2 = new System.Windows.Forms.Panel();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            lblTitle = new System.Windows.Forms.Label();
+            panel6 = new System.Windows.Forms.Panel();
+            btnGitHub = new System.Windows.Forms.Button();
+            lblVersion = new System.Windows.Forms.Label();
+            lblVersionTitle = new System.Windows.Forms.Label();
+            panel1.SuspendLayout();
+            pnlNavigation.SuspendLayout();
+            panel5.SuspendLayout();
+            panel4.SuspendLayout();
+            panel7.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel6.SuspendLayout();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.pnlNavigation);
-            this.panel1.Controls.Add(this.txt);
-            this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Controls.Add(this.lblVersion);
-            this.panel1.Controls.Add(this.lblVersionTitle);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(974, 665);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.btnChangelog);
-            this.panel7.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.ForeColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(3, 220);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(178, 64);
-            this.panel7.TabIndex = 28;
-            // 
-            // btnChangelog
-            // 
-            this.btnChangelog.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnChangelog.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnChangelog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangelog.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnChangelog.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnChangelog.Location = new System.Drawing.Point(-6, -4);
-            this.btnChangelog.Name = "btnChangelog";
-            this.btnChangelog.Size = new System.Drawing.Size(191, 70);
-            this.btnChangelog.TabIndex = 0;
-            this.btnChangelog.Text = "Changelog";
-            this.btnChangelog.UseVisualStyleBackColor = false;
-            this.btnChangelog.Click += new System.EventHandler(this.btnChangelog_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnSources);
-            this.panel5.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.ForeColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(3, 148);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(178, 64);
-            this.panel5.TabIndex = 27;
-            // 
-            // btnSources
-            // 
-            this.btnSources.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSources.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnSources.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSources.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSources.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSources.Location = new System.Drawing.Point(-6, -4);
-            this.btnSources.Name = "btnSources";
-            this.btnSources.Size = new System.Drawing.Size(191, 70);
-            this.btnSources.TabIndex = 0;
-            this.btnSources.Text = "Sources";
-            this.btnSources.UseVisualStyleBackColor = false;
-            this.btnSources.Click += new System.EventHandler(this.btnSources_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.btnAcknowledgements);
-            this.panel4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(3, 76);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(178, 64);
-            this.panel4.TabIndex = 26;
-            // 
-            // btnAcknowledgements
-            // 
-            this.btnAcknowledgements.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAcknowledgements.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAcknowledgements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAcknowledgements.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcknowledgements.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAcknowledgements.Location = new System.Drawing.Point(-6, -4);
-            this.btnAcknowledgements.Name = "btnAcknowledgements";
-            this.btnAcknowledgements.Size = new System.Drawing.Size(191, 70);
-            this.btnAcknowledgements.TabIndex = 0;
-            this.btnAcknowledgements.Text = "Acknowledgements";
-            this.btnAcknowledgements.UseVisualStyleBackColor = false;
-            this.btnAcknowledgements.Click += new System.EventHandler(this.btnAcknowledgements_Click);
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnAboutThisProject);
-            this.panel3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(3, 4);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(178, 64);
-            this.panel3.TabIndex = 25;
-            // 
-            // btnAboutThisProject
-            // 
-            this.btnAboutThisProject.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAboutThisProject.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnAboutThisProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAboutThisProject.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAboutThisProject.ForeColor = System.Drawing.Color.Coral;
-            this.btnAboutThisProject.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnAboutThisProject.Location = new System.Drawing.Point(-6, -4);
-            this.btnAboutThisProject.Name = "btnAboutThisProject";
-            this.btnAboutThisProject.Size = new System.Drawing.Size(191, 70);
-            this.btnAboutThisProject.TabIndex = 0;
-            this.btnAboutThisProject.Text = "About this project";
-            this.btnAboutThisProject.UseVisualStyleBackColor = false;
-            this.btnAboutThisProject.Click += new System.EventHandler(this.btnAboutThisProject_Click);
-            // 
-            // txt
-            // 
-            this.txt.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.txt.Location = new System.Drawing.Point(190, 69);
-            this.txt.Multiline = true;
-            this.txt.Name = "txt";
-            this.txt.ReadOnly = true;
-            this.txt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txt.Size = new System.Drawing.Size(785, 561);
-            this.txt.TabIndex = 24;
-            this.txt.Text = resources.GetString("txt.Text");
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.pictureBox1);
-            this.panel2.Controls.Add(this.lblTitle);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(974, 63);
-            this.panel2.TabIndex = 23;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.pictureBox1.Image = global::CarRepairShop.Properties.Resources.users;
-            this.pictureBox1.Location = new System.Drawing.Point(177, 9);
-            this.pictureBox1.MinimumSize = new System.Drawing.Size(48, 50);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblTitle.Location = new System.Drawing.Point(231, 20);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(581, 29);
-            this.lblTitle.TabIndex = 13;
-            this.lblTitle.Text = "Michał Galli - \"Car repair shop\" engineer project";
-            // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.btnGitHub);
-            this.panel6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel6.ForeColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(3, 359);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(178, 64);
-            this.panel6.TabIndex = 18;
-            // 
-            // btnGitHub
-            // 
-            this.btnGitHub.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnGitHub.BackColor = System.Drawing.Color.SlateBlue;
-            this.btnGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGitHub.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGitHub.Image = global::CarRepairShop.Properties.Resources.githubLogo;
-            this.btnGitHub.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGitHub.Location = new System.Drawing.Point(-3, -17);
-            this.btnGitHub.Name = "btnGitHub";
-            this.btnGitHub.Size = new System.Drawing.Size(200, 98);
-            this.btnGitHub.TabIndex = 0;
-            this.btnGitHub.Text = "Open github";
-            this.btnGitHub.UseVisualStyleBackColor = false;
-            this.btnGitHub.Click += new System.EventHandler(this.btnGitHub_Click);
-            // 
-            // lblVersion
-            // 
-            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblVersion.AutoSize = true;
-            this.lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblVersion.ForeColor = System.Drawing.Color.Black;
-            this.lblVersion.Location = new System.Drawing.Point(92, 637);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(55, 24);
-            this.lblVersion.TabIndex = 17;
-            this.lblVersion.Text = "1.0.0";
-            // 
-            // lblVersionTitle
-            // 
-            this.lblVersionTitle.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblVersionTitle.AutoSize = true;
-            this.lblVersionTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.lblVersionTitle.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblVersionTitle.Location = new System.Drawing.Point(2, 637);
-            this.lblVersionTitle.Name = "lblVersionTitle";
-            this.lblVersionTitle.Size = new System.Drawing.Size(88, 24);
-            this.lblVersionTitle.TabIndex = 15;
-            this.lblVersionTitle.Text = "Version:";
+            panel1.Controls.Add(pnlNavigation);
+            panel1.Controls.Add(txt);
+            panel1.Controls.Add(panel2);
+            panel1.Controls.Add(panel6);
+            panel1.Controls.Add(lblVersion);
+            panel1.Controls.Add(lblVersionTitle);
+            panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel1.Location = new System.Drawing.Point(0, 0);
+            panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(1136, 767);
+            panel1.TabIndex = 0;
             // 
             // pnlNavigation
             // 
-            this.pnlNavigation.Controls.Add(this.panel5);
-            this.pnlNavigation.Controls.Add(this.panel4);
-            this.pnlNavigation.Controls.Add(this.panel7);
-            this.pnlNavigation.Controls.Add(this.panel3);
-            this.pnlNavigation.Location = new System.Drawing.Point(0, 65);
-            this.pnlNavigation.Name = "pnlNavigation";
-            this.pnlNavigation.Size = new System.Drawing.Size(184, 288);
-            this.pnlNavigation.TabIndex = 29;
+            pnlNavigation.Controls.Add(panel5);
+            pnlNavigation.Controls.Add(panel4);
+            pnlNavigation.Controls.Add(panel7);
+            pnlNavigation.Controls.Add(panel3);
+            pnlNavigation.Location = new System.Drawing.Point(0, 75);
+            pnlNavigation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pnlNavigation.Name = "pnlNavigation";
+            pnlNavigation.Size = new System.Drawing.Size(215, 332);
+            pnlNavigation.TabIndex = 29;
+            // 
+            // panel5
+            // 
+            panel5.Controls.Add(btnSources);
+            panel5.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel5.ForeColor = System.Drawing.Color.White;
+            panel5.Location = new System.Drawing.Point(4, 171);
+            panel5.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel5.Name = "panel5";
+            panel5.Size = new System.Drawing.Size(208, 74);
+            panel5.TabIndex = 27;
+            // 
+            // btnSources
+            // 
+            btnSources.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnSources.BackColor = System.Drawing.Color.SteelBlue;
+            btnSources.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSources.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSources.Image = Properties.Resources.sources;
+            btnSources.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnSources.Location = new System.Drawing.Point(-7, -3);
+            btnSources.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSources.Name = "btnSources";
+            btnSources.Size = new System.Drawing.Size(223, 97);
+            btnSources.TabIndex = 0;
+            btnSources.Text = "Sources";
+            btnSources.UseVisualStyleBackColor = false;
+            btnSources.Click += btnSources_Click;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(btnAcknowledgements);
+            panel4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel4.ForeColor = System.Drawing.Color.White;
+            panel4.Location = new System.Drawing.Point(4, 88);
+            panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(208, 74);
+            panel4.TabIndex = 26;
+            // 
+            // btnAcknowledgements
+            // 
+            btnAcknowledgements.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnAcknowledgements.BackColor = System.Drawing.Color.SteelBlue;
+            btnAcknowledgements.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAcknowledgements.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnAcknowledgements.Image = Properties.Resources.acknowledgement;
+            btnAcknowledgements.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnAcknowledgements.Location = new System.Drawing.Point(-7, -3);
+            btnAcknowledgements.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnAcknowledgements.Name = "btnAcknowledgements";
+            btnAcknowledgements.Size = new System.Drawing.Size(223, 97);
+            btnAcknowledgements.TabIndex = 0;
+            btnAcknowledgements.Text = "Acknowledgements";
+            btnAcknowledgements.UseVisualStyleBackColor = false;
+            btnAcknowledgements.Click += btnAcknowledgements_Click;
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(btnChangelog);
+            panel7.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel7.ForeColor = System.Drawing.Color.White;
+            panel7.Location = new System.Drawing.Point(4, 254);
+            panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel7.Name = "panel7";
+            panel7.Size = new System.Drawing.Size(208, 74);
+            panel7.TabIndex = 28;
+            // 
+            // btnChangelog
+            // 
+            btnChangelog.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnChangelog.BackColor = System.Drawing.Color.SteelBlue;
+            btnChangelog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnChangelog.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnChangelog.Image = Properties.Resources.changelog;
+            btnChangelog.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnChangelog.Location = new System.Drawing.Point(-7, -3);
+            btnChangelog.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnChangelog.Name = "btnChangelog";
+            btnChangelog.Size = new System.Drawing.Size(223, 97);
+            btnChangelog.TabIndex = 0;
+            btnChangelog.Text = "Changelog";
+            btnChangelog.UseVisualStyleBackColor = false;
+            btnChangelog.Click += btnChangelog_Click;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(btnAboutThisProject);
+            panel3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel3.ForeColor = System.Drawing.Color.White;
+            panel3.Location = new System.Drawing.Point(4, 5);
+            panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(208, 74);
+            panel3.TabIndex = 25;
+            // 
+            // btnAboutThisProject
+            // 
+            btnAboutThisProject.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnAboutThisProject.BackColor = System.Drawing.Color.SteelBlue;
+            btnAboutThisProject.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnAboutThisProject.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnAboutThisProject.ForeColor = System.Drawing.Color.Coral;
+            btnAboutThisProject.Image = Properties.Resources.info;
+            btnAboutThisProject.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnAboutThisProject.Location = new System.Drawing.Point(-7, -1);
+            btnAboutThisProject.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnAboutThisProject.Name = "btnAboutThisProject";
+            btnAboutThisProject.Size = new System.Drawing.Size(223, 95);
+            btnAboutThisProject.TabIndex = 0;
+            btnAboutThisProject.Text = "About this project";
+            btnAboutThisProject.UseVisualStyleBackColor = false;
+            btnAboutThisProject.Click += btnAboutThisProject_Click;
+            // 
+            // txt
+            // 
+            txt.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            txt.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            txt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 238);
+            txt.Location = new System.Drawing.Point(222, 80);
+            txt.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            txt.Multiline = true;
+            txt.Name = "txt";
+            txt.ReadOnly = true;
+            txt.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            txt.Size = new System.Drawing.Size(916, 647);
+            txt.TabIndex = 24;
+            // 
+            // panel2
+            // 
+            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(lblTitle);
+            panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            panel2.Location = new System.Drawing.Point(0, 0);
+            panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(1136, 73);
+            panel2.TabIndex = 23;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom;
+            pictureBox1.Image = Properties.Resources.users;
+            pictureBox1.Location = new System.Drawing.Point(206, 10);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pictureBox1.MinimumSize = new System.Drawing.Size(56, 58);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(56, 58);
+            pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 16;
+            pictureBox1.TabStop = false;
+            // 
+            // lblTitle
+            // 
+            lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom;
+            lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
+            lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
+            lblTitle.Location = new System.Drawing.Point(270, 23);
+            lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new System.Drawing.Size(678, 33);
+            lblTitle.TabIndex = 13;
+            lblTitle.Text = "Michał Galli - \"Car repair shop\" engineer project";
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(btnGitHub);
+            panel6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel6.ForeColor = System.Drawing.Color.White;
+            panel6.Location = new System.Drawing.Point(4, 414);
+            panel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel6.Name = "panel6";
+            panel6.Size = new System.Drawing.Size(208, 74);
+            panel6.TabIndex = 18;
+            // 
+            // btnGitHub
+            // 
+            btnGitHub.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            btnGitHub.BackColor = System.Drawing.Color.SlateBlue;
+            btnGitHub.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnGitHub.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnGitHub.Image = Properties.Resources.githubLogo;
+            btnGitHub.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnGitHub.Location = new System.Drawing.Point(-4, -1);
+            btnGitHub.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnGitHub.Name = "btnGitHub";
+            btnGitHub.Size = new System.Drawing.Size(220, 98);
+            btnGitHub.TabIndex = 0;
+            btnGitHub.Text = "Open github";
+            btnGitHub.UseVisualStyleBackColor = false;
+            btnGitHub.Click += btnGitHub_Click;
+            // 
+            // lblVersion
+            // 
+            lblVersion.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            lblVersion.AutoSize = true;
+            lblVersion.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
+            lblVersion.ForeColor = System.Drawing.Color.Black;
+            lblVersion.Location = new System.Drawing.Point(88, 735);
+            lblVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblVersion.Name = "lblVersion";
+            lblVersion.Size = new System.Drawing.Size(55, 24);
+            lblVersion.TabIndex = 17;
+            lblVersion.Text = "1.0.0";
+            // 
+            // lblVersionTitle
+            // 
+            lblVersionTitle.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            lblVersionTitle.AutoSize = true;
+            lblVersionTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
+            lblVersionTitle.ForeColor = System.Drawing.Color.SteelBlue;
+            lblVersionTitle.Location = new System.Drawing.Point(2, 735);
+            lblVersionTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblVersionTitle.Name = "lblVersionTitle";
+            lblVersionTitle.Size = new System.Drawing.Size(88, 24);
+            lblVersionTitle.TabIndex = 15;
+            lblVersionTitle.Text = "Version:";
             // 
             // HomeTab
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
-            this.Name = "HomeTab";
-            this.Size = new System.Drawing.Size(974, 665);
-            this.Load += new System.EventHandler(this.HomeTab_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel6.ResumeLayout(false);
-            this.pnlNavigation.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(panel1);
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            Name = "HomeTab";
+            Size = new System.Drawing.Size(1136, 767);
+            Load += HomeTab_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            pnlNavigation.ResumeLayout(false);
+            panel5.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel6.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 

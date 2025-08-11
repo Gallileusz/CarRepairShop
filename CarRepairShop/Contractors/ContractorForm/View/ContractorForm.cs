@@ -7,10 +7,24 @@ namespace CarRepairShop.Contractors.ContractorForm.View
     {
         private Presenter.ContractorFormPresenter _presenter;
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string ContractorName { get => txtName.Text; set => txtName.Text = value; }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string ContractorSurname { get => txtSurname.Text; set => txtSurname.Text = value; }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string ContractorEmail { get => txtEmail.Text; set => txtEmail.Text = value; }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string ContractorPhoneNumber { get => txtPhoneNumber.Text; set => txtPhoneNumber.Text = value; }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string FormTitle { get => this.Text; set => this.Text = value; }
 
         public event EventHandler FormIsLoaded;

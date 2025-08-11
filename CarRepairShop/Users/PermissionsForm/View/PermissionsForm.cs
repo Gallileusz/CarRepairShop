@@ -14,6 +14,8 @@ namespace CarRepairShop.Users.PermissionsForm.View
         public event EventHandler CancelClicked;
         public event EventHandler FormLoaded;
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string FormTitle { get => this.Text; set => this.Text = value; }
 
         public List<PermissionModel> GetSelectedPermissions { get => dgv.DataSource as List<PermissionModel>; }

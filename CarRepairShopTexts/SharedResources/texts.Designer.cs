@@ -61,11 +61,69 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Test.
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Technology: 
+        ///
+        ///    - Windows Forms
+        ///
+        ///Programming Language: 
+        ///
+        ///    - C#
+        ///
+        ///MVP Architecture:
+        ///
+        ///    The application logic is separated from the user interface, allowing easy modifications without impacting the entire application.
+        ///
+        ///Testability:
+        ///
+        ///    All business logic within the application is covered by unit tests, enabling verification of all use cases and maintaining high code quality.
+        ///
+        ///Database: 
+        ///
+        ///    The application data is stored in a relational SQL database hosted on Microsoft Azure, providi [obcięto pozostałą część ciągu]&quot;;.
+        /// </summary>
+        internal static string HomeTabAboutThisProject {
+            get {
+                return ResourceManager.GetString("HomeTabAboutThisProject", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu I would like to express my sincere gratitude to my supervisor, Dr. Wiktoria Kalus, for her invaluable support, dedication, and insightful guidance throughout the realization of this engineering project.
+        ///
+        ///I also wish to thank the entire RS-Code team for my development as a software developer..
         /// </summary>
         internal static string HomeTabAcknowledgements {
             get {
                 return ResourceManager.GetString("HomeTabAcknowledgements", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Missing changelog entries or changelog file coulnd&apos;t be found..
+        /// </summary>
+        internal static string HomeTabChangelogLoadFailed {
+            get {
+                return ResourceManager.GetString("HomeTabChangelogLoadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Failed to open GitHub page. URL might be outdated or you have internet connection issues..
+        /// </summary>
+        internal static string HomeTabGitHubLoadFailed {
+            get {
+                return ResourceManager.GetString("HomeTabGitHubLoadFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Sources:
+        ///
+        ///- Icons: https://icons8.com/.
+        /// </summary>
+        internal static string HomeTabSources {
+            get {
+                return ResourceManager.GetString("HomeTabSources", resourceCulture);
             }
         }
     }

@@ -11,12 +11,16 @@ namespace CarRepairShop.Utilities.SingleInputForm.View
         public event FormClosingEventHandler FormIsClosing;
         public event EventHandler OKButtonClicked;
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string FormTitle
         {
             get => this.Text;
             set => this.Text = value;
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string Value
         {
             get => txt.Text;

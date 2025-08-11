@@ -24,6 +24,8 @@ namespace CarRepairShop.MainForm.Views.Tabs.Home
             _presenter = new HomeTabPresenter(this, new WebBrowserHandler(), new ChangelogHandler());
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string CurrentText { get => txt.Text; set => txt.Text = value; }
 
         public void SetVersion(string version) => lblVersion.Text = version;

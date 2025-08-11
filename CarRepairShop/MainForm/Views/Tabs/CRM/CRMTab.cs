@@ -19,8 +19,12 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             .Select(crm => crm.ID)
             .FirstOrDefault();
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public DateTime FilterDateFrom { get => dtpDateFrom.Value; set => dtpDateFrom.Value = value; }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public DateTime FilterDateTo => dtpDateTo.Value;
 
         public string FilterContractorFullName => txtContractorFullname.Text;

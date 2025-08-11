@@ -259,7 +259,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
                 .Where(crm =>
                 {
                     DateTime startDate;
-                    if (!DateTime.TryParseExact(crm.StartDate, "dd//MM/yyyy HH:mm", System.Globalization.CultureInfo.InvariantCulture, System.Globalization.DateTimeStyles.None, out startDate))
+                    if (!DateTime.TryParseExact(crm.StartDate, "dd//MM/yyyy HH:mm", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None, out startDate))
                         return false;
                     return startDate >= _view.FilterDateFrom && startDate.Date <= _view.FilterDateTo.Date;
                 })

@@ -11,12 +11,16 @@ namespace CarRepairShop.LoginForm.View
 
         public UserCredentialsInput UserCredentials => new UserCredentialsInput { Login = txtLogin.Text, Password = txtPassword.Text };
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public bool CacheCheckboxSelected
         {
             get => cbCacheLogin.Checked;
             set => cbCacheLogin.Checked = value;
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string Login
         {
             get => txtLogin.Text;

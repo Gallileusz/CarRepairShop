@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="HomeTabAcknowledgements" xml:space="preserve">
-    <value>I would like to express my sincere gratitude to my supervisor, Dr. Wiktoria Kalus, for her invaluable support, dedication, and insightful guidance throughout the realization of this engineering project.
-
-I also wish to thank the entire RS-Code team for my development as a software developer.</value>
-  </data>
-  <data name="HomeTabAboutThisProject" xml:space="preserve">
-    <value>Technology: 
-
-    - Windows Forms
-
-Programming Language: 
-
-    - C#
-
-MVP Architecture:
-
-    The application logic is separated from the user interface, allowing easy modifications without impacting the entire application.
-
-Testability:
-
-    All business logic within the application is covered by unit tests, enabling verification of all use cases and maintaining high code quality.
-
-Database: 
-
-    The application data is stored in a relational SQL database hosted on Microsoft Azure, providing availability, security, and scalability regardless of the user’s location.
-
-Application Features:
-
-    - Registration and browsing of vehicles, clients, orders, and workshop services.
-    - Ability to edit and delete existing entries.
-    - Data synchronization and secure access through implementation of authentication and authorization.</value>
-  </data>
-  <data name="HomeTabSources" xml:space="preserve">
-    <value>Sources:
-
-- Icons: https://icons8.com/</value>
-  </data>
-  <data name="HomeTabChangelogLoadFailed" xml:space="preserve">
-    <value>Missing changelog entries or changelog file coulnd't be found.</value>
-  </data>
-  <data name="HomeTabGitHubLoadFailed" xml:space="preserve">
-    <value>Failed to open GitHub page. URL might be outdated or you have internet connection issues.</value>
-  </data>
 </root>

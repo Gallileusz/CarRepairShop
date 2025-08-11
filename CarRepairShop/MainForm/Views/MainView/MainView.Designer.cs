@@ -28,256 +28,273 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pnlNavigation = new System.Windows.Forms.Panel();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnSettings = new System.Windows.Forms.Button();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.btnUsers = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnWarehouse = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.btnServices = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnCRM = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnContractors = new System.Windows.Forms.Button();
-            this.pnlBody = new System.Windows.Forms.Panel();
-            this.pnlNavigation.SuspendLayout();
-            this.panel8.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            pnlNavigation = new System.Windows.Forms.Panel();
+            panel8 = new System.Windows.Forms.Panel();
+            btnHome = new System.Windows.Forms.Button();
+            panel7 = new System.Windows.Forms.Panel();
+            btnSettings = new System.Windows.Forms.Button();
+            panel6 = new System.Windows.Forms.Panel();
+            btnUsers = new System.Windows.Forms.Button();
+            panel4 = new System.Windows.Forms.Panel();
+            btnWarehouse = new System.Windows.Forms.Button();
+            panel3 = new System.Windows.Forms.Panel();
+            btnServices = new System.Windows.Forms.Button();
+            panel2 = new System.Windows.Forms.Panel();
+            btnCRM = new System.Windows.Forms.Button();
+            panel1 = new System.Windows.Forms.Panel();
+            btnContractors = new System.Windows.Forms.Button();
+            pnlBody = new System.Windows.Forms.Panel();
+            pnlNavigation.SuspendLayout();
+            panel8.SuspendLayout();
+            panel7.SuspendLayout();
+            panel6.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel2.SuspendLayout();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // pnlNavigation
             // 
-            this.pnlNavigation.BackColor = System.Drawing.Color.SteelBlue;
-            this.pnlNavigation.Controls.Add(this.panel8);
-            this.pnlNavigation.Controls.Add(this.panel7);
-            this.pnlNavigation.Controls.Add(this.panel6);
-            this.pnlNavigation.Controls.Add(this.panel4);
-            this.pnlNavigation.Controls.Add(this.panel3);
-            this.pnlNavigation.Controls.Add(this.panel2);
-            this.pnlNavigation.Controls.Add(this.panel1);
-            this.pnlNavigation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlNavigation.Location = new System.Drawing.Point(0, 0);
-            this.pnlNavigation.Name = "pnlNavigation";
-            this.pnlNavigation.Size = new System.Drawing.Size(1026, 62);
-            this.pnlNavigation.TabIndex = 0;
+            pnlNavigation.BackColor = System.Drawing.Color.SteelBlue;
+            pnlNavigation.Controls.Add(panel8);
+            pnlNavigation.Controls.Add(panel7);
+            pnlNavigation.Controls.Add(panel6);
+            pnlNavigation.Controls.Add(panel4);
+            pnlNavigation.Controls.Add(panel3);
+            pnlNavigation.Controls.Add(panel2);
+            pnlNavigation.Controls.Add(panel1);
+            pnlNavigation.Dock = System.Windows.Forms.DockStyle.Top;
+            pnlNavigation.Location = new System.Drawing.Point(0, 0);
+            pnlNavigation.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pnlNavigation.Name = "pnlNavigation";
+            pnlNavigation.Size = new System.Drawing.Size(1197, 55);
+            pnlNavigation.TabIndex = 0;
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.btnHome);
-            this.panel8.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel8.ForeColor = System.Drawing.Color.White;
-            this.panel8.Location = new System.Drawing.Point(2, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(100, 64);
-            this.panel8.TabIndex = 8;
+            panel8.Controls.Add(btnHome);
+            panel8.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel8.ForeColor = System.Drawing.Color.White;
+            panel8.Location = new System.Drawing.Point(2, 0);
+            panel8.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel8.Name = "panel8";
+            panel8.Size = new System.Drawing.Size(117, 74);
+            panel8.TabIndex = 8;
             // 
             // btnHome
             // 
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.ForeColor = System.Drawing.Color.Coral;
-            this.btnHome.Image = global::CarRepairShop.Properties.Resources.home;
-            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnHome.Location = new System.Drawing.Point(-6, -2);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(110, 66);
-            this.btnHome.TabIndex = 0;
-            this.btnHome.Text = "Home";
-            this.btnHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnHome.UseVisualStyleBackColor = true;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnHome.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnHome.ForeColor = System.Drawing.Color.Coral;
+            btnHome.Image = Properties.Resources.home;
+            btnHome.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnHome.Location = new System.Drawing.Point(-7, -2);
+            btnHome.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new System.Drawing.Size(128, 58);
+            btnHome.TabIndex = 0;
+            btnHome.Text = "Home";
+            btnHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // panel7
             // 
-            this.panel7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel7.Controls.Add(this.btnSettings);
-            this.panel7.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.ForeColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(928, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(100, 66);
-            this.panel7.TabIndex = 7;
+            panel7.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            panel7.Controls.Add(btnSettings);
+            panel7.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel7.ForeColor = System.Drawing.Color.White;
+            panel7.Location = new System.Drawing.Point(1083, 0);
+            panel7.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel7.Name = "panel7";
+            panel7.Size = new System.Drawing.Size(117, 76);
+            panel7.TabIndex = 7;
             // 
             // btnSettings
             // 
-            this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSettings.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSettings.Image = global::CarRepairShop.Properties.Resources.settings;
-            this.btnSettings.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnSettings.Location = new System.Drawing.Point(-5, -2);
-            this.btnSettings.Name = "btnSettings";
-            this.btnSettings.Size = new System.Drawing.Size(107, 65);
-            this.btnSettings.TabIndex = 0;
-            this.btnSettings.Text = "Settings";
-            this.btnSettings.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSettings.UseVisualStyleBackColor = true;
-            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
+            btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnSettings.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnSettings.Image = Properties.Resources.settings;
+            btnSettings.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnSettings.Location = new System.Drawing.Point(-6, -2);
+            btnSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnSettings.Name = "btnSettings";
+            btnSettings.Size = new System.Drawing.Size(125, 58);
+            btnSettings.TabIndex = 0;
+            btnSettings.Text = "Settings";
+            btnSettings.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnSettings.UseVisualStyleBackColor = true;
+            btnSettings.Click += btnSettings_Click;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.btnUsers);
-            this.panel6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel6.ForeColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(544, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(100, 64);
-            this.panel6.TabIndex = 6;
+            panel6.Controls.Add(btnUsers);
+            panel6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel6.ForeColor = System.Drawing.Color.White;
+            panel6.Location = new System.Drawing.Point(635, 0);
+            panel6.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel6.Name = "panel6";
+            panel6.Size = new System.Drawing.Size(117, 74);
+            panel6.TabIndex = 6;
             // 
             // btnUsers
             // 
-            this.btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsers.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUsers.Image = global::CarRepairShop.Properties.Resources.users;
-            this.btnUsers.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnUsers.Location = new System.Drawing.Point(-6, -2);
-            this.btnUsers.Name = "btnUsers";
-            this.btnUsers.Size = new System.Drawing.Size(110, 66);
-            this.btnUsers.TabIndex = 0;
-            this.btnUsers.Text = "Users";
-            this.btnUsers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUsers.UseVisualStyleBackColor = true;
-            this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
+            btnUsers.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnUsers.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnUsers.Image = Properties.Resources.users;
+            btnUsers.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnUsers.Location = new System.Drawing.Point(-7, -2);
+            btnUsers.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnUsers.Name = "btnUsers";
+            btnUsers.Size = new System.Drawing.Size(128, 58);
+            btnUsers.TabIndex = 0;
+            btnUsers.Text = "Users";
+            btnUsers.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnUsers.UseVisualStyleBackColor = true;
+            btnUsers.Click += btnUsers_Click;
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.btnWarehouse);
-            this.panel4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(434, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(100, 64);
-            this.panel4.TabIndex = 4;
+            panel4.Controls.Add(btnWarehouse);
+            panel4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel4.ForeColor = System.Drawing.Color.White;
+            panel4.Location = new System.Drawing.Point(506, 0);
+            panel4.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel4.Name = "panel4";
+            panel4.Size = new System.Drawing.Size(117, 74);
+            panel4.TabIndex = 4;
             // 
             // btnWarehouse
             // 
-            this.btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnWarehouse.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnWarehouse.Image = global::CarRepairShop.Properties.Resources.warehouse;
-            this.btnWarehouse.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnWarehouse.Location = new System.Drawing.Point(-6, -2);
-            this.btnWarehouse.Name = "btnWarehouse";
-            this.btnWarehouse.Size = new System.Drawing.Size(110, 66);
-            this.btnWarehouse.TabIndex = 0;
-            this.btnWarehouse.Text = "Warehouse";
-            this.btnWarehouse.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnWarehouse.UseVisualStyleBackColor = true;
-            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
+            btnWarehouse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnWarehouse.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnWarehouse.Image = Properties.Resources.warehouse;
+            btnWarehouse.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnWarehouse.Location = new System.Drawing.Point(-7, -2);
+            btnWarehouse.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnWarehouse.Name = "btnWarehouse";
+            btnWarehouse.Size = new System.Drawing.Size(128, 58);
+            btnWarehouse.TabIndex = 0;
+            btnWarehouse.Text = "Warehouse";
+            btnWarehouse.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnWarehouse.UseVisualStyleBackColor = true;
+            btnWarehouse.Click += btnWarehouse_Click;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnServices);
-            this.panel3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(324, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(100, 64);
-            this.panel3.TabIndex = 3;
+            panel3.Controls.Add(btnServices);
+            panel3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel3.ForeColor = System.Drawing.Color.White;
+            panel3.Location = new System.Drawing.Point(378, 0);
+            panel3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel3.Name = "panel3";
+            panel3.Size = new System.Drawing.Size(117, 74);
+            panel3.TabIndex = 3;
             // 
             // btnServices
             // 
-            this.btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnServices.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnServices.Image = global::CarRepairShop.Properties.Resources.services;
-            this.btnServices.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnServices.Location = new System.Drawing.Point(-6, -2);
-            this.btnServices.Name = "btnServices";
-            this.btnServices.Size = new System.Drawing.Size(110, 66);
-            this.btnServices.TabIndex = 0;
-            this.btnServices.Text = "Services";
-            this.btnServices.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnServices.UseVisualStyleBackColor = true;
-            this.btnServices.Click += new System.EventHandler(this.btnServices_Click);
+            btnServices.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnServices.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnServices.Image = Properties.Resources.services;
+            btnServices.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnServices.Location = new System.Drawing.Point(-7, -2);
+            btnServices.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnServices.Name = "btnServices";
+            btnServices.Size = new System.Drawing.Size(128, 58);
+            btnServices.TabIndex = 0;
+            btnServices.Text = "Services";
+            btnServices.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnServices.UseVisualStyleBackColor = true;
+            btnServices.Click += btnServices_Click;
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnCRM);
-            this.panel2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(218, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(100, 64);
-            this.panel2.TabIndex = 2;
+            panel2.Controls.Add(btnCRM);
+            panel2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel2.ForeColor = System.Drawing.Color.White;
+            panel2.Location = new System.Drawing.Point(254, 0);
+            panel2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel2.Name = "panel2";
+            panel2.Size = new System.Drawing.Size(117, 74);
+            panel2.TabIndex = 2;
             // 
             // btnCRM
             // 
-            this.btnCRM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCRM.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCRM.Image = global::CarRepairShop.Properties.Resources.crm;
-            this.btnCRM.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCRM.Location = new System.Drawing.Point(-2, -2);
-            this.btnCRM.Name = "btnCRM";
-            this.btnCRM.Size = new System.Drawing.Size(110, 66);
-            this.btnCRM.TabIndex = 0;
-            this.btnCRM.Text = "CRM";
-            this.btnCRM.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCRM.UseVisualStyleBackColor = true;
-            this.btnCRM.Click += new System.EventHandler(this.btnCRM_Click);
+            btnCRM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCRM.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnCRM.Image = Properties.Resources.crm;
+            btnCRM.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnCRM.Location = new System.Drawing.Point(-2, -2);
+            btnCRM.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnCRM.Name = "btnCRM";
+            btnCRM.Size = new System.Drawing.Size(128, 58);
+            btnCRM.TabIndex = 0;
+            btnCRM.Text = "CRM";
+            btnCRM.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnCRM.UseVisualStyleBackColor = true;
+            btnCRM.Click += btnCRM_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnContractors);
-            this.panel1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(112, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(100, 64);
-            this.panel1.TabIndex = 1;
+            panel1.Controls.Add(btnContractors);
+            panel1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
+            panel1.ForeColor = System.Drawing.Color.White;
+            panel1.Location = new System.Drawing.Point(131, 0);
+            panel1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new System.Drawing.Size(117, 74);
+            panel1.TabIndex = 1;
             // 
             // btnContractors
             // 
-            this.btnContractors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContractors.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContractors.Image = global::CarRepairShop.Properties.Resources.contractors;
-            this.btnContractors.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnContractors.Location = new System.Drawing.Point(-6, -2);
-            this.btnContractors.Name = "btnContractors";
-            this.btnContractors.Size = new System.Drawing.Size(110, 66);
-            this.btnContractors.TabIndex = 0;
-            this.btnContractors.Text = "Contractors";
-            this.btnContractors.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnContractors.UseVisualStyleBackColor = true;
-            this.btnContractors.Click += new System.EventHandler(this.btnContractors_Click);
+            btnContractors.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnContractors.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
+            btnContractors.Image = Properties.Resources.contractors;
+            btnContractors.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            btnContractors.Location = new System.Drawing.Point(-7, -2);
+            btnContractors.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnContractors.Name = "btnContractors";
+            btnContractors.Size = new System.Drawing.Size(128, 58);
+            btnContractors.TabIndex = 0;
+            btnContractors.Text = "Contractors";
+            btnContractors.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            btnContractors.UseVisualStyleBackColor = true;
+            btnContractors.Click += btnContractors_Click;
             // 
             // pnlBody
             // 
-            this.pnlBody.BackColor = System.Drawing.SystemColors.Control;
-            this.pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlBody.Location = new System.Drawing.Point(0, 62);
-            this.pnlBody.Name = "pnlBody";
-            this.pnlBody.Size = new System.Drawing.Size(1026, 549);
-            this.pnlBody.TabIndex = 2;
+            pnlBody.BackColor = System.Drawing.SystemColors.Control;
+            pnlBody.Dock = System.Windows.Forms.DockStyle.Fill;
+            pnlBody.Location = new System.Drawing.Point(0, 55);
+            pnlBody.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            pnlBody.Name = "pnlBody";
+            pnlBody.Size = new System.Drawing.Size(1197, 650);
+            pnlBody.TabIndex = 2;
             // 
             // MainView
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1026, 611);
-            this.Controls.Add(this.pnlBody);
-            this.Controls.Add(this.pnlNavigation);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MinimumSize = new System.Drawing.Size(1042, 650);
-            this.Name = "MainView";
-            this.Text = "Car repair shop CRUD";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.MainView_Load);
-            this.pnlNavigation.ResumeLayout(false);
-            this.panel8.ResumeLayout(false);
-            this.panel7.ResumeLayout(false);
-            this.panel6.ResumeLayout(false);
-            this.panel4.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1197, 705);
+            Controls.Add(pnlBody);
+            Controls.Add(pnlNavigation);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MinimumSize = new System.Drawing.Size(1213, 744);
+            Name = "MainView";
+            Text = "Car repair shop CRUD";
+            WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            Load += MainView_Load;
+            pnlNavigation.ResumeLayout(false);
+            panel8.ResumeLayout(false);
+            panel7.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            panel2.ResumeLayout(false);
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
 
         }
 

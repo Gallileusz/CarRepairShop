@@ -12,7 +12,12 @@ namespace CarRepairShop.AppSettings.DefualtRepairShopSettings.View
         public event EventHandler ConfirmButtonClicked;
         public event EventHandler CancelButtonClicked;
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string NewPassword { get => txtNewPasswordFirstField.Text; set => txtNewPasswordFirstField.Text = value; }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string NewPasswordSecondField { get => txtNewPasswordSecondField.Text; set => txtNewPasswordSecondField.Text = value; }
 
         public DefaultRepairShopSettings()

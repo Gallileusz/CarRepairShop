@@ -1,9 +1,9 @@
-﻿using System;
+﻿using CarRepairShop.ConsumableMaterialForm.Presenter;
+using CarRepairShop.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using CarRepairShop.ConsumableMaterialForm.Presenter;
-using CarRepairShop.Domain.Entities;
 
 namespace CarRepairShop.ConsumableMaterialForm.View
 {
@@ -26,18 +26,16 @@ namespace CarRepairShop.ConsumableMaterialForm.View
             _presenter.SetConsuambleMaterial(consumableMaterial);
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string FormTitle
         {
-            get
-            {
-                return this.Text;
-            }
-            set
-            {
-                this.Text = value;
-            }
+            get => this.Text;
+            set => this.Text = value;
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public int QuantityValue
         {
             get
@@ -52,18 +50,16 @@ namespace CarRepairShop.ConsumableMaterialForm.View
             }
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string MaterialName
         {
-            get
-            {
-                return txtMaterialName.Text;
-            }
-            set
-            {
-                txtMaterialName.Text = value;
-            }
+            get => txtMaterialName.Text;
+            set => txtMaterialName.Text = value;
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string MaterialTypeName
         {
             get

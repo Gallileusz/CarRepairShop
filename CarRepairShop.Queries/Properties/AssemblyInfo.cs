@@ -1,16 +1,6 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
-// Ogólne informacje o zestawie są kontrolowane poprzez następujący 
-// zestaw atrybutów. Zmień wartości tych atrybutów, aby zmodyfikować informacje
-// powiązane z zestawem.
-[assembly: AssemblyTitle("CarRepairShop.Queries")]
-[assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("CarRepairShop.Queries")]
-[assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -21,13 +11,3 @@ using System.Runtime.InteropServices;
 
 // Następujący identyfikator GUID jest identyfikatorem biblioteki typów w przypadku udostępnienia tego projektu w modelu COM
 [assembly: Guid("2499b394-acef-48fa-9351-727ff2d7ba6c")]
-
-// Informacje o wersji zestawu zawierają następujące cztery wartości:
-//
-//      Wersja główna
-//      Wersja pomocnicza
-//      Numer kompilacji
-//      Poprawka
-//
-[assembly: AssemblyVersion("1.0.0.0")]
-[assembly: AssemblyFileVersion("1.0.0.0")]

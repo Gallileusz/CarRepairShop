@@ -19,12 +19,16 @@ namespace CarRepairShop.Users.UserInfoForm.View
             _presenter.SetUser(user);
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string UserName
         {
             get => txtName.Text;
             set => txtName.Text = value;
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string UserSurname
         {
             get => txtSurname.Text;

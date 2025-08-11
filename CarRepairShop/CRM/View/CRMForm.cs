@@ -9,12 +9,16 @@ namespace CarRepairShop.CRM.View
 {
     public partial class CRMForm : Form, ICRMForm
     {
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public int SelectedContractorID
         {
             get { return cmbContractor.SelectedItem is Model.ContractorModel contractor ? contractor.ID : 0; }
             set { cmbContractor.SelectedItem = cmbContractor.Items.OfType<Model.ContractorModel>().FirstOrDefault(c => c.ID == value); }
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public int SelectedVehicleID
         {
             get
@@ -33,6 +37,8 @@ namespace CarRepairShop.CRM.View
             }
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public List<int> SelectedRequiredServiceID
         {
             get
@@ -74,29 +80,44 @@ namespace CarRepairShop.CRM.View
             }
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public DateTime CreationDate
         {
             get => DateTime.Parse(txtDateCreated.Text);
             set => txtDateCreated.Text = value.ToString("yyyy-MM-dd HH:mm");
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public DateTime CloseDate
         {
             get => DateTime.Parse(txtDateClosed.Text);
             set => txtDateClosed.Text = value.ToString("yyyy-MM-dd HH:mm");
         }
 
-
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string MechanicName { get => txtMechanicName.Text; set => txtMechanicName.Text = value; }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string MechanicSurname { get => txtMechanicSurname.Text; set => txtMechanicSurname.Text = value; }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string TaskComment { get => rtbTaskComment.Text; set => rtbTaskComment.Text = value; }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public decimal TotalPrice { get => Convert.ToDecimal(string.IsNullOrEmpty(txtExpectedPrice.Text) ? null : txtExpectedPrice.Text); set => txtExpectedPrice.Text = Convert.ToDecimal(value).ToString(); }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public bool TaskClosed { get => cbTaskClosed.Checked; set => cbTaskClosed.Checked = value; }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public DialogResult OperationConfirmed { get; set; }
 
         public event EventHandler FormIsLoaded;

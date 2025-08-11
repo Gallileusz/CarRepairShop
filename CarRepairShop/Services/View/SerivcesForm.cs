@@ -14,14 +14,20 @@ namespace CarRepairShop.Services.View
         public event EventHandler ConfirmButtonClicked;
         public event EventHandler CancelButtonClicked;
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string FormTitle { get => this.Text; set => this.Text = value; }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string ServiceName
         {
             get => txtName.Text;
             set => txtName.Text = value;
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public float ServiceCost
         {
             get
@@ -31,6 +37,8 @@ namespace CarRepairShop.Services.View
             set => txtCost.Text = value.ToString("0.00");
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public float ServiceDuration
         {
             get
@@ -40,6 +48,8 @@ namespace CarRepairShop.Services.View
             set => txtTimeNeeded.Text = value.ToString("0.0");
         }
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public int ServiceWarrantyMonths
         {
             get

@@ -1,17 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9C3E0DCB-D672-405C-AFE3-2BB417DAD6F5}</ProjectGuid>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CarRepairShop</RootNamespace>
-    <AssemblyName>CarRepairShop</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
     <PublishUrl>publikuj\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,345 +17,43 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="BCrypt.Net-Core, Version=1.6.0.0, Culture=neutral, PublicKeyToken=4d63bfbfdfd3c6e4, processorArchitecture=MSIL">
-      <HintPath>..\packages\BCrypt.Net-Core.1.6.0\lib\net452\BCrypt.Net-Core.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AppSettings\CurrentUserService.cs" />
-    <Compile Include="AppSettings\DefualtRepairShopSettings\Presenter\DefaultRepairShopSettingsPresenter.cs" />
-    <Compile Include="AppSettings\DefualtRepairShopSettings\View\DefaultRepairShopSettings.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AppSettings\DefualtRepairShopSettings\View\DefaultRepairShopSettings.Designer.cs">
-      <DependentUpon>DefaultRepairShopSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="AppSettings\DefualtRepairShopSettings\View\IDefaultRepairShopSettings.cs" />
-    <Compile Include="AppSettings\ICurrentUserService.cs" />
-    <Compile Include="AppSettings\PermissionService.cs" />
-    <Compile Include="ConsumableMaterialForm\Presenter\ConsumableMaterialPresenter.cs" />
-    <Compile Include="ConsumableMaterialForm\View\ConsumableMaterial.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ConsumableMaterialForm\View\ConsumableMaterial.Designer.cs">
-      <DependentUpon>ConsumableMaterial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ConsumableMaterialForm\View\IConsumableMaterial.cs" />
-    <Compile Include="Contractors\CarForm\Presenter\CarFormPresenter.cs" />
-    <Compile Include="Contractors\CarForm\View\CarForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Contractors\CarForm\View\CarForm.Designer.cs">
-      <DependentUpon>CarForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Contractors\CarForm\View\ICarForm.cs" />
-    <Compile Include="Contractors\ContractorForm\Presenter\ContractorFormPresenter.cs" />
-    <Compile Include="Contractors\ContractorForm\View\ContractorForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Contractors\ContractorForm\View\ContractorForm.Designer.cs">
-      <DependentUpon>ContractorForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Contractors\ContractorForm\View\IContractorForm.cs" />
-    <Compile Include="AppSettings\CurrentUser.cs" />
-    <Compile Include="CRM\Model\ContractorModel.cs" />
-    <Compile Include="CRM\Model\RequiredServicesModel.cs" />
-    <Compile Include="CRM\Presenter\CRMFormPresenter.cs" />
-    <Compile Include="CRM\Queries.cs" />
-    <Compile Include="CRM\Resources\lang.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>lang.resx</DependentUpon>
-    </Compile>
-    <Compile Include="CRM\View\CRMForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CRM\View\CRMForm.Designer.cs">
-      <DependentUpon>CRMForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="CRM\View\ICRMForm.cs" />
-    <Compile Include="LoginForm\DTO\UserCredentialsInput.cs" />
-    <Compile Include="LoginForm\Presenter\LoginFormPresenter.cs" />
-    <Compile Include="LoginForm\View\ILoginView.cs" />
-    <Compile Include="LoginForm\View\LoginForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="LoginForm\View\LoginForm.Designer.cs">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm\Models\Tabs\CRM\CRM_Model.cs" />
-    <Compile Include="MainForm\Presenters\MainForm\MainViewPresenter.cs" />
-    <Compile Include="MainForm\Presenters\Tabs\Contractors\ContractorTabPresenter.cs" />
-    <Compile Include="MainForm\Presenters\Tabs\CRM\CRMTabPresenter.cs" />
-    <Compile Include="MainForm\Presenters\Tabs\Home\HomeTabPresenter.cs" />
-    <Compile Include="MainForm\Presenters\Tabs\Services\ServicesTabPresenter.cs" />
-    <Compile Include="MainForm\Presenters\Tabs\Settings\SettingsTabPresenter.cs" />
-    <Compile Include="MainForm\Presenters\Tabs\User\UsersTabPresenter.cs" />
-    <Compile Include="MainForm\Presenters\Tabs\Warehouse\WarehouseTabPresenter.cs" />
-    <Compile Include="MainForm\Views\Tabs\Contractors\ContractorsTab.cs">
+    <Compile Update="MainForm\Views\Tabs\Contractors\ContractorsTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm\Views\Tabs\Contractors\ContractorsTab.Designer.cs">
-      <DependentUpon>ContractorsTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm\Views\MainView\IMainView.cs" />
-    <Compile Include="MainForm\Views\MainView\MainView.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="MainForm\Views\MainView\MainView.Designer.cs">
-      <DependentUpon>MainView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm\Views\Tabs\Contractors\IContractorsTab.cs" />
-    <Compile Include="MainForm\Views\Tabs\CRM\CRMTab.cs">
+    <Compile Update="MainForm\Views\Tabs\CRM\CRMTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm\Views\Tabs\CRM\CRMTab.Designer.cs">
-      <DependentUpon>CRMTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm\Views\Tabs\CRM\ICRMTab.cs" />
-    <Compile Include="MainForm\Views\Tabs\Home\HomeTab.cs">
+    <Compile Update="MainForm\Views\Tabs\Home\HomeTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm\Views\Tabs\Home\HomeTab.Designer.cs">
-      <DependentUpon>HomeTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm\Views\Tabs\Home\IHomeTab.cs" />
-    <Compile Include="MainForm\Views\Tabs\Services\IServicesTab.cs" />
-    <Compile Include="MainForm\Views\Tabs\Services\ServicesTab.cs">
+    <Compile Update="MainForm\Views\Tabs\Services\ServicesTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm\Views\Tabs\Services\ServicesTab.Designer.cs">
-      <DependentUpon>ServicesTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm\Views\Tabs\Settings\ISettingsTab.cs" />
-    <Compile Include="MainForm\Views\Tabs\Settings\SettingsTab.cs">
+    <Compile Update="MainForm\Views\Tabs\Settings\SettingsTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm\Views\Tabs\Settings\SettingsTab.Designer.cs">
-      <DependentUpon>SettingsTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm\Views\Tabs\Users\IUsersTabView.cs" />
-    <Compile Include="MainForm\Views\Tabs\Users\UsersTab.cs">
+    <Compile Update="MainForm\Views\Tabs\Users\UsersTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm\Views\Tabs\Users\UsersTab.Designer.cs">
-      <DependentUpon>UsersTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="MainForm\Views\Tabs\Warehouse\IWarehouseTab.cs" />
-    <Compile Include="MainForm\Views\Tabs\Warehouse\WarehouseTab.cs">
+    <Compile Update="MainForm\Views\Tabs\Warehouse\WarehouseTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="MainForm\Views\Tabs\Warehouse\WarehouseTab.Designer.cs">
-      <DependentUpon>WarehouseTab.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\Presenter\ServicesFormPresenter.cs" />
-    <Compile Include="Services\View\IServicesForm.cs" />
-    <Compile Include="Services\View\SerivcesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Services\View\SerivcesForm.Designer.cs">
-      <DependentUpon>SerivcesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Users\PermissionsForm\Model\PermissionModel.cs" />
-    <Compile Include="Users\PermissionsForm\Presenter\PermissionsFormPresenter.cs" />
-    <Compile Include="Users\PermissionsForm\View\IPermissionsView.cs" />
-    <Compile Include="Users\PermissionsForm\View\PermissionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Users\PermissionsForm\View\PermissionsForm.Designer.cs">
-      <DependentUpon>PermissionsForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Users\UserInfoForm\Presenter\UsersInfoFormPresenter.cs" />
-    <Compile Include="Users\UserInfoForm\View\IUsersInfoForm.cs" />
-    <Compile Include="Users\UserInfoForm\View\UsersInfoForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Users\UserInfoForm\View\UsersInfoForm.Designer.cs">
-      <DependentUpon>UsersInfoForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="AppSettings\DefualtRepairShopSettings\View\DefaultRepairShopSettings.resx">
-      <DependentUpon>DefaultRepairShopSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ConsumableMaterialForm\View\ConsumableMaterial.resx">
-      <DependentUpon>ConsumableMaterial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Contractors\CarForm\View\CarForm.resx">
-      <DependentUpon>CarForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Contractors\ContractorForm\View\ContractorForm.resx">
-      <DependentUpon>ContractorForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CRM\Resources\lang.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>lang.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CRM\View\CRMForm.resx">
-      <DependentUpon>CRMForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm\View\LoginForm.en-US.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm\View\LoginForm.pl-PL.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="LoginForm\View\LoginForm.resx">
-      <DependentUpon>LoginForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\Contractors\ContractorsTab.resx">
-      <DependentUpon>ContractorsTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\MainView\MainView.resx">
-      <DependentUpon>MainView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\CRM\CRMTab.resx">
-      <DependentUpon>CRMTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\Home\HomeTab.resx">
-      <DependentUpon>HomeTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\Services\ServicesTab.en-US.resx">
-      <DependentUpon>ServicesTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\Services\ServicesTab.pl-PL.resx">
-      <DependentUpon>ServicesTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\Services\ServicesTab.resx">
-      <DependentUpon>ServicesTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\Settings\SettingsTab.resx">
-      <DependentUpon>SettingsTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\Users\UsersTab.resx">
-      <DependentUpon>UsersTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="MainForm\Views\Tabs\Warehouse\WarehouseTab.resx">
-      <DependentUpon>WarehouseTab.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
-    <EmbeddedResource Include="Services\View\SerivcesForm.en-US.resx">
-      <DependentUpon>SerivcesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Services\View\SerivcesForm.pl-PL.resx">
-      <DependentUpon>SerivcesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Services\View\SerivcesForm.resx">
-      <DependentUpon>SerivcesForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Users\PermissionsForm\View\PermissionsForm.resx">
-      <DependentUpon>PermissionsForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Users\UserInfoForm\View\UsersInfoForm.resx">
-      <DependentUpon>UsersInfoForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Services\Model\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\edit.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\delete.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\settings.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\users.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\statistics.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\warehouse.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\services.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\crm.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\contractors.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\CarRepairShop.Domain\CarRepairShop.Domain.csproj">
-      <Project>{f5f0aa3f-3a29-4727-836e-8260e60c7b03}</Project>
-      <Name>CarRepairShop.Domain</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarRepairShop.Repos\CarRepairShop.Repositories.csproj">
-      <Project>{67440a41-043a-4ea6-84a9-9327bbdecf26}</Project>
-      <Name>CarRepairShop.Repositories</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CarRepairShop.Utilities\CarRepairShop.Utilities.csproj">
-      <Project>{3536c72f-d0a4-4c43-a178-15f013eac1c0}</Project>
-      <Name>CarRepairShop.Utilities</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\mechanicGif.gif" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\key.png" />
+    <ProjectReference Include="..\CarRepairShop.Domain\CarRepairShop.Domain.csproj" />
+    <ProjectReference Include="..\CarRepairShop.Library\CarRepairShop.Library.csproj" />
+    <ProjectReference Include="..\CarRepairShop.Repos\CarRepairShop.Repositories.csproj" />
+    <ProjectReference Include="..\CarRepairShop.Utilities\CarRepairShop.Utilities.csproj" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -379,20 +67,4 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\search.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\show.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\home.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ansLogo.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\githubLogo.png" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

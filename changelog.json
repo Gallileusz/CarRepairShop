@@ -1,20 +1,14 @@
 [
   {
-    "version": "1.1.0",
-    "date": "2025-08-10",
-    "changes": [
-      "Added new Tab - Home in the main view",
-      "Added changelog",
-      "Added web browser handler"
-    ]
-  },
-  {
     "version": "1.0.0",
     "date": "2025-08-10",
     "changes": [
+      "Added changelog file",
       "Added new Tab - Home in the main view",
-      "Added changelog",
-      "Added web browser handler"
+      "Added web browser handler",
+      "Added current user handler",
+      "Added Texts project to store all texts",
+      "Added Library project to assign texts to branches with easy access"
     ]
   }
 ]

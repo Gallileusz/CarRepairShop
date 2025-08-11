@@ -11,7 +11,12 @@ namespace CarRepairShop.Contractors.CarForm.View
     {
         private CarFormPresenter _presenter;
 
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public string FormTitle { get => this.Text; set => this.Text = value; }
+
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
         public ContractorsCars Car
         {
             get

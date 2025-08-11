@@ -31,24 +31,25 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Home
         private void OnFormIsLoaded(object sender, EventArgs e)
         {
             _view.SetVersion(_changelogHandler.GetNewestVersion(_changelogHandler.LoadChangelog()).Version);
+            _view.CurrentText = Library.Texts.MainView.HomeTab.AboutThisProject;
         }
 
         private void OnAboutThisProjectClicked(object sender, EventArgs e)
         {
             _view.HighlightButton(sender as Button);
-            _view.CurrentText = "OnAboutThisProjectClicked";
+            _view.CurrentText = Library.Texts.MainView.HomeTab.AboutThisProject;
         }
 
         private void OnAcknowledgementsClicked(object sender, EventArgs e)
         {
             _view.HighlightButton(sender as Button);
-            _view.CurrentText = "OnAcknowledgementsClicked";
+            _view.CurrentText = Library.Texts.MainView.HomeTab.Acknowledgements;
         }
 
         private void OnSourcesClicked(object sender, EventArgs e)
         {
             _view.HighlightButton(sender as Button);
-            _view.CurrentText = "OnSourcesClicked";
+            _view.CurrentText = Library.Texts.MainView.HomeTab.Sources;
         }
 
         private void OnChangelogClicked(object sender, EventArgs e)
@@ -74,9 +75,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Home
                 _view.CurrentText = sb.ToString();
             }
             else
-            {
-                _view.CurrentText = "No changelog entries found.";
-            }
+                _view.CurrentText = Library.Texts.MainView.HomeTab.ChangelogError;
         }
 
         private async void OnGitHubClicked(object sender, EventArgs e)
@@ -84,7 +83,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Home
             var success = await _webBrowserHandler.OpenURL(_repoURL);
 
             if (!success)
-                _view.ShowMessage("Failed to open GitHub page. Please check your internet connection or try again later.");
+                _view.ShowMessage(Library.Texts.MainView.HomeTab.GitHubError);
         }
     }
 }

@@ -1,120 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3536C72F-D0A4-4C43-A178-15F013EAC1C0}</ProjectGuid>
+    <TargetFramework>net9.0-windows</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>CarRepairShop.Utilities</RootNamespace>
-    <AssemblyName>CarRepairShop.Utilities</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <Deterministic>true</Deterministic>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Deployment" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
-    <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="ChangelogHandler\ChangelogEntry.cs" />
-    <Compile Include="ChangelogHandler\Changelog.cs" />
-    <Compile Include="ChangelogHandler\ChangelogHandler.cs" />
-    <Compile Include="ChangelogHandler\IChangelogHandler.cs" />
-    <Compile Include="ComboboxForm\Presenter\ComboboxFormPresenter.cs" />
-    <Compile Include="ComboboxForm\View\ComboboxForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ComboboxForm\View\ComboboxForm.Designer.cs">
-      <DependentUpon>ComboboxForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="ComboboxForm\View\IComboboxForm.cs" />
-    <Compile Include="ControlUtilities\ButtonUtilities.cs" />
-    <Compile Include="ControlUtilities\DataGridViewUtilities.cs" />
-    <Compile Include="Permissions\Permissions.cs" />
-    <Compile Include="Permissions\PermissionTabs.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SingleInputForm\Presenter\SingleInputFormPresenter.cs" />
-    <Compile Include="SingleInputForm\View\ISingleInputForm.cs" />
-    <Compile Include="SingleInputForm\View\SingleInputForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SingleInputForm\View\SingleInputForm.Designer.cs">
-      <DependentUpon>SingleInputForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="WebBrowser\IWebBrowserHandler.cs" />
-    <Compile Include="WebBrowser\WebBrowser.cs" />
-    <Compile Include="WebBrowser\WebBrowserHandler.cs" />
-    <EmbeddedResource Include="ComboboxForm\View\ComboboxForm.resx">
-      <DependentUpon>ComboboxForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="SingleInputForm\View\SingleInputForm.resx">
-      <DependentUpon>SingleInputForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
   <ItemGroup>
     <Folder Include="ComboboxForm\Model\" />
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CarRepairShop.Domain\CarRepairShop.Domain.csproj">
-      <Project>{f5f0aa3f-3a29-4727-836e-8260e60c7b03}</Project>
-      <Name>CarRepairShop.Domain</Name>
-    </ProjectReference>
+    <ProjectReference Include="..\CarRepairShop.Domain\CarRepairShop.Domain.csproj" />
   </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
