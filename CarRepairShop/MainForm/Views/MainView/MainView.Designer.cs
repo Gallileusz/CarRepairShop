@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.pnlNavigation = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.btnHome = new System.Windows.Forms.Button();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnSettings = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.btnUsers = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.btnStatistics = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnWarehouse = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,9 +45,9 @@
             this.btnContractors = new System.Windows.Forms.Button();
             this.pnlBody = new System.Windows.Forms.Panel();
             this.pnlNavigation.SuspendLayout();
+            this.panel8.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -57,9 +57,9 @@
             // pnlNavigation
             // 
             this.pnlNavigation.BackColor = System.Drawing.Color.SteelBlue;
+            this.pnlNavigation.Controls.Add(this.panel8);
             this.pnlNavigation.Controls.Add(this.panel7);
             this.pnlNavigation.Controls.Add(this.panel6);
-            this.pnlNavigation.Controls.Add(this.panel5);
             this.pnlNavigation.Controls.Add(this.panel4);
             this.pnlNavigation.Controls.Add(this.panel3);
             this.pnlNavigation.Controls.Add(this.panel2);
@@ -69,6 +69,32 @@
             this.pnlNavigation.Name = "pnlNavigation";
             this.pnlNavigation.Size = new System.Drawing.Size(1026, 62);
             this.pnlNavigation.TabIndex = 0;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.btnHome);
+            this.panel8.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel8.ForeColor = System.Drawing.Color.White;
+            this.panel8.Location = new System.Drawing.Point(2, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(100, 64);
+            this.panel8.TabIndex = 8;
+            // 
+            // btnHome
+            // 
+            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnHome.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.Coral;
+            this.btnHome.Image = global::CarRepairShop.Properties.Resources.home;
+            this.btnHome.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnHome.Location = new System.Drawing.Point(-6, -2);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.Size = new System.Drawing.Size(110, 66);
+            this.btnHome.TabIndex = 0;
+            this.btnHome.Text = "Home";
+            this.btnHome.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnHome.UseVisualStyleBackColor = true;
+            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // panel7
             // 
@@ -101,7 +127,7 @@
             this.panel6.Controls.Add(this.btnUsers);
             this.panel6.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel6.ForeColor = System.Drawing.Color.White;
-            this.panel6.Location = new System.Drawing.Point(535, 0);
+            this.panel6.Location = new System.Drawing.Point(544, 0);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(100, 64);
             this.panel6.TabIndex = 6;
@@ -121,36 +147,12 @@
             this.btnUsers.UseVisualStyleBackColor = true;
             this.btnUsers.Click += new System.EventHandler(this.btnUsers_Click);
             // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.btnStatistics);
-            this.panel5.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel5.ForeColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(429, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(100, 64);
-            this.panel5.TabIndex = 5;
-            // 
-            // btnStatistics
-            // 
-            this.btnStatistics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStatistics.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStatistics.Image = global::CarRepairShop.Properties.Resources.statistics;
-            this.btnStatistics.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnStatistics.Location = new System.Drawing.Point(-6, -2);
-            this.btnStatistics.Name = "btnStatistics";
-            this.btnStatistics.Size = new System.Drawing.Size(110, 66);
-            this.btnStatistics.TabIndex = 0;
-            this.btnStatistics.Text = "Statistics";
-            this.btnStatistics.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnStatistics.UseVisualStyleBackColor = true;
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.btnWarehouse);
             this.panel4.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel4.ForeColor = System.Drawing.Color.White;
-            this.panel4.Location = new System.Drawing.Point(323, 0);
+            this.panel4.Location = new System.Drawing.Point(434, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(100, 64);
             this.panel4.TabIndex = 4;
@@ -175,7 +177,7 @@
             this.panel3.Controls.Add(this.btnServices);
             this.panel3.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel3.ForeColor = System.Drawing.Color.White;
-            this.panel3.Location = new System.Drawing.Point(213, 0);
+            this.panel3.Location = new System.Drawing.Point(324, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(100, 64);
             this.panel3.TabIndex = 3;
@@ -200,7 +202,7 @@
             this.panel2.Controls.Add(this.btnCRM);
             this.panel2.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel2.ForeColor = System.Drawing.Color.White;
-            this.panel2.Location = new System.Drawing.Point(107, 0);
+            this.panel2.Location = new System.Drawing.Point(218, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(100, 64);
             this.panel2.TabIndex = 2;
@@ -225,7 +227,7 @@
             this.panel1.Controls.Add(this.btnContractors);
             this.panel1.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Location = new System.Drawing.Point(1, 0);
+            this.panel1.Location = new System.Drawing.Point(112, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(100, 64);
             this.panel1.TabIndex = 1;
@@ -266,10 +268,11 @@
             this.Name = "MainView";
             this.Text = "Car repair shop CRUD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MainView_Load);
             this.pnlNavigation.ResumeLayout(false);
+            this.panel8.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
-            this.panel5.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
@@ -290,11 +293,11 @@
         private System.Windows.Forms.Button btnServices;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnCRM;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Button btnStatistics;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Button btnUsers;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Button btnSettings;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Button btnHome;
     }
 }

@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChangelogHandler\ChangelogEntry.cs" />
+    <Compile Include="ChangelogHandler\Changelog.cs" />
+    <Compile Include="ChangelogHandler\ChangelogHandler.cs" />
+    <Compile Include="ChangelogHandler\IChangelogHandler.cs" />
     <Compile Include="ComboboxForm\Presenter\ComboboxFormPresenter.cs" />
     <Compile Include="ComboboxForm\View\ComboboxForm.cs">
       <SubType>Form</SubType>
@@ -68,6 +75,9 @@
     <Compile Include="SingleInputForm\View\SingleInputForm.Designer.cs">
       <DependentUpon>SingleInputForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="WebBrowser\IWebBrowserHandler.cs" />
+    <Compile Include="WebBrowser\WebBrowser.cs" />
+    <Compile Include="WebBrowser\WebBrowserHandler.cs" />
     <EmbeddedResource Include="ComboboxForm\View\ComboboxForm.resx">
       <DependentUpon>ComboboxForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +93,7 @@
     <EmbeddedResource Include="SingleInputForm\View\SingleInputForm.resx">
       <DependentUpon>SingleInputForm.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

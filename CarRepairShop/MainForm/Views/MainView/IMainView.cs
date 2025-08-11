@@ -5,6 +5,8 @@ namespace CarRepairShop.MainForm.Views.MainView
 {
     public interface IMainView
     {
+        event EventHandler MainFormIsLoaded;
+        event EventHandler HomeButtonClicked;
         event EventHandler ContractorTabButtonClicked;
         event EventHandler CRMTabButtonClicked;
         event EventHandler ServicesTabButtonClicked;
