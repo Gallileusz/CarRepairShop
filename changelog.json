@@ -5,7 +5,8 @@
     "changes": [
       "Switched local database to Azure database",
       "Added database handler",
-      "Added azure key vault to store connection string for users added into to the group"
+      "Added azure key vault to store connection string for users added into to the group",
+      "Added main form translations"
     ]
   },
   {
