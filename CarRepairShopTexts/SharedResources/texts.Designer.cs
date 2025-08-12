@@ -126,5 +126,59 @@ namespace CarRepairShop.Texts.SharedResources {
                 return ResourceManager.GetString("HomeTabSources", resourceCulture);
             }
         }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractors.
+        /// </summary>
+        internal static string MainForm_Contractors {
+            get {
+                return ResourceManager.GetString("MainForm_Contractors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu CRM.
+        /// </summary>
+        internal static string MainForm_CRM {
+            get {
+                return ResourceManager.GetString("MainForm_CRM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Missing permissions to display the {0} tab!.
+        /// </summary>
+        internal static string MainForm_MissingPermissionsToOpenTab {
+            get {
+                return ResourceManager.GetString("MainForm_MissingPermissionsToOpenTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Services.
+        /// </summary>
+        internal static string MainForm_Services {
+            get {
+                return ResourceManager.GetString("MainForm_Services", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Users.
+        /// </summary>
+        internal static string MainForm_Users {
+            get {
+                return ResourceManager.GetString("MainForm_Users", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Warehouse.
+        /// </summary>
+        internal static string MainForm_Warehouse {
+            get {
+                return ResourceManager.GetString("MainForm_Warehouse", resourceCulture);
+            }
+        }
     }
 }

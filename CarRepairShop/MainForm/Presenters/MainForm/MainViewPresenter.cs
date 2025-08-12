@@ -1,4 +1,5 @@
-﻿using CarRepairShop.MainForm.Views.MainView;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.MainForm.Views.MainView;
 using CarRepairShop.MainForm.Views.Tabs.ContractorsTab;
 using CarRepairShop.MainForm.Views.Tabs.CRM;
 using CarRepairShop.MainForm.Views.Tabs.Home;
@@ -12,10 +13,12 @@ namespace CarRepairShop.MainForm.Presenters.MainForm
     public class MainViewPresenter
     {
         private readonly IMainView _view;
+        private readonly ICurrentUserService _userService;
 
-        public MainViewPresenter(IMainView view)
+        public MainViewPresenter(IMainView view, ICurrentUserService userService)
         {
             _view = view;
+            _userService = userService;
 
             SubscribeToEvents();
         }
@@ -40,7 +43,11 @@ namespace CarRepairShop.MainForm.Presenters.MainForm
             _view.HighlightButton(sender as System.Windows.Forms.Button);
         }
 
-        private void ShowSettingsTab(object sender, EventArgs e) => _view.ShowTab(new SettingsTab());
+        private void ShowSettingsTab(object sender, EventArgs e)
+        {
+            _view.HighlightButton(sender as System.Windows.Forms.Button);
+            _view.ShowTab(new SettingsTab());
+        }
 
         private void ShowServicesTab(object sender, EventArgs e)
         {
@@ -50,8 +57,9 @@ namespace CarRepairShop.MainForm.Presenters.MainForm
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage("Nie masz uprawnień do wyświetlania zakładki: Usługi!");
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.Services));
         }
+
         private void ShowUsersTab(object sender, EventArgs e)
         {
             if (UserHasViewPermissions(PermissionTabs.Services, Permissions.AllowDisplay))
@@ -60,8 +68,9 @@ namespace CarRepairShop.MainForm.Presenters.MainForm
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage("Nie masz uprawnień do wyświetlania zakładki: Użytkownicy!");
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.Users));
         }
+
         private void ShowWarehouseTab(object sender, EventArgs e)
         {
             if (UserHasViewPermissions(PermissionTabs.Services, Permissions.AllowDisplay))
@@ -70,8 +79,9 @@ namespace CarRepairShop.MainForm.Presenters.MainForm
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage("Nie masz uprawnień do wyświetlania zakładki: Magazyn!");
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.Warehouse));
         }
+
         private void ShowCRMTab(object sender, EventArgs e)
         {
             if (UserHasViewPermissions(PermissionTabs.Services, Permissions.AllowDisplay))
@@ -80,7 +90,7 @@ namespace CarRepairShop.MainForm.Presenters.MainForm
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage("Nie masz uprawnień do wyświetlania zakładki: CRM!");
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.CRM));
         }
         private void ShowContractorsTab(object sender, EventArgs e)
         {
@@ -90,9 +100,9 @@ namespace CarRepairShop.MainForm.Presenters.MainForm
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage("Nie masz uprawnień do wyświetlania zakładki: Kontrahenci!");
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.Contractors));
         }
 
-        public bool UserHasViewPermissions(PermissionTabs permissionTab, Permissions permission) => AppSettings.CurrentUser.HasPermission(permissionTab, permission) ? true : false;
+        public bool UserHasViewPermissions(PermissionTabs permissionTab, Permissions permission) => _userService.HasPermission(permissionTab, permission);
     }
 }

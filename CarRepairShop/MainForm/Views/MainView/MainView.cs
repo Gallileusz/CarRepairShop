@@ -1,4 +1,5 @@
-﻿using CarRepairShop.MainForm.Presenters.MainForm;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.MainForm.Presenters.MainForm;
 using CarRepairShop.Utilities.ControlUtilities;
 using System;
 using System.Drawing;
@@ -20,7 +21,7 @@ namespace CarRepairShop.MainForm.Views.MainView
         public MainView()
         {
             InitializeComponent();
-            var presenter = new MainViewPresenter(this);
+            var presenter = new MainViewPresenter(this, new CurrentUserService());
         }
 
         public void HighlightButton(Button clickedButton)

@@ -160,4 +160,22 @@ Application Features:
   <data name="HomeTabGitHubLoadFailed" xml:space="preserve">
     <value>Failed to open GitHub page. URL might be outdated or you have internet connection issues.</value>
   </data>
+  <data name="MainForm_MissingPermissionsToOpenTab" xml:space="preserve">
+    <value>Missing permissions to display the {0} tab!</value>
+  </data>
+  <data name="MainForm_Services" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="MainForm_Users" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="MainForm_CRM" xml:space="preserve">
+    <value>CRM</value>
+  </data>
+  <data name="MainForm_Warehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="MainForm_Contractors" xml:space="preserve">
+    <value>Contractors</value>
+  </data>
 </root>
