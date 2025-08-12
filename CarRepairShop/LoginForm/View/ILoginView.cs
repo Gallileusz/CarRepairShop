@@ -9,7 +9,7 @@ namespace CarRepairShop.LoginForm.View
         event EventHandler FormIsLoaded;
         event EventHandler LoginButtonClicked;
         event EventHandler<KeyPressEventArgs> EnterButtonClicked;
-        event EventHandler QuitLabelClicked;
+        event EventHandler QuitButtonClicked;
         bool CacheCheckboxSelected { get; set; }
         string Login { get; set; }
         void ShowMessage(string message);

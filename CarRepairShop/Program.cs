@@ -23,6 +23,9 @@ namespace CarRepairShop
             Thread.CurrentThread.CurrentCulture = new CultureInfo(language);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
+            var dbHandler = new Repos.DataBaseHandler();
+            dbHandler.SetConnectionStringAsync().GetAwaiter().GetResult();
+
             using (var loginForm = new LoginForm.View.LoginForm())
             {
                 var result = loginForm.ShowDialog();

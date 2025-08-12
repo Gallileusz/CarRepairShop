@@ -29,133 +29,146 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginForm));
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.lblQuit = new System.Windows.Forms.Label();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.cbCacheLogin = new System.Windows.Forms.CheckBox();
-            this.pbPassword = new System.Windows.Forms.PictureBox();
-            this.pbLogin = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).BeginInit();
-            this.SuspendLayout();
+            lblTitle = new System.Windows.Forms.Label();
+            panel2 = new System.Windows.Forms.Panel();
+            btnLogin = new System.Windows.Forms.Button();
+            txtLogin = new System.Windows.Forms.TextBox();
+            txtPassword = new System.Windows.Forms.TextBox();
+            panel4 = new System.Windows.Forms.Panel();
+            cbCacheLogin = new System.Windows.Forms.CheckBox();
+            pbPassword = new System.Windows.Forms.PictureBox();
+            pbLogin = new System.Windows.Forms.PictureBox();
+            panel1 = new System.Windows.Forms.Panel();
+            panel6 = new System.Windows.Forms.Panel();
+            btnQuit = new System.Windows.Forms.Button();
+            panel3 = new System.Windows.Forms.Panel();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbPassword).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pbLogin).BeginInit();
+            panel1.SuspendLayout();
+            panel6.SuspendLayout();
+            SuspendLayout();
             // 
             // lblTitle
             // 
-            resources.ApplyResources(this.lblTitle, "lblTitle");
-            this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
-            this.lblTitle.Name = "lblTitle";
+            resources.ApplyResources(lblTitle, "lblTitle");
+            lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
+            lblTitle.Name = "lblTitle";
             // 
             // panel2
             // 
-            resources.ApplyResources(this.panel2, "panel2");
-            this.panel2.Controls.Add(this.btnLogin);
-            this.panel2.Name = "panel2";
+            panel2.Controls.Add(btnLogin);
+            resources.ApplyResources(panel2, "panel2");
+            panel2.Name = "panel2";
             // 
             // btnLogin
             // 
-            resources.ApplyResources(this.btnLogin, "btnLogin");
-            this.btnLogin.BackColor = System.Drawing.Color.SteelBlue;
-            this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Name = "btnLogin";
-            this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
-            // 
-            // lblQuit
-            // 
-            resources.ApplyResources(this.lblQuit, "lblQuit");
-            this.lblQuit.ForeColor = System.Drawing.Color.Red;
-            this.lblQuit.Name = "lblQuit";
-            this.lblQuit.Click += new System.EventHandler(this.lblQuit_Click);
+            btnLogin.BackColor = System.Drawing.Color.SteelBlue;
+            resources.ApplyResources(btnLogin, "btnLogin");
+            btnLogin.ForeColor = System.Drawing.Color.White;
+            btnLogin.Name = "btnLogin";
+            btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += btnLogin_Click;
             // 
             // txtLogin
             // 
-            resources.ApplyResources(this.txtLogin, "txtLogin");
-            this.txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLogin.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtLogin.Name = "txtLogin";
+            txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(txtLogin, "txtLogin");
+            txtLogin.ForeColor = System.Drawing.Color.SteelBlue;
+            txtLogin.Name = "txtLogin";
             // 
             // txtPassword
             // 
-            resources.ApplyResources(this.txtPassword, "txtPassword");
-            this.txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtPassword.ForeColor = System.Drawing.Color.SteelBlue;
-            this.txtPassword.Name = "txtPassword";
+            txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            resources.ApplyResources(txtPassword, "txtPassword");
+            txtPassword.ForeColor = System.Drawing.Color.SteelBlue;
+            txtPassword.Name = "txtPassword";
             // 
             // panel4
             // 
-            resources.ApplyResources(this.panel4, "panel4");
-            this.panel4.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel4.Name = "panel4";
+            panel4.BackColor = System.Drawing.Color.SteelBlue;
+            resources.ApplyResources(panel4, "panel4");
+            panel4.Name = "panel4";
             // 
             // cbCacheLogin
             // 
-            resources.ApplyResources(this.cbCacheLogin, "cbCacheLogin");
-            this.cbCacheLogin.BackColor = System.Drawing.Color.White;
-            this.cbCacheLogin.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.cbCacheLogin.Name = "cbCacheLogin";
-            this.cbCacheLogin.UseVisualStyleBackColor = false;
+            resources.ApplyResources(cbCacheLogin, "cbCacheLogin");
+            cbCacheLogin.BackColor = System.Drawing.Color.White;
+            cbCacheLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            cbCacheLogin.Name = "cbCacheLogin";
+            cbCacheLogin.UseVisualStyleBackColor = false;
             // 
             // pbPassword
             // 
-            resources.ApplyResources(this.pbPassword, "pbPassword");
-            this.pbPassword.Image = global::CarRepairShop.Properties.Resources.key;
-            this.pbPassword.Name = "pbPassword";
-            this.pbPassword.TabStop = false;
+            pbPassword.Image = Properties.Resources.key;
+            resources.ApplyResources(pbPassword, "pbPassword");
+            pbPassword.Name = "pbPassword";
+            pbPassword.TabStop = false;
             // 
             // pbLogin
             // 
-            resources.ApplyResources(this.pbLogin, "pbLogin");
-            this.pbLogin.Image = global::CarRepairShop.Properties.Resources.users;
-            this.pbLogin.Name = "pbLogin";
-            this.pbLogin.TabStop = false;
+            pbLogin.Image = Properties.Resources.users;
+            resources.ApplyResources(pbLogin, "pbLogin");
+            pbLogin.Name = "pbLogin";
+            pbLogin.TabStop = false;
             // 
             // panel1
             // 
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel1.BackgroundImage = global::CarRepairShop.Properties.Resources.mechanicGif;
-            this.panel1.ForeColor = System.Drawing.Color.White;
-            this.panel1.Name = "panel1";
+            panel1.BackColor = System.Drawing.Color.SteelBlue;
+            panel1.BackgroundImage = Properties.Resources.mechanicGif;
+            resources.ApplyResources(panel1, "panel1");
+            panel1.Controls.Add(panel6);
+            panel1.ForeColor = System.Drawing.Color.White;
+            panel1.Name = "panel1";
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(btnQuit);
+            resources.ApplyResources(panel6, "panel6");
+            panel6.Name = "panel6";
+            // 
+            // btnQuit
+            // 
+            btnQuit.BackColor = System.Drawing.Color.White;
+            resources.ApplyResources(btnQuit, "btnQuit");
+            btnQuit.ForeColor = System.Drawing.Color.SteelBlue;
+            btnQuit.Name = "btnQuit";
+            btnQuit.UseVisualStyleBackColor = false;
+            btnQuit.Click += btnQuit_Click;
             // 
             // panel3
             // 
-            resources.ApplyResources(this.panel3, "panel3");
-            this.panel3.BackColor = System.Drawing.Color.SteelBlue;
-            this.panel3.Name = "panel3";
+            panel3.BackColor = System.Drawing.Color.SteelBlue;
+            resources.ApplyResources(panel3, "panel3");
+            panel3.Name = "panel3";
             // 
             // LoginForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.cbCacheLogin);
-            this.Controls.Add(this.panel4);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.txtLogin);
-            this.Controls.Add(this.lblQuit);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.pbPassword);
-            this.Controls.Add(this.pbLogin);
-            this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.KeyPreview = true;
-            this.Name = "LoginForm";
-            this.Load += new System.EventHandler(this.LoginForm_Load);
-            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.LoginForm_KeyPress);
-            this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbPassword)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbLogin)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.White;
+            Controls.Add(panel3);
+            Controls.Add(cbCacheLogin);
+            Controls.Add(panel4);
+            Controls.Add(txtPassword);
+            Controls.Add(txtLogin);
+            Controls.Add(panel2);
+            Controls.Add(pbPassword);
+            Controls.Add(pbLogin);
+            Controls.Add(lblTitle);
+            Controls.Add(panel1);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            KeyPreview = true;
+            Name = "LoginForm";
+            Load += LoginForm_Load;
+            KeyPress += LoginForm_KeyPress;
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pbPassword).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pbLogin).EndInit();
+            panel1.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -167,11 +180,12 @@
         private System.Windows.Forms.PictureBox pbPassword;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Label lblQuit;
         private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.CheckBox cbCacheLogin;
         private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Button btnQuit;
     }
 }

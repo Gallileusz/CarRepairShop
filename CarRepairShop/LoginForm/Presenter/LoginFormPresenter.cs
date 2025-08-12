@@ -1,5 +1,7 @@
-﻿using CarRepairShop.Domain.Entities;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.Domain.Entities;
 using CarRepairShop.LoginForm.View;
+using CarRepairShop.Repos;
 using CarRepairShop.Repositories;
 using System;
 using System.Linq;
@@ -11,19 +13,24 @@ namespace CarRepairShop.LoginForm.Presenter
     public class LoginFormPresenter
     {
         private readonly ILoginView _view;
-        private readonly GenericRepository _genericRepo;
+        private readonly IGenericRepository _genericRepo;
+        private readonly IDataBaseHandler _dbHandler;
+        private readonly ICurrentUserService _currentUserService;
+        private bool _isConnectionStringSet = false;
 
-        public LoginFormPresenter(ILoginView view)
+        public LoginFormPresenter(ILoginView view, IGenericRepository genericRepo, IDataBaseHandler dbHandler, ICurrentUserService currentUser)
         {
             _view = view;
-            _genericRepo = new GenericRepository();
+            _dbHandler = dbHandler;
+            _currentUserService = currentUser;
+            _genericRepo = genericRepo;
             SubscribeEvents();
         }
 
         private void SubscribeEvents()
         {
             _view.LoginButtonClicked += Login;
-            _view.QuitLabelClicked += Quit;
+            _view.QuitButtonClicked += Quit;
             _view.FormIsLoaded += Load;
             _view.EnterButtonClicked += LoginByEnterClick;
         }
@@ -34,9 +41,16 @@ namespace CarRepairShop.LoginForm.Presenter
 
             _view.CacheCheckboxSelected = true;
             _view.Login = Properties.Settings.Default.CachedLogin;
+
+            if (!_dbHandler.IsConnectionStringSet)
+            {
+                _view.ShowMessage("Wystąpił błąd z uzyskaniem klucza bazy danych z serwisu Azure. Proszę skontaktować się z administratorem!"); return;
+            }
+
+            _isConnectionStringSet = true;
         }
 
-        private void Quit(object sender, EventArgs e) => Application.Exit();
+        private void Quit(object sender, EventArgs e) => _view.CloseLoginForm();
 
         private void LoginByEnterClick(object sender, KeyPressEventArgs e)
         {
@@ -46,6 +60,11 @@ namespace CarRepairShop.LoginForm.Presenter
 
         private void Login(object sender, EventArgs e)
         {
+            if (!_isConnectionStringSet)
+            {
+                _view.ShowMessage("Wystąpił błąd z uzyskaniem klucza bazy danych z serwisu Azure. Proszę skontaktować się z administratorem!"); return;
+            }
+
             var login = _view.UserCredentials.Login;
             var password = _view.UserCredentials.Password;
 
@@ -67,7 +86,7 @@ namespace CarRepairShop.LoginForm.Presenter
                 return;
             }
 
-            AppSettings.CurrentUser.SetUser(_genericRepo.GetAll<Domain.Entities.Users>().FirstOrDefault(x => x.ID == credentials.UserID));
+            _currentUserService.SetUser(_genericRepo.GetAll<Domain.Entities.Users>().FirstOrDefault(x => x.ID == credentials.UserID));
 
             Cache(true);
             _view.CloseLoginForm();
@@ -78,7 +97,7 @@ namespace CarRepairShop.LoginForm.Presenter
         {
             Properties.Settings.Default.CachedLogin = _view.CacheCheckboxSelected && success ? _view.Login : string.Empty;
             Properties.Settings.Default.Language = Thread.CurrentThread.CurrentUICulture.ToString();
-            AppSettings.CurrentUser.Language = Thread.CurrentThread.CurrentUICulture.ToString();
+            _currentUserService.Language = Thread.CurrentThread.CurrentUICulture.ToString();
             Properties.Settings.Default.Save();
         }
     }
