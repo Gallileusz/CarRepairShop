@@ -1,4 +1,6 @@
-﻿using CarRepairShop.Users.PermissionsForm.Model;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.Repositories;
+using CarRepairShop.Users.PermissionsForm.Model;
 using CarRepairShop.Users.PermissionsForm.Presenter;
 using System;
 using System.Collections.Generic;
@@ -23,7 +25,7 @@ namespace CarRepairShop.Users.PermissionsForm.View
         public PermissionsForm(Domain.Entities.Users user)
         {
             InitializeComponent();
-            _presenter = new PermissionsFormPresenter(this, user);
+            _presenter = new PermissionsFormPresenter(this, new CurrentUserService(), new GenericRepository(), user);
         }
 
         private void PermissionsForm_Load(object sender, EventArgs e) => FormLoaded?.Invoke(sender, e);
@@ -43,6 +45,9 @@ namespace CarRepairShop.Users.PermissionsForm.View
             dgv.DataSource = null;
             dgv.DataSource = permissionModels;
 
+            dgv.Columns[nameof(PermissionModel.PermissionName)].HeaderText = Library.Texts.PermissionsForm.DatagridviewTabColumn;
+            dgv.Columns[nameof(PermissionModel.AllowDisplay)].HeaderText = Library.Texts.PermissionsForm.DatagridviewDisplayColumn;
+            dgv.Columns[nameof(PermissionModel.AllowEdit)].HeaderText = Library.Texts.PermissionsForm.DatagridviewEditColumn;
             dgv.Columns[nameof(PermissionModel.PermissionName)].ReadOnly = true;
             dgv.Columns[nameof(PermissionModel.PermissionName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgv.Columns[nameof(PermissionModel.PermissionID)].Visible = false;

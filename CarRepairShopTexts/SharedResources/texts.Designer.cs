@@ -182,6 +182,123 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you want to save changes?.
+        /// </summary>
+        internal static string PermissionsForm_AskToSaveBody {
+            get {
+                return ResourceManager.GetString("PermissionsForm_AskToSaveBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Permission change confirmation.
+        /// </summary>
+        internal static string PermissionsForm_AskToSaveTitle {
+            get {
+                return ResourceManager.GetString("PermissionsForm_AskToSaveTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Changes has been saved..
+        /// </summary>
+        internal static string PermissionsForm_ChangesSaved {
+            get {
+                return ResourceManager.GetString("PermissionsForm_ChangesSaved", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Display.
+        /// </summary>
+        internal static string PermissionsForm_DatagridviewColumnAllowDisplay {
+            get {
+                return ResourceManager.GetString("PermissionsForm_DatagridviewColumnAllowDisplay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Edit.
+        /// </summary>
+        internal static string PermissionsForm_DatagridviewColumnAllowEdit {
+            get {
+                return ResourceManager.GetString("PermissionsForm_DatagridviewColumnAllowEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Tab.
+        /// </summary>
+        internal static string PermissionsForm_DatagridviewColumnPermissionTab {
+            get {
+                return ResourceManager.GetString("PermissionsForm_DatagridviewColumnPermissionTab", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractors.
+        /// </summary>
+        internal static string PermissionsForm_PermissionContractors {
+            get {
+                return ResourceManager.GetString("PermissionsForm_PermissionContractors", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu CRM.
+        /// </summary>
+        internal static string PermissionsForm_PermissionCRM {
+            get {
+                return ResourceManager.GetString("PermissionsForm_PermissionCRM", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Services.
+        /// </summary>
+        internal static string PermissionsForm_PermissionServices {
+            get {
+                return ResourceManager.GetString("PermissionsForm_PermissionServices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Settings.
+        /// </summary>
+        internal static string PermissionsForm_PermissionSettings {
+            get {
+                return ResourceManager.GetString("PermissionsForm_PermissionSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Statistics.
+        /// </summary>
+        internal static string PermissionsForm_PermissionStatistics {
+            get {
+                return ResourceManager.GetString("PermissionsForm_PermissionStatistics", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Users.
+        /// </summary>
+        internal static string PermissionsForm_PermissionUsers {
+            get {
+                return ResourceManager.GetString("PermissionsForm_PermissionUsers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Warehouse.
+        /// </summary>
+        internal static string PermissionsForm_PermissionWarehouse {
+            get {
+                return ResourceManager.GetString("PermissionsForm_PermissionWarehouse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the user: {0} {1}?.
         /// </summary>
         internal static string UsersTab_AskToDeleteBody {

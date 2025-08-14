@@ -229,4 +229,43 @@ Application Features:
   <data name="UsersTab_ColumnSurname" xml:space="preserve">
     <value>Surname</value>
   </data>
+  <data name="PermissionsForm_AskToSaveBody" xml:space="preserve">
+    <value>Do you want to save changes?</value>
+  </data>
+  <data name="PermissionsForm_AskToSaveTitle" xml:space="preserve">
+    <value>Permission change confirmation</value>
+  </data>
+  <data name="PermissionsForm_ChangesSaved" xml:space="preserve">
+    <value>Changes has been saved.</value>
+  </data>
+  <data name="PermissionsForm_DatagridviewColumnAllowEdit" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="PermissionsForm_DatagridviewColumnAllowDisplay" xml:space="preserve">
+    <value>Display</value>
+  </data>
+  <data name="PermissionsForm_DatagridviewColumnPermissionTab" xml:space="preserve">
+    <value>Tab</value>
+  </data>
+  <data name="PermissionsForm_PermissionContractors" xml:space="preserve">
+    <value>Contractors</value>
+  </data>
+  <data name="PermissionsForm_PermissionCRM" xml:space="preserve">
+    <value>CRM</value>
+  </data>
+  <data name="PermissionsForm_PermissionServices" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="PermissionsForm_PermissionWarehouse" xml:space="preserve">
+    <value>Warehouse</value>
+  </data>
+  <data name="PermissionsForm_PermissionStatistics" xml:space="preserve">
+    <value>Statistics</value>
+  </data>
+  <data name="PermissionsForm_PermissionUsers" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="PermissionsForm_PermissionSettings" xml:space="preserve">
+    <value>Settings</value>
+  </data>
 </root>

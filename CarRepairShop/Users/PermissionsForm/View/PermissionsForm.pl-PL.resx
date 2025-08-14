@@ -117,112 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MainForm_MissingPermissionsToOpenTab" xml:space="preserve">
-    <value>Nie masz uprawnień do wyświetlania zakładki: {0}!</value>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Uprawnienia</value>
   </data>
-  <data name="MainForm_Services" xml:space="preserve">
-    <value>Usługi</value>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Anuluj</value>
   </data>
-  <data name="MainForm_Users" xml:space="preserve">
-    <value>Użytkownicy</value>
-  </data>
-  <data name="MainForm_CRM" xml:space="preserve">
-    <value>CRM</value>
-  </data>
-  <data name="MainForm_Warehouse" xml:space="preserve">
-    <value>Magazyn</value>
-  </data>
-  <data name="MainForm_Contractors" xml:space="preserve">
-    <value>Kontrahenci</value>
-  </data>
-  <data name="UsersTab_PleaseSelectPersonToEdit" xml:space="preserve">
-    <value>Proszę wybrać użytkownika do edycji.</value>
-  </data>
-  <data name="UsersTab_UsersPermissions" xml:space="preserve">
-    <value>Uprawnienia użytkownika:</value>
-  </data>
-  <data name="UsersTab_UserHasBeenAdded" xml:space="preserve">
-    <value>Użytkownik {0} {1} został dodany.</value>
-  </data>
-  <data name="UsersTab_UserAddingError" xml:space="preserve">
-    <value>Wystąpił błąd podczas dodawania nowego użytkownika!</value>
-  </data>
-  <data name="UsersTab_UserHasBeenEdited" xml:space="preserve">
-    <value>Dane użytkownika zostały zaktualizowane.</value>
-  </data>
-  <data name="UsersTab_UserEditError" xml:space="preserve">
-    <value>Wystąpił błąd podczas edytowania wybranego użytkownika!</value>
-  </data>
-  <data name="UsersTab_AskToDeleteBody" xml:space="preserve">
-    <value>Czy na pewno chcesz usunąć użytkownika: {0} {1}?</value>
-  </data>
-  <data name="UsersTab_UserHasBeenDeleted" xml:space="preserve">
-    <value>Użytkownik został usunięty.</value>
-  </data>
-  <data name="UsersTab_UserDeleteError" xml:space="preserve">
-    <value>Wystąpił błąd podczas usuwania wybranego użytkownika!</value>
-  </data>
-  <data name="UsersTab_FirstNameAndSurnameCannotBeEmpty" xml:space="preserve">
-    <value>Pole imie i nazwisko musi zostać wypełnione!</value>
-  </data>
-  <data name="UsersTab_UserExists" xml:space="preserve">
-    <value>Użytkownik o takim imieniu i nazwisku już istnieje!</value>
-  </data>
-  <data name="UsersTab_MissingPermissions" xml:space="preserve">
-    <value>Brak uprawnień do dokonywania zmian w tej zakładce! Skontaktuj się z kimś, kto ma uprawnienia edycji w zakładce użytkownicy, aby mógł ci nadać uprawnienia!</value>
-  </data>
-  <data name="UsersTab_CouldntAddPermissions" xml:space="preserve">
-    <value>Nie udało się przypisać uprawnień do użytkownika!</value>
-  </data>
-  <data name="UsersTab_AskToDeleteHeader" xml:space="preserve">
-    <value>Usuwanie użytkownika</value>
-  </data>
-  <data name="UsersTab_PleaseSelectPersonToDelete" xml:space="preserve">
-    <value>Proszę wybrać użytkownika do usunięcia.</value>
-  </data>
-  <data name="UsersTab_ColumnName" xml:space="preserve">
-    <value>Imię</value>
-  </data>
-  <data name="UsersTab_ColumnSurname" xml:space="preserve">
-    <value>Nazwisko</value>
-  </data>
-  <data name="PermissionsForm_ChangesSaved" xml:space="preserve">
-    <value>Zmiany zostały zapisane.</value>
-  </data>
-  <data name="PermissionsForm_AskToSaveBody" xml:space="preserve">
-    <value>Chcesz zapisać zmiany?</value>
-  </data>
-  <data name="PermissionsForm_AskToSaveTitle" xml:space="preserve">
-    <value>Potwierdzenie zmian uprawnień</value>
-  </data>
-  <data name="PermissionsForm_DatagridviewColumnAllowEdit" xml:space="preserve">
-    <value>Edycja</value>
-  </data>
-  <data name="PermissionsForm_DatagridviewColumnAllowDisplay" xml:space="preserve">
-    <value>Wyświetlanie</value>
-  </data>
-  <data name="PermissionsForm_DatagridviewColumnPermissionTab" xml:space="preserve">
-    <value>Zakładka</value>
-  </data>
-  <data name="PermissionsForm_PermissionContractors" xml:space="preserve">
-    <value>Kontrahenci</value>
-  </data>
-  <data name="PermissionsForm_PermissionCRM" xml:space="preserve">
-    <value>CRM</value>
-  </data>
-  <data name="PermissionsForm_PermissionServices" xml:space="preserve">
-    <value>Usługi</value>
-  </data>
-  <data name="PermissionsForm_PermissionSettings" xml:space="preserve">
-    <value>Ustawienia</value>
-  </data>
-  <data name="PermissionsForm_PermissionStatistics" xml:space="preserve">
-    <value>Statystyka</value>
-  </data>
-  <data name="PermissionsForm_PermissionUsers" xml:space="preserve">
-    <value>Użytkownicy</value>
-  </data>
-  <data name="PermissionsForm_PermissionWarehouse" xml:space="preserve">
-    <value>Magazyn</value>
+  <data name="btnConfirm.Text" xml:space="preserve">
+    <value>Potwierdź</value>
   </data>
 </root>

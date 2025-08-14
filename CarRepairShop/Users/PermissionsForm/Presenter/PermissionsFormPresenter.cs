@@ -1,4 +1,5 @@
-﻿using CarRepairShop.Repositories;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.Repositories;
 using CarRepairShop.Users.PermissionsForm.Model;
 using CarRepairShop.Users.PermissionsForm.View;
 using System;
@@ -9,19 +10,26 @@ namespace CarRepairShop.Users.PermissionsForm.Presenter
 {
     public class PermissionsFormPresenter
     {
-        private IPermissionsView _view;
-        private GenericRepository _genericRepository;
+        private readonly IPermissionsView _view;
+        private readonly IGenericRepository _genericRepository;
+        private readonly ICurrentUserService _currentUserService;
+
+        private const string _mainLanguage = "en-US";
 
         private Domain.Entities.Users _user;
         private List<Domain.Entities.Permissions> _permissions;
         private List<Domain.Entities.UserPermissions> _userPermissions;
 
-        public PermissionsFormPresenter(IPermissionsView view, Domain.Entities.Users user)
+        public PermissionsFormPresenter(IPermissionsView view, ICurrentUserService currentUser, IGenericRepository genericRepo, Domain.Entities.Users user)
         {
             _view = view;
-            _genericRepository = new GenericRepository();
+            _genericRepository = genericRepo;
+            _currentUserService = currentUser;
+
             _user = user;
             _permissions = _genericRepository.GetAll<Domain.Entities.Permissions>().ToList();
+            if (_currentUserService.Language != _mainLanguage)
+                TranslateTabs();
             _userPermissions = _genericRepository.GetAll<Domain.Entities.UserPermissions>().Where(x => x.UserID == _user.ID).ToList();
 
             SubscribeToEvents();
@@ -54,7 +62,7 @@ namespace CarRepairShop.Users.PermissionsForm.Presenter
 
         private void Confirm(object sender, EventArgs e)
         {
-            if (!_view.ConfirmAction("Czy na pewno chcesz zapisać zmiany?", "Potwierdzenie zmian uprawnień")) return;
+            if (!_view.ConfirmAction(Library.Texts.PermissionsForm.AskForConfirmationBody, Library.Texts.PermissionsForm.AskForConfirmationTitle)) return;
 
             var permissions = _view.GetSelectedPermissions;
 
@@ -102,12 +110,24 @@ namespace CarRepairShop.Users.PermissionsForm.Presenter
             if (!permissionsToRemove.Any())
                 _genericRepository.Delete(permissionsToRemove);
 
-            _view.ShowMessage("Zmiany zostały zapisane.");
-            if (_user.ID == AppSettings.CurrentUser.Data.ID)
-                AppSettings.CurrentUser.SetUser(_user);
+            _view.ShowMessage(Library.Texts.PermissionsForm.AskForConfirmationTitle);
+            if (_user.ID == _currentUserService.Data.ID)
+                _currentUserService.SetUser(_user);
             _view.CloseForm();
         }
 
         private void Cancel(object sender, EventArgs e) => _view.CloseForm();
+
+        private void TranslateTabs() => _permissions =
+            new List<Domain.Entities.Permissions>
+            {
+                new Domain.Entities.Permissions { ID = 1, Name = Library.Texts.PermissionsForm.PermissionContractors },
+                new Domain.Entities.Permissions { ID = 2, Name = Library.Texts.PermissionsForm.PermissionCRM },
+                new Domain.Entities.Permissions { ID = 3, Name = Library.Texts.PermissionsForm.PermissionServices },
+                new Domain.Entities.Permissions { ID = 4, Name = Library.Texts.PermissionsForm.PermissionWarehouse },
+                new Domain.Entities.Permissions { ID = 5, Name = Library.Texts.PermissionsForm.PermissionStatistics },
+                new Domain.Entities.Permissions { ID = 6, Name = Library.Texts.PermissionsForm.PermissionUsers },
+                new Domain.Entities.Permissions { ID = 7, Name = Library.Texts.PermissionsForm.PermissionSettings }
+            };
     }
 }
