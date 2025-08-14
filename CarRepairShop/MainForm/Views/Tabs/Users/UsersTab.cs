@@ -47,6 +47,8 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             dgvUsers.DataSource = null;
             dgvUsers.DataSource = users;
 
+            dgvUsers.Columns[nameof(Domain.Entities.Users.Name)].HeaderText = Library.Texts.MainView.UsersTab.ColumnName;
+            dgvUsers.Columns[nameof(Domain.Entities.Users.Surname)].HeaderText = Library.Texts.MainView.UsersTab.Surname;
             dgvUsers.Columns[nameof(Domain.Entities.Users.Name)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvUsers.Columns[nameof(Domain.Entities.Users.Surname)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvUsers.Columns[nameof(Domain.Entities.Users.ID)].Visible = false;

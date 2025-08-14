@@ -223,4 +223,10 @@ Application Features:
   <data name="UsersTab_PleaseSelectPersonToDelete" xml:space="preserve">
     <value>Please select a user to delete.</value>
   </data>
+  <data name="UsersTab_ColumnName" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="UsersTab_ColumnSurname" xml:space="preserve">
+    <value>Surname</value>
+  </data>
 </root>

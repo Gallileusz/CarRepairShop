@@ -200,6 +200,24 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name.
+        /// </summary>
+        internal static string UsersTab_ColumnName {
+            get {
+                return ResourceManager.GetString("UsersTab_ColumnName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Surname.
+        /// </summary>
+        internal static string UsersTab_ColumnSurname {
+            get {
+                return ResourceManager.GetString("UsersTab_ColumnSurname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Permission assignement failed!.
         /// </summary>
         internal static string UsersTab_CouldntAddPermissions {

@@ -36,5 +36,8 @@
         public static string UserHasBeenDeleted => SharedResources.texts.UsersTab_UserHasBeenDeleted;
         public static string UserHasBeenEdited => SharedResources.texts.UsersTab_UserHasBeenEdited;
         public static string PermissionFormTitle => SharedResources.texts.UsersTab_UsersPermissions;
+        public static string DatagridviewColumnName => SharedResources.texts.UsersTab_ColumnName;
+        public static string DatagridviewColumnSurname => SharedResources.texts.UsersTab_ColumnSurname;
+
     }
 }

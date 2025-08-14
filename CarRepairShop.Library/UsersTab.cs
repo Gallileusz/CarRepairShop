@@ -19,5 +19,7 @@ namespace CarRepairShop.Library
         public string UserHasBeenDeleted => SharedTexts.UserHasBeenDeleted;
         public string UserHasBeenEdited => SharedTexts.UserHasBeenEdited;
         public string PermissionFormTitle => SharedTexts.PermissionFormTitle;
+        public string ColumnName => SharedTexts.DatagridviewColumnName;
+        public string Surname => SharedTexts.DatagridviewColumnSurname;
     }
 }
