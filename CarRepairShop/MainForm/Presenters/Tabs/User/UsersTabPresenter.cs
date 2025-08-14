@@ -1,4 +1,5 @@
-﻿using CarRepairShop.Domain.Entities;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Views.Tabs.Users;
 using CarRepairShop.Repositories;
 using CarRepairShop.Users.PermissionsForm.View;
@@ -11,15 +12,18 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
     public class UsersTabPresenter
     {
         private readonly IUsersTabView _view;
-        private readonly GenericRepository _genericRepo;
+        private readonly IGenericRepository _genericRepo;
+        private readonly ICurrentUserService _currentUser;
 
         private List<Domain.Entities.Users> _usersList;
         private List<Domain.Entities.Users> _filteredUsersList;
 
-        public UsersTabPresenter(IUsersTabView view)
+        public UsersTabPresenter(IUsersTabView view, IGenericRepository genericRepo, ICurrentUserService currentUser)
         {
             _view = view;
-            _genericRepo = new GenericRepository();
+            _genericRepo = genericRepo;
+            _currentUser = currentUser;
+
             _usersList = _genericRepo.GetAll<Domain.Entities.Users>().ToList();
             _filteredUsersList = _usersList;
 
@@ -40,14 +44,16 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
 
         private void EditPermissions(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.Permissions.AllowEdit)) return;
+
             var selectedUser = _usersList.FirstOrDefault(x => x.ID == _view.SelectedUserID);
-            if (selectedUser == null)
+            if (selectedUser == null || selectedUser.ID <= 0)
             {
-                _view.ShowMessage("Proszę wybrać użytkownika do edycji."); return;
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.SelectUserToEdit); return;
             }
 
             var form = new PermissionsForm(selectedUser);
-            form.FormTitle = $"Uprawnienia użytkownika: {selectedUser.Name} {selectedUser.Surname}";
+            form.FormTitle = $"{Library.Texts.MainView.UsersTab.PermissionFormTitle} {selectedUser.Name} {selectedUser.Surname}";
             form.ShowDialog();
         }
 
@@ -70,13 +76,17 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
             _view.SearchSurameChanged -= FilterUsers;
 
             _view.LoadUsersToGrid(_usersList);
-            _view.UnableButtonsIfNoPermissions();
+            _view.UnableButtonsIfNoPermissions(_currentUser.HasPermission(
+                Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.Permissions.AllowEdit));
 
             _view.SearchNameChanged += FilterUsers;
             _view.SearchSurameChanged += FilterUsers;
         }
+
         private void AddUser(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.Permissions.AllowEdit)) return;
+
             var form = new UsersInfoForm(new Domain.Entities.Users());
             form.ShowDialog();
 
@@ -87,7 +97,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
             if (_genericRepo.Insert(newUser) > 0)
             {
                 _usersList.Add(newUser);
-                _view.ShowMessage($"Użytkownik {newUser.Name} {newUser.Surname} został dodany.");
+                _view.ShowMessage(string.Format(Library.Texts.MainView.UsersTab.UserHasBeenAdded, newUser.Name, newUser.Surname));
 
                 var loginCredentials = new UserCredentials
                 {
@@ -97,22 +107,24 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
                 };
 
                 if (_genericRepo.Insert(loginCredentials) < 0)
-                    _view.ShowMessage("Nie udało się przypisać loginu i hasła dla użytkownika!");
+                    _view.ShowMessage(Library.Texts.MainView.UsersTab.PermissionAssignementFailed);
 
                 AddPermissionsToUser(newUser);
 
                 _view.LoadUsersToGrid(_usersList);
             }
             else
-                _view.ShowMessage("Nie udało się dodać użytkownika!");
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.InsertingUserFailed);
         }
 
         private void EditUser(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.Permissions.AllowEdit)) return;
+
             var selectedUser = _usersList.FirstOrDefault(x => x.ID == _view.SelectedUserID);
             if (selectedUser == null)
             {
-                _view.ShowMessage("Proszę wybrać użytkownika do edycji."); return;
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.SelectUserToEdit); return;
             }
 
             var form = new UsersInfoForm(selectedUser);
@@ -131,31 +143,35 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
             {
                 _usersList[index] = selectedUser;
                 _view.LoadUsersToGrid(_usersList);
-                _view.ShowMessage("Użytkownik został zaktualizowany.");
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.UserHasBeenEdited);
             }
             else
-                _view.ShowMessage("Nie udało się zaktualizować użytkownika!");
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.EditingUserFailed);
         }
 
         private void DeleteUser(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.Permissions.AllowEdit)) return;
+
             var selectedUser = _usersList.FirstOrDefault(x => x.ID == _view.SelectedUserID);
             if (selectedUser == null)
             {
-                _view.ShowMessage("Proszę wybrać użytkownika do edycji."); return;
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.SelectUserToDelete); return;
             }
 
-            if (!_view.ConfirmAction($"Czy na pewno chcesz usunąć użytkownika: \r\n{selectedUser.Name} {selectedUser.Surname}?", "Usuwanie użytkownika")) return;
+            if (!_view.ConfirmAction(
+                string.Format(Library.Texts.MainView.UsersTab.AskToDeleteUserBody, selectedUser.Name, selectedUser.Surname),
+                Library.Texts.MainView.UsersTab.AskToDeleteUserTitle)) return;
 
             if (_genericRepo.Delete(selectedUser))
             {
                 _usersList.Remove(selectedUser);
                 _genericRepo.Delete(_genericRepo.GetAll<UserCredentials>().FirstOrDefault(x => x.UserID == selectedUser.ID));
                 _view.LoadUsersToGrid(_usersList);
-                _view.ShowMessage("Użytkownik został usunięty.");
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.UserHasBeenDeleted);
             }
             else
-                _view.ShowMessage("Nie udało się zaktualizować użytkownika!");
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.DeletingUserFailed);
         }
 
         private bool IsUserInvalid(Domain.Entities.Users user)
@@ -164,13 +180,13 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
 
             if (string.IsNullOrEmpty(user.Name) || string.IsNullOrEmpty(user.Surname))
             {
-                _view.ShowMessage("Pole imie i nazwisko musi zostać wypełnione!");
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.UserDataCannotBeEmpty);
                 return true;
             }
 
             if (_usersList.Where(x => x.Name == user.Name && x.Surname == user.Surname).Any())
             {
-                _view.ShowMessage("Użytkownik o takim imieniu i nazwisku już istnieje!");
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.UserExists);
                 return true;
             }
 
@@ -203,7 +219,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
             }
 
             if (_genericRepo.Insert(permissionsToAdd) <= 0)
-                _view.ShowMessage("Nie udało się przypisać uprawnień do użytkownika!");
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.PermissionAssignementFailed);
         }
     }
 }

@@ -180,5 +180,140 @@ namespace CarRepairShop.Texts.SharedResources {
                 return ResourceManager.GetString("MainForm_Warehouse", resourceCulture);
             }
         }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the user: {0} {1}?.
+        /// </summary>
+        internal static string UsersTab_AskToDeleteBody {
+            get {
+                return ResourceManager.GetString("UsersTab_AskToDeleteBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Deleting user.
+        /// </summary>
+        internal static string UsersTab_AskToDeleteHeader {
+            get {
+                return ResourceManager.GetString("UsersTab_AskToDeleteHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Permission assignement failed!.
+        /// </summary>
+        internal static string UsersTab_CouldntAddPermissions {
+            get {
+                return ResourceManager.GetString("UsersTab_CouldntAddPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The field firstname and lastname can&apos;t be empty!.
+        /// </summary>
+        internal static string UsersTab_FirstNameAndSurnameCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("UsersTab_FirstNameAndSurnameCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Missing permissions to edit in this tab! Please contact someone with edit permissions in users tab to assign new permissions for you!.
+        /// </summary>
+        internal static string UsersTab_MissingPermissions {
+            get {
+                return ResourceManager.GetString("UsersTab_MissingPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please select a user to delete..
+        /// </summary>
+        internal static string UsersTab_PleaseSelectPersonToDelete {
+            get {
+                return ResourceManager.GetString("UsersTab_PleaseSelectPersonToDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please select a user to edit..
+        /// </summary>
+        internal static string UsersTab_PleaseSelectPersonToEdit {
+            get {
+                return ResourceManager.GetString("UsersTab_PleaseSelectPersonToEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu An error accured while inserting new user!.
+        /// </summary>
+        internal static string UsersTab_UserAddingError {
+            get {
+                return ResourceManager.GetString("UsersTab_UserAddingError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu An error accured while deleting selected user!.
+        /// </summary>
+        internal static string UsersTab_UserDeleteError {
+            get {
+                return ResourceManager.GetString("UsersTab_UserDeleteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu An error accured while editing selected user!.
+        /// </summary>
+        internal static string UsersTab_UserEditError {
+            get {
+                return ResourceManager.GetString("UsersTab_UserEditError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu User with this firstname and lastname exists already!.
+        /// </summary>
+        internal static string UsersTab_UserExists {
+            get {
+                return ResourceManager.GetString("UsersTab_UserExists", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu User {0} {1} has been added..
+        /// </summary>
+        internal static string UsersTab_UserHasBeenAdded {
+            get {
+                return ResourceManager.GetString("UsersTab_UserHasBeenAdded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu User has been deleted..
+        /// </summary>
+        internal static string UsersTab_UserHasBeenDeleted {
+            get {
+                return ResourceManager.GetString("UsersTab_UserHasBeenDeleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu User data has been updated..
+        /// </summary>
+        internal static string UsersTab_UserHasBeenEdited {
+            get {
+                return ResourceManager.GetString("UsersTab_UserHasBeenEdited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu User permissions from:.
+        /// </summary>
+        internal static string UsersTab_UsersPermissions {
+            get {
+                return ResourceManager.GetString("UsersTab_UsersPermissions", resourceCulture);
+            }
+        }
     }
 }

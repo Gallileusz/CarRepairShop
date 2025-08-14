@@ -135,4 +135,49 @@
   <data name="MainForm_Contractors" xml:space="preserve">
     <value>Kontrahenci</value>
   </data>
+  <data name="UsersTab_PleaseSelectPersonToEdit" xml:space="preserve">
+    <value>Proszę wybrać użytkownika do edycji.</value>
+  </data>
+  <data name="UsersTab_UsersPermissions" xml:space="preserve">
+    <value>Uprawnienia użytkownika:</value>
+  </data>
+  <data name="UsersTab_UserHasBeenAdded" xml:space="preserve">
+    <value>Użytkownik {0} {1} został dodany.</value>
+  </data>
+  <data name="UsersTab_UserAddingError" xml:space="preserve">
+    <value>Wystąpił błąd podczas dodawania nowego użytkownika!</value>
+  </data>
+  <data name="UsersTab_UserHasBeenEdited" xml:space="preserve">
+    <value>Dane użytkownika zostały zaktualizowane.</value>
+  </data>
+  <data name="UsersTab_UserEditError" xml:space="preserve">
+    <value>Wystąpił błąd podczas edytowania wybranego użytkownika!</value>
+  </data>
+  <data name="UsersTab_AskToDeleteBody" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć użytkownika: {0} {1}?</value>
+  </data>
+  <data name="UsersTab_UserHasBeenDeleted" xml:space="preserve">
+    <value>Użytkownik został usunięty.</value>
+  </data>
+  <data name="UsersTab_UserDeleteError" xml:space="preserve">
+    <value>Wystąpił błąd podczas usuwania wybranego użytkownika!</value>
+  </data>
+  <data name="UsersTab_FirstNameAndSurnameCannotBeEmpty" xml:space="preserve">
+    <value>Pole imie i nazwisko musi zostać wypełnione!</value>
+  </data>
+  <data name="UsersTab_UserExists" xml:space="preserve">
+    <value>Użytkownik o takim imieniu i nazwisku już istnieje!</value>
+  </data>
+  <data name="UsersTab_MissingPermissions" xml:space="preserve">
+    <value>Brak uprawnień do dokonywania zmian w tej zakładce! Skontaktuj się z kimś, kto ma uprawnienia edycji w zakładce użytkownicy, aby mógł ci nadać uprawnienia!</value>
+  </data>
+  <data name="UsersTab_CouldntAddPermissions" xml:space="preserve">
+    <value>Nie udało się przypisać uprawnień do użytkownika!</value>
+  </data>
+  <data name="UsersTab_AskToDeleteHeader" xml:space="preserve">
+    <value>Usuwanie użytkownika</value>
+  </data>
+  <data name="UsersTab_PleaseSelectPersonToDelete" xml:space="preserve">
+    <value>Proszę wybrać użytkownika do usunięcia.</value>
+  </data>
 </root>

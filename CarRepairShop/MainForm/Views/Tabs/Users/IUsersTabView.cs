@@ -19,6 +19,6 @@ namespace CarRepairShop.MainForm.Views.Tabs.Users
         string SearchedSurname { get; }
         void ShowMessage(string message);
         bool ConfirmAction(string message, string title);
-        void UnableButtonsIfNoPermissions();
+        void UnableButtonsIfNoPermissions(bool hasEditPermission);
     }
 }

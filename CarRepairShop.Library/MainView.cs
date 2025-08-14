@@ -5,6 +5,7 @@ namespace CarRepairShop.Library
     public class MainView
     {
         public HomeTab HomeTab { get; } = new HomeTab();
+        public UsersTab UsersTab { get; } = new UsersTab();
 
         public string MissingPermissionsMessage => SharedTexts.MainFormMissingPermissionsMessage;
         public string Services => SharedTexts.MainFormServices;

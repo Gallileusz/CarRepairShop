@@ -1,5 +1,7 @@
-﻿using CarRepairShop.MainForm.Presenters.Tabs.User;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.MainForm.Presenters.Tabs.User;
 using CarRepairShop.MainForm.Views.Tabs.Users;
+using CarRepairShop.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -37,7 +39,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
         {
             InitializeComponent();
             Debounce.Stop();
-            _presenter = new UsersTabPresenter(this);
+            _presenter = new UsersTabPresenter(this, new GenericRepository(), new CurrentUserService());
         }
 
         public void LoadUsersToGrid(List<Domain.Entities.Users> users)
@@ -48,18 +50,15 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             dgvUsers.Columns[nameof(Domain.Entities.Users.Name)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvUsers.Columns[nameof(Domain.Entities.Users.Surname)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvUsers.Columns[nameof(Domain.Entities.Users.ID)].Visible = false;
-            if (!AppSettings.CurrentUser.Data.Admin)
-                dgvUsers.Columns[nameof(Domain.Entities.Users.Admin)].Visible = false;
+            dgvUsers.Columns[nameof(Domain.Entities.Users.Admin)].Visible = false;
         }
 
-        public void UnableButtonsIfNoPermissions()
+        public void UnableButtonsIfNoPermissions(bool hasEditPermission)
         {
-            bool hasEditPermission = AppSettings.CurrentUser.HasPermission(Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.Permissions.AllowEdit);
-
             btnAdd.Enabled = hasEditPermission;
             btnEdit.Enabled = hasEditPermission;
             btnDelete.Enabled = hasEditPermission;
-            btnPermissions.Enabled = AppSettings.CurrentUser.IsAdmin;
+            btnPermissions.Enabled = hasEditPermission;
         }
 
         public void ShowMessage(string message) => MessageBox.Show(message);

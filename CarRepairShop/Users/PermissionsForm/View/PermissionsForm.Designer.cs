@@ -29,69 +29,76 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.dgv = new System.Windows.Forms.DataGridView();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
-            this.SuspendLayout();
+            dgv = new System.Windows.Forms.DataGridView();
+            btnConfirm = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)dgv).BeginInit();
+            SuspendLayout();
             // 
             // dgv
             // 
-            this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 238);
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.SteelBlue;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv.Location = new System.Drawing.Point(12, 12);
-            this.dgv.Name = "dgv";
-            this.dgv.RowHeadersVisible = false;
-            this.dgv.Size = new System.Drawing.Size(625, 327);
-            this.dgv.TabIndex = 0;
+            dgv.DefaultCellStyle = dataGridViewCellStyle1;
+            dgv.Location = new System.Drawing.Point(14, 14);
+            dgv.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            dgv.Name = "dgv";
+            dgv.RowHeadersVisible = false;
+            dgv.Size = new System.Drawing.Size(729, 377);
+            dgv.TabIndex = 0;
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnConfirm.Location = new System.Drawing.Point(246, 345);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(75, 34);
-            this.btnConfirm.TabIndex = 1;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 238);
+            btnConfirm.ForeColor = System.Drawing.Color.SteelBlue;
+            btnConfirm.Location = new System.Drawing.Point(287, 398);
+            btnConfirm.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.Size = new System.Drawing.Size(88, 39);
+            btnConfirm.TabIndex = 1;
+            btnConfirm.Text = "Confirm";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Crimson;
-            this.btnCancel.Location = new System.Drawing.Point(327, 345);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(75, 34);
-            this.btnCancel.TabIndex = 2;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 238);
+            btnCancel.ForeColor = System.Drawing.Color.Crimson;
+            btnCancel.Location = new System.Drawing.Point(382, 398);
+            btnCancel.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            btnCancel.Name = "btnCancel";
+            btnCancel.Size = new System.Drawing.Size(88, 39);
+            btnCancel.TabIndex = 2;
+            btnCancel.Text = "Cancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // PermissionsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(649, 384);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.dgv);
-            this.MaximumSize = new System.Drawing.Size(665, 423);
-            this.MinimumSize = new System.Drawing.Size(665, 423);
-            this.Name = "PermissionsForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "PermissionsForm";
-            this.Load += new System.EventHandler(this.PermissionsForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dgv)).EndInit();
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(757, 443);
+            Controls.Add(btnCancel);
+            Controls.Add(btnConfirm);
+            Controls.Add(dgv);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MaximumSize = new System.Drawing.Size(773, 482);
+            MinimizeBox = false;
+            MinimumSize = new System.Drawing.Size(773, 482);
+            Name = "PermissionsForm";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "PermissionsForm";
+            Load += PermissionsForm_Load;
+            ((System.ComponentModel.ISupportInitialize)dgv).EndInit();
+            ResumeLayout(false);
 
         }
 
