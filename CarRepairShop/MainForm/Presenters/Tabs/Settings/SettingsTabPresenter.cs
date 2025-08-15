@@ -1,5 +1,4 @@
-﻿using CarRepairShop.AppSettings.DefualtRepairShopSettings.View;
-using CarRepairShop.Domain.Entities;
+﻿using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Views.Tabs.Settings;
 using CarRepairShop.Repositories;
 using CarRepairShop.Utilities.ComboboxForm.View;
@@ -29,13 +28,9 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Settings
 
         private void SubscribeToEvents()
         {
-            _view.TabIsLoaded += Load;
             _view.LanguageButtonClicked += ChangeLanguage;
             _view.ChangePasswordButtonClicked += ChangeMyPassword;
-            _view.ChangeDefaultPasswordButtonClicked += ChangeDefaultPassword;
         }
-
-        private void Load(object sender, EventArgs e) => _view.UnableDefaultSettingsButtonIfUserIsNotAdmin();
 
         private void ChangeLanguage(object sender, EventArgs e)
         {
@@ -81,26 +76,6 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Settings
                 _view.ShowMessage("Udało się zmienić hasło.");
             else
                 _view.ShowMessage("Problem z dokonaniem zmian hasła!");
-        }
-
-        private void ChangeDefaultPassword(object sender, EventArgs e)
-        {
-            var form = new DefaultRepairShopSettings();
-            form.ShowDialog();
-
-            if (form.NewPassword == null) return;
-
-            if (string.IsNullOrEmpty(form.NewPassword)) return;
-
-            var defaultSettings = _genericRepo.GetAll<DefaultSettings>().FirstOrDefault();
-            defaultSettings.PasswordHash = BCrypt.Net.BCrypt.HashPassword(form.NewPassword);
-
-            if (_genericRepo.Update(defaultSettings))
-                _view.ShowMessage("Hasło zostało zmienione dla nowo dodawanych użytkowników.");
-            else
-            {
-                _view.ShowMessage("Nie udało się zmienić hasła!"); return;
-            }
         }
 
         private bool IsPasswordInvalid(string password, UserCredentials currentCredentials)

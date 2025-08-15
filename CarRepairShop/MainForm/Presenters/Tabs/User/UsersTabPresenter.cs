@@ -3,6 +3,7 @@ using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Views.Tabs.Users;
 using CarRepairShop.Repositories;
 using CarRepairShop.Users.PermissionsForm.View;
+using CarRepairShop.Users.UserInfoForm.Model;
 using CarRepairShop.Users.UserInfoForm.View;
 using System;
 using System.Collections.Generic;
@@ -16,6 +17,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
         private readonly ICurrentUserService _currentUser;
 
         private List<Domain.Entities.Users> _usersList;
+        private List<Domain.Entities.UserCredentials> _userCredentials;
         private List<Domain.Entities.Users> _filteredUsersList;
 
         public UsersTabPresenter(IUsersTabView view, IGenericRepository genericRepo, ICurrentUserService currentUser)
@@ -25,6 +27,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
             _currentUser = currentUser;
 
             _usersList = _genericRepo.GetAll<Domain.Entities.Users>().ToList();
+            _userCredentials = _genericRepo.GetAll<UserCredentials>().ToList();
             _filteredUsersList = _usersList;
 
             SubscribeEvents();
@@ -87,12 +90,21 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
         {
             if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.Permissions.AllowEdit)) return;
 
-            var form = new UsersInfoForm(new Domain.Entities.Users());
+            var form = new UsersInfoForm(null);
             form.ShowDialog();
 
-            var newUser = form.GetUser();
+            if (form.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
 
-            if (IsUserInvalid(newUser)) return;
+            var newUserModel = form.GetUserModel();
+
+            if (IsUserInvalid(newUserModel, false)) return;
+
+            var newUser = new Domain.Entities.Users
+            {
+                Name = newUserModel.UserName,
+                Surname = newUserModel.UserSurname,
+                Admin = newUserModel.SuperAdmin,
+            };
 
             if (_genericRepo.Insert(newUser) > 0)
             {
@@ -102,8 +114,8 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
                 var loginCredentials = new UserCredentials
                 {
                     UserID = newUser.ID,
-                    Login = CreateLogin(newUser),
-                    PasswordHash = _genericRepo.GetAll<DefaultSettings>().FirstOrDefault().PasswordHash
+                    Login = newUserModel.Login,
+                    PasswordHash = BCrypt.Net.BCrypt.HashPassword(newUserModel.Password)
                 };
 
                 if (_genericRepo.Insert(loginCredentials) < 0)
@@ -127,15 +139,18 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
                 _view.ShowMessage(Library.Texts.MainView.UsersTab.SelectUserToEdit); return;
             }
 
-            var form = new UsersInfoForm(selectedUser);
+            var form = new UsersInfoForm(selectedUser.ID);
             form.ShowDialog();
 
-            var updatedUser = form.GetUser();
+            if (form.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
 
-            if (IsUserInvalid(updatedUser)) return;
+            var updatedUser = form.GetUserModel();
 
-            selectedUser.Name = updatedUser.Name;
-            selectedUser.Surname = updatedUser.Surname;
+            if (IsUserInvalid(updatedUser, true)) return;
+
+            selectedUser.Name = updatedUser.UserName;
+            selectedUser.Surname = updatedUser.UserSurname;
+            selectedUser.Admin = updatedUser.SuperAdmin;
 
             int index = _usersList.FindIndex(u => u.ID == selectedUser.ID);
 
@@ -174,31 +189,29 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
                 _view.ShowMessage(Library.Texts.MainView.UsersTab.DeletingUserFailed);
         }
 
-        private bool IsUserInvalid(Domain.Entities.Users user)
+        private bool IsUserInvalid(UsersInfoModel user, bool edit)
         {
             if (user == null) return true;
 
-            if (string.IsNullOrEmpty(user.Name) || string.IsNullOrEmpty(user.Surname))
+            if (string.IsNullOrEmpty(user.UserName) || string.IsNullOrEmpty(user.UserSurname))
             {
                 _view.ShowMessage(Library.Texts.MainView.UsersTab.UserDataCannotBeEmpty);
                 return true;
             }
 
-            if (_usersList.Where(x => x.Name == user.Name && x.Surname == user.Surname).Any())
+            if (!edit && _usersList.Where(x => x.Name == user.UserName && x.Surname == user.UserSurname).Any())
             {
                 _view.ShowMessage(Library.Texts.MainView.UsersTab.UserExists);
                 return true;
             }
 
+            if (!edit && _userCredentials.Any(x => x.Login == user.Login))
+            {
+                _view.ShowMessage(Library.Texts.MainView.UsersTab.LoginAlreadyInUse);
+                return true;
+            }
+
             return false;
-        }
-
-        private string CreateLogin(Domain.Entities.Users user)
-        {
-            string namePart = user.Name.Substring(0, 1).ToLower();
-            string surnamePart = char.ToUpper(user.Surname[0]) + user.Surname.Substring(1).ToLower();
-
-            return namePart + surnamePart;
         }
 
         private void AddPermissionsToUser(Domain.Entities.Users user)

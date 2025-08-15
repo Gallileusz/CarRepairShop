@@ -50,6 +50,8 @@ namespace CarRepairShop.Users.PermissionsForm.View
             dgv.Columns[nameof(PermissionModel.AllowEdit)].HeaderText = Library.Texts.PermissionsForm.DatagridviewEditColumn;
             dgv.Columns[nameof(PermissionModel.PermissionName)].ReadOnly = true;
             dgv.Columns[nameof(PermissionModel.PermissionName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgv.Columns[nameof(PermissionModel.AllowDisplay)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dgv.Columns[nameof(PermissionModel.AllowEdit)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dgv.Columns[nameof(PermissionModel.PermissionID)].Visible = false;
             dgv.Columns[nameof(PermissionModel.UserID)].Visible = false;
         }

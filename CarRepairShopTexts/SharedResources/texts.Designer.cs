@@ -353,6 +353,15 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Provided login is already in use!.
+        /// </summary>
+        internal static string UsersTab_LoginAlreadyInUse {
+            get {
+                return ResourceManager.GetString("UsersTab_LoginAlreadyInUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Missing permissions to edit in this tab! Please contact someone with edit permissions in users tab to assign new permissions for you!.
         /// </summary>
         internal static string UsersTab_MissingPermissions {
@@ -385,6 +394,15 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string UsersTab_UserAddingError {
             get {
                 return ResourceManager.GetString("UsersTab_UserAddingError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Login and Password field cannot be empty!.
+        /// </summary>
+        internal static string UsersTab_UserCredentialsDataCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("UsersTab_UserCredentialsDataCannotBeEmpty", resourceCulture);
             }
         }
         
@@ -439,6 +457,15 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string UsersTab_UserHasBeenEdited {
             get {
                 return ResourceManager.GetString("UsersTab_UserHasBeenEdited", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu User {0} {1}.
+        /// </summary>
+        internal static string UsersTab_UserInfoTitle {
+            get {
+                return ResourceManager.GetString("UsersTab_UserInfoTitle", resourceCulture);
             }
         }
         

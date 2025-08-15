@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -117,4 +117,31 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="$this.Text" xml:space="preserve">
+    <value>New user</value>
+  </data>
+  <data name="btnAccept.Text" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="cbSuperAdmin.Text" xml:space="preserve">
+    <value>Super-Admin</value>
+  </data>
+  <data name="gbLogin.Text" xml:space="preserve">
+    <value>Login:</value>
+  </data>
+  <data name="gbName.Text" xml:space="preserve">
+    <value>Name:</value>
+  </data>
+  <data name="gbPassword.Text" xml:space="preserve">
+    <value>Password:</value>
+  </data>
+  <data name="gbSuperAdmin.Text" xml:space="preserve">
+    <value>Super-Admin permissions:</value>
+  </data>
+  <data name="gbSurname.Text" xml:space="preserve">
+    <value>Surname:</value>
+  </data>
 </root>

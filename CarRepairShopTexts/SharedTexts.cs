@@ -21,10 +21,13 @@
 
         // Users tab
 
+        public static string UsersTab_UserInfoTitle => SharedResources.texts.UsersTab_UserInfoTitle;
         public static string UsersTab_AskToDeleteUserBody => SharedResources.texts.UsersTab_AskToDeleteBody;
         public static string UsersTab_AskToDeleteUserTitle => SharedResources.texts.UsersTab_AskToDeleteHeader;
         public static string UsersTab_PermissionAssignementFailed => SharedResources.texts.UsersTab_CouldntAddPermissions;
         public static string UsersTab_UserDataCannotBeEmpty => SharedResources.texts.UsersTab_FirstNameAndSurnameCannotBeEmpty;
+        public static string UsersTab_UserCredentialsDataCannotBeEmpty => SharedResources.texts.UsersTab_UserCredentialsDataCannotBeEmpty;
+        public static string UsersTab_LoginAlreadyInUse => SharedResources.texts.UsersTab_LoginAlreadyInUse;
         public static string UsersTab_PermissionsToEditUsersMissing => SharedResources.texts.UsersTab_MissingPermissions;
         public static string UsersTab_SelectUserToEdit => SharedResources.texts.UsersTab_PleaseSelectPersonToEdit;
         public static string UsersTab_SelectUserToDelete => SharedResources.texts.UsersTab_PleaseSelectPersonToDelete;
