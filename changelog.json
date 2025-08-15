@@ -1,5 +1,14 @@
 [
   {
+    "version": "1.2.0",
+    "date": "2025-08-15",
+    "changes": [
+      "Refactored user creation form, added more data to assign on creation.",
+      "Deleted default Car Repair Shop settings in settings tab",
+      "Switched font to 'Verdana'",
+    ]
+  },
+  {
     "version": "1.1.0",
     "date": "2025-08-12",
     "changes": [
