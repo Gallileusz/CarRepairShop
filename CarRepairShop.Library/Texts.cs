@@ -4,5 +4,6 @@
     {
         public static MainView MainView { get; } = new MainView();
         public static PermissionsForm PermissionsForm { get; } = new PermissionsForm();
+        public static LoginForm LoginForm { get; } = new LoginForm();
     }
 }

@@ -1,5 +1,4 @@
 ﻿using CarRepairShop.AppSettings;
-using CarRepairShop.LoginForm.DTO;
 using CarRepairShop.LoginForm.Presenter;
 using CarRepairShop.Repos;
 using CarRepairShop.Repositories;
@@ -10,13 +9,15 @@ namespace CarRepairShop.LoginForm.View
 {
     public partial class LoginForm : Form, ILoginView
     {
-        private LoginFormPresenter _presenter;
-
-        public UserCredentialsInput UserCredentials => new UserCredentialsInput { Login = txtLogin.Text, Password = txtPassword.Text };
+        public event EventHandler LoginButtonClicked;
+        public event EventHandler QuitButtonClicked;
+        public event EventHandler FormIsLoaded;
+        public event EventHandler<KeyPressEventArgs> EnterButtonClicked;
+        public event EventHandler ConnectionErrorPictureBoxClicked;
 
         [System.ComponentModel.Browsable(false)]
         [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public bool CacheCheckboxSelected
+        public bool CacheLogin
         {
             get => cbCacheLogin.Checked;
             set => cbCacheLogin.Checked = value;
@@ -30,10 +31,11 @@ namespace CarRepairShop.LoginForm.View
             set => txtLogin.Text = value;
         }
 
-        public event EventHandler LoginButtonClicked;
-        public event EventHandler QuitButtonClicked;
-        public event EventHandler FormIsLoaded;
-        public event EventHandler<KeyPressEventArgs> EnterButtonClicked;
+        [System.ComponentModel.Browsable(false)]
+        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        public string Password => txtPassword.Text;
+
+        private LoginFormPresenter _presenter;
 
         public LoginForm()
         {
@@ -41,18 +43,40 @@ namespace CarRepairShop.LoginForm.View
             _presenter = new LoginFormPresenter(this, new GenericRepository(), new DataBaseHandler(), new CurrentUserService());
         }
 
-        public void CloseLoginForm() => this.Close();
+        public void CloseForm() => this.Close();
 
         public void SetDialogResult(DialogResult result) => this.DialogResult = result;
 
         public void ShowMessage(string message) => MessageBox.Show(message);
 
-        private void btnLogin_Click(object sender, System.EventArgs e) => LoginButtonClicked?.Invoke(sender, e);
+        public void ChangeConnectionErrorIconVisibility(bool visible)
+        {
+            pbConnectionError.Visible = visible;
+            lblError.Visible = visible;
+        }
+
+        public void SetErrorToolTip(string error)
+        {
+            var toolTip = new ToolTip
+            {
+                AutoPopDelay = 5000,
+                InitialDelay = 1000,
+                ReshowDelay = 500,
+                ShowAlways = true
+            };
+
+            toolTip.SetToolTip(pbConnectionError, error);
+            toolTip.SetToolTip(lblError, error);
+        }
+
+        private void btnLogin_Click(object sender, EventArgs e) => LoginButtonClicked?.Invoke(sender, e);
 
         private void LoginForm_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(sender, e);
 
         private void LoginForm_KeyPress(object sender, KeyPressEventArgs e) => EnterButtonClicked?.Invoke(sender, e);
 
         private void btnQuit_Click(object sender, EventArgs e) => QuitButtonClicked?.Invoke(sender, e);
+
+        private void pbConnectionError_Click(object sender, EventArgs e) => ConnectionErrorPictureBoxClicked?.Invoke(sender, e);
     }
 }

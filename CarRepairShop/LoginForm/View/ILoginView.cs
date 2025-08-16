@@ -1,5 +1,4 @@
-﻿using CarRepairShop.LoginForm.DTO;
-using System;
+﻿using System;
 using System.Windows.Forms;
 
 namespace CarRepairShop.LoginForm.View
@@ -10,11 +9,16 @@ namespace CarRepairShop.LoginForm.View
         event EventHandler LoginButtonClicked;
         event EventHandler<KeyPressEventArgs> EnterButtonClicked;
         event EventHandler QuitButtonClicked;
-        bool CacheCheckboxSelected { get; set; }
+        event EventHandler ConnectionErrorPictureBoxClicked;
+
+        bool CacheLogin { get; set; }
         string Login { get; set; }
+        string Password { get; }
+
+        void ChangeConnectionErrorIconVisibility(bool visible);
         void ShowMessage(string message);
-        UserCredentialsInput UserCredentials { get; }
-        void CloseLoginForm();
+        void SetErrorToolTip(string error);
+        void CloseForm();
         void SetDialogResult(DialogResult result);
     }
 }

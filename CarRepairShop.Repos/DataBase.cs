@@ -12,7 +12,7 @@ namespace CarRepairShop.Repos
 
         public static string ConnectionString = string.Empty;
 
-        public static bool IsConnectionStringSet = false;
+        public static bool IsConnectionStringSet;
 
         public static async Task SetConnectionStringAsync()
         {
@@ -24,9 +24,12 @@ namespace CarRepairShop.Repos
 
                 if (!string.IsNullOrEmpty(secret.Value))
                     IsConnectionStringSet = true;
+                else
+                    IsConnectionStringSet = false;
             }
             catch (Exception ex)
             {
+                IsConnectionStringSet = false;
                 Console.WriteLine($"Error:\r\n{ex.Message}");
             }
         }

@@ -2,6 +2,7 @@
 {
     public static class SharedTexts
     {
+        #region Tabs
         // Home tab
 
         public static string HomeTabAcknowledgements => SharedResources.texts.HomeTabAcknowledgements;
@@ -42,6 +43,8 @@
         public static string UsersTab_DatagridviewColumnName => SharedResources.texts.UsersTab_ColumnName;
         public static string UsersTab_DatagridviewColumnSurname => SharedResources.texts.UsersTab_ColumnSurname;
 
+        #endregion
+
         // Permissions Form
         public static string PermissionsForm_AskForConfirmationBody => SharedResources.texts.PermissionsForm_AskToSaveBody;
         public static string PermissionsForm_AskForConfirmationTitle => SharedResources.texts.PermissionsForm_AskToSaveTitle;
@@ -57,5 +60,12 @@
         public static string PermissionsForm_PermissionUsers => SharedResources.texts.PermissionsForm_PermissionUsers;
         public static string PermissionsForm_PermissionWarehouse => SharedResources.texts.PermissionsForm_PermissionWarehouse;
 
+        // Login Form
+
+        public static string LoginForm_LoggedOutFromAzureService => SharedResources.texts.LoginForm_LoggedOutFromAzureService;
+        public static string LoginForm_DatabaseNeedsToRestart => SharedResources.texts.LoginForm_DatabaseNeedsToRestart;
+        public static string LoginForm_ProvideLoginAndPassword => SharedResources.texts.LoginForm_ProvideLoginAndPassword;
+        public static string LoginForm_InvalidCredentials => SharedResources.texts.LoginForm_InvalidCredentials;
+        public static string LoginForm_FollowingErrorsOccurred => SharedResources.texts.LoginForm_FollowingErrorsOccurred;
     }
 }

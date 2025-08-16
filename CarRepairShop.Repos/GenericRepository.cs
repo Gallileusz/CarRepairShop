@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 
 namespace CarRepairShop.Repositories
 {
@@ -27,6 +28,23 @@ namespace CarRepairShop.Repositories
                     Type typeT = typeof(T);
                     string sql = $"SELECT * FROM {typeT.Name} {querySufix}";
                     return connection.Query<T>(sql, commandType: CommandType.Text);
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
+
+        public async Task<IEnumerable<T>> GetAllAsync<T>(string querySufix = "")
+        {
+            using (IDbConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    Type typeT = typeof(T);
+                    string sql = $"SELECT * FROM {typeT.Name} {querySufix}";
+                    return await connection.QueryAsync<T>(sql, commandType: CommandType.Text);
                 }
                 catch (Exception ex)
                 {

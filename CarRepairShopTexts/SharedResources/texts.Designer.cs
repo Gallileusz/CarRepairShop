@@ -128,6 +128,51 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The database requires a restart. Please wait 30 to 60 seconds and try again..
+        /// </summary>
+        internal static string LoginForm_DatabaseNeedsToRestart {
+            get {
+                return ResourceManager.GetString("LoginForm_DatabaseNeedsToRestart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The following errors occurred:.
+        /// </summary>
+        internal static string LoginForm_FollowingErrorsOccurred {
+            get {
+                return ResourceManager.GetString("LoginForm_FollowingErrorsOccurred", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Invalid login or password..
+        /// </summary>
+        internal static string LoginForm_InvalidCredentials {
+            get {
+                return ResourceManager.GetString("LoginForm_InvalidCredentials", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu An error occurred while retrieving the database key from the Azure service. Please contact the administrator!.
+        /// </summary>
+        internal static string LoginForm_LoggedOutFromAzureService {
+            get {
+                return ResourceManager.GetString("LoginForm_LoggedOutFromAzureService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please enter your login and password..
+        /// </summary>
+        internal static string LoginForm_ProvideLoginAndPassword {
+            get {
+                return ResourceManager.GetString("LoginForm_ProvideLoginAndPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractors.
         /// </summary>
         internal static string MainForm_Contractors {
