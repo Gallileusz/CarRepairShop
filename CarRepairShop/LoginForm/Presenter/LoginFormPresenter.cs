@@ -94,9 +94,11 @@ namespace CarRepairShop.LoginForm.Presenter
                 _view.ShowMessage(Library.Texts.LoginForm.LoggedOutFromAzureService); return;
             }
 
-            if (!_userCredentials.Any() || !_users.Any())
+            if (_userCredentials == null || _users == null || !_userCredentials.Any() || !_users.Any())
             {
                 _view.ShowMessage(Library.Texts.LoginForm.DatabaseNeedsToRestart);
+                _view.ChangeConnectionErrorIconVisibility(true);
+                _view.SetErrorToolTip(_errorMessage);
                 _userCredentials = await _genericRepo.GetAllAsync<UserCredentials>();
                 _users = await _genericRepo.GetAllAsync<Domain.Entities.Users>();
                 return;
