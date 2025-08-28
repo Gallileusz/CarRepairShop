@@ -13,8 +13,8 @@ namespace CarRepairShop.Domain.Entities
         [Column("Name")]
         public string Name { get; set; }
 
-        [Column("MaterialTypeName")]
-        public string MaterialTypeName { get; set; }
+        [Column("MaterialTypeID")]
+        public int MaterialTypeID { get; set; }
 
         [Column("Quantity")]
         public int Quantity { get; set; }

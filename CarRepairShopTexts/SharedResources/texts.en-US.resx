@@ -292,4 +292,106 @@ Application Features:
   <data name="LoginForm_FollowingErrorsOccurred" xml:space="preserve">
     <value>The following errors occurred:</value>
   </data>
+  <data name="WarehouseTab_All" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="WatehouseTab_AddConsuambleMaterial" xml:space="preserve">
+    <value>Add new consumable material</value>
+  </data>
+  <data name="WarehouseTab_MaterialAddedSuccessfully" xml:space="preserve">
+    <value>Added new consumable material successfully.</value>
+  </data>
+  <data name="WarehouseTab_InsertingMaterialError" xml:space="preserve">
+    <value>A new consumable material couldn't be added to the database!</value>
+  </data>
+  <data name="WarehouseTab_MaterialEdit" xml:space="preserve">
+    <value>Material edit {0}</value>
+  </data>
+  <data name="WarehouseTab_MaterialUpdatedSuccessfully" xml:space="preserve">
+    <value>Edited consumable material successfully.</value>
+  </data>
+  <data name="WarehouseTab_MaterialUpdateError" xml:space="preserve">
+    <value>The consumable material couldn't be updated!</value>
+  </data>
+  <data name="WarehouseTab_DeleteMaterialBody" xml:space="preserve">
+    <value>Do you really want to delete the consuamble material:</value>
+  </data>
+  <data name="WarehouseTab_DeleteMaterialHeader" xml:space="preserve">
+    <value>Removal confirmation</value>
+  </data>
+  <data name="WarehouseTab_DeletedSuccessfully" xml:space="preserve">
+    <value>Material deleted.</value>
+  </data>
+  <data name="WarehouseTab_DeleteError" xml:space="preserve">
+    <value>Material couldn't be deleted!</value>
+  </data>
+  <data name="ConsumableMaterial_ProvideNewMaterialsName" xml:space="preserve">
+    <value>Provide new materails type name:</value>
+  </data>
+  <data name="ConsumableMaterial_MaterialInsertSuccess" xml:space="preserve">
+    <value>Successfully added new material type.</value>
+  </data>
+  <data name="ConsumableMaterial_MaterialInsertError" xml:space="preserve">
+    <value>Material type: {0} couldn't be added!</value>
+  </data>
+  <data name="ConsuambleMaterial_NameCannotBeEmpty" xml:space="preserve">
+    <value>Name can't be empty!</value>
+  </data>
+  <data name="ConsumableMaterial_SelectMaterialType" xml:space="preserve">
+    <value>Please select the material type!</value>
+  </data>
+  <data name="ConsumableMaterial_ProvideMaterialName" xml:space="preserve">
+    <value>Please provide the material name!</value>
+  </data>
+  <data name="ConsumableMaterial_CorrectMaterialQuantity" xml:space="preserve">
+    <value>The quanitity must be greater than 0!</value>
+  </data>
+  <data name="ConsumableMaterial_MaterialExistsAlready" xml:space="preserve">
+    <value>Material type: {0} exists already!</value>
+  </data>
+  <data name="MaterialsTypesList_AddNewMaterialType" xml:space="preserve">
+    <value>Add new material type:</value>
+  </data>
+  <data name="MaterialsTypesList_InsertSuccess" xml:space="preserve">
+    <value>The material type: {0} has been successfully added.</value>
+  </data>
+  <data name="MaterialsTypesList_InsertError" xml:space="preserve">
+    <value>The material type: {0} couldn't be added!</value>
+  </data>
+  <data name="MaterialsTypesList_EditMaterial" xml:space="preserve">
+    <value>Edit material type name:</value>
+  </data>
+  <data name="MaterialsTypesList_EditMaterialConfirmationBody" xml:space="preserve">
+    <value>Do you really want to change the material type name from {0} to {1}?</value>
+  </data>
+  <data name="MaterialsTypesList_EditMaterialConfirmationTitle" xml:space="preserve">
+    <value>Name change</value>
+  </data>
+  <data name="MaterialsTypesList_EditSuccess" xml:space="preserve">
+    <value>Material type name has been updated.</value>
+  </data>
+  <data name="MaterialsTypesList_EditError" xml:space="preserve">
+    <value>Material type name couldn't been updated!</value>
+  </data>
+  <data name="MaterialsTypesList_DeleteConfirmationBody" xml:space="preserve">
+    <value>Do you really want to delete the material type: {0}?</value>
+  </data>
+  <data name="MaterialsTypesList_DeleteConfirmationTitle" xml:space="preserve">
+    <value>Delete confirmation</value>
+  </data>
+  <data name="MaterialsTypesList_DeleteSuccess" xml:space="preserve">
+    <value>Material type {0} has been deleted.</value>
+  </data>
+  <data name="MaterialsTypesList_DeleteError" xml:space="preserve">
+    <value>Material type: {0} couldn't be deleted!</value>
+  </data>
+  <data name="WarehouseTab_DataGridViewColumnMaterialName" xml:space="preserve">
+    <value>Material name</value>
+  </data>
+  <data name="WarehouseTab_DataGridViewColumnMaterialTypeName" xml:space="preserve">
+    <value>Material type name</value>
+  </data>
+  <data name="WarehouseTab_DataGridViewColumnQuantity" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
 </root>

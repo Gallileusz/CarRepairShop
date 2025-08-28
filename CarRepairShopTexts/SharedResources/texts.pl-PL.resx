@@ -249,4 +249,106 @@
   <data name="LoginForm_FollowingErrorsOccurred" xml:space="preserve">
     <value>Wystąpiły następujące błędy:</value>
   </data>
+  <data name="WarehouseTab_All" xml:space="preserve">
+    <value>Wszystkie</value>
+  </data>
+  <data name="WatehouseTab_AddConsuambleMaterial" xml:space="preserve">
+    <value>Dodaj nowy materiał zużywalny</value>
+  </data>
+  <data name="WarehouseTab_MaterialAddedSuccessfully" xml:space="preserve">
+    <value>Udało się dodać nowy materiał zużywalny.</value>
+  </data>
+  <data name="WarehouseTab_InsertingMaterialError" xml:space="preserve">
+    <value>Nie udało się dodać nowego materiału zużywalnego do bazy danych!</value>
+  </data>
+  <data name="WarehouseTab_MaterialEdit" xml:space="preserve">
+    <value>Edycja materiału {0}</value>
+  </data>
+  <data name="WarehouseTab_MaterialUpdatedSuccessfully" xml:space="preserve">
+    <value>Udało się dokonać zmian w materiale zużywalnym.</value>
+  </data>
+  <data name="WarehouseTab_MaterialUpdateError" xml:space="preserve">
+    <value>Nie udało się dokonać zmian w materiale zużywalnym!</value>
+  </data>
+  <data name="WarehouseTab_DeleteMaterialBody" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć materiał zużywalny:</value>
+  </data>
+  <data name="WarehouseTab_DeleteMaterialHeader" xml:space="preserve">
+    <value>Potwierdzenie operacji usunięcia</value>
+  </data>
+  <data name="WarehouseTab_DeletedSuccessfully" xml:space="preserve">
+    <value>Materiał usunięty.</value>
+  </data>
+  <data name="WarehouseTab_DeleteError" xml:space="preserve">
+    <value>Nie udało się usunąć materiału!</value>
+  </data>
+  <data name="ConsumableMaterial_ProvideNewMaterialsName" xml:space="preserve">
+    <value>Podaj nazwę nowego typu materiału:</value>
+  </data>
+  <data name="ConsumableMaterial_MaterialInsertSuccess" xml:space="preserve">
+    <value>Pomyślnie dodano nowy typ materiału.</value>
+  </data>
+  <data name="ConsumableMaterial_MaterialInsertError" xml:space="preserve">
+    <value>Nie udało się dodać typu materiału: {0}!</value>
+  </data>
+  <data name="ConsuambleMaterial_NameCannotBeEmpty" xml:space="preserve">
+    <value>Nazwa nie może być pusta!</value>
+  </data>
+  <data name="ConsumableMaterial_SelectMaterialType" xml:space="preserve">
+    <value>Proszę wybrać typ materiału!</value>
+  </data>
+  <data name="ConsumableMaterial_ProvideMaterialName" xml:space="preserve">
+    <value>Proszę wprowadzić nazwę materiału!</value>
+  </data>
+  <data name="ConsumableMaterial_CorrectMaterialQuantity" xml:space="preserve">
+    <value>Ilość musi być większa od 0!</value>
+  </data>
+  <data name="ConsumableMaterial_MaterialExistsAlready" xml:space="preserve">
+    <value>Typ materiału: {0} już istnieje!</value>
+  </data>
+  <data name="MaterialsTypesList_AddNewMaterialType" xml:space="preserve">
+    <value>Dodaj nowy typ materiału:</value>
+  </data>
+  <data name="MaterialsTypesList_InsertSuccess" xml:space="preserve">
+    <value>Nowy typ materiału: {0} został pomyślnie dodany.</value>
+  </data>
+  <data name="MaterialsTypesList_InsertError" xml:space="preserve">
+    <value>Nie udało się dodać nowego materiału o nazwie: {0}!</value>
+  </data>
+  <data name="MaterialsTypesList_EditMaterial" xml:space="preserve">
+    <value>Edytuj nazwę typu materiału:</value>
+  </data>
+  <data name="MaterialsTypesList_EditMaterialConfirmationBody" xml:space="preserve">
+    <value>Czy na pewno chcesz zmienić nazwę typu matateriału z {0} na {1}?</value>
+  </data>
+  <data name="MaterialsTypesList_EditMaterialConfirmationTitle" xml:space="preserve">
+    <value>Zmiana nazwy</value>
+  </data>
+  <data name="MaterialsTypesList_EditSuccess" xml:space="preserve">
+    <value>Nazwa typu materiału została zaktualizowana.</value>
+  </data>
+  <data name="MaterialsTypesList_EditError" xml:space="preserve">
+    <value>Nie udało się zmienić nazwy typu materiału!</value>
+  </data>
+  <data name="MaterialsTypesList_DeleteConfirmationBody" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć typ matateriału: {0}?</value>
+  </data>
+  <data name="MaterialsTypesList_DeleteConfirmationTitle" xml:space="preserve">
+    <value>Potwierdzenie usunięcia</value>
+  </data>
+  <data name="MaterialsTypesList_DeleteSuccess" xml:space="preserve">
+    <value>Typ materiału {0} został usunięty.</value>
+  </data>
+  <data name="MaterialsTypesList_DeleteError" xml:space="preserve">
+    <value>Nie udało się usunąć typu materiału: {0}!</value>
+  </data>
+  <data name="WarehouseTab_DataGridViewColumnMaterialName" xml:space="preserve">
+    <value>Nazwa materiału</value>
+  </data>
+  <data name="WarehouseTab_DataGridViewColumnMaterialTypeName" xml:space="preserve">
+    <value>Nazwa typu materiału</value>
+  </data>
+  <data name="WarehouseTab_DataGridViewColumnQuantity" xml:space="preserve">
+    <value>Ilość</value>
+  </data>
 </root>

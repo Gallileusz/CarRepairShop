@@ -1,7 +1,10 @@
-﻿using CarRepairShop.ConsumableMaterialForm.Presenter;
-using CarRepairShop.Domain.Entities;
+﻿using CarRepairShop.Domain.Entities;
+using CarRepairShop.MainForm.Models.Tabs.Warehouse;
+using CarRepairShop.Warehouse.ConsumableMaterial.Presenter;
+using CarRepairShop.Warehouse.ConsumableMaterial.View;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -9,33 +12,34 @@ namespace CarRepairShop.ConsumableMaterialForm.View
 {
     public partial class ConsumableMaterial : Form, IConsumableMaterial
     {
-        private ConsumableMaterialPresenter _presenter;
-
         public event EventHandler FormIsLoaded;
         public event EventHandler FormIsClosing;
         public event EventHandler ConfirmButtonClicked;
         public event EventHandler CancelButtonClicked;
         public event EventHandler IncrementButtonClicked;
         public event EventHandler ReductButtonClicked;
-        public event EventHandler AddNewMaterialTypeButtonClicked;
 
-        public ConsumableMaterial(ConsumableMaterials consumableMaterial)
+        private readonly ConsumableMaterialPresenter _presenter;
+
+        public ConsumableMaterial(int? id)
         {
             InitializeComponent();
-            _presenter = new ConsumableMaterialPresenter(this);
-            _presenter.SetConsuambleMaterial(consumableMaterial);
+            _presenter = new ConsumableMaterialPresenter(this, id);
         }
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public DialogResult OperationConfirmed { get => DialogResult; set => DialogResult = value; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string FormTitle
         {
             get => this.Text;
             set => this.Text = value;
         }
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int QuantityValue
         {
             get
@@ -44,47 +48,49 @@ namespace CarRepairShop.ConsumableMaterialForm.View
                     return result;
                 return 0;
             }
-            set
-            {
-                txtQuantity.Text = value.ToString();
-            }
+            set => txtQuantity.Text = value.ToString();
         }
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string MaterialName
         {
             get => txtMaterialName.Text;
             set => txtMaterialName.Text = value;
         }
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public string MaterialTypeName
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public int MaterialTypeID
         {
             get
             {
                 if (cmbMaterialTypes.SelectedItem is MaterialTypes selected)
-                    return selected.Name;
-                return string.Empty;
+                    return selected.ID;
+                return 0;
             }
             set
             {
                 if (cmbMaterialTypes.DataSource is List<MaterialTypes> list)
                 {
-                    var material = list.FirstOrDefault(x => x.Name == value);
+                    var material = list.FirstOrDefault(x => x.ID == value);
                     cmbMaterialTypes.SelectedItem = material;
                 }
             }
         }
 
-        public ConsumableMaterials GetConsumableMaterial => _presenter.GetConsumableMaterial();
+        public ConsumableMaterials GetConsumableMaterial => new ConsumableMaterials
+        {
+            Name = MaterialName,
+            Quantity = QuantityValue,
+            MaterialTypeID = MaterialTypeID
+        };
 
-        public void ShowMessage(string message) => MessageBox.Show(message);
-
-        public bool ConfirmAction(string message, string title) => MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
-
-        public void CloseForm() => this.Close();
+        public ReturnedConsumableMaterial GetReturnedConsumableMaterial => new ReturnedConsumableMaterial
+        {
+            OperationConfirmed = this.OperationConfirmed,
+            ConsumableMaterial = this.GetConsumableMaterial
+        };
 
         public void PopulateCombobox(List<MaterialTypes> materialTypes)
         {
@@ -95,11 +101,15 @@ namespace CarRepairShop.ConsumableMaterialForm.View
             cmbMaterialTypes.DisplayMember = nameof(MaterialTypes.Name);
         }
 
+        public void ShowMessage(string message) => MessageBox.Show(message);
+
+        public bool ConfirmAction(string message, string title) => MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
+
+        public void CloseForm() => this.Close();
+
         private void ConsumableMaterial_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(this, e);
 
         private void ConsumableMaterial_FormClosing(object sender, FormClosingEventArgs e) => FormIsClosing?.Invoke(this, e);
-
-        private void btnAddMaterialType_Click(object sender, EventArgs e) => AddNewMaterialTypeButtonClicked?.Invoke(this, e);
 
         private void btnIncrementQuantity_Click(object sender, EventArgs e) => IncrementButtonClicked?.Invoke(this, e);
 

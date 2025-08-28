@@ -61,6 +61,78 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name can&apos;t be empty!.
+        /// </summary>
+        internal static string ConsuambleMaterial_NameCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("ConsuambleMaterial_NameCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The quanitity must be greater than 0!.
+        /// </summary>
+        internal static string ConsumableMaterial_CorrectMaterialQuantity {
+            get {
+                return ResourceManager.GetString("ConsumableMaterial_CorrectMaterialQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material type: {0} exists already!.
+        /// </summary>
+        internal static string ConsumableMaterial_MaterialExistsAlready {
+            get {
+                return ResourceManager.GetString("ConsumableMaterial_MaterialExistsAlready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material type: {0} couldn&apos;t be added!.
+        /// </summary>
+        internal static string ConsumableMaterial_MaterialInsertError {
+            get {
+                return ResourceManager.GetString("ConsumableMaterial_MaterialInsertError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully added new material type..
+        /// </summary>
+        internal static string ConsumableMaterial_MaterialInsertSuccess {
+            get {
+                return ResourceManager.GetString("ConsumableMaterial_MaterialInsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please provide the material name!.
+        /// </summary>
+        internal static string ConsumableMaterial_ProvideMaterialName {
+            get {
+                return ResourceManager.GetString("ConsumableMaterial_ProvideMaterialName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Provide new materails type name:.
+        /// </summary>
+        internal static string ConsumableMaterial_ProvideNewMaterialsName {
+            get {
+                return ResourceManager.GetString("ConsumableMaterial_ProvideNewMaterialsName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please select the material type!.
+        /// </summary>
+        internal static string ConsumableMaterial_SelectMaterialType {
+            get {
+                return ResourceManager.GetString("ConsumableMaterial_SelectMaterialType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Technology: 
         ///
         ///    - Windows Forms
@@ -223,6 +295,114 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string MainForm_Warehouse {
             get {
                 return ResourceManager.GetString("MainForm_Warehouse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add new material type:.
+        /// </summary>
+        internal static string MaterialsTypesList_AddNewMaterialType {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_AddNewMaterialType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the material type: {0}?.
+        /// </summary>
+        internal static string MaterialsTypesList_DeleteConfirmationBody {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_DeleteConfirmationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Delete confirmation.
+        /// </summary>
+        internal static string MaterialsTypesList_DeleteConfirmationTitle {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_DeleteConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material type: {0} couldn&apos;t be deleted!.
+        /// </summary>
+        internal static string MaterialsTypesList_DeleteError {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_DeleteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material type {0} has been deleted..
+        /// </summary>
+        internal static string MaterialsTypesList_DeleteSuccess {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_DeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material type name couldn&apos;t been updated!.
+        /// </summary>
+        internal static string MaterialsTypesList_EditError {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_EditError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Edit material type name:.
+        /// </summary>
+        internal static string MaterialsTypesList_EditMaterial {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_EditMaterial", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to change the material type name from {0} to {1}?.
+        /// </summary>
+        internal static string MaterialsTypesList_EditMaterialConfirmationBody {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_EditMaterialConfirmationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name change.
+        /// </summary>
+        internal static string MaterialsTypesList_EditMaterialConfirmationTitle {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_EditMaterialConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material type name has been updated..
+        /// </summary>
+        internal static string MaterialsTypesList_EditSuccess {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_EditSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The material type: {0} couldn&apos;t be added!.
+        /// </summary>
+        internal static string MaterialsTypesList_InsertError {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_InsertError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The material type: {0} has been successfully added..
+        /// </summary>
+        internal static string MaterialsTypesList_InsertSuccess {
+            get {
+                return ResourceManager.GetString("MaterialsTypesList_InsertSuccess", resourceCulture);
             }
         }
         
@@ -520,6 +700,132 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string UsersTab_UsersPermissions {
             get {
                 return ResourceManager.GetString("UsersTab_UsersPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu All.
+        /// </summary>
+        internal static string WarehouseTab_All {
+            get {
+                return ResourceManager.GetString("WarehouseTab_All", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material name.
+        /// </summary>
+        internal static string WarehouseTab_DataGridViewColumnMaterialName {
+            get {
+                return ResourceManager.GetString("WarehouseTab_DataGridViewColumnMaterialName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material type name.
+        /// </summary>
+        internal static string WarehouseTab_DataGridViewColumnMaterialTypeName {
+            get {
+                return ResourceManager.GetString("WarehouseTab_DataGridViewColumnMaterialTypeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Quantity.
+        /// </summary>
+        internal static string WarehouseTab_DataGridViewColumnQuantity {
+            get {
+                return ResourceManager.GetString("WarehouseTab_DataGridViewColumnQuantity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material deleted..
+        /// </summary>
+        internal static string WarehouseTab_DeletedSuccessfully {
+            get {
+                return ResourceManager.GetString("WarehouseTab_DeletedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material couldn&apos;t be deleted!.
+        /// </summary>
+        internal static string WarehouseTab_DeleteError {
+            get {
+                return ResourceManager.GetString("WarehouseTab_DeleteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the consuamble material:.
+        /// </summary>
+        internal static string WarehouseTab_DeleteMaterialBody {
+            get {
+                return ResourceManager.GetString("WarehouseTab_DeleteMaterialBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Removal confirmation.
+        /// </summary>
+        internal static string WarehouseTab_DeleteMaterialHeader {
+            get {
+                return ResourceManager.GetString("WarehouseTab_DeleteMaterialHeader", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu A new consumable material couldn&apos;t be added to the database!.
+        /// </summary>
+        internal static string WarehouseTab_InsertingMaterialError {
+            get {
+                return ResourceManager.GetString("WarehouseTab_InsertingMaterialError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Added new consumable material successfully..
+        /// </summary>
+        internal static string WarehouseTab_MaterialAddedSuccessfully {
+            get {
+                return ResourceManager.GetString("WarehouseTab_MaterialAddedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Material edit {0}.
+        /// </summary>
+        internal static string WarehouseTab_MaterialEdit {
+            get {
+                return ResourceManager.GetString("WarehouseTab_MaterialEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Edited consumable material successfully..
+        /// </summary>
+        internal static string WarehouseTab_MaterialUpdatedSuccessfully {
+            get {
+                return ResourceManager.GetString("WarehouseTab_MaterialUpdatedSuccessfully", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The consumable material couldn&apos;t be updated!.
+        /// </summary>
+        internal static string WarehouseTab_MaterialUpdateError {
+            get {
+                return ResourceManager.GetString("WarehouseTab_MaterialUpdateError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add new consumable material.
+        /// </summary>
+        internal static string WatehouseTab_AddConsuambleMaterial {
+            get {
+                return ResourceManager.GetString("WatehouseTab_AddConsuambleMaterial", resourceCulture);
             }
         }
     }

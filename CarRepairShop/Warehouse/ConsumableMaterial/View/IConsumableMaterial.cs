@@ -1,8 +1,9 @@
 ﻿using CarRepairShop.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
-namespace CarRepairShop.ConsumableMaterialForm.View
+namespace CarRepairShop.Warehouse.ConsumableMaterial.View
 {
     public interface IConsumableMaterial
     {
@@ -12,7 +13,6 @@ namespace CarRepairShop.ConsumableMaterialForm.View
         event EventHandler CancelButtonClicked;
         event EventHandler IncrementButtonClicked;
         event EventHandler ReductButtonClicked;
-        event EventHandler AddNewMaterialTypeButtonClicked;
 
         void PopulateCombobox(List<MaterialTypes> materialTypes);
         void ShowMessage(string message);
@@ -21,7 +21,8 @@ namespace CarRepairShop.ConsumableMaterialForm.View
         string FormTitle { get; set; }
         int QuantityValue { get; set; }
         string MaterialName { get; set; }
-        string MaterialTypeName { get; set; }
+        int MaterialTypeID { get; set; }
+        DialogResult OperationConfirmed { get; set; }
         ConsumableMaterials GetConsumableMaterial { get; }
     }
 }

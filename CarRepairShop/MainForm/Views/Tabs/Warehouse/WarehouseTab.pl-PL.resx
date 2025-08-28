@@ -126,19 +126,19 @@
   <data name="btnAdd.Text" xml:space="preserve">
     <value>        Dodaj</value>
   </data>
-  <data name="gbName.Text" xml:space="preserve">
-    <value>Imię:</value>
-  </data>
   <data name="lblActions.Text" xml:space="preserve">
     <value>Akcje:</value>
   </data>
   <data name="lblFilters.Text" xml:space="preserve">
     <value>Filtry:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Nazwisko:</value>
+  <data name="gbName.Text" xml:space="preserve">
+    <value>Nazwa:</value>
   </data>
-  <data name="btnPermissions.Text" xml:space="preserve">
-    <value>        Edytuj uprawnienia</value>
+  <data name="gbMaterialType.Text" xml:space="preserve">
+    <value>Typ materiału:</value>
+  </data>
+  <data name="btnMaterialTypes.Text" xml:space="preserve">
+    <value>        Typy materiałów</value>
   </data>
 </root>

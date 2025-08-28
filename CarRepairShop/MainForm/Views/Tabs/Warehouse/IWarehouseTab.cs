@@ -1,6 +1,8 @@
 ﻿using CarRepairShop.Domain.Entities;
+using CarRepairShop.MainForm.Models.Tabs.Warehouse;
 using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 
 namespace CarRepairShop.MainForm.Views.Tabs.Warehouse
 {
@@ -10,16 +12,21 @@ namespace CarRepairShop.MainForm.Views.Tabs.Warehouse
         event EventHandler AddMaterialButtonClicked;
         event EventHandler EditMaterialButtonClicked;
         event EventHandler DeleteMaterialButtonClicked;
+        event EventHandler ConsumableMaterialsTypesButtonClicked;
         event EventHandler SearchTextChanged;
-        event EventHandler DebounceTimerElapsed;
+        event EventHandler DebounceElapsed;
         event EventHandler SelectedMaterialTypeChanged;
-        void LoadMaterialsToGrid(List<Domain.Entities.ConsumableMaterials> materials);
-        void LoadMaterialTypesToCombobox(List<Domain.Entities.MaterialTypes> materialTypes);
-        int SelectedConsumableMaterialID { get; }
+        void LoadMaterialsToGrid(List<ConsumableMaterialVM> materials);
+        void LoadMaterialTypesToCombobox(List<MaterialTypes> materialTypes);
+        int SelectedID { get; }
         string SearchedName { get; }
-        MaterialTypes SearchedMaterialType { get; }
+        int SearchedMaterialTypeID { get; }
         void ShowMessage(string message);
         bool ConfirmAction(string message, string title);
-        void UnableButtonsIfNoPermissions();
+        void SetButtonsAccesability(bool hasEditPermissions);
+        void StopDebounce();
+        void StartDebounce();
+        DialogResult ShowMaterialTypesForm();
+        ReturnedConsumableMaterial ShowConsumableMaterialsForm(int? id, string title);
     }
 }

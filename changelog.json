@@ -1,5 +1,16 @@
 [
   {
+    "version": "1.4.0",
+    "date": "2025-08-28",
+    "changes": [
+      "Added material types dictionary button in Warehouse tab",
+      "Added new material type dictionary management form",
+      "Deleted from creating material form the option to add new material type",
+      "Changed fonts in Warehouse tab to 'Verdana'",
+      "Added translations to Warehouse tab and all sub-forms"
+    ]
+  },
+  {
     "version": "1.3.0",
     "date": "2025-08-16",
     "changes": [

@@ -118,13 +118,13 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDelete.Text" xml:space="preserve">
-    <value>Delete</value>
+    <value>        Delete</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
-    <value>Edit</value>
+    <value>        Edit</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
-    <value>Add</value>
+    <value>        Add</value>
   </data>
   <data name="gbName.Text" xml:space="preserve">
     <value>Name:</value>
@@ -139,6 +139,6 @@
     <value>Surname:</value>
   </data>
   <data name="btnPermissions.Text" xml:space="preserve">
-    <value>Edit permissions</value>
+    <value>        Edit permissions</value>
   </data>
 </root>

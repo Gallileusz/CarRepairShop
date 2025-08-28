@@ -3,6 +3,7 @@
     public static class SharedTexts
     {
         #region Tabs
+
         // Home tab
 
         public static string HomeTabAcknowledgements => SharedResources.texts.HomeTabAcknowledgements;
@@ -43,6 +44,23 @@
         public static string UsersTab_DatagridviewColumnName => SharedResources.texts.UsersTab_ColumnName;
         public static string UsersTab_DatagridviewColumnSurname => SharedResources.texts.UsersTab_ColumnSurname;
 
+        // Warehouse Tab
+
+        public static string WarehouseTab_All => SharedResources.texts.WarehouseTab_All;
+        public static string WatehouseTab_AddConsuambleMaterial => SharedResources.texts.WatehouseTab_AddConsuambleMaterial;
+        public static string WarehouseTab_MaterialAddedSuccessfully => SharedResources.texts.WarehouseTab_MaterialAddedSuccessfully;
+        public static string WarehouseTab_InsertingMaterialError => SharedResources.texts.WarehouseTab_InsertingMaterialError;
+        public static string WarehouseTab_MaterialEdit => SharedResources.texts.WarehouseTab_MaterialEdit;
+        public static string WarehouseTab_MaterialUpdatedSuccessfully => SharedResources.texts.WarehouseTab_MaterialUpdatedSuccessfully;
+        public static string WarehouseTab_MaterialUpdateError => SharedResources.texts.WarehouseTab_MaterialUpdateError;
+        public static string WarehouseTab_DeleteMaterialBody => SharedResources.texts.WarehouseTab_DeleteMaterialBody;
+        public static string WarehouseTab_DeleteMaterialHeader => SharedResources.texts.WarehouseTab_DeleteMaterialHeader;
+        public static string WarehouseTab_MaterialDeletedSuccessfully => SharedResources.texts.WarehouseTab_DeletedSuccessfully;
+        public static string WarehouseTab_MaterialDeleteError => SharedResources.texts.WarehouseTab_DeleteError;
+        public static string WarehouseTab_DataGridViewColumnMaterialName => SharedResources.texts.WarehouseTab_DataGridViewColumnMaterialName;
+        public static string WarehouseTab_DataGridViewColumnMaterialTypeName => SharedResources.texts.WarehouseTab_DataGridViewColumnMaterialTypeName;
+        public static string WarehouseTab_DataGridViewColumnQuantity => SharedResources.texts.WarehouseTab_DataGridViewColumnQuantity;
+
         #endregion
 
         // Permissions Form
@@ -67,5 +85,31 @@
         public static string LoginForm_ProvideLoginAndPassword => SharedResources.texts.LoginForm_ProvideLoginAndPassword;
         public static string LoginForm_InvalidCredentials => SharedResources.texts.LoginForm_InvalidCredentials;
         public static string LoginForm_FollowingErrorsOccurred => SharedResources.texts.LoginForm_FollowingErrorsOccurred;
+
+        // ConsumableMaterial Form
+
+        public static string ConsumableMaterial_ProvideNewMaterialsName => SharedResources.texts.ConsumableMaterial_ProvideNewMaterialsName;
+        public static string ConsumableMaterial_MaterialInsertSuccess => SharedResources.texts.ConsumableMaterial_MaterialInsertSuccess;
+        public static string ConsumableMaterial_MaterialInsertError => SharedResources.texts.ConsumableMaterial_MaterialInsertError;
+        public static string ConsuambleMaterial_NameCannotBeEmpty => SharedResources.texts.ConsuambleMaterial_NameCannotBeEmpty;
+        public static string ConsumableMaterial_SelectMaterialType => SharedResources.texts.ConsumableMaterial_SelectMaterialType;
+        public static string ConsumableMaterial_ProvideMaterialName => SharedResources.texts.ConsumableMaterial_ProvideMaterialName;
+        public static string ConsumableMaterial_CorrectMaterialQuantity => SharedResources.texts.ConsumableMaterial_CorrectMaterialQuantity;
+        public static string ConsumableMaterial_MaterialExistsAlready => SharedResources.texts.ConsumableMaterial_MaterialExistsAlready;
+
+        // MaterialsTypesList Form
+
+        public static string MaterialsTypesList_AddNewMaterialType => SharedResources.texts.MaterialsTypesList_AddNewMaterialType;
+        public static string MaterialsTypesList_InsertSuccess => SharedResources.texts.MaterialsTypesList_InsertSuccess;
+        public static string MaterialsTypesList_InsertError => SharedResources.texts.MaterialsTypesList_InsertError;
+        public static string MaterialsTypesList_EditMaterial => SharedResources.texts.MaterialsTypesList_EditMaterial;
+        public static string MaterialsTypesList_EditMaterialConfirmationBody => SharedResources.texts.MaterialsTypesList_EditMaterialConfirmationBody;
+        public static string MaterialsTypesList_EditMaterialConfirmationTitle => SharedResources.texts.MaterialsTypesList_EditMaterialConfirmationTitle;
+        public static string MaterialsTypesList_EditSuccess => SharedResources.texts.MaterialsTypesList_EditSuccess;
+        public static string MaterialsTypesList_EditError => SharedResources.texts.MaterialsTypesList_EditError;
+        public static string MaterialsTypesList_DeleteConfirmationBody => SharedResources.texts.MaterialsTypesList_DeleteConfirmationBody;
+        public static string MaterialsTypesList_DeleteConfirmationTitle => SharedResources.texts.MaterialsTypesList_DeleteConfirmationTitle;
+        public static string MaterialsTypesList_DeleteSuccess => SharedResources.texts.MaterialsTypesList_DeleteSuccess;
+        public static string MaterialsTypesList_DeleteError => SharedResources.texts.MaterialsTypesList_DeleteError;
     }
 }

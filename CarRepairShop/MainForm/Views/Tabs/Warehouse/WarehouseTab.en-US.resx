@@ -118,27 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="btnDelete.Text" xml:space="preserve">
-    <value>        Usuń</value>
+    <value>        Delete</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
-    <value>        Edytuj</value>
+    <value>        Edit</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
-    <value>        Dodaj</value>
-  </data>
-  <data name="gbName.Text" xml:space="preserve">
-    <value>Imię:</value>
+    <value>        Add</value>
   </data>
   <data name="lblActions.Text" xml:space="preserve">
-    <value>Akcje:</value>
+    <value>Actions:</value>
   </data>
   <data name="lblFilters.Text" xml:space="preserve">
-    <value>Filtry:</value>
+    <value>Filters:</value>
   </data>
-  <data name="groupBox1.Text" xml:space="preserve">
-    <value>Nazwisko:</value>
+  <data name="gbName.Text" xml:space="preserve">
+    <value>Name:</value>
   </data>
-  <data name="btnPermissions.Text" xml:space="preserve">
-    <value>        Edytuj uprawnienia</value>
+  <data name="gbMaterialType.Text" xml:space="preserve">
+    <value>Material type:</value>
+  </data>
+  <data name="btnMaterialTypes.Text" xml:space="preserve">
+    <value>        Material types</value>
   </data>
 </root>

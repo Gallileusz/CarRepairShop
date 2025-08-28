@@ -123,7 +123,7 @@
   </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="btnDelete.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 9.75pt</value>
+    <value>Verdana, 11.25pt</value>
   </data>
   <data name="btnDelete.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -143,10 +143,10 @@
     <value>0</value>
   </data>
   <data name="btnDelete.Text" xml:space="preserve">
-    <value>Delete</value>
+    <value>        Delete</value>
   </data>
   <data name="btnDelete.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnDelete.Name" xml:space="preserve">
     <value>btnDelete</value>
@@ -191,7 +191,7 @@
     <value>Flat</value>
   </data>
   <data name="btnEdit.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 9.75pt</value>
+    <value>Verdana, 11.25pt</value>
   </data>
   <data name="btnEdit.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -209,10 +209,10 @@
     <value>0</value>
   </data>
   <data name="btnEdit.Text" xml:space="preserve">
-    <value>Edit</value>
+    <value>        Edit</value>
   </data>
   <data name="btnEdit.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnEdit.Name" xml:space="preserve">
     <value>btnEdit</value>
@@ -257,7 +257,7 @@
     <value>Flat</value>
   </data>
   <data name="btnAdd.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 9.75pt</value>
+    <value>Verdana, 11.25pt</value>
   </data>
   <data name="btnAdd.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -275,10 +275,10 @@
     <value>0</value>
   </data>
   <data name="btnAdd.Text" xml:space="preserve">
-    <value>Add</value>
+    <value>        Add</value>
   </data>
   <data name="btnAdd.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnAdd.Name" xml:space="preserve">
     <value>btnAdd</value>
@@ -560,7 +560,7 @@
     <value>Flat</value>
   </data>
   <data name="btnPermissions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Verdana, 9.75pt</value>
+    <value>Verdana, 11.25pt</value>
   </data>
   <data name="btnPermissions.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -578,10 +578,10 @@
     <value>0</value>
   </data>
   <data name="btnPermissions.Text" xml:space="preserve">
-    <value>Edit permissions</value>
+    <value>        Edit permissions</value>
   </data>
   <data name="btnPermissions.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnPermissions.Name" xml:space="preserve">
     <value>btnPermissions</value>

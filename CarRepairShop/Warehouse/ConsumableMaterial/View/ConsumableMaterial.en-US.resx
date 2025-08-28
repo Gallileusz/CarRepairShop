@@ -117,28 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="btnDelete.Text" xml:space="preserve">
-    <value>        Usuń</value>
-  </data>
-  <data name="btnEdit.Text" xml:space="preserve">
-    <value>        Edytuj</value>
-  </data>
-  <data name="btnAdd.Text" xml:space="preserve">
-    <value>        Dodaj</value>
-  </data>
-  <data name="gbName.Text" xml:space="preserve">
-    <value>Imię:</value>
-  </data>
-  <data name="lblActions.Text" xml:space="preserve">
-    <value>Akcje:</value>
-  </data>
-  <data name="lblFilters.Text" xml:space="preserve">
-    <value>Filtry:</value>
-  </data>
   <data name="groupBox1.Text" xml:space="preserve">
-    <value>Nazwisko:</value>
+    <value>Material name:</value>
   </data>
-  <data name="btnPermissions.Text" xml:space="preserve">
-    <value>        Edytuj uprawnienia</value>
+  <data name="groupBox2.Text" xml:space="preserve">
+    <value>Material type:</value>
+  </data>
+  <data name="groupBox3.Text" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="btnReduceQuantity.Text" xml:space="preserve">
+    <value>↓</value>
+  </data>
+  <data name="txtQuantity.Text" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="btnIncrementQuantity.Text" xml:space="preserve">
+    <value>↑</value>
+  </data>
+  <data name="btnConfirm.Text" xml:space="preserve">
+    <value>Confirm</value>
+  </data>
+  <data name="btnCancel.Text" xml:space="preserve">
+    <value>Cancel</value>
   </data>
 </root>
