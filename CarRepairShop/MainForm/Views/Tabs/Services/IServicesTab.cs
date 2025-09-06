@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRepairShop.Services.DTO;
+using System;
 using System.Collections.Generic;
 
 namespace CarRepairShop.MainForm.Views.Tabs.Services
@@ -6,7 +7,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.Services
     public interface IServicesTab
     {
         event EventHandler FormIsLoaded;
-        event EventHandler DebounceTimerElapsed;
+        event EventHandler DebounceElapsed;
         event EventHandler FilterChanged;
 
         event EventHandler AddServiceButtonClicked;
@@ -24,5 +25,8 @@ namespace CarRepairShop.MainForm.Views.Tabs.Services
         void ShowMessage(string message);
         bool ConfirmAction(string message, string title);
         void UnableButtonsIfUserDoesntHavePermissions(bool hasEditPermissions);
+        void StartDebounce();
+        void StopDebounce();
+        ServiceFormResult ShowServiceForm(int? serviceID);
     }
 }

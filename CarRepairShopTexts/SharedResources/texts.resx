@@ -394,4 +394,88 @@ Application Features:
   <data name="WarehouseTab_DataGridViewColumnQuantity" xml:space="preserve">
     <value>Quantity</value>
   </data>
+  <data name="ServicesTab_MissingEditPermissions" xml:space="preserve">
+    <value>Missing edit permissions for edit tab!</value>
+  </data>
+  <data name="ServicesTab_PleaseSelectService" xml:space="preserve">
+    <value>Please select a services first.</value>
+  </data>
+  <data name="ServicesTab_ConfirmServiceStatusChangeBody" xml:space="preserve">
+    <value>Do you really want to change service: {0} status?</value>
+  </data>
+  <data name="ServicesTab_ConfirmServiceStatusChangeTitle" xml:space="preserve">
+    <value>Status change confirmation.</value>
+  </data>
+  <data name="ServicesTab_Active" xml:space="preserve">
+    <value>active</value>
+  </data>
+  <data name="ServicesTab_Inactive" xml:space="preserve">
+    <value>inaktive</value>
+  </data>
+  <data name="ServicesTab_StatusChangeSuccess" xml:space="preserve">
+    <value>Successfully update service: {0} status to: {1}.</value>
+  </data>
+  <data name="ServicesTab_StatusChangeError" xml:space="preserve">
+    <value>Service: {0} status couldn't be changed!</value>
+  </data>
+  <data name="ServicesTab_InsertSuccess" xml:space="preserve">
+    <value>Successfully added new service.</value>
+  </data>
+  <data name="ServicesTab_InsertError" xml:space="preserve">
+    <value>New service couldn't be added!</value>
+  </data>
+  <data name="ServicesTab_UpdateSuccess" xml:space="preserve">
+    <value>Successfully updated the service.</value>
+  </data>
+  <data name="ServicesTab_UpdateError" xml:space="preserve">
+    <value>Service: {0} couldn't be edited!</value>
+  </data>
+  <data name="ServicesTab_DeleteConfirmBody" xml:space="preserve">
+    <value>Do you really want to delete the service: {0}?</value>
+  </data>
+  <data name="ServicesTab_DeleteConfirmTitle" xml:space="preserve">
+    <value>Delete confirmation.</value>
+  </data>
+  <data name="ServicesTab_DeleteSuccess" xml:space="preserve">
+    <value>Successfully deleted service.</value>
+  </data>
+  <data name="ServicesTab_DeleteError" xml:space="preserve">
+    <value>Service couldn't be deleted!</value>
+  </data>
+  <data name="ServicesForm_NewServiceTitle" xml:space="preserve">
+    <value>Add new service</value>
+  </data>
+  <data name="ServicesForm_EditServiceTitle" xml:space="preserve">
+    <value>Edit service: {0}</value>
+  </data>
+  <data name="ServicesForm_PleaseProvideServiceName" xml:space="preserve">
+    <value>Service name can't be empty!</value>
+  </data>
+  <data name="ServicesForm_PleaseProvideServiceWarrantyTime" xml:space="preserve">
+    <value>Warranty time can't be less than 0 months!</value>
+  </data>
+  <data name="ServicesForm_PleaseProvideServiceDurationTime" xml:space="preserve">
+    <value>Service duration time can't be less than 1 hour!</value>
+  </data>
+  <data name="ServicesForm_PleaseProvideServicePrice" xml:space="preserve">
+    <value>Please provide service price!</value>
+  </data>
+  <data name="ServicesForm_ServiceWithThisNameExistsAlready" xml:space="preserve">
+    <value>Service with this name exists already!</value>
+  </data>
+  <data name="ServicesTab_StatusHeaderText" xml:space="preserve">
+    <value>Active</value>
+  </data>
+  <data name="ServicesTab_NameHeaderText" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ServicesTab_DurationHeaderText" xml:space="preserve">
+    <value>Estimated execution time [hours]</value>
+  </data>
+  <data name="ServicesTab_WarrantyHeaderText" xml:space="preserve">
+    <value>Warranty [months]</value>
+  </data>
+  <data name="ServicesTab_CostHeaderText" xml:space="preserve">
+    <value>Cost</value>
+  </data>
 </root>

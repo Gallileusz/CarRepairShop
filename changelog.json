@@ -1,5 +1,17 @@
 [
   {
+    "version": "1.5.0",
+    "date": "2025-09-7",
+    "changes": [
+      "Refactored Service form view",
+      "Refactored Service form presenter",
+      "Refactored presenter in Services tab",
+      "Refactored view in Services tab",
+      "Changed fonts in Service tab to 'Verdana'",
+      "Added translations to Service tab and all sub-forms"
+    ]
+  },
+  {
     "version": "1.4.0",
     "date": "2025-08-28",
     "changes": [

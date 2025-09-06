@@ -4,22 +4,25 @@ using CarRepairShop.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.MainForm.Presenters.Tabs.Services
 {
     public class ServicesTabPresenter
     {
         private readonly IServicesTab _view;
-        private readonly GenericRepository _genericRepo;
-        private List<Domain.Entities.Services> _servicesList;
-        private List<Domain.Entities.Services> _filteredServicesList;
+        private readonly IGenericRepository _genericRepo;
+        private readonly ICurrentUserService _currentUser;
 
-        public ServicesTabPresenter(IServicesTab view)
+        private List<Domain.Entities.Services> _servicesList;
+
+        public ServicesTabPresenter(IServicesTab view, IGenericRepository genericRepo, ICurrentUserService currentUser)
         {
             _view = view;
-            _genericRepo = new GenericRepository();
+            _genericRepo = genericRepo;
+            _currentUser = currentUser;
+
             _servicesList = _genericRepo.GetAll<Domain.Entities.Services>().ToList();
-            _filteredServicesList = _servicesList;
 
             SubscribeToEvents();
         }
@@ -27,8 +30,8 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Services
         private void SubscribeToEvents()
         {
             _view.FormIsLoaded += Load;
-            _view.DebounceTimerElapsed += DebounceTimerElapsed;
-            _view.FilterChanged += Filter;
+            _view.DebounceElapsed += DebounceTimerElapsed;
+            _view.FilterChanged += StartDebounce;
             _view.ServiceStatusCheckboxClicked += ChangeServiceStatus;
 
             _view.AddServiceButtonClicked += AddService;
@@ -36,105 +39,83 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Services
             _view.DeleteServiceButtonClicked += DeleteService;
         }
 
+        private void Load(object sender, EventArgs e)
+        {
+            _view.StopDebounce();
+            _view.LoadServicesToGrid(GetModels());
+            _view.UnableButtonsIfUserDoesntHavePermissions(
+                _currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit));
+        }
+
+        private void DebounceTimerElapsed(object sender, EventArgs e) => _view.LoadServicesToGrid(GetModels());
+
+        private void StartDebounce(object sender, EventArgs e) => _view.StartDebounce();
+
         private void ChangeServiceStatus(object sender, EventArgs e)
         {
-            if (!CurrentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit))
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit))
             {
-                _view.ShowMessage("Nie masz uprawnień do zmiany statusu usług!"); return;
+                _view.ShowMessage(Translations.MainView.ServicesTab.MissingEditPermissions); return;
             }
 
             var service = _servicesList.FirstOrDefault(x => x.ID == _view.SelectedServiceID);
 
             if (service == null)
             {
-                _view.ShowMessage("Proszę wybrać usługę do edycji."); return;
+                _view.ShowMessage(Translations.MainView.ServicesTab.ServiceNotSelected); return;
             }
 
-            if (!_view.ConfirmAction($"Czy na pewno chcesz zmienić status usługi: {service.Name}?", "Potwierdzenie zmiany statusu usługi.")) return;
+            if (!_view.ConfirmAction(string.Format(Translations.MainView.ServicesTab.ConfirmServiceStatusChangeBody, service.Name), Translations.MainView.ServicesTab.ConfirmServiceStatusChangeTitle)) return;
 
             service.IsActive = !service.IsActive;
 
             if (_genericRepo.Update(service))
             {
-                var status = service.IsActive ? "aktywny" : "nieaktywny";
-                _view.LoadServicesToGrid(_servicesList);
-                _view.ShowMessage($"Pomyślnie zaktualizowano status usługi: {service.Name} na {status}.");
+                var status = service.IsActive ? Translations.MainView.ServicesTab.Active : Translations.MainView.ServicesTab.Inactive;
+                _view.LoadServicesToGrid(GetModels());
+                _view.ShowMessage(string.Format(Translations.MainView.ServicesTab.StatusChangeSuccess, service.Name, status));
             }
             else
-                _view.ShowMessage($"Nie udało się zaktualizować statusu usługi: {service.Name}!");
-        }
-
-        private void Load(object sender, EventArgs e)
-        {
-            _view.LoadServicesToGrid(_servicesList.Where(x => x.IsActive).ToList());
-            _view.UnableButtonsIfUserDoesntHavePermissions(CurrentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit));
-        }
-
-        private void DebounceTimerElapsed(object sender, EventArgs e) => _view.LoadServicesToGrid(_filteredServicesList);
-
-        private void Filter(object sender, EventArgs e)
-        {
-            _filteredServicesList = _servicesList;
-
-            if (!string.IsNullOrEmpty(_view.SearchedServiceName))
-                _filteredServicesList = _filteredServicesList.Where(x => x.Name.ToLower().Contains(_view.SearchedServiceName.ToLower())).ToList();
-
-            if (_view.AllStatusesRadioButtonStatus) return;
-
-            if (_view.ActiveServicesRadioButtonStatus)
-                _filteredServicesList = _filteredServicesList.Where(x => x.IsActive).ToList();
-            else if (_view.InactiveServicesRadioButtonStatus)
-                _filteredServicesList = _filteredServicesList.Where(x => !x.IsActive).ToList();
+                _view.ShowMessage(string.Format(Translations.MainView.ServicesTab.StatusChangeError, service.Name));
         }
 
         private void AddService(object sender, EventArgs e)
         {
-            var form = new CarRepairShop.Services.View.SerivcesForm(null);
-            form.ShowDialog();
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit)) return;
 
-            var service = new Domain.Entities.Services
-            {
-                Name = form.ServiceName,
-                StandardCost = form.ServiceCost,
-                Duration = form.ServiceDuration,
-                WarrantyMonths = form.ServiceWarrantyMonths,
-                IsActive = true
-            };
+            var serviceDto = _view.ShowServiceForm(null);
+            if (serviceDto.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
+
+            var service = serviceDto.Service;
 
             if (IsServiceInvalid(service)) return;
-
 
             if (_genericRepo.Insert(service) > 0)
             {
                 _servicesList.Add(service);
-                _view.LoadServicesToGrid(_servicesList);
-                _view.ShowMessage("Pomyślnie dodano nową usługę.");
+                _view.LoadServicesToGrid(GetModels());
+                _view.ShowMessage(Translations.MainView.ServicesTab.InsertSuccess);
             }
             else
-                _view.ShowMessage($"Nie udało się dodać nowej usługi: {service.Name}!");
+                _view.ShowMessage(Translations.MainView.ServicesTab.InsertError);
         }
 
         private void EditService(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit)) return;
+
             var serviceBeforeUpdate = _servicesList.FirstOrDefault(x => x.ID == _view.SelectedServiceID);
 
             if (serviceBeforeUpdate == null)
             {
-                _view.ShowMessage("Proszę wybrać usługę do edycji."); return;
+                _view.ShowMessage(Translations.MainView.ServicesTab.ServiceNotSelected); return;
             }
 
-            var form = new CarRepairShop.Services.View.SerivcesForm(serviceBeforeUpdate.ID);
-            form.ShowDialog();
+            var serviceDto = _view.ShowServiceForm(serviceBeforeUpdate.ID);
+            if (serviceDto.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
 
-            var service = new Domain.Entities.Services
-            {
-                Name = form.ServiceName,
-                StandardCost = form.ServiceCost,
-                Duration = form.ServiceDuration,
-                WarrantyMonths = form.ServiceWarrantyMonths,
-                IsActive = true,
-                ID = serviceBeforeUpdate.ID
-            };
+            var service = serviceDto.Service;
+            service.ID = serviceBeforeUpdate.ID;
 
             if (IsServiceInvalid(service) || AreServicesEqual(serviceBeforeUpdate, service)) return;
 
@@ -143,32 +124,52 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Services
             if (serviceIndex >= 0 && _genericRepo.Update(service))
             {
                 _servicesList[serviceIndex] = service;
-                _view.LoadServicesToGrid(_servicesList);
-                _view.ShowMessage("Pomyślnie zaktualizowano usługę.");
+                _view.LoadServicesToGrid(GetModels());
+                _view.ShowMessage(Translations.MainView.ServicesTab.UpdateSuccess);
             }
             else
-                _view.ShowMessage($"Nie udało się zaktualiuzować usługi: {service.Name}!");
+                _view.ShowMessage(string.Format(Translations.MainView.ServicesTab.UpdateError, service.Name));
         }
 
         private void DeleteService(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit)) return;
+
             var service = _servicesList.FirstOrDefault(x => x.ID == _view.SelectedServiceID);
 
             if (service == null)
             {
-                _view.ShowMessage("Proszę wybrać użytkownika do edycji."); return;
+                _view.ShowMessage(Translations.MainView.ServicesTab.ServiceNotSelected); return;
             }
 
-            if (!_view.ConfirmAction($"Czy na pewno chcesz usunąć usługę: {service.Name}?", "Potwierdzenie usunięcia usługi?")) return;
+            if (!_view.ConfirmAction(string.Format(Translations.MainView.ServicesTab.DeleteConfirmBody, service.Name), Translations.MainView.ServicesTab.DeleteConfirmTitle)) return;
 
             if (_genericRepo.Delete(service))
             {
                 _servicesList.Remove(service);
-                _view.LoadServicesToGrid(_servicesList);
-                _view.ShowMessage("Pomyślnie usunięto usługę.");
+                _view.LoadServicesToGrid(GetModels());
+                _view.ShowMessage(Translations.MainView.ServicesTab.DeleteSuccess);
             }
             else
-                _view.ShowMessage($"Nie udało się usunąć usługi: {service.Name}!");
+                _view.ShowMessage(string.Format(Translations.MainView.ServicesTab.DeleteError, service.Name));
+        }
+
+        private List<Domain.Entities.Services> GetModels()
+        {
+            var filteredServices = _servicesList;
+
+            if (!string.IsNullOrEmpty(_view.SearchedServiceName))
+                filteredServices = filteredServices.Where(x => x.Name.ToLower().Contains(_view.SearchedServiceName.ToLower())).ToList();
+
+            if (_view.AllStatusesRadioButtonStatus) return filteredServices;
+
+            if (_view.ActiveServicesRadioButtonStatus)
+                filteredServices = filteredServices.Where(x => x.IsActive).ToList();
+
+            else if (_view.InactiveServicesRadioButtonStatus)
+                filteredServices = filteredServices.Where(x => !x.IsActive).ToList();
+
+            return filteredServices;
         }
 
         private bool IsServiceInvalid(Domain.Entities.Services service)

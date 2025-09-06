@@ -47,6 +47,7 @@
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="MainForm\Models\Tabs\Services\" />
     <Folder Include="Services\Model\" />
   </ItemGroup>
   <ItemGroup>

@@ -135,4 +135,10 @@
   <data name="gbName.Text" xml:space="preserve">
     <value>Nazwa:</value>
   </data>
+  <data name="gbStatus.Text" xml:space="preserve">
+    <value>Status usługi:</value>
+  </data>
+  <data name="cbActive.Text" xml:space="preserve">
+    <value>Aktywny</value>
+  </data>
 </root>

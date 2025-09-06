@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <root>
-  <!-- 
-    Microsoft ResX Schema 
-    
+  <!--
+    Microsoft ResX Schema
+
     Version 2.0
-    
-    The primary goals of this format is to allow a simple XML format 
-    that is mostly human readable. The generation and parsing of the 
-    various data types are done through the TypeConverter classes 
+
+    The primary goals of this format is to allow a simple XML format
+    that is mostly human readable. The generation and parsing of the
+    various data types are done through the TypeConverter classes
     associated with the data types.
-    
+
     Example:
-    
+
     ... ado.net/XML headers & schema ...
     <resheader name="resmimetype">text/microsoft-resx</resheader>
     <resheader name="version">2.0</resheader>
@@ -26,36 +26,36 @@
         <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
         <comment>This is a comment</comment>
     </data>
-                
-    There are any number of "resheader" rows that contain simple 
+
+    There are any number of "resheader" rows that contain simple
     name/value pairs.
-    
-    Each data row contains a name, and value. The row also contains a 
-    type or mimetype. Type corresponds to a .NET class that support 
-    text/value conversion through the TypeConverter architecture. 
-    Classes that don't support this are serialized and stored with the 
+
+    Each data row contains a name, and value. The row also contains a
+    type or mimetype. Type corresponds to a .NET class that support
+    text/value conversion through the TypeConverter architecture.
+    Classes that don't support this are serialized and stored with the
     mimetype set.
-    
-    The mimetype is used for serialized objects, and tells the 
-    ResXResourceReader how to depersist the object. This is currently not 
+
+    The mimetype is used for serialized objects, and tells the
+    ResXResourceReader how to depersist the object. This is currently not
     extensible. For a given mimetype the value must be set accordingly:
-    
-    Note - application/x-microsoft.net.object.binary.base64 is the format 
-    that the ResXResourceWriter will generate, however the reader can 
+
+    Note - application/x-microsoft.net.object.binary.base64 is the format
+    that the ResXResourceWriter will generate, however the reader can
     read any of the formats listed below.
-    
+
     mimetype: application/x-microsoft.net.object.binary.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
             : and then encoded with base64 encoding.
-    
+
     mimetype: application/x-microsoft.net.object.soap.base64
-    value   : The object must be serialized with 
+    value   : The object must be serialized with
             : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
             : and then encoded with base64 encoding.
 
     mimetype: application/x-microsoft.net.object.bytearray.base64
-    value   : The object must be serialized into a byte array 
+    value   : The object must be serialized into a byte array
             : using a System.ComponentModel.TypeConverter
             : and then encoded with base64 encoding.
     -->
@@ -119,10 +119,10 @@
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="pnlSeparator.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 130</value>
+    <value>0, 155</value>
   </data>
   <data name="pnlSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>163, 2</value>
+    <value>192, 2</value>
   </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="pnlSeparator.TabIndex" type="System.Int32, mscorlib">
@@ -132,7 +132,7 @@
     <value>pnlSeparator</value>
   </data>
   <data name="&gt;&gt;pnlSeparator.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlSeparator.Parent" xml:space="preserve">
     <value>$this</value>
@@ -144,13 +144,13 @@
     <value>True</value>
   </data>
   <data name="lblActions.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+    <value>Verdana, 11.25pt, style=Bold</value>
   </data>
   <data name="lblActions.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 4</value>
+    <value>4, 9</value>
   </data>
   <data name="lblActions.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 18</value>
+    <value>74, 18</value>
   </data>
   <data name="lblActions.TabIndex" type="System.Int32, mscorlib">
     <value>22</value>
@@ -162,7 +162,7 @@
     <value>lblActions</value>
   </data>
   <data name="&gt;&gt;lblActions.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblActions.Parent" xml:space="preserve">
     <value>$this</value>
@@ -170,9 +170,12 @@
   <data name="&gt;&gt;lblActions.ZOrder" xml:space="preserve">
     <value>5</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="btnDeleteService.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
+  </data>
+  <data name="btnDeleteService.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 11.25pt</value>
   </data>
   <data name="btnDeleteService.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
@@ -181,22 +184,22 @@
     <value>-5, -8</value>
   </data>
   <data name="btnDeleteService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 48</value>
+    <value>193, 48</value>
   </data>
   <data name="btnDeleteService.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnDeleteService.Text" xml:space="preserve">
-    <value>Delete service</value>
+    <value>        Delete</value>
   </data>
   <data name="btnDeleteService.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnDeleteService.Name" xml:space="preserve">
     <value>btnDeleteService</value>
   </data>
   <data name="&gt;&gt;btnDeleteService.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnDeleteService.Parent" xml:space="preserve">
     <value>pnlButtonDelete</value>
@@ -208,10 +211,10 @@
     <value>Segoe UI Emoji, 9.75pt</value>
   </data>
   <data name="pnlButtonDelete.Location" type="System.Drawing.Point, System.Drawing">
-    <value>5, 91</value>
+    <value>6, 110</value>
   </data>
   <data name="pnlButtonDelete.Size" type="System.Drawing.Size, System.Drawing">
-    <value>159, 33</value>
+    <value>188, 33</value>
   </data>
   <data name="pnlButtonDelete.TabIndex" type="System.Int32, mscorlib">
     <value>21</value>
@@ -220,7 +223,7 @@
     <value>pnlButtonDelete</value>
   </data>
   <data name="&gt;&gt;pnlButtonDelete.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlButtonDelete.Parent" xml:space="preserve">
     <value>$this</value>
@@ -231,6 +234,9 @@
   <data name="btnEditService.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="btnEditService.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 11.25pt</value>
+  </data>
   <data name="btnEditService.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -238,22 +244,22 @@
     <value>-4, -8</value>
   </data>
   <data name="btnEditService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 48</value>
+    <value>193, 48</value>
   </data>
   <data name="btnEditService.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnEditService.Text" xml:space="preserve">
-    <value>Edit service</value>
+    <value>        Edit</value>
   </data>
   <data name="btnEditService.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnEditService.Name" xml:space="preserve">
     <value>btnEditService</value>
   </data>
   <data name="&gt;&gt;btnEditService.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnEditService.Parent" xml:space="preserve">
     <value>pnlButtonEdit</value>
@@ -265,10 +271,10 @@
     <value>Segoe UI Emoji, 9.75pt</value>
   </data>
   <data name="pnlButtonEdit.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 58</value>
+    <value>5, 72</value>
   </data>
   <data name="pnlButtonEdit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>160, 33</value>
+    <value>189, 33</value>
   </data>
   <data name="pnlButtonEdit.TabIndex" type="System.Int32, mscorlib">
     <value>20</value>
@@ -277,7 +283,7 @@
     <value>pnlButtonEdit</value>
   </data>
   <data name="&gt;&gt;pnlButtonEdit.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlButtonEdit.Parent" xml:space="preserve">
     <value>$this</value>
@@ -288,6 +294,9 @@
   <data name="btnAddService.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
+  <data name="btnAddService.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Verdana, 11.25pt</value>
+  </data>
   <data name="btnAddService.ImageAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
@@ -295,22 +304,22 @@
     <value>-2, -4</value>
   </data>
   <data name="btnAddService.Size" type="System.Drawing.Size, System.Drawing">
-    <value>168, 48</value>
+    <value>193, 48</value>
   </data>
   <data name="btnAddService.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="btnAddService.Text" xml:space="preserve">
-    <value>Add service</value>
+    <value>        Add</value>
   </data>
   <data name="btnAddService.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
+    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;btnAddService.Name" xml:space="preserve">
     <value>btnAddService</value>
   </data>
   <data name="&gt;&gt;btnAddService.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;btnAddService.Parent" xml:space="preserve">
     <value>pnlButtonAdd</value>
@@ -322,10 +331,10 @@
     <value>Segoe UI Emoji, 9.75pt</value>
   </data>
   <data name="pnlButtonAdd.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 25</value>
+    <value>4, 33</value>
   </data>
   <data name="pnlButtonAdd.Size" type="System.Drawing.Size, System.Drawing">
-    <value>161, 33</value>
+    <value>190, 33</value>
   </data>
   <data name="pnlButtonAdd.TabIndex" type="System.Int32, mscorlib">
     <value>19</value>
@@ -334,7 +343,7 @@
     <value>pnlButtonAdd</value>
   </data>
   <data name="&gt;&gt;pnlButtonAdd.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;pnlButtonAdd.Parent" xml:space="preserve">
     <value>$this</value>
@@ -343,10 +352,10 @@
     <value>8</value>
   </data>
   <data name="txtServiceName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 19</value>
+    <value>6, 22</value>
   </data>
   <data name="txtServiceName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>138, 22</value>
+    <value>165, 26</value>
   </data>
   <data name="txtServiceName.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -355,7 +364,7 @@
     <value>txtServiceName</value>
   </data>
   <data name="&gt;&gt;txtServiceName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;txtServiceName.Parent" xml:space="preserve">
     <value>gbServiceName</value>
@@ -364,13 +373,13 @@
     <value>0</value>
   </data>
   <data name="gbServiceName.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Verdana, 11.25pt</value>
   </data>
   <data name="gbServiceName.Location" type="System.Drawing.Point, System.Drawing">
-    <value>6, 169</value>
+    <value>6, 198</value>
   </data>
   <data name="gbServiceName.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 58</value>
+    <value>177, 58</value>
   </data>
   <data name="gbServiceName.TabIndex" type="System.Int32, mscorlib">
     <value>34</value>
@@ -382,7 +391,7 @@
     <value>gbServiceName</value>
   </data>
   <data name="&gt;&gt;gbServiceName.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbServiceName.Parent" xml:space="preserve">
     <value>$this</value>
@@ -394,13 +403,13 @@
     <value>True</value>
   </data>
   <data name="lblFilters.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 11.25pt, style=Bold</value>
+    <value>Verdana, 11.25pt, style=Bold</value>
   </data>
   <data name="lblFilters.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 142</value>
+    <value>4, 171</value>
   </data>
   <data name="lblFilters.Size" type="System.Drawing.Size, System.Drawing">
-    <value>60, 18</value>
+    <value>65, 18</value>
   </data>
   <data name="lblFilters.TabIndex" type="System.Int32, mscorlib">
     <value>35</value>
@@ -412,7 +421,7 @@
     <value>lblFilters</value>
   </data>
   <data name="&gt;&gt;lblFilters.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;lblFilters.Parent" xml:space="preserve">
     <value>$this</value>
@@ -438,23 +447,20 @@
   <data name="groupBox5.TabIndex" type="System.Int32, mscorlib">
     <value>36</value>
   </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Contractor cars:</value>
-  </data>
   <data name="&gt;&gt;groupBox5.Name" xml:space="preserve">
     <value>groupBox5</value>
   </data>
   <data name="&gt;&gt;groupBox5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="dgv.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>Top, Bottom, Left, Right</value>
   </data>
   <data name="dgv.Location" type="System.Drawing.Point, System.Drawing">
-    <value>163, 0</value>
+    <value>189, 0</value>
   </data>
   <data name="dgv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>538, 370</value>
+    <value>512, 394</value>
   </data>
   <data name="dgv.TabIndex" type="System.Int32, mscorlib">
     <value>37</value>
@@ -463,7 +469,7 @@
     <value>dgv</value>
   </data>
   <data name="&gt;&gt;dgv.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;dgv.Parent" xml:space="preserve">
     <value>$this</value>
@@ -478,7 +484,7 @@
     <value>6, 78</value>
   </data>
   <data name="rbInactive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 20</value>
+    <value>120, 22</value>
   </data>
   <data name="rbInactive.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
@@ -490,7 +496,7 @@
     <value>rbInactive</value>
   </data>
   <data name="&gt;&gt;rbInactive.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rbInactive.Parent" xml:space="preserve">
     <value>gbStatuses</value>
@@ -505,7 +511,7 @@
     <value>6, 52</value>
   </data>
   <data name="rbActive.Size" type="System.Drawing.Size, System.Drawing">
-    <value>90, 20</value>
+    <value>107, 22</value>
   </data>
   <data name="rbActive.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
@@ -517,7 +523,7 @@
     <value>rbActive</value>
   </data>
   <data name="&gt;&gt;rbActive.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rbActive.Parent" xml:space="preserve">
     <value>gbStatuses</value>
@@ -529,13 +535,13 @@
     <value>True</value>
   </data>
   <data name="rbAll.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Verdana, 11.25pt</value>
   </data>
   <data name="rbAll.Location" type="System.Drawing.Point, System.Drawing">
     <value>6, 26</value>
   </data>
   <data name="rbAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>76, 20</value>
+    <value>104, 22</value>
   </data>
   <data name="rbAll.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -547,7 +553,7 @@
     <value>rbAll</value>
   </data>
   <data name="&gt;&gt;rbAll.Type" xml:space="preserve">
-    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;rbAll.Parent" xml:space="preserve">
     <value>gbStatuses</value>
@@ -556,13 +562,13 @@
     <value>2</value>
   </data>
   <data name="gbStatuses.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Microsoft Sans Serif, 9.75pt</value>
+    <value>Verdana, 11.25pt</value>
   </data>
   <data name="gbStatuses.Location" type="System.Drawing.Point, System.Drawing">
-    <value>7, 233</value>
+    <value>7, 263</value>
   </data>
   <data name="gbStatuses.Size" type="System.Drawing.Size, System.Drawing">
-    <value>150, 111</value>
+    <value>176, 111</value>
   </data>
   <data name="gbStatuses.TabIndex" type="System.Int32, mscorlib">
     <value>38</value>
@@ -574,7 +580,7 @@
     <value>gbStatuses</value>
   </data>
   <data name="&gt;&gt;gbStatuses.Type" xml:space="preserve">
-    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;gbStatuses.Parent" xml:space="preserve">
     <value>$this</value>
@@ -586,21 +592,24 @@
     <value>True</value>
   </metadata>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+    <value>8, 18</value>
+  </data>
+  <data name="$this.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Calibri, 11.25pt</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>701, 370</value>
+    <value>701, 394</value>
   </data>
   <data name="&gt;&gt;Debounce.Name" xml:space="preserve">
     <value>Debounce</value>
   </data>
   <data name="&gt;&gt;Debounce.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Timer, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.Timer, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ServicesTab</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

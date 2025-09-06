@@ -524,6 +524,258 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Edit service: {0}.
+        /// </summary>
+        internal static string ServicesForm_EditServiceTitle {
+            get {
+                return ResourceManager.GetString("ServicesForm_EditServiceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add new service.
+        /// </summary>
+        internal static string ServicesForm_NewServiceTitle {
+            get {
+                return ResourceManager.GetString("ServicesForm_NewServiceTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Service duration time can&apos;t be less than 1 hour!.
+        /// </summary>
+        internal static string ServicesForm_PleaseProvideServiceDurationTime {
+            get {
+                return ResourceManager.GetString("ServicesForm_PleaseProvideServiceDurationTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Service name can&apos;t be empty!.
+        /// </summary>
+        internal static string ServicesForm_PleaseProvideServiceName {
+            get {
+                return ResourceManager.GetString("ServicesForm_PleaseProvideServiceName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please provide service price!.
+        /// </summary>
+        internal static string ServicesForm_PleaseProvideServicePrice {
+            get {
+                return ResourceManager.GetString("ServicesForm_PleaseProvideServicePrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Warranty time can&apos;t be less than 0 months!.
+        /// </summary>
+        internal static string ServicesForm_PleaseProvideServiceWarrantyTime {
+            get {
+                return ResourceManager.GetString("ServicesForm_PleaseProvideServiceWarrantyTime", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Service with this name exists already!.
+        /// </summary>
+        internal static string ServicesForm_ServiceWithThisNameExistsAlready {
+            get {
+                return ResourceManager.GetString("ServicesForm_ServiceWithThisNameExistsAlready", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu active.
+        /// </summary>
+        internal static string ServicesTab_Active {
+            get {
+                return ResourceManager.GetString("ServicesTab_Active", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to change service: {0} status?.
+        /// </summary>
+        internal static string ServicesTab_ConfirmServiceStatusChangeBody {
+            get {
+                return ResourceManager.GetString("ServicesTab_ConfirmServiceStatusChangeBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Status change confirmation..
+        /// </summary>
+        internal static string ServicesTab_ConfirmServiceStatusChangeTitle {
+            get {
+                return ResourceManager.GetString("ServicesTab_ConfirmServiceStatusChangeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Cost.
+        /// </summary>
+        internal static string ServicesTab_CostHeaderText {
+            get {
+                return ResourceManager.GetString("ServicesTab_CostHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the service: {0}?.
+        /// </summary>
+        internal static string ServicesTab_DeleteConfirmBody {
+            get {
+                return ResourceManager.GetString("ServicesTab_DeleteConfirmBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Delete confirmation..
+        /// </summary>
+        internal static string ServicesTab_DeleteConfirmTitle {
+            get {
+                return ResourceManager.GetString("ServicesTab_DeleteConfirmTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Service couldn&apos;t be deleted!.
+        /// </summary>
+        internal static string ServicesTab_DeleteError {
+            get {
+                return ResourceManager.GetString("ServicesTab_DeleteError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully deleted service..
+        /// </summary>
+        internal static string ServicesTab_DeleteSuccess {
+            get {
+                return ResourceManager.GetString("ServicesTab_DeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Estimated execution time [hours].
+        /// </summary>
+        internal static string ServicesTab_DurationHeaderText {
+            get {
+                return ResourceManager.GetString("ServicesTab_DurationHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu inaktive.
+        /// </summary>
+        internal static string ServicesTab_Inactive {
+            get {
+                return ResourceManager.GetString("ServicesTab_Inactive", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu New service couldn&apos;t be added!.
+        /// </summary>
+        internal static string ServicesTab_InsertError {
+            get {
+                return ResourceManager.GetString("ServicesTab_InsertError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully added new service..
+        /// </summary>
+        internal static string ServicesTab_InsertSuccess {
+            get {
+                return ResourceManager.GetString("ServicesTab_InsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Missing edit permissions for edit tab!.
+        /// </summary>
+        internal static string ServicesTab_MissingEditPermissions {
+            get {
+                return ResourceManager.GetString("ServicesTab_MissingEditPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name.
+        /// </summary>
+        internal static string ServicesTab_NameHeaderText {
+            get {
+                return ResourceManager.GetString("ServicesTab_NameHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please select a services first..
+        /// </summary>
+        internal static string ServicesTab_PleaseSelectService {
+            get {
+                return ResourceManager.GetString("ServicesTab_PleaseSelectService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Service: {0} status couldn&apos;t be changed!.
+        /// </summary>
+        internal static string ServicesTab_StatusChangeError {
+            get {
+                return ResourceManager.GetString("ServicesTab_StatusChangeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully update service: {0} status to: {1}..
+        /// </summary>
+        internal static string ServicesTab_StatusChangeSuccess {
+            get {
+                return ResourceManager.GetString("ServicesTab_StatusChangeSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Active.
+        /// </summary>
+        internal static string ServicesTab_StatusHeaderText {
+            get {
+                return ResourceManager.GetString("ServicesTab_StatusHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Service: {0} couldn&apos;t be edited!.
+        /// </summary>
+        internal static string ServicesTab_UpdateError {
+            get {
+                return ResourceManager.GetString("ServicesTab_UpdateError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully updated the service..
+        /// </summary>
+        internal static string ServicesTab_UpdateSuccess {
+            get {
+                return ResourceManager.GetString("ServicesTab_UpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Warranty [months].
+        /// </summary>
+        internal static string ServicesTab_WarrantyHeaderText {
+            get {
+                return ResourceManager.GetString("ServicesTab_WarrantyHeaderText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the user: {0} {1}?.
         /// </summary>
         internal static string UsersTab_AskToDeleteBody {

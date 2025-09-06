@@ -351,4 +351,88 @@
   <data name="WarehouseTab_DataGridViewColumnQuantity" xml:space="preserve">
     <value>Ilość</value>
   </data>
+  <data name="ServicesTab_MissingEditPermissions" xml:space="preserve">
+    <value>Nie masz uprawnień do zmiany statusu usług!</value>
+  </data>
+  <data name="ServicesTab_PleaseSelectService" xml:space="preserve">
+    <value>Proszę najpierw wybrać usługę.</value>
+  </data>
+  <data name="ServicesTab_ConfirmServiceStatusChangeBody" xml:space="preserve">
+    <value>Czy na pewno chcesz zmienić status usługi: {0}?</value>
+  </data>
+  <data name="ServicesTab_ConfirmServiceStatusChangeTitle" xml:space="preserve">
+    <value>Potwierdzenie zmiany statusu usługi.</value>
+  </data>
+  <data name="ServicesTab_Active" xml:space="preserve">
+    <value>aktywny</value>
+  </data>
+  <data name="ServicesTab_Inactive" xml:space="preserve">
+    <value>nieaktywny</value>
+  </data>
+  <data name="ServicesTab_StatusChangeSuccess" xml:space="preserve">
+    <value>Pomyślnie zaktualizowano status usługi: {0} na {1}.</value>
+  </data>
+  <data name="ServicesTab_StatusChangeError" xml:space="preserve">
+    <value>Nie udało się zaktualizować statusu usługi: {0}!</value>
+  </data>
+  <data name="ServicesTab_InsertSuccess" xml:space="preserve">
+    <value>Pomyślnie dodano nową usługę.</value>
+  </data>
+  <data name="ServicesTab_InsertError" xml:space="preserve">
+    <value>Nie udało się dodać nowej usługi!</value>
+  </data>
+  <data name="ServicesTab_UpdateSuccess" xml:space="preserve">
+    <value>Pomyślnie zaktualizowano usługę.</value>
+  </data>
+  <data name="ServicesTab_UpdateError" xml:space="preserve">
+    <value>Nie udało się zaktualiuzować usługi: {0}!</value>
+  </data>
+  <data name="ServicesTab_DeleteConfirmBody" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć usługę: {0}?</value>
+  </data>
+  <data name="ServicesTab_DeleteConfirmTitle" xml:space="preserve">
+    <value>Potwierdzenie usunięcia usługi.</value>
+  </data>
+  <data name="ServicesTab_DeleteSuccess" xml:space="preserve">
+    <value>Pomyślnie usunięto usługę.</value>
+  </data>
+  <data name="ServicesTab_DeleteError" xml:space="preserve">
+    <value>Nie udało się usunąć usługi!</value>
+  </data>
+  <data name="ServicesForm_NewServiceTitle" xml:space="preserve">
+    <value>Dodaj nową usługę</value>
+  </data>
+  <data name="ServicesForm_EditServiceTitle" xml:space="preserve">
+    <value>Edycja usługi: {0}</value>
+  </data>
+  <data name="ServicesForm_PleaseProvideServiceName" xml:space="preserve">
+    <value>Nazwa usługi nie może być pusta!</value>
+  </data>
+  <data name="ServicesForm_PleaseProvideServiceWarrantyTime" xml:space="preserve">
+    <value>Gwarancja nie może być mniejsza niż 0 miesięcy!</value>
+  </data>
+  <data name="ServicesForm_PleaseProvideServiceDurationTime" xml:space="preserve">
+    <value>Czas wykonania usługi nie może być mniejszy niż 0 godzin!</value>
+  </data>
+  <data name="ServicesForm_PleaseProvideServicePrice" xml:space="preserve">
+    <value>Proszę podać cenę usługi!</value>
+  </data>
+  <data name="ServicesForm_ServiceWithThisNameExistsAlready" xml:space="preserve">
+    <value>Usługa z tą nazwą już istnieje!</value>
+  </data>
+  <data name="ServicesTab_StatusHeaderText" xml:space="preserve">
+    <value>Aktywny</value>
+  </data>
+  <data name="ServicesTab_NameHeaderText" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="ServicesTab_DurationHeaderText" xml:space="preserve">
+    <value>Szacowany czas wykonania [godziny]</value>
+  </data>
+  <data name="ServicesTab_WarrantyHeaderText" xml:space="preserve">
+    <value>Gwarancja [miesiące]</value>
+  </data>
+  <data name="ServicesTab_CostHeaderText" xml:space="preserve">
+    <value>Koszt</value>
+  </data>
 </root>

@@ -29,112 +29,133 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SerivcesForm));
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.gbPhoneNumber = new System.Windows.Forms.GroupBox();
-            this.txtWarrantyTime = new System.Windows.Forms.TextBox();
-            this.gmEmail = new System.Windows.Forms.GroupBox();
-            this.txtCost = new System.Windows.Forms.TextBox();
-            this.gbSurname = new System.Windows.Forms.GroupBox();
-            this.txtTimeNeeded = new System.Windows.Forms.TextBox();
-            this.gbName = new System.Windows.Forms.GroupBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.gbPhoneNumber.SuspendLayout();
-            this.gmEmail.SuspendLayout();
-            this.gbSurname.SuspendLayout();
-            this.gbName.SuspendLayout();
-            this.SuspendLayout();
+            btnCancel = new System.Windows.Forms.Button();
+            btnConfirm = new System.Windows.Forms.Button();
+            gbPhoneNumber = new System.Windows.Forms.GroupBox();
+            txtWarrantyTime = new System.Windows.Forms.TextBox();
+            gmEmail = new System.Windows.Forms.GroupBox();
+            txtCost = new System.Windows.Forms.TextBox();
+            gbSurname = new System.Windows.Forms.GroupBox();
+            txtTimeNeeded = new System.Windows.Forms.TextBox();
+            gbName = new System.Windows.Forms.GroupBox();
+            txtName = new System.Windows.Forms.TextBox();
+            gbStatus = new System.Windows.Forms.GroupBox();
+            cbActive = new System.Windows.Forms.CheckBox();
+            gbPhoneNumber.SuspendLayout();
+            gmEmail.SuspendLayout();
+            gbSurname.SuspendLayout();
+            gbName.SuspendLayout();
+            gbStatus.SuspendLayout();
+            SuspendLayout();
             // 
             // btnCancel
             // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            resources.ApplyResources(btnCancel, "btnCancel");
+            btnCancel.Name = "btnCancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnConfirm
             // 
-            resources.ApplyResources(this.btnConfirm, "btnConfirm");
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            resources.ApplyResources(btnConfirm, "btnConfirm");
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // gbPhoneNumber
             // 
-            this.gbPhoneNumber.Controls.Add(this.txtWarrantyTime);
-            resources.ApplyResources(this.gbPhoneNumber, "gbPhoneNumber");
-            this.gbPhoneNumber.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbPhoneNumber.Name = "gbPhoneNumber";
-            this.gbPhoneNumber.TabStop = false;
+            gbPhoneNumber.Controls.Add(txtWarrantyTime);
+            resources.ApplyResources(gbPhoneNumber, "gbPhoneNumber");
+            gbPhoneNumber.ForeColor = System.Drawing.Color.SteelBlue;
+            gbPhoneNumber.Name = "gbPhoneNumber";
+            gbPhoneNumber.TabStop = false;
             // 
             // txtWarrantyTime
             // 
-            resources.ApplyResources(this.txtWarrantyTime, "txtWarrantyTime");
-            this.txtWarrantyTime.Name = "txtWarrantyTime";
+            resources.ApplyResources(txtWarrantyTime, "txtWarrantyTime");
+            txtWarrantyTime.Name = "txtWarrantyTime";
             // 
             // gmEmail
             // 
-            this.gmEmail.Controls.Add(this.txtCost);
-            resources.ApplyResources(this.gmEmail, "gmEmail");
-            this.gmEmail.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gmEmail.Name = "gmEmail";
-            this.gmEmail.TabStop = false;
+            gmEmail.Controls.Add(txtCost);
+            resources.ApplyResources(gmEmail, "gmEmail");
+            gmEmail.ForeColor = System.Drawing.Color.SteelBlue;
+            gmEmail.Name = "gmEmail";
+            gmEmail.TabStop = false;
             // 
             // txtCost
             // 
-            resources.ApplyResources(this.txtCost, "txtCost");
-            this.txtCost.Name = "txtCost";
+            resources.ApplyResources(txtCost, "txtCost");
+            txtCost.Name = "txtCost";
             // 
             // gbSurname
             // 
-            this.gbSurname.Controls.Add(this.txtTimeNeeded);
-            resources.ApplyResources(this.gbSurname, "gbSurname");
-            this.gbSurname.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbSurname.Name = "gbSurname";
-            this.gbSurname.TabStop = false;
+            gbSurname.Controls.Add(txtTimeNeeded);
+            resources.ApplyResources(gbSurname, "gbSurname");
+            gbSurname.ForeColor = System.Drawing.Color.SteelBlue;
+            gbSurname.Name = "gbSurname";
+            gbSurname.TabStop = false;
             // 
             // txtTimeNeeded
             // 
-            resources.ApplyResources(this.txtTimeNeeded, "txtTimeNeeded");
-            this.txtTimeNeeded.Name = "txtTimeNeeded";
+            resources.ApplyResources(txtTimeNeeded, "txtTimeNeeded");
+            txtTimeNeeded.Name = "txtTimeNeeded";
             // 
             // gbName
             // 
-            this.gbName.Controls.Add(this.txtName);
-            resources.ApplyResources(this.gbName, "gbName");
-            this.gbName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbName.Name = "gbName";
-            this.gbName.TabStop = false;
+            gbName.Controls.Add(txtName);
+            resources.ApplyResources(gbName, "gbName");
+            gbName.ForeColor = System.Drawing.Color.SteelBlue;
+            gbName.Name = "gbName";
+            gbName.TabStop = false;
             // 
             // txtName
             // 
-            resources.ApplyResources(this.txtName, "txtName");
-            this.txtName.Name = "txtName";
+            resources.ApplyResources(txtName, "txtName");
+            txtName.Name = "txtName";
+            // 
+            // gbStatus
+            // 
+            gbStatus.Controls.Add(cbActive);
+            resources.ApplyResources(gbStatus, "gbStatus");
+            gbStatus.ForeColor = System.Drawing.Color.SteelBlue;
+            gbStatus.Name = "gbStatus";
+            gbStatus.TabStop = false;
+            // 
+            // cbActive
+            // 
+            resources.ApplyResources(cbActive, "cbActive");
+            cbActive.Name = "cbActive";
+            cbActive.UseVisualStyleBackColor = true;
             // 
             // SerivcesForm
             // 
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.gbPhoneNumber);
-            this.Controls.Add(this.gmEmail);
-            this.Controls.Add(this.gbSurname);
-            this.Controls.Add(this.gbName);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "SerivcesForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SerivcesForm_FormClosing);
-            this.Load += new System.EventHandler(this.SerivcesForm_Load);
-            this.gbPhoneNumber.ResumeLayout(false);
-            this.gbPhoneNumber.PerformLayout();
-            this.gmEmail.ResumeLayout(false);
-            this.gmEmail.PerformLayout();
-            this.gbSurname.ResumeLayout(false);
-            this.gbSurname.PerformLayout();
-            this.gbName.ResumeLayout(false);
-            this.gbName.PerformLayout();
-            this.ResumeLayout(false);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(gbStatus);
+            Controls.Add(btnCancel);
+            Controls.Add(btnConfirm);
+            Controls.Add(gbPhoneNumber);
+            Controls.Add(gmEmail);
+            Controls.Add(gbSurname);
+            Controls.Add(gbName);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "SerivcesForm";
+            FormClosing += SerivcesForm_FormClosing;
+            Load += SerivcesForm_Load;
+            gbPhoneNumber.ResumeLayout(false);
+            gbPhoneNumber.PerformLayout();
+            gmEmail.ResumeLayout(false);
+            gmEmail.PerformLayout();
+            gbSurname.ResumeLayout(false);
+            gbSurname.PerformLayout();
+            gbName.ResumeLayout(false);
+            gbName.PerformLayout();
+            gbStatus.ResumeLayout(false);
+            gbStatus.PerformLayout();
+            ResumeLayout(false);
 
         }
 
@@ -149,5 +170,7 @@
         private System.Windows.Forms.TextBox txtTimeNeeded;
         private System.Windows.Forms.GroupBox gbName;
         private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.GroupBox gbStatus;
+        private System.Windows.Forms.CheckBox cbActive;
     }
 }

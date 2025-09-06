@@ -61,6 +61,30 @@
         public static string WarehouseTab_DataGridViewColumnMaterialTypeName => SharedResources.texts.WarehouseTab_DataGridViewColumnMaterialTypeName;
         public static string WarehouseTab_DataGridViewColumnQuantity => SharedResources.texts.WarehouseTab_DataGridViewColumnQuantity;
 
+        // Services Tab
+
+        public static string ServicesTab_MissingEditPermissions => SharedResources.texts.ServicesTab_MissingEditPermissions;
+        public static string ServicesTab_PleaseSelectService => SharedResources.texts.ServicesTab_PleaseSelectService;
+        public static string ServicesTab_ConfirmServiceStatusChangeBody => SharedResources.texts.ServicesTab_ConfirmServiceStatusChangeBody;
+        public static string ServicesTab_ConfirmServiceStatusChangeTitle => SharedResources.texts.ServicesTab_ConfirmServiceStatusChangeTitle;
+        public static string ServicesTab_Active => SharedResources.texts.ServicesTab_Active;
+        public static string ServicesTab_Inactive => SharedResources.texts.ServicesTab_Inactive;
+        public static string ServicesTab_StatusChangeSuccess => SharedResources.texts.ServicesTab_StatusChangeSuccess;
+        public static string ServicesTab_StatusChangeError => SharedResources.texts.ServicesTab_StatusChangeError;
+        public static string ServicesTab_InsertSuccess => SharedResources.texts.ServicesTab_InsertSuccess;
+        public static string ServicesTab_InsertError => SharedResources.texts.ServicesTab_InsertError;
+        public static string ServicesTab_UpdateSuccess => SharedResources.texts.ServicesTab_UpdateSuccess;
+        public static string ServicesTab_UpdateError => SharedResources.texts.ServicesTab_UpdateError;
+        public static string ServicesTab_DeleteConfirmBody => SharedResources.texts.ServicesTab_DeleteConfirmBody;
+        public static string ServicesTab_DeleteConfirmTitle => SharedResources.texts.ServicesTab_DeleteConfirmTitle;
+        public static string ServicesTab_DeleteSuccess => SharedResources.texts.ServicesTab_DeleteSuccess;
+        public static string ServicesTab_DeleteError => SharedResources.texts.ServicesTab_DeleteError;
+        public static string ServicesTab_StatusHeaderText => SharedResources.texts.ServicesTab_StatusHeaderText;
+        public static string ServicesTab_DurationHeaderText => SharedResources.texts.ServicesTab_DurationHeaderText;
+        public static string ServicesTab_WarrantyHeaderText => SharedResources.texts.ServicesTab_WarrantyHeaderText;
+        public static string ServicesTab_CostHeaderText => SharedResources.texts.ServicesTab_CostHeaderText;
+        public static string ServicesTab_NameHeaderText => SharedResources.texts.ServicesTab_NameHeaderText;
+
         #endregion
 
         // Permissions Form
@@ -111,5 +135,15 @@
         public static string MaterialsTypesList_DeleteConfirmationTitle => SharedResources.texts.MaterialsTypesList_DeleteConfirmationTitle;
         public static string MaterialsTypesList_DeleteSuccess => SharedResources.texts.MaterialsTypesList_DeleteSuccess;
         public static string MaterialsTypesList_DeleteError => SharedResources.texts.MaterialsTypesList_DeleteError;
+
+        // Services Form
+
+        public static string ServicesForm_NewServiceTitle => SharedResources.texts.ServicesForm_NewServiceTitle;
+        public static string ServicesForm_EditServiceTitle => SharedResources.texts.ServicesForm_EditServiceTitle;
+        public static string ServicesForm_PleaseProvideServiceName => SharedResources.texts.ServicesForm_PleaseProvideServiceName;
+        public static string ServicesForm_PleaseProvideServiceWarrantyTime => SharedResources.texts.ServicesForm_PleaseProvideServiceWarrantyTime;
+        public static string ServicesForm_PleaseProvideServiceDurationTime => SharedResources.texts.ServicesForm_PleaseProvideServiceDurationTime;
+        public static string ServicesForm_PleaseProvideServicePrice => SharedResources.texts.ServicesForm_PleaseProvideServicePrice;
+        public static string ServicesForm_ServiceWithThisNameExistsAlready => SharedResources.texts.ServicesForm_ServiceWithThisNameExistsAlready;
     }
 }

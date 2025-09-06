@@ -1,5 +1,7 @@
-﻿using CarRepairShop.Services.Presenter;
+﻿using CarRepairShop.Repositories;
+using CarRepairShop.Services.Presenter;
 using System;
+using System.ComponentModel;
 using System.Globalization;
 using System.Windows.Forms;
 
@@ -7,27 +9,27 @@ namespace CarRepairShop.Services.View
 {
     public partial class SerivcesForm : Form, IServicesForm
     {
-        ServicesFormPresenter _presenter;
+        private readonly ServicesFormPresenter _presenter;
 
         public event EventHandler FormIsLoaded;
         public event EventHandler FormIsClosing;
         public event EventHandler ConfirmButtonClicked;
         public event EventHandler CancelButtonClicked;
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string FormTitle { get => this.Text; set => this.Text = value; }
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public string ServiceName
         {
             get => txtName.Text;
             set => txtName.Text = value;
         }
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float ServiceCost
         {
             get
@@ -37,8 +39,8 @@ namespace CarRepairShop.Services.View
             set => txtCost.Text = value.ToString("0.00");
         }
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public float ServiceDuration
         {
             get
@@ -48,8 +50,8 @@ namespace CarRepairShop.Services.View
             set => txtTimeNeeded.Text = value.ToString("0.0");
         }
 
-        [System.ComponentModel.Browsable(false)]
-        [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public int ServiceWarrantyMonths
         {
             get
@@ -59,12 +61,23 @@ namespace CarRepairShop.Services.View
             set => txtWarrantyTime.Text = value.ToString();
         }
 
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public DialogResult OperationConfirmed { get => DialogResult; set => DialogResult = value; }
+
+        [Browsable(false)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
+        public bool Active { get => cbActive.Checked; set => cbActive.Checked = value; }
 
         public SerivcesForm(int? serviceID)
         {
             InitializeComponent();
-            _presenter = new ServicesFormPresenter(this, serviceID);
+            _presenter = new ServicesFormPresenter(this, new GenericRepository(), serviceID);
         }
+
+        public void ShowMessage(string message) => MessageBox.Show(message);
+
+        public void CloseForm() => this.Close();
 
         private void btnConfirm_Click(object sender, EventArgs e) => ConfirmButtonClicked?.Invoke(sender, e);
 
@@ -73,9 +86,5 @@ namespace CarRepairShop.Services.View
         private void SerivcesForm_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(sender, e);
 
         private void SerivcesForm_FormClosing(object sender, FormClosingEventArgs e) => FormIsClosing?.Invoke(sender, e);
-
-        public void ShowMessage(string message) => MessageBox.Show(message);
-
-        public void CloseForm() => this.Close();
     }
 }

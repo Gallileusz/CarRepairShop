@@ -1,7 +1,11 @@
-﻿using CarRepairShop.MainForm.Presenters.Tabs.Services;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.MainForm.Presenters.Tabs.Services;
+using CarRepairShop.Repositories;
+using CarRepairShop.Services.DTO;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.MainForm.Views.Tabs.Services
 {
@@ -10,22 +14,14 @@ namespace CarRepairShop.MainForm.Views.Tabs.Services
         private ServicesTabPresenter _presenter;
 
         public event EventHandler FormIsLoaded;
-        public event EventHandler DebounceTimerElapsed;
+        public event EventHandler DebounceElapsed;
         public event EventHandler FilterChanged;
         public event EventHandler AddServiceButtonClicked;
         public event EventHandler EditServiceButtonClicked;
         public event EventHandler DeleteServiceButtonClicked;
         public event EventHandler ServiceStatusCheckboxClicked;
 
-        public int SelectedServiceID
-        {
-            get
-            {
-                if (dgv.CurrentRow?.DataBoundItem is Domain.Entities.Services service)
-                    return service.ID;
-                return 0;
-            }
-        }
+        public int SelectedServiceID => dgv.CurrentRow?.DataBoundItem is Domain.Entities.Services service ? service.ID : 0;
 
         public string SearchedServiceName => txtServiceName.Text;
 
@@ -38,25 +34,25 @@ namespace CarRepairShop.MainForm.Views.Tabs.Services
         public ServicesTab()
         {
             InitializeComponent();
-            _presenter = new ServicesTabPresenter(this);
-            Debounce.Stop();
+            _presenter = new ServicesTabPresenter(this, new GenericRepository(), new CurrentUserService());
         }
-
-        private void ServicesTab_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(sender, e);
-
-        private void btnAddService_Click(object sender, EventArgs e) => AddServiceButtonClicked?.Invoke(sender, e);
-
-        private void btnEditService_Click(object sender, EventArgs e) => EditServiceButtonClicked?.Invoke(sender, e);
-
-        private void btnDeleteService_Click(object sender, EventArgs e) => DeleteServiceButtonClicked?.Invoke(sender, e);
 
         public void LoadServicesToGrid(List<Domain.Entities.Services> services)
         {
             dgv.DataSource = null;
             dgv.DataSource = services;
 
-            dgv.Columns[nameof(Domain.Entities.Services.Name)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgv.Columns[nameof(Domain.Entities.Services.ID)].Visible = false;
+            dgv.Columns[nameof(Domain.Entities.Services.Name)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgv.Columns[nameof(Domain.Entities.Services.IsActive)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dgv.Columns[nameof(Domain.Entities.Services.Duration)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dgv.Columns[nameof(Domain.Entities.Services.WarrantyMonths)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dgv.Columns[nameof(Domain.Entities.Services.StandardCost)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            dgv.Columns[nameof(Domain.Entities.Services.Name)].HeaderText = Translations.MainView.ServicesTab.NameHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.IsActive)].HeaderText = Translations.MainView.ServicesTab.StatusHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.Duration)].HeaderText = Translations.MainView.ServicesTab.DurationHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.WarrantyMonths)].HeaderText = Translations.MainView.ServicesTab.WarrantyHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.StandardCost)].HeaderText = Translations.MainView.ServicesTab.CostHeaderText;
         }
 
         public bool ConfirmAction(string message, string title) => MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;
@@ -72,49 +68,56 @@ namespace CarRepairShop.MainForm.Views.Tabs.Services
             dgv.Columns[nameof(Domain.Entities.Services.IsActive)].ReadOnly = hasEditPermission;
         }
 
-        private void Debounce_Tick(object sender, EventArgs e)
+        public ServiceFormResult ShowServiceForm(int? serviceID)
         {
-            Debounce.Stop();
-            DebounceTimerElapsed?.Invoke(this, e);
+            var form = new CarRepairShop.Services.View.SerivcesForm(serviceID);
+            form.ShowDialog();
+
+            return new ServiceFormResult
+            {
+                OperationConfirmed = form.OperationConfirmed,
+                Service = new Domain.Entities.Services
+                {
+                    Name = form.ServiceName,
+                    StandardCost = form.ServiceCost,
+                    Duration = form.ServiceDuration,
+                    WarrantyMonths = form.ServiceWarrantyMonths,
+                    IsActive = form.Active
+                }
+            };
         }
 
-        private void txtServiceName_TextChanged(object sender, EventArgs e)
+        public void StartDebounce()
         {
             Debounce.Stop();
             Debounce.Start();
-
-            FilterChanged?.Invoke(sender, e);
         }
+
+        public void StopDebounce() => Debounce.Stop();
+
+        private void Debounce_Tick(object sender, EventArgs e) => DebounceElapsed?.Invoke(this, e);
+
+        private void ServicesTab_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(sender, e);
+
+        private void btnAddService_Click(object sender, EventArgs e) => AddServiceButtonClicked?.Invoke(sender, e);
+
+        private void btnEditService_Click(object sender, EventArgs e) => EditServiceButtonClicked?.Invoke(sender, e);
+
+        private void btnDeleteService_Click(object sender, EventArgs e) => DeleteServiceButtonClicked?.Invoke(sender, e);
+
+        private void txtServiceName_TextChanged(object sender, EventArgs e) => FilterChanged?.Invoke(sender, e);
+
+        private void rbAll_CheckedChanged(object sender, EventArgs e) => FilterChanged?.Invoke(sender, e);
+
+        private void rbActive_CheckedChanged(object sender, EventArgs e) => FilterChanged?.Invoke(sender, e);
+
+        private void rbInactive_CheckedChanged(object sender, EventArgs e) => FilterChanged?.Invoke(sender, e);
 
         private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex != dgv.Columns[nameof(Domain.Entities.Services.IsActive)].Index || e.RowIndex < 0) return;
 
             ServiceStatusCheckboxClicked?.Invoke(sender, e);
-        }
-
-        private void rbAll_CheckedChanged(object sender, EventArgs e)
-        {
-            Debounce.Stop();
-            Debounce.Start();
-
-            FilterChanged?.Invoke(sender, e);
-        }
-
-        private void rbActive_CheckedChanged(object sender, EventArgs e)
-        {
-            Debounce.Stop();
-            Debounce.Start();
-
-            FilterChanged?.Invoke(sender, e);
-        }
-
-        private void rbInactive_CheckedChanged(object sender, EventArgs e)
-        {
-            Debounce.Stop();
-            Debounce.Start();
-
-            FilterChanged?.Invoke(sender, e);
         }
     }
 }

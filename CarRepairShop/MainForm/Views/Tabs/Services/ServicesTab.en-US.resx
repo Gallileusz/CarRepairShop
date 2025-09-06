@@ -121,22 +121,19 @@
     <value>Actions:</value>
   </data>
   <data name="btnDeleteService.Text" xml:space="preserve">
-    <value>Delete service</value>
+    <value>        Delete</value>
   </data>
   <data name="btnEditService.Text" xml:space="preserve">
-    <value>Edit service</value>
+    <value>        Edit</value>
   </data>
   <data name="btnAddService.Text" xml:space="preserve">
-    <value>Add service</value>
+    <value>        Add</value>
   </data>
   <data name="gbServiceName.Text" xml:space="preserve">
     <value>Service name:</value>
   </data>
   <data name="lblFilters.Text" xml:space="preserve">
     <value>Filters:</value>
-  </data>
-  <data name="groupBox5.Text" xml:space="preserve">
-    <value>Contractor cars:</value>
   </data>
   <data name="rbInactive.Text" xml:space="preserve">
     <value>Inactive only</value>

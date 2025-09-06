@@ -121,13 +121,13 @@
     <value>Akcje:</value>
   </data>
   <data name="btnDeleteService.Text" xml:space="preserve">
-    <value>Usuń usługę</value>
+    <value>        Usuń</value>
   </data>
   <data name="btnEditService.Text" xml:space="preserve">
-    <value>Edytuj usługę</value>
+    <value>        Edytuj</value>
   </data>
   <data name="btnAddService.Text" xml:space="preserve">
-    <value>Dodaj usługę</value>
+    <value>        Dodaj</value>
   </data>
   <data name="gbServiceName.Text" xml:space="preserve">
     <value>Nazwa usługi:</value>
