@@ -478,4 +478,37 @@ Application Features:
   <data name="ServicesTab_CostHeaderText" xml:space="preserve">
     <value>Cost</value>
   </data>
+  <data name="SettingsTab_SelectLanguage" xml:space="preserve">
+    <value>Select language:</value>
+  </data>
+  <data name="SettingsTab_LanguageChangeConfirmationBody" xml:space="preserve">
+    <value>The change of the language will restart the app! Do you want to change the language?</value>
+  </data>
+  <data name="SettingsTab_LanguageChangeConfirmationTitle" xml:space="preserve">
+    <value>Language change confirmation.</value>
+  </data>
+  <data name="SettingsTab_ProvideNewPassword" xml:space="preserve">
+    <value>Provide new password:</value>
+  </data>
+  <data name="SettingsTab_PasswordChangeConfirmationBody" xml:space="preserve">
+    <value>Do you really want to change your password?</value>
+  </data>
+  <data name="SettingsTab_PasswordChangeConfirmationTitle" xml:space="preserve">
+    <value>Password change confirmation.</value>
+  </data>
+  <data name="SettingsTab_PasswordChangeSuccess" xml:space="preserve">
+    <value>Your password has been changed.</value>
+  </data>
+  <data name="SettingsTab_PasswordChangeError" xml:space="preserve">
+    <value>Your password couldn't be changed!</value>
+  </data>
+  <data name="SettingsTab_PasswordCannotBeEmpty" xml:space="preserve">
+    <value>The password can't be empty!</value>
+  </data>
+  <data name="SettingsTab_ProvidedPasswordIsTooShort" xml:space="preserve">
+    <value>The password is too short! It has to contain at least 5 characters!</value>
+  </data>
+  <data name="SettingsTab_ProvidedCurrentPasswordOnPasswordChange" xml:space="preserve">
+    <value>The provided password to change is the same as the actual password!</value>
+  </data>
 </root>

@@ -21,9 +21,10 @@ namespace CarRepairShop.Utilities.SingleInputForm.View
 
         [System.ComponentModel.Browsable(false)]
         [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public string Value
+#nullable enable
+        public string? Value
         {
-            get => txt.Text;
+            get => string.IsNullOrEmpty(txt.Text) ? null : txt.Text;
             set => txt.Text = value;
         }
 

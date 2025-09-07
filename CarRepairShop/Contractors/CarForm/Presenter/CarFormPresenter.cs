@@ -41,7 +41,7 @@ namespace CarRepairShop.Contractors.CarForm.Presenter
 
             if (form.Value == null) return;
 
-            var name = form.Value.ToString();
+            var name = form.Value;
 
             if (IsNewFuelTypeNameInvalid(name)) return;
 

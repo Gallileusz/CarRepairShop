@@ -9,7 +9,8 @@ namespace CarRepairShop.Utilities.SingleInputForm.View
         event FormClosingEventHandler FormIsClosing;
         event EventHandler OKButtonClicked;
         string FormTitle { get; set; }
-        string Value { get; set; }
+#nullable enable
+        string? Value { get; set; }
         void CloseForm();
     }
 }

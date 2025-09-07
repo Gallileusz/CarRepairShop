@@ -117,4 +117,145 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnLanguage.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 39</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLanguage.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="btnLanguage.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 43</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnLanguage.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="btnLanguage.Text" xml:space="preserve">
+    <value>Language</value>
+  </data>
+  <data name="&gt;&gt;btnLanguage.Name" xml:space="preserve">
+    <value>btnLanguage</value>
+  </data>
+  <data name="&gt;&gt;btnLanguage.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnLanguage.Parent" xml:space="preserve">
+    <value>gbAppSettings</value>
+  </data>
+  <data name="&gt;&gt;btnLanguage.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbAppSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="gbAppSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 3</value>
+  </data>
+  <data name="gbAppSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="gbAppSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="gbAppSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 483</value>
+  </data>
+  <data name="gbAppSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>35</value>
+  </data>
+  <data name="gbAppSettings.Text" xml:space="preserve">
+    <value>App settings:</value>
+  </data>
+  <data name="&gt;&gt;gbAppSettings.Name" xml:space="preserve">
+    <value>gbAppSettings</value>
+  </data>
+  <data name="&gt;&gt;gbAppSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbAppSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbAppSettings.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="btnChangeCurrentUserPassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>7, 39</value>
+  </data>
+  <data name="btnChangeCurrentUserPassword.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="btnChangeCurrentUserPassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>287, 43</value>
+  </data>
+  <data name="btnChangeCurrentUserPassword.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="btnChangeCurrentUserPassword.Text" xml:space="preserve">
+    <value>Change my password</value>
+  </data>
+  <data name="&gt;&gt;btnChangeCurrentUserPassword.Name" xml:space="preserve">
+    <value>btnChangeCurrentUserPassword</value>
+  </data>
+  <data name="&gt;&gt;btnChangeCurrentUserPassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChangeCurrentUserPassword.Parent" xml:space="preserve">
+    <value>gbUserSettings</value>
+  </data>
+  <data name="&gt;&gt;btnChangeCurrentUserPassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="gbUserSettings.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 11.25pt</value>
+  </data>
+  <data name="gbUserSettings.Location" type="System.Drawing.Point, System.Drawing">
+    <value>322, 3</value>
+  </data>
+  <data name="gbUserSettings.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="gbUserSettings.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="gbUserSettings.Size" type="System.Drawing.Size, System.Drawing">
+    <value>301, 483</value>
+  </data>
+  <data name="gbUserSettings.TabIndex" type="System.Int32, mscorlib">
+    <value>36</value>
+  </data>
+  <data name="gbUserSettings.Text" xml:space="preserve">
+    <value>User settings:</value>
+  </data>
+  <data name="&gt;&gt;gbUserSettings.Name" xml:space="preserve">
+    <value>gbUserSettings</value>
+  </data>
+  <data name="&gt;&gt;gbUserSettings.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbUserSettings.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;gbUserSettings.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 15</value>
+  </data>
+  <data name="$this.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 3, 4, 3</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1086, 490</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>SettingsTab</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

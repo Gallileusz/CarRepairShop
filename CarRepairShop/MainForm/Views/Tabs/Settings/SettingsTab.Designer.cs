@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SettingsTab));
             gbAppSettings = new System.Windows.Forms.GroupBox();
             btnLanguage = new System.Windows.Forms.Button();
             gbUserSettings = new System.Windows.Forms.GroupBox();
@@ -39,62 +40,40 @@
             // gbAppSettings
             // 
             gbAppSettings.Controls.Add(btnLanguage);
-            gbAppSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 238);
+            resources.ApplyResources(gbAppSettings, "gbAppSettings");
             gbAppSettings.ForeColor = System.Drawing.Color.SteelBlue;
-            gbAppSettings.Location = new System.Drawing.Point(4, 3);
-            gbAppSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             gbAppSettings.Name = "gbAppSettings";
-            gbAppSettings.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            gbAppSettings.Size = new System.Drawing.Size(301, 483);
-            gbAppSettings.TabIndex = 35;
             gbAppSettings.TabStop = false;
-            gbAppSettings.Text = "App settings:";
             // 
             // btnLanguage
             // 
-            btnLanguage.Location = new System.Drawing.Point(7, 39);
-            btnLanguage.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(btnLanguage, "btnLanguage");
             btnLanguage.Name = "btnLanguage";
-            btnLanguage.Size = new System.Drawing.Size(287, 43);
-            btnLanguage.TabIndex = 0;
-            btnLanguage.Text = "Language";
             btnLanguage.UseVisualStyleBackColor = true;
             btnLanguage.Click += btnLanguage_Click;
             // 
             // gbUserSettings
             // 
             gbUserSettings.Controls.Add(btnChangeCurrentUserPassword);
-            gbUserSettings.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 238);
+            resources.ApplyResources(gbUserSettings, "gbUserSettings");
             gbUserSettings.ForeColor = System.Drawing.Color.SteelBlue;
-            gbUserSettings.Location = new System.Drawing.Point(322, 3);
-            gbUserSettings.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             gbUserSettings.Name = "gbUserSettings";
-            gbUserSettings.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            gbUserSettings.Size = new System.Drawing.Size(301, 483);
-            gbUserSettings.TabIndex = 36;
             gbUserSettings.TabStop = false;
-            gbUserSettings.Text = "User settings:";
             // 
             // btnChangeCurrentUserPassword
             // 
-            btnChangeCurrentUserPassword.Location = new System.Drawing.Point(7, 39);
-            btnChangeCurrentUserPassword.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            resources.ApplyResources(btnChangeCurrentUserPassword, "btnChangeCurrentUserPassword");
             btnChangeCurrentUserPassword.Name = "btnChangeCurrentUserPassword";
-            btnChangeCurrentUserPassword.Size = new System.Drawing.Size(287, 43);
-            btnChangeCurrentUserPassword.TabIndex = 2;
-            btnChangeCurrentUserPassword.Text = "Change my password";
             btnChangeCurrentUserPassword.UseVisualStyleBackColor = true;
             btnChangeCurrentUserPassword.Click += btnChangeCurrentUserPassword_Click;
             // 
             // SettingsTab
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             Controls.Add(gbUserSettings);
             Controls.Add(gbAppSettings);
-            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Name = "SettingsTab";
-            Size = new System.Drawing.Size(1086, 490);
             gbAppSettings.ResumeLayout(false);
             gbUserSettings.ResumeLayout(false);
             ResumeLayout(false);

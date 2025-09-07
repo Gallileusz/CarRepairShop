@@ -112,7 +112,7 @@ namespace CarRepairShop.Users.PermissionsForm.Presenter
 
             _view.ShowMessage(Library.Texts.PermissionsForm.AskForConfirmationTitle);
             if (_user.ID == _currentUserService.Data.ID)
-                _currentUserService.SetUser(_user);
+                _currentUserService.SetUser(_user, _currentUserService.Credentials);
             _view.CloseForm();
         }
 

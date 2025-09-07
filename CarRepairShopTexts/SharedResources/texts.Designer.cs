@@ -776,6 +776,105 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The change of the language will restart the app! Do you want to change the language?.
+        /// </summary>
+        internal static string SettingsTab_LanguageChangeConfirmationBody {
+            get {
+                return ResourceManager.GetString("SettingsTab_LanguageChangeConfirmationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Language change confirmation..
+        /// </summary>
+        internal static string SettingsTab_LanguageChangeConfirmationTitle {
+            get {
+                return ResourceManager.GetString("SettingsTab_LanguageChangeConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The password can&apos;t be empty!.
+        /// </summary>
+        internal static string SettingsTab_PasswordCannotBeEmpty {
+            get {
+                return ResourceManager.GetString("SettingsTab_PasswordCannotBeEmpty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to change your password?.
+        /// </summary>
+        internal static string SettingsTab_PasswordChangeConfirmationBody {
+            get {
+                return ResourceManager.GetString("SettingsTab_PasswordChangeConfirmationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Password change confirmation..
+        /// </summary>
+        internal static string SettingsTab_PasswordChangeConfirmationTitle {
+            get {
+                return ResourceManager.GetString("SettingsTab_PasswordChangeConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Your password couldn&apos;t be changed!.
+        /// </summary>
+        internal static string SettingsTab_PasswordChangeError {
+            get {
+                return ResourceManager.GetString("SettingsTab_PasswordChangeError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Your password has been changed..
+        /// </summary>
+        internal static string SettingsTab_PasswordChangeSuccess {
+            get {
+                return ResourceManager.GetString("SettingsTab_PasswordChangeSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The provided password to change is the same as the actual password!.
+        /// </summary>
+        internal static string SettingsTab_ProvidedCurrentPasswordOnPasswordChange {
+            get {
+                return ResourceManager.GetString("SettingsTab_ProvidedCurrentPasswordOnPasswordChange", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The password is too short! It has to contain at least 5 characters!.
+        /// </summary>
+        internal static string SettingsTab_ProvidedPasswordIsTooShort {
+            get {
+                return ResourceManager.GetString("SettingsTab_ProvidedPasswordIsTooShort", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Provide new password:.
+        /// </summary>
+        internal static string SettingsTab_ProvideNewPassword {
+            get {
+                return ResourceManager.GetString("SettingsTab_ProvideNewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Select language:.
+        /// </summary>
+        internal static string SettingsTab_SelectLanguage {
+            get {
+                return ResourceManager.GetString("SettingsTab_SelectLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the user: {0} {1}?.
         /// </summary>
         internal static string UsersTab_AskToDeleteBody {

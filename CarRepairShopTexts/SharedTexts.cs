@@ -85,6 +85,20 @@
         public static string ServicesTab_CostHeaderText => SharedResources.texts.ServicesTab_CostHeaderText;
         public static string ServicesTab_NameHeaderText => SharedResources.texts.ServicesTab_NameHeaderText;
 
+        // Settings Tab
+
+        public static string SettingsTab_SelectLanguage => SharedResources.texts.SettingsTab_SelectLanguage;
+        public static string SettingsTab_LanguageChangeConfirmationTitle => SharedResources.texts.SettingsTab_LanguageChangeConfirmationTitle;
+        public static string SettingsTab_LanguageChangeConfirmationBody => SharedResources.texts.SettingsTab_LanguageChangeConfirmationBody;
+        public static string SettingsTab_ProvideNewPassword => SharedResources.texts.SettingsTab_ProvideNewPassword;
+        public static string SettingsTab_PasswordChangeConfirmationBody => SharedResources.texts.SettingsTab_PasswordChangeConfirmationBody;
+        public static string SettingsTab_PasswordChangeConfirmationTitle => SharedResources.texts.SettingsTab_PasswordChangeConfirmationTitle;
+        public static string SettingsTab_PasswordChangeSuccess => SharedResources.texts.SettingsTab_PasswordChangeSuccess;
+        public static string SettingsTab_PasswordChangeError => SharedResources.texts.SettingsTab_PasswordChangeError;
+        public static string SettingsTab_PasswordCannotBeEmpty => SharedResources.texts.SettingsTab_PasswordCannotBeEmpty;
+        public static string SettingsTab_ProvidedPasswordIsTooShort => SharedResources.texts.SettingsTab_ProvidedPasswordIsTooShort;
+        public static string SettingsTab_ProvidedCurrentPasswordOnPasswordChange => SharedResources.texts.SettingsTab_ProvidedCurrentPasswordOnPasswordChange;
+
         #endregion
 
         // Permissions Form

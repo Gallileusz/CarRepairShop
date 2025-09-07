@@ -8,6 +8,7 @@ namespace CarRepairShop.Library
         public UsersTab UsersTab { get; } = new UsersTab();
         public WarehouseTab WarehouseTab { get; } = new WarehouseTab();
         public ServicesTab ServicesTab { get; } = new ServicesTab();
+        public SettingsTab SettingsTab { get; } = new SettingsTab();
 
         public string MissingPermissionsMessage => SharedTexts.MainFormMissingPermissionsMessage;
         public string Services => SharedTexts.MainFormServices;

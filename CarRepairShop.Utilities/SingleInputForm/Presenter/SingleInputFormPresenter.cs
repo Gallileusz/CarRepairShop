@@ -7,7 +7,6 @@ namespace CarRepairShop.Utilities.SingleInputForm.Presenter
     public class SingleInputFormPresenter
     {
         private readonly ISingleInputForm _view;
-        private string _value;
         private bool _isConfirmed = false;
         private readonly string _initialTitle;
         private readonly string _initialValue;
@@ -26,14 +25,13 @@ namespace CarRepairShop.Utilities.SingleInputForm.Presenter
         private void Accept(object sender, EventArgs e)
         {
             _isConfirmed = true;
-            _value = _view.Value;
             _view.CloseForm();
         }
 
         private void Close(object sender, FormClosingEventArgs e)
         {
             if (_isConfirmed == false)
-                _value = null;
+                _view.Value = null;
         }
 
         private void Load(object sender, EventArgs e)

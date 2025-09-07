@@ -117,7 +117,7 @@ namespace CarRepairShop.LoginForm.Presenter
                 _view.ShowMessage(Library.Texts.LoginForm.InvalidCredentials); return;
             }
 
-            _currentUserService.SetUser(_users.FirstOrDefault(x => x.ID == credentials.UserID));
+            _currentUserService.SetUser(_users.FirstOrDefault(x => x.ID == credentials.UserID), _userCredentials.FirstOrDefault(x => x.UserID == credentials.UserID));
 
             Cache();
             _view.SetDialogResult(DialogResult.OK);

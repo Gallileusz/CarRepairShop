@@ -10,10 +10,12 @@ namespace CarRepairShop.AppSettings
 
         public string Language { get => CurrentUser.Language; set => CurrentUser.Language = value; }
 
+        public Domain.Entities.UserCredentials Credentials => CurrentUser.Credentials;
+
         public bool HasPermission(PermissionTabs permissionType, Permissions permission) => CurrentUser.HasPermission(permissionType, permission);
 
         public void Initialize(PermissionService permissionService) => CurrentUser.Initialize(permissionService);
 
-        public void SetUser(Domain.Entities.Users user) => CurrentUser.SetUser(user);
+        public void SetUser(Domain.Entities.Users user, Domain.Entities.UserCredentials credentials) => CurrentUser.SetUser(user, credentials);
     }
 }

@@ -1,7 +1,19 @@
 [
   {
-    "version": "1.5.0",
+    "version": "1.6.0",
     "date": "2025-09-7",
+    "changes": [
+      "Refactored presenter in Settings tab",
+      "Refactored view in Settings tab",
+      "Single input form returns null if operation cancelled",
+      "Changed fonts in Settings tab to 'Verdana'",
+      "Added credentials object to current user service",
+      "Added translations to Settings tab and all sub-forms"
+    ]
+  },
+  {
+    "version": "1.5.0",
+    "date": "2025-09-6",
     "changes": [
       "Refactored Service form view",
       "Refactored Service form presenter",
