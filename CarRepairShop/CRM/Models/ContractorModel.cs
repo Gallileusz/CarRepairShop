@@ -1,4 +1,4 @@
-﻿namespace CarRepairShop.CRM.Model
+﻿namespace CarRepairShop.CRM.Models
 {
     public class ContractorModel
     {

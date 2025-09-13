@@ -2,6 +2,6 @@
 {
     public static class Queries
     {
-        public static string DeleteCRMTasks(int taskID) => $"DELETE FROM {nameof(Domain.Entities.CRM_Task)} WHERE {nameof(Domain.Entities.CRM_Task.TaskID)} = {taskID};";
+        public static string DeleteMappings(int taskID) => $"DELETE FROM {nameof(Domain.Entities.CRM_Services)} WHERE {nameof(Domain.Entities.CRM_Services.TaskID)} = {taskID};";
     }
 }

@@ -9,5 +9,6 @@
         public static ConsumableMaterial ConsumableMaterial { get; } = new ConsumableMaterial();
         public static MaterialsTypesList MaterialsTypesList { get; } = new MaterialsTypesList();
         public static ServicesForm ServicesForm { get; } = new ServicesForm();
+        public static CRMForm CRMForm { get; } = new CRMForm();
     }
 }

@@ -28,398 +28,351 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbName = new System.Windows.Forms.GroupBox();
-            this.lblSelectedVehicle = new System.Windows.Forms.Label();
-            this.dgvContractorCars = new System.Windows.Forms.DataGridView();
-            this.lblContractorFullName = new System.Windows.Forms.Label();
-            this.cmbContractor = new System.Windows.Forms.ComboBox();
-            this.gbMechanicData = new System.Windows.Forms.GroupBox();
-            this.txtMechanicSurname = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtMechanicName = new System.Windows.Forms.TextBox();
-            this.gbTaskData = new System.Windows.Forms.GroupBox();
-            this.cbTaskClosed = new System.Windows.Forms.CheckBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtDateClosed = new System.Windows.Forms.TextBox();
-            this.rtbTaskComment = new System.Windows.Forms.RichTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtDateCreated = new System.Windows.Forms.TextBox();
-            this.gbRequiredServices = new System.Windows.Forms.GroupBox();
-            this.dgvRequiredServices = new System.Windows.Forms.DataGridView();
-            this.gbSelectedServices = new System.Windows.Forms.GroupBox();
-            this.btnDecrement = new System.Windows.Forms.Button();
-            this.btnIncrement = new System.Windows.Forms.Button();
-            this.lblQuantity = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtExpectedPrice = new System.Windows.Forms.TextBox();
-            this.dgvSelectedServices = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.gbName.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContractorCars)).BeginInit();
-            this.gbMechanicData.SuspendLayout();
-            this.gbTaskData.SuspendLayout();
-            this.gbRequiredServices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRequiredServices)).BeginInit();
-            this.gbSelectedServices.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSelectedServices)).BeginInit();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CRMForm));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            gbName = new System.Windows.Forms.GroupBox();
+            lblSelectedVehicle = new System.Windows.Forms.Label();
+            dgvContractorCars = new System.Windows.Forms.DataGridView();
+            lblContractorFullName = new System.Windows.Forms.Label();
+            cmbContractor = new System.Windows.Forms.ComboBox();
+            gbMechanicData = new System.Windows.Forms.GroupBox();
+            txtMechanicSurname = new System.Windows.Forms.TextBox();
+            label3 = new System.Windows.Forms.Label();
+            label4 = new System.Windows.Forms.Label();
+            txtMechanicName = new System.Windows.Forms.TextBox();
+            gbTaskData = new System.Windows.Forms.GroupBox();
+            cbTaskClosed = new System.Windows.Forms.CheckBox();
+            label2 = new System.Windows.Forms.Label();
+            txtDateClosed = new System.Windows.Forms.TextBox();
+            rtbTaskComment = new System.Windows.Forms.RichTextBox();
+            label7 = new System.Windows.Forms.Label();
+            label5 = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            txtDateCreated = new System.Windows.Forms.TextBox();
+            gbRequiredServices = new System.Windows.Forms.GroupBox();
+            dgvRequiredServices = new System.Windows.Forms.DataGridView();
+            gbSelectedServices = new System.Windows.Forms.GroupBox();
+            btnDecrement = new System.Windows.Forms.Button();
+            btnIncrement = new System.Windows.Forms.Button();
+            lblQuantity = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            txtExpectedPrice = new System.Windows.Forms.TextBox();
+            dgvSelectedServices = new System.Windows.Forms.DataGridView();
+            btnCancel = new System.Windows.Forms.Button();
+            btnConfirm = new System.Windows.Forms.Button();
+            gbName.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvContractorCars).BeginInit();
+            gbMechanicData.SuspendLayout();
+            gbTaskData.SuspendLayout();
+            gbRequiredServices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvRequiredServices).BeginInit();
+            gbSelectedServices.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSelectedServices).BeginInit();
+            SuspendLayout();
             // 
             // gbName
             // 
-            this.gbName.Controls.Add(this.lblSelectedVehicle);
-            this.gbName.Controls.Add(this.dgvContractorCars);
-            this.gbName.Controls.Add(this.lblContractorFullName);
-            this.gbName.Controls.Add(this.cmbContractor);
-            this.gbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbName.Location = new System.Drawing.Point(12, 12);
-            this.gbName.Name = "gbName";
-            this.gbName.Size = new System.Drawing.Size(428, 208);
-            this.gbName.TabIndex = 41;
-            this.gbName.TabStop = false;
-            this.gbName.Text = "Contractor data:";
+            gbName.Controls.Add(lblSelectedVehicle);
+            gbName.Controls.Add(dgvContractorCars);
+            gbName.Controls.Add(lblContractorFullName);
+            gbName.Controls.Add(cmbContractor);
+            resources.ApplyResources(gbName, "gbName");
+            gbName.ForeColor = System.Drawing.Color.SteelBlue;
+            gbName.Name = "gbName";
+            gbName.TabStop = false;
             // 
             // lblSelectedVehicle
             // 
-            this.lblSelectedVehicle.AutoSize = true;
-            this.lblSelectedVehicle.Location = new System.Drawing.Point(5, 58);
-            this.lblSelectedVehicle.Name = "lblSelectedVehicle";
-            this.lblSelectedVehicle.Size = new System.Drawing.Size(110, 16);
-            this.lblSelectedVehicle.TabIndex = 4;
-            this.lblSelectedVehicle.Text = "Selected vehicle:";
+            resources.ApplyResources(lblSelectedVehicle, "lblSelectedVehicle");
+            lblSelectedVehicle.Name = "lblSelectedVehicle";
             // 
             // dgvContractorCars
             // 
-            this.dgvContractorCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvContractorCars.Location = new System.Drawing.Point(8, 81);
-            this.dgvContractorCars.MultiSelect = false;
-            this.dgvContractorCars.Name = "dgvContractorCars";
-            this.dgvContractorCars.ReadOnly = true;
-            this.dgvContractorCars.RowHeadersVisible = false;
-            this.dgvContractorCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContractorCars.Size = new System.Drawing.Size(412, 121);
-            this.dgvContractorCars.TabIndex = 3;
-            this.dgvContractorCars.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvContractorCars_CellClick);
+            dgvContractorCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dgvContractorCars.DefaultCellStyle = dataGridViewCellStyle1;
+            resources.ApplyResources(dgvContractorCars, "dgvContractorCars");
+            dgvContractorCars.MultiSelect = false;
+            dgvContractorCars.Name = "dgvContractorCars";
+            dgvContractorCars.ReadOnly = true;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 11.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dgvContractorCars.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dgvContractorCars.RowHeadersVisible = false;
+            dgvContractorCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvContractorCars.CellClick += dgvContractorCars_CellClick;
             // 
             // lblContractorFullName
             // 
-            this.lblContractorFullName.AutoSize = true;
-            this.lblContractorFullName.Location = new System.Drawing.Point(6, 28);
-            this.lblContractorFullName.Name = "lblContractorFullName";
-            this.lblContractorFullName.Size = new System.Drawing.Size(65, 16);
-            this.lblContractorFullName.TabIndex = 2;
-            this.lblContractorFullName.Text = "Fullname:";
+            resources.ApplyResources(lblContractorFullName, "lblContractorFullName");
+            lblContractorFullName.Name = "lblContractorFullName";
             // 
             // cmbContractor
             // 
-            this.cmbContractor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbContractor.FormattingEnabled = true;
-            this.cmbContractor.Location = new System.Drawing.Point(77, 25);
-            this.cmbContractor.Name = "cmbContractor";
-            this.cmbContractor.Size = new System.Drawing.Size(343, 24);
-            this.cmbContractor.TabIndex = 0;
-            this.cmbContractor.SelectedValueChanged += new System.EventHandler(this.cmbContractor_SelectedValueChanged);
+            cmbContractor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            cmbContractor.FormattingEnabled = true;
+            resources.ApplyResources(cmbContractor, "cmbContractor");
+            cmbContractor.Name = "cmbContractor";
+            cmbContractor.SelectedValueChanged += cmbContractor_SelectedValueChanged;
             // 
             // gbMechanicData
             // 
-            this.gbMechanicData.Controls.Add(this.txtMechanicSurname);
-            this.gbMechanicData.Controls.Add(this.label3);
-            this.gbMechanicData.Controls.Add(this.label4);
-            this.gbMechanicData.Controls.Add(this.txtMechanicName);
-            this.gbMechanicData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbMechanicData.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbMechanicData.Location = new System.Drawing.Point(457, 285);
-            this.gbMechanicData.Name = "gbMechanicData";
-            this.gbMechanicData.Size = new System.Drawing.Size(329, 97);
-            this.gbMechanicData.TabIndex = 42;
-            this.gbMechanicData.TabStop = false;
-            this.gbMechanicData.Text = "Mechanic data:";
+            gbMechanicData.Controls.Add(txtMechanicSurname);
+            gbMechanicData.Controls.Add(label3);
+            gbMechanicData.Controls.Add(label4);
+            gbMechanicData.Controls.Add(txtMechanicName);
+            resources.ApplyResources(gbMechanicData, "gbMechanicData");
+            gbMechanicData.ForeColor = System.Drawing.Color.SteelBlue;
+            gbMechanicData.Name = "gbMechanicData";
+            gbMechanicData.TabStop = false;
             // 
             // txtMechanicSurname
             // 
-            this.txtMechanicSurname.Location = new System.Drawing.Point(76, 59);
-            this.txtMechanicSurname.Name = "txtMechanicSurname";
-            this.txtMechanicSurname.ReadOnly = true;
-            this.txtMechanicSurname.Size = new System.Drawing.Size(245, 22);
-            this.txtMechanicSurname.TabIndex = 3;
+            resources.ApplyResources(txtMechanicSurname, "txtMechanicSurname");
+            txtMechanicSurname.Name = "txtMechanicSurname";
+            txtMechanicSurname.ReadOnly = true;
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(64, 16);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Surname:";
+            resources.ApplyResources(label3, "label3");
+            label3.Name = "label3";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(22, 27);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 16);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "Name:";
+            resources.ApplyResources(label4, "label4");
+            label4.Name = "label4";
             // 
             // txtMechanicName
             // 
-            this.txtMechanicName.Location = new System.Drawing.Point(76, 24);
-            this.txtMechanicName.Name = "txtMechanicName";
-            this.txtMechanicName.ReadOnly = true;
-            this.txtMechanicName.Size = new System.Drawing.Size(245, 22);
-            this.txtMechanicName.TabIndex = 0;
+            resources.ApplyResources(txtMechanicName, "txtMechanicName");
+            txtMechanicName.Name = "txtMechanicName";
+            txtMechanicName.ReadOnly = true;
             // 
             // gbTaskData
             // 
-            this.gbTaskData.Controls.Add(this.cbTaskClosed);
-            this.gbTaskData.Controls.Add(this.label2);
-            this.gbTaskData.Controls.Add(this.txtDateClosed);
-            this.gbTaskData.Controls.Add(this.rtbTaskComment);
-            this.gbTaskData.Controls.Add(this.label7);
-            this.gbTaskData.Controls.Add(this.label5);
-            this.gbTaskData.Controls.Add(this.label6);
-            this.gbTaskData.Controls.Add(this.txtDateCreated);
-            this.gbTaskData.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbTaskData.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbTaskData.Location = new System.Drawing.Point(457, 12);
-            this.gbTaskData.Name = "gbTaskData";
-            this.gbTaskData.Size = new System.Drawing.Size(331, 258);
-            this.gbTaskData.TabIndex = 43;
-            this.gbTaskData.TabStop = false;
-            this.gbTaskData.Text = "Task data:";
+            gbTaskData.Controls.Add(cbTaskClosed);
+            gbTaskData.Controls.Add(label2);
+            gbTaskData.Controls.Add(txtDateClosed);
+            gbTaskData.Controls.Add(rtbTaskComment);
+            gbTaskData.Controls.Add(label7);
+            gbTaskData.Controls.Add(label5);
+            gbTaskData.Controls.Add(label6);
+            gbTaskData.Controls.Add(txtDateCreated);
+            resources.ApplyResources(gbTaskData, "gbTaskData");
+            gbTaskData.ForeColor = System.Drawing.Color.SteelBlue;
+            gbTaskData.Name = "gbTaskData";
+            gbTaskData.TabStop = false;
             // 
             // cbTaskClosed
             // 
-            this.cbTaskClosed.AutoSize = true;
-            this.cbTaskClosed.ForeColor = System.Drawing.Color.Red;
-            this.cbTaskClosed.Location = new System.Drawing.Point(101, 52);
-            this.cbTaskClosed.Name = "cbTaskClosed";
-            this.cbTaskClosed.Size = new System.Drawing.Size(44, 20);
-            this.cbTaskClosed.TabIndex = 8;
-            this.cbTaskClosed.Text = "No";
-            this.cbTaskClosed.UseVisualStyleBackColor = true;
-            this.cbTaskClosed.CheckedChanged += new System.EventHandler(this.cbTaskClosed_CheckedChanged);
+            resources.ApplyResources(cbTaskClosed, "cbTaskClosed");
+            cbTaskClosed.ForeColor = System.Drawing.Color.Red;
+            cbTaskClosed.Name = "cbTaskClosed";
+            cbTaskClosed.UseVisualStyleBackColor = true;
+            cbTaskClosed.CheckedChanged += cbTaskClosed_CheckedChanged;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 81);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 16);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Date closed:";
+            resources.ApplyResources(label2, "label2");
+            label2.Name = "label2";
             // 
             // txtDateClosed
             // 
-            this.txtDateClosed.Location = new System.Drawing.Point(101, 78);
-            this.txtDateClosed.Name = "txtDateClosed";
-            this.txtDateClosed.ReadOnly = true;
-            this.txtDateClosed.Size = new System.Drawing.Size(222, 22);
-            this.txtDateClosed.TabIndex = 6;
+            resources.ApplyResources(txtDateClosed, "txtDateClosed");
+            txtDateClosed.Name = "txtDateClosed";
+            txtDateClosed.ReadOnly = true;
             // 
             // rtbTaskComment
             // 
-            this.rtbTaskComment.Location = new System.Drawing.Point(6, 133);
-            this.rtbTaskComment.Name = "rtbTaskComment";
-            this.rtbTaskComment.Size = new System.Drawing.Size(315, 118);
-            this.rtbTaskComment.TabIndex = 5;
-            this.rtbTaskComment.Text = "";
+            resources.ApplyResources(rtbTaskComment, "rtbTaskComment");
+            rtbTaskComment.Name = "rtbTaskComment";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 114);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(155, 16);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Comment to the problem:";
+            resources.ApplyResources(label7, "label7");
+            label7.Name = "label7";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(85, 16);
-            this.label5.TabIndex = 2;
-            this.label5.Text = "Task closed:";
+            resources.ApplyResources(label5, "label5");
+            label5.Name = "label5";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 27);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 16);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Date created:";
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
             // 
             // txtDateCreated
             // 
-            this.txtDateCreated.Location = new System.Drawing.Point(101, 24);
-            this.txtDateCreated.Name = "txtDateCreated";
-            this.txtDateCreated.ReadOnly = true;
-            this.txtDateCreated.Size = new System.Drawing.Size(222, 22);
-            this.txtDateCreated.TabIndex = 0;
+            resources.ApplyResources(txtDateCreated, "txtDateCreated");
+            txtDateCreated.Name = "txtDateCreated";
+            txtDateCreated.ReadOnly = true;
             // 
             // gbRequiredServices
             // 
-            this.gbRequiredServices.Controls.Add(this.dgvRequiredServices);
-            this.gbRequiredServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbRequiredServices.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbRequiredServices.Location = new System.Drawing.Point(12, 226);
-            this.gbRequiredServices.Name = "gbRequiredServices";
-            this.gbRequiredServices.Size = new System.Drawing.Size(428, 156);
-            this.gbRequiredServices.TabIndex = 44;
-            this.gbRequiredServices.TabStop = false;
-            this.gbRequiredServices.Text = "Required services:";
+            gbRequiredServices.Controls.Add(dgvRequiredServices);
+            resources.ApplyResources(gbRequiredServices, "gbRequiredServices");
+            gbRequiredServices.ForeColor = System.Drawing.Color.SteelBlue;
+            gbRequiredServices.Name = "gbRequiredServices";
+            gbRequiredServices.TabStop = false;
             // 
             // dgvRequiredServices
             // 
-            this.dgvRequiredServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRequiredServices.Location = new System.Drawing.Point(8, 21);
-            this.dgvRequiredServices.Name = "dgvRequiredServices";
-            this.dgvRequiredServices.ReadOnly = true;
-            this.dgvRequiredServices.RowHeadersVisible = false;
-            this.dgvRequiredServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvRequiredServices.Size = new System.Drawing.Size(412, 129);
-            this.dgvRequiredServices.TabIndex = 0;
-            this.dgvRequiredServices.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRequiredServices_CellClick);
+            dgvRequiredServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dgvRequiredServices.DefaultCellStyle = dataGridViewCellStyle3;
+            resources.ApplyResources(dgvRequiredServices, "dgvRequiredServices");
+            dgvRequiredServices.Name = "dgvRequiredServices";
+            dgvRequiredServices.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 11.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dgvRequiredServices.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dgvRequiredServices.RowHeadersVisible = false;
+            dgvRequiredServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            dgvRequiredServices.CellClick += dgvRequiredServices_CellClick;
             // 
             // gbSelectedServices
             // 
-            this.gbSelectedServices.Controls.Add(this.btnDecrement);
-            this.gbSelectedServices.Controls.Add(this.btnIncrement);
-            this.gbSelectedServices.Controls.Add(this.lblQuantity);
-            this.gbSelectedServices.Controls.Add(this.label8);
-            this.gbSelectedServices.Controls.Add(this.txtExpectedPrice);
-            this.gbSelectedServices.Controls.Add(this.dgvSelectedServices);
-            this.gbSelectedServices.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbSelectedServices.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbSelectedServices.Location = new System.Drawing.Point(12, 388);
-            this.gbSelectedServices.Name = "gbSelectedServices";
-            this.gbSelectedServices.Size = new System.Drawing.Size(776, 192);
-            this.gbSelectedServices.TabIndex = 45;
-            this.gbSelectedServices.TabStop = false;
-            this.gbSelectedServices.Text = "Selected services:";
+            gbSelectedServices.Controls.Add(btnDecrement);
+            gbSelectedServices.Controls.Add(btnIncrement);
+            gbSelectedServices.Controls.Add(lblQuantity);
+            gbSelectedServices.Controls.Add(label8);
+            gbSelectedServices.Controls.Add(txtExpectedPrice);
+            gbSelectedServices.Controls.Add(dgvSelectedServices);
+            resources.ApplyResources(gbSelectedServices, "gbSelectedServices");
+            gbSelectedServices.ForeColor = System.Drawing.Color.SteelBlue;
+            gbSelectedServices.Name = "gbSelectedServices";
+            gbSelectedServices.TabStop = false;
             // 
             // btnDecrement
             // 
-            this.btnDecrement.Location = new System.Drawing.Point(429, 122);
-            this.btnDecrement.Name = "btnDecrement";
-            this.btnDecrement.Size = new System.Drawing.Size(41, 43);
-            this.btnDecrement.TabIndex = 13;
-            this.btnDecrement.Text = "- 1";
-            this.btnDecrement.UseVisualStyleBackColor = true;
-            this.btnDecrement.Click += new System.EventHandler(this.btnDecrement_Click);
+            resources.ApplyResources(btnDecrement, "btnDecrement");
+            btnDecrement.Name = "btnDecrement";
+            btnDecrement.UseVisualStyleBackColor = true;
+            btnDecrement.Click += btnDecrement_Click;
             // 
             // btnIncrement
             // 
-            this.btnIncrement.Location = new System.Drawing.Point(429, 57);
-            this.btnIncrement.Name = "btnIncrement";
-            this.btnIncrement.Size = new System.Drawing.Size(41, 43);
-            this.btnIncrement.TabIndex = 11;
-            this.btnIncrement.Text = "+ 1";
-            this.btnIncrement.UseVisualStyleBackColor = true;
-            this.btnIncrement.Click += new System.EventHandler(this.btnIncrement_Click);
+            resources.ApplyResources(btnIncrement, "btnIncrement");
+            btnIncrement.Name = "btnIncrement";
+            btnIncrement.UseVisualStyleBackColor = true;
+            btnIncrement.Click += btnIncrement_Click;
             // 
             // lblQuantity
             // 
-            this.lblQuantity.AutoSize = true;
-            this.lblQuantity.Location = new System.Drawing.Point(426, 103);
-            this.lblQuantity.Name = "lblQuantity";
-            this.lblQuantity.Size = new System.Drawing.Size(55, 16);
-            this.lblQuantity.TabIndex = 10;
-            this.lblQuantity.Text = "Quantity";
+            resources.ApplyResources(lblQuantity, "lblQuantity");
+            lblQuantity.Name = "lblQuantity";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label8.Location = new System.Drawing.Point(437, 169);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(115, 16);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Expected price:";
+            resources.ApplyResources(label8, "label8");
+            label8.Name = "label8";
             // 
             // txtExpectedPrice
             // 
-            this.txtExpectedPrice.Location = new System.Drawing.Point(556, 166);
-            this.txtExpectedPrice.Name = "txtExpectedPrice";
-            this.txtExpectedPrice.ReadOnly = true;
-            this.txtExpectedPrice.Size = new System.Drawing.Size(215, 22);
-            this.txtExpectedPrice.TabIndex = 8;
+            resources.ApplyResources(txtExpectedPrice, "txtExpectedPrice");
+            txtExpectedPrice.Name = "txtExpectedPrice";
+            txtExpectedPrice.ReadOnly = true;
             // 
             // dgvSelectedServices
             // 
-            this.dgvSelectedServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSelectedServices.Location = new System.Drawing.Point(8, 21);
-            this.dgvSelectedServices.MultiSelect = false;
-            this.dgvSelectedServices.Name = "dgvSelectedServices";
-            this.dgvSelectedServices.ReadOnly = true;
-            this.dgvSelectedServices.RowHeadersVisible = false;
-            this.dgvSelectedServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSelectedServices.Size = new System.Drawing.Size(412, 165);
-            this.dgvSelectedServices.TabIndex = 0;
+            dgvSelectedServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dgvSelectedServices.DefaultCellStyle = dataGridViewCellStyle5;
+            resources.ApplyResources(dgvSelectedServices, "dgvSelectedServices");
+            dgvSelectedServices.MultiSelect = false;
+            dgvSelectedServices.Name = "dgvSelectedServices";
+            dgvSelectedServices.ReadOnly = true;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Verdana", 11.25F);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dgvSelectedServices.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dgvSelectedServices.RowHeadersVisible = false;
+            dgvSelectedServices.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             // 
             // btnCancel
             // 
-            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnCancel.ForeColor = System.Drawing.Color.Red;
-            this.btnCancel.Location = new System.Drawing.Point(408, 586);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(104, 27);
-            this.btnCancel.TabIndex = 47;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            resources.ApplyResources(btnCancel, "btnCancel");
+            btnCancel.ForeColor = System.Drawing.Color.Red;
+            btnCancel.Name = "btnCancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnConfirm.ForeColor = System.Drawing.Color.SteelBlue;
-            this.btnConfirm.Location = new System.Drawing.Point(277, 586);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(104, 27);
-            this.btnConfirm.TabIndex = 46;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            resources.ApplyResources(btnConfirm, "btnConfirm");
+            btnConfirm.ForeColor = System.Drawing.Color.SteelBlue;
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // CRMForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 621);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.gbSelectedServices);
-            this.Controls.Add(this.gbRequiredServices);
-            this.Controls.Add(this.gbTaskData);
-            this.Controls.Add(this.gbMechanicData);
-            this.Controls.Add(this.gbName);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "CRMForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CRMForm";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.CRMForm_FormClosed);
-            this.Load += new System.EventHandler(this.CRMForm_Load);
-            this.gbName.ResumeLayout(false);
-            this.gbName.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvContractorCars)).EndInit();
-            this.gbMechanicData.ResumeLayout(false);
-            this.gbMechanicData.PerformLayout();
-            this.gbTaskData.ResumeLayout(false);
-            this.gbTaskData.PerformLayout();
-            this.gbRequiredServices.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvRequiredServices)).EndInit();
-            this.gbSelectedServices.ResumeLayout(false);
-            this.gbSelectedServices.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvSelectedServices)).EndInit();
-            this.ResumeLayout(false);
+            resources.ApplyResources(this, "$this");
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(btnCancel);
+            Controls.Add(btnConfirm);
+            Controls.Add(gbSelectedServices);
+            Controls.Add(gbRequiredServices);
+            Controls.Add(gbTaskData);
+            Controls.Add(gbMechanicData);
+            Controls.Add(gbName);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "CRMForm";
+            FormClosed += CRMForm_FormClosed;
+            Load += CRMForm_Load;
+            gbName.ResumeLayout(false);
+            gbName.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvContractorCars).EndInit();
+            gbMechanicData.ResumeLayout(false);
+            gbMechanicData.PerformLayout();
+            gbTaskData.ResumeLayout(false);
+            gbTaskData.PerformLayout();
+            gbRequiredServices.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dgvRequiredServices).EndInit();
+            gbSelectedServices.ResumeLayout(false);
+            gbSelectedServices.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvSelectedServices).EndInit();
+            ResumeLayout(false);
 
         }
 

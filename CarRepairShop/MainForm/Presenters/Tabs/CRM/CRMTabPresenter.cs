@@ -1,5 +1,4 @@
 ﻿using CarRepairShop.AppSettings;
-using CarRepairShop.CRM.View;
 using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Models.Tabs.CRM;
 using CarRepairShop.MainForm.Views.Tabs.CRM;
@@ -8,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
 {
@@ -16,6 +16,8 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
         private ICRMTab _view;
         private IGenericRepository _genericRepo;
         private ICurrentUserService _currentUserService;
+
+        private const string _dateFormat = "dd.MM.yyyy HH:mm";
 
         private List<CRM_Task> _crms;
         private List<CRM_Services> _crmServices;
@@ -43,9 +45,9 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
             {
                 ID = crm.TaskID,
                 Description = crm.Comment,
-                StartDate = crm.StartDate.ToString("dd//MM/yyyy HH:mm"),
+                StartDate = crm.StartDate.ToString(_dateFormat),
                 Completed = crm.Completed,
-                EndDate = crm.EndDate?.ToString("dd//MM/yyyy HH:mm") ?? string.Empty,
+                EndDate = crm.EndDate?.ToString(_dateFormat) ?? string.Empty,
                 TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == crm.MechanicID).Name} {_mechanics.FirstOrDefault(c => c.ID == crm.MechanicID).Surname}",
                 CustomerFullname = $"{_contractors.FirstOrDefault(c => c.ID == crm.ContractorID).Name} {_contractors.FirstOrDefault(c => c.ID == crm.ContractorID).Surname}",
                 Price = (decimal)crm.Price,
@@ -77,68 +79,52 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
 
         private void LoadData(object sender, EventArgs e)
         {
-            _view.FilterDateFrom = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
+            var currentWeekMonday = DateTime.Now.AddDays(-(int)(DateTime.Now.DayOfWeek == DayOfWeek.Sunday ? 6 : DateTime.Now.DayOfWeek - DayOfWeek.Monday));
+
+            _view.FilterDateFrom = currentWeekMonday;
             _view.StopDebounce();
-            _view.PopulateCRMTasksGrid(GetFilteredModels());
-            _view.ChangeButtonAccess(
-                _currentUserService.IsAdmin
-                || _currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit));
+            _view.PopulateCRMTasksGrid(GetModels());
+            _view.ChangeButtonAccess(_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit));
         }
 
         private void OnAddButtonClicked(object sender, EventArgs e)
         {
-            if (!_currentUserService.IsAdmin
-                || !_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit)) return;
 
-            var form = new CRMForm(null);
-            form.ShowDialog();
+            var data = _view.OpenCRMForm();
 
-            if (form.OperationConfirmed != DialogResult.Yes) return;
+            if (data.OperationConfirmed != DialogResult.Yes) return;
 
-            var crm = new CRM_Task
+            if (_genericRepo.Insert(data.CRM_Task) < 0)
             {
-                ContractorID = form.SelectedContractorID,
-                CarID = form.SelectedVehicleID,
-                StartDate = form.CreationDate,
-                Completed = false,
-                MechanicID = _currentUserService.Data.ID,
-                Comment = form.TaskComment,
-                Price = Convert.ToDouble(form.TotalPrice)
-            };
+                _view.ShowMessage(Translations.MainView.CRMTab.TaskInsertFailed);
+                return;
+            }
 
-            _genericRepo.Insert(crm);
+            data.CRM_Services.ForEach(s => s.TaskID = data.CRM_Task.TaskID);
 
-            var crmServiceMappings = form.SelectedRequiredServiceID
-                .Select(
-                    serviceId => new CRM_Services
-                    {
-                        TaskID = crm.TaskID,
-                        ServiceID = serviceId,
-                        Quantity = form.SelectedServiceQuantities != null && form.SelectedServiceQuantities.ContainsKey(serviceId)
-                            ? form.SelectedServiceQuantities[serviceId]
-                            : 1
-                    })
-                .ToList();
+            if (_genericRepo.Insert(data.CRM_Services) < 0)
+            {
+                _view.ShowMessage(Translations.MainView.CRMTab.TaskMappingsInsertFailed); return;
+            }
 
-            _genericRepo.Insert(crmServiceMappings);
-
-            _crms.Add(crm);
-            _crmServices.AddRange(crmServiceMappings);
+            _crms.Add(data.CRM_Task);
+            _crmServices.AddRange(data.CRM_Services);
             _models.Add(new CRM_Model
             {
-                ID = crm.TaskID,
-                Description = crm.Comment,
-                StartDate = crm.StartDate.ToString("dd//MM/yyyy HH:mm"),
-                Completed = crm.Completed,
+                ID = data.CRM_Task.TaskID,
+                Description = data.CRM_Task.Comment,
+                StartDate = data.CRM_Task.StartDate.ToString(_dateFormat),
+                Completed = data.CRM_Task.Completed,
                 EndDate = null,
-                TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == crm.MechanicID).Name} {_contractors.FirstOrDefault(c => c.ID == crm.MechanicID).Surname}",
-                CustomerFullname = $"{_contractors.FirstOrDefault(c => c.ID == crm.ContractorID).Name} {_contractors.FirstOrDefault(c => c.ID == crm.ContractorID).Surname}",
-                Price = (decimal)crm.Price,
-                VehicleDetails = $"{_contractorsCars.FirstOrDefault(c => c.ID == crm.CarID).BrandName} {_contractorsCars.FirstOrDefault(c => c.ID == crm.CarID).ModelName} {_contractorsCars.FirstOrDefault(c => c.ID == crm.CarID).Year}",
+                TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Name} {_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Surname}",
+                CustomerFullname = $"{_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.ContractorID).Name} {_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.ContractorID).Surname}",
+                Price = (decimal)data.CRM_Task.Price,
+                VehicleDetails = $"{_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).BrandName} {_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).ModelName} {_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).Year}",
                 Services = string.Join(", ",
                     _crmServices
                         .Where(
-                            cs => cs.TaskID == crm.TaskID)
+                            cs => cs.TaskID == data.CRM_Task.TaskID)
                         .Select(cs =>
                             {
                                 var service = _services.FirstOrDefault(s => s.ID == cs.ServiceID);
@@ -147,69 +133,50 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
                         .Where(s => s != null))
             });
 
-            _view.PopulateCRMTasksGrid(GetFilteredModels());
+            _view.PopulateCRMTasksGrid(GetModels());
+            _view.ShowMessage(Translations.MainView.CRMTab.TaskInsertSuccess); return;
         }
 
         private void OnEditButtonClicked(object sender, EventArgs e)
         {
-            if (!_currentUserService.IsAdmin
-                || !_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit)) return;
 
             var id = _view.SelectedCRMTaskID;
             var taskBeforeUpdate = _crms.Where(x => x.TaskID == id).FirstOrDefault();
             var taskMappingsBeforeUpdate = _crmServices.Where(x => x.TaskID == id).ToList();
 
-            var form = new CRMForm(id);
-            form.ShowDialog();
+            if (taskBeforeUpdate.EndDate != null
+                && !_view.ConfirmAction(Translations.MainView.CRMTab.ReadOnlyViewBody, Translations.MainView.CRMTab.ReadOnlyViewTitle)) return;
 
-            if (form.OperationConfirmed != DialogResult.Yes) return;
+            var data = _view.OpenCRMForm(id);
 
-            var taskAfterUpdate = new CRM_Task
-            {
-                TaskID = id,
-                ContractorID = form.SelectedContractorID,
-                CarID = form.SelectedVehicleID,
-                StartDate = form.CreationDate,
-                Completed = form.TaskClosed,
-                EndDate = form.TaskClosed ? DateTime.Now : (DateTime?)null,
-                MechanicID = taskBeforeUpdate.MechanicID,
-                Comment = form.TaskComment,
-                Price = Convert.ToDouble(form.TotalPrice)
-            };
+            if (data.OperationConfirmed != DialogResult.Yes) return;
 
-            var taskMappingsAfterUpdate = form.SelectedRequiredServiceID
-                .Select(
-                    serviceId => new CRM_Services
-                    {
-                        ID = serviceId,
-                        TaskID = id,
-                        ServiceID = serviceId,
-                        Quantity = form.SelectedServiceQuantities != null && form.SelectedServiceQuantities.ContainsKey(serviceId)
-                            ? form.SelectedServiceQuantities[serviceId]
-                            : 1
-                    })
-                .ToList();
+            if (taskBeforeUpdate.EndDate != null) return;
+
+            data.CRM_Task.TaskID = id;
+            data.CRM_Services.ForEach(s => s.TaskID = data.CRM_Task.TaskID);
 
             if (_crms.FindIndex(t => t.TaskID == id) >= 0
-                && _genericRepo.Update(taskAfterUpdate)
-                && _genericRepo.UseRawSql(CarRepairShop.CRM.Queries.DeleteCRMTasks(taskBeforeUpdate.TaskID))
-                && _genericRepo.Insert(taskMappingsAfterUpdate) > 0)
+                && _genericRepo.Update(data.CRM_Task)
+                && _genericRepo.UseRawSql(CarRepairShop.CRM.Queries.DeleteMappings(data.CRM_Task.TaskID))
+                && _genericRepo.Insert(data.CRM_Services) > 0)
             {
                 _models[_crms.FindIndex(t => t.TaskID == id)] = new CRM_Model
                 {
-                    ID = taskAfterUpdate.TaskID,
-                    Description = taskAfterUpdate.Comment,
-                    StartDate = taskAfterUpdate.StartDate.ToString("dd//MM/yyyy HH:mm"),
-                    Completed = taskAfterUpdate.Completed,
-                    EndDate = taskAfterUpdate.EndDate?.ToString("dd//MM/yyyy HH:mm") ?? string.Empty,
-                    TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == taskAfterUpdate.MechanicID).Name} {_contractors.FirstOrDefault(c => c.ID == taskAfterUpdate.MechanicID).Surname}",
-                    CustomerFullname = $"{_contractors.FirstOrDefault(c => c.ID == taskAfterUpdate.ContractorID).Name} {_contractors.FirstOrDefault(c => c.ID == taskAfterUpdate.ContractorID).Surname}",
-                    Price = (decimal)taskAfterUpdate.Price,
-                    VehicleDetails = $"{_contractorsCars.FirstOrDefault(c => c.ID == taskAfterUpdate.CarID).BrandName} {_contractorsCars.FirstOrDefault(c => c.ID == taskAfterUpdate.CarID).ModelName} {_contractorsCars.FirstOrDefault(c => c.ID == taskAfterUpdate.CarID).Year}",
+                    ID = data.CRM_Task.TaskID,
+                    Description = data.CRM_Task.Comment,
+                    StartDate = data.CRM_Task.StartDate.ToString(_dateFormat),
+                    Completed = data.CRM_Task.Completed,
+                    EndDate = data.CRM_Task.EndDate?.ToString(_dateFormat) ?? string.Empty,
+                    TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Name} {_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Surname}",
+                    CustomerFullname = $"{_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.ContractorID).Name} {_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.ContractorID).Surname}",
+                    Price = (decimal)data.CRM_Task.Price,
+                    VehicleDetails = $"{_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).BrandName} {_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).ModelName} {_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).Year}",
                     Services = string.Join(", ",
-                        taskMappingsAfterUpdate
+                        data.CRM_Services
                             .Where(
-                                cs => cs.TaskID == taskAfterUpdate.TaskID)
+                                cs => cs.TaskID == data.CRM_Task.TaskID)
                             .Select(cs =>
                                 {
                                     var service = _services.FirstOrDefault(s => s.ID == cs.ServiceID);
@@ -218,11 +185,12 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
                             .Where(s => s != null))
                 };
 
-                _view.PopulateCRMTasksGrid(GetFilteredModels());
+                _view.PopulateCRMTasksGrid(GetModels());
+                _view.ShowMessage(Translations.MainView.CRMTab.UpdateSuccess); return;
             }
             else
             {
-                _view.ShowMessage("Task update has failed"); return;
+                _view.ShowMessage(Translations.MainView.CRMTab.UpdateError); return;
             }
         }
 
@@ -230,15 +198,28 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
         {
             if (!_currentUserService.IsAdmin)
             {
-                _view.ShowMessage("You have to have Super-Admin rights for this action!"); return;
+                _view.ShowMessage(Translations.MainView.CRMTab.MissingSuperAdminPermissions); return;
             }
 
-            var id = _view.SelectedCRMTaskID;
-            var crmsToDelete = _crms.Where(c => c.TaskID == id).ToList();
-            var crmServicesToDelete = _crmServices.Where(cs => cs.TaskID == id).ToList();
+            if (!_view.ConfirmAction(Translations.MainView.CRMTab.DeleteConfirmBody, Translations.MainView.CRMTab.DeleteConfirmTitle)) return;
 
-            _genericRepo.Delete(crmsToDelete);
-            _genericRepo.Delete(crmServicesToDelete);
+            var crm = _crms.FirstOrDefault(c => c.TaskID == _view.SelectedCRMTaskID);
+            var serviceMappings = _crmServices.Where(cs => cs.TaskID == _view.SelectedCRMTaskID).ToList();
+
+            if (!_genericRepo.Delete(crm))
+            {
+                _view.ShowMessage(Translations.MainView.CRMTab.DeleteTaskError); return;
+            }
+
+            if (!_genericRepo.Delete(serviceMappings))
+            {
+                _view.ShowMessage(Translations.MainView.CRMTab.DeleteTaskMappingsError); return;
+            }
+
+            _models.RemoveAll(m => m.ID == _view.SelectedCRMTaskID);
+            _view.PopulateCRMTasksGrid(GetModels());
+
+            _view.ShowMessage(Translations.MainView.CRMTab.DeleteSuccess);
         }
 
         private void StartDebounce(object sender, EventArgs e) => _view.StartDebounce();
@@ -246,20 +227,19 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
         private void FilterData(object sender, EventArgs e)
         {
             _view.StopDebounce();
-            _view.PopulateCRMTasksGrid(GetFilteredModels());
+            _view.PopulateCRMTasksGrid(GetModels());
         }
 
 
-        private List<CRM_Model> GetFilteredModels()
+        private List<CRM_Model> GetModels()
         {
-            if (_view.FilterDateFrom.Date > _view.FilterDateTo.Date)
-                return new List<CRM_Model>();
+            if (_view.FilterDateFrom.Date > _view.FilterDateTo.Date) return new List<CRM_Model>();
 
             var filteredModels = _models
                 .Where(crm =>
                 {
                     DateTime startDate;
-                    if (!DateTime.TryParseExact(crm.StartDate, "dd//MM/yyyy HH:mm", System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None, out startDate))
+                    if (!DateTime.TryParseExact(crm.StartDate, _dateFormat, System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None, out startDate))
                         return false;
                     return startDate >= _view.FilterDateFrom && startDate.Date <= _view.FilterDateTo.Date;
                 })
@@ -277,8 +257,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
                         crm => crm.TaskCreatorFullname != null && crm.TaskCreatorFullname.Contains(_view.FilterMechanicFullName))
                     .ToList();
 
-            if (_view.FilterShowAllChecked)
-                return filteredModels;
+            if (_view.FilterShowAllChecked) return filteredModels;
 
             if (_view.FilterShowCompletedChecked)
                 filteredModels = filteredModels

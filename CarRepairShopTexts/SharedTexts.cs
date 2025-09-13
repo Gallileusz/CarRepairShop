@@ -99,6 +99,31 @@
         public static string SettingsTab_ProvidedPasswordIsTooShort => SharedResources.texts.SettingsTab_ProvidedPasswordIsTooShort;
         public static string SettingsTab_ProvidedCurrentPasswordOnPasswordChange => SharedResources.texts.SettingsTab_ProvidedCurrentPasswordOnPasswordChange;
 
+        // CRM tab
+
+        public static string CRMTab_TaskInsertFailed => SharedResources.texts.CRMTab_TaskInsertFailed;
+        public static string CRMTab_TaskMappingsInsertFailed => SharedResources.texts.CRMTab_TaskMappingsInsertFailed;
+        public static string CRMTab_TaskInsertSuccess => SharedResources.texts.CRMTab_TaskInsertSuccess;
+        public static string CRMTab_ReadOnlyViewBody => SharedResources.texts.CRMTab_ReadOnlyViewBody;
+        public static string CRMTab_ReadOnlyViewTitle => SharedResources.texts.CRMTab_ReadOnlyViewTitle;
+        public static string CRMTab_UpdateSuccess => SharedResources.texts.CRMTab_UpdateSuccess;
+        public static string CRMTab_UpdateError => SharedResources.texts.CRMTab_UpdateError;
+        public static string CRMTab_MissingSuperAdminPermissions => SharedResources.texts.CRMTab_MissingSuperAdminPermissions;
+        public static string CRMTab_DeleteConfirmOperationBody => SharedResources.texts.CRMTab_DeleteConfirmOperationBody;
+        public static string CRMTab_DeleteConfirmOperationTitle => SharedResources.texts.CRMTab_DeleteConfirmOperationTitle;
+        public static string CRMTab_DeleteTaskError => SharedResources.texts.CRMTab_DeleteTaskError;
+        public static string CRMTab_DeleteTaskMappingsError => SharedResources.texts.CRMTab_DeleteTaskMappingsError;
+        public static string CRMTab_DeleteSuccess => SharedResources.texts.CRMTab_DeleteSuccess;
+        public static string CRMTab_ColumnMechanicFullName => SharedResources.texts.CRMTab_ColumnMechanicFullName;
+        public static string CRMTab_ColumnContractorFullName => SharedResources.texts.CRMTab_ColumnContractorFullName;
+        public static string CRMTab_ColumnDescription => SharedResources.texts.CRMTab_ColumnDescription;
+        public static string CRMTab_ColumnVehicleData => SharedResources.texts.CRMTab_ColumnVehicleData;
+        public static string CRMTab_ColumnServices => SharedResources.texts.CRMTab_ColumnServices;
+        public static string CRMTab_ColumnStartDate => SharedResources.texts.CRMTab_ColumnStartDate;
+        public static string CRMTab_ColumnCloseDate => SharedResources.texts.CRMTab_ColumnCloseDate;
+        public static string CRMTab_ColumnPrice => SharedResources.texts.CRMTab_ColumnPrice;
+        public static string CRMTab_ColumnCompleted => SharedResources.texts.CRMTab_ColumnCompleted;
+
         #endregion
 
         // Permissions Form
@@ -159,5 +184,32 @@
         public static string ServicesForm_PleaseProvideServiceDurationTime => SharedResources.texts.ServicesForm_PleaseProvideServiceDurationTime;
         public static string ServicesForm_PleaseProvideServicePrice => SharedResources.texts.ServicesForm_PleaseProvideServicePrice;
         public static string ServicesForm_ServiceWithThisNameExistsAlready => SharedResources.texts.ServicesForm_ServiceWithThisNameExistsAlready;
+
+        // CRMForm
+
+        public static string CRMForm_ConfirmClosureBody => SharedResources.texts.CRMForm_ConfirmClosureBody;
+        public static string CRMForm_ConfirmClosureTitle => SharedResources.texts.CRMForm_ConfirmClosureTitle;
+        public static string CRMForm_ConfirmReOpenBody => SharedResources.texts.CRMForm_ConfirmReOpenBody;
+        public static string CRMForm_ConfirmReOpenTitle => SharedResources.texts.CRMForm_ConfirmReOpenTitle;
+        public static string CRMForm_Error => SharedResources.texts.CRMForm_Error;
+        public static string CRMForm_Warning => SharedResources.texts.CRMForm_Warning;
+        public static string CRMForm_SelectContractor => SharedResources.texts.CRMForm_SelectContractor;
+        public static string CRMForm_SelectVehicle => SharedResources.texts.CRMForm_SelectVehicle;
+        public static string CRMForm_SelectService => SharedResources.texts.CRMForm_SelectService;
+        public static string CRMForm_EmptyComment => SharedResources.texts.CRMForm_EmptyComment;
+        public static string CRMForm_Yes => SharedResources.texts.CRMForm_Yes;
+        public static string CRMForm_No => SharedResources.texts.CRMForm_No;
+
+        public static string CRMForm_QuantityColumn => SharedResources.texts.CRMForm_QuantityColumn;
+        public static string CRMForm_NameColumn => SharedResources.texts.CRMForm_NameColumn;
+        public static string CRMForm_PriceColumn => SharedResources.texts.CRMForm_PriceColumn;
+        public static string CRMForm_BrandColumn => SharedResources.texts.CRMForm_BrandColumn;
+        public static string CRMForm_ModelColumn => SharedResources.texts.CRMForm_ModelColumn;
+        public static string CRMForm_MileageColumn => SharedResources.texts.CRMForm_MileageColumn;
+        public static string CRMForm_LicensePlateColumn => SharedResources.texts.CRMForm_LicensePlateColumn;
+        public static string CRMForm_FuelTypeColumn => SharedResources.texts.CRMForm_FuelTypeColumn;
+        public static string CRMForm_EngineCapacityColumn => SharedResources.texts.CRMForm_EngineCapacityColumn;
+        public static string CRMForm_ProductionYearColumn => SharedResources.texts.CRMForm_ProductionYear;
+
     }
 }

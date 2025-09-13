@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.CRM.Presenter
 {
@@ -17,7 +18,7 @@ namespace CarRepairShop.CRM.Presenter
         private List<Domain.Entities.Contractors> _contractors;
         private List<ContractorsCars> _contractorsCars;
         private List<Domain.Entities.Services> _services;
-        private List<Model.RequiredServicesModel> _currentSelectedServices = new List<Model.RequiredServicesModel>();
+        private List<Models.RequiredServicesModel> _currentSelectedServices = new List<Models.RequiredServicesModel>();
         private bool _closeConfirmed;
 
         public CRMFormPresenter(ICRMForm view, int? taskID)
@@ -70,7 +71,7 @@ namespace CarRepairShop.CRM.Presenter
         private void LoadForm(object sender, EventArgs e)
         {
             var contractors = _contractors
-                .Select(x => new Model.ContractorModel
+                .Select(x => new Models.ContractorModel
                 {
                     ID = x.ID,
                     FullName = $"{x.Name} {x.Surname}",
@@ -90,6 +91,7 @@ namespace CarRepairShop.CRM.Presenter
         {
             if (_taskID == null || _taskID < 0)
             {
+                _view.MechanicID = CurrentUser.Data.ID;
                 _view.CreationDate = DateTime.Now;
                 _view.MechanicName = CurrentUser.Data.Name;
                 _view.MechanicSurname = CurrentUser.Data.Surname;
@@ -108,6 +110,7 @@ namespace CarRepairShop.CRM.Presenter
                 _view.CreationDate = task.StartDate;
                 _view.MechanicName = mechanicData.Name;
                 _view.MechanicSurname = mechanicData.Surname;
+                _view.MechanicID = task.MechanicID;
                 _view.TaskComment = task.Comment;
                 _view.SelectedContractorID = task.ContractorID;
                 _view.LoadContractorVehicles(_contractorsCars.Where(x => x.ContractorID == task.ContractorID).OrderBy(x => x.ID).ToList());
@@ -121,7 +124,7 @@ namespace CarRepairShop.CRM.Presenter
                         selectedServices,
                         service => service.ID,
                         selected => selected.ServiceID,
-                        (service, mappings) => new Model.RequiredServicesModel
+                        (service, mappings) => new Models.RequiredServicesModel
                         {
                             ID = service.ID,
                             Name = service.Name,
@@ -149,7 +152,7 @@ namespace CarRepairShop.CRM.Presenter
             if (selectedServiceIDs == null || !selectedServiceIDs.Any())
             {
                 _currentSelectedServices.Clear();
-                _view.LoadSelectedServices(new List<Model.RequiredServicesModel>());
+                _view.LoadSelectedServices(new List<Models.RequiredServicesModel>());
                 return;
             }
 
@@ -160,7 +163,7 @@ namespace CarRepairShop.CRM.Presenter
                     var existing = _currentSelectedServices.FirstOrDefault(s => s.ID == x.ID);
                     var quantity = (existing != null && existing.Quantity > 0) ? existing.Quantity : 1;
 
-                    return new Model.RequiredServicesModel
+                    return new Models.RequiredServicesModel
                     {
                         ID = x.ID,
                         Name = x.Name,
@@ -227,7 +230,7 @@ namespace CarRepairShop.CRM.Presenter
 
             if (_view.TaskClosed)
             {
-                if (!_view.ConfirmAction("Are you sure you want to close this task?", "Confirmation"))
+                if (!_view.ConfirmAction(Translations.CRMForm.ConfirmClosureBody, Translations.CRMForm.ConfirmClosureTitle))
                 {
 
                     _view.TaskClosed = false;
@@ -238,7 +241,7 @@ namespace CarRepairShop.CRM.Presenter
             }
             else
             {
-                if (!_view.ConfirmAction("Are you sure you want to reopen this task?", "Confirmation"))
+                if (!_view.ConfirmAction(Translations.CRMForm.ConfirmReOpenBody, Translations.CRMForm.ConfirmReOpenTitle))
                 {
                     _view.TaskClosed = true;
                     _view.ChangeTaskStatus(_view.TaskClosed);
@@ -261,22 +264,22 @@ namespace CarRepairShop.CRM.Presenter
         {
             if (_view.SelectedContractorID <= 0)
             {
-                _view.ShowMessage("Please select a contractor.", "Error"); return;
+                _view.ShowMessage(Translations.CRMForm.SelectContractor, Translations.CRMForm.Error); return;
             }
 
             if (_view.SelectedVehicleID <= 0)
             {
-                _view.ShowMessage("Please select a vehicle.", "Error"); return;
+                _view.ShowMessage(Translations.CRMForm.SelectVehicle, Translations.CRMForm.Error); return;
             }
 
             if (_currentSelectedServices == null || !_currentSelectedServices.Any())
             {
-                _view.ShowMessage("Please select at least one service.", "Error"); return;
+                _view.ShowMessage(Translations.CRMForm.SelectService, Translations.CRMForm.Error); return;
             }
 
             if (string.IsNullOrEmpty(_view.TaskComment.Trim()))
             {
-                if (!_view.ConfirmAction("Do you want to leave the comment empty?", "Warning")) return;
+                if (!_view.ConfirmAction(Translations.CRMForm.EmptyComment, Translations.CRMForm.Warning)) return;
             }
 
             _view.OperationConfirmed = DialogResult.Yes;

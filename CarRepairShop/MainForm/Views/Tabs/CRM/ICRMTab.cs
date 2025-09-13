@@ -1,4 +1,5 @@
-﻿using CarRepairShop.MainForm.Models.Tabs.CRM;
+﻿using CarRepairShop.CRM.DTO;
+using CarRepairShop.MainForm.Models.Tabs.CRM;
 using System;
 using System.Collections.Generic;
 
@@ -23,6 +24,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
         bool FilterShowCompletedChecked { get; }
         bool FilterShowNotCompletedChecked { get; }
 
+        CRMFormResult OpenCRMForm(int? crmTaskID = null);
         void ChangeButtonAccess(bool enabled);
         bool ConfirmAction(string message, string title);
         void ShowMessage(string message);

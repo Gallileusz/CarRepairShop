@@ -511,4 +511,136 @@ Application Features:
   <data name="SettingsTab_ProvidedCurrentPasswordOnPasswordChange" xml:space="preserve">
     <value>The provided password to change is the same as the actual password!</value>
   </data>
+  <data name="CRMTab_TaskInsertFailed" xml:space="preserve">
+    <value>Task creation has failed!</value>
+  </data>
+  <data name="CRMTab_TaskMappingsInsertFailed" xml:space="preserve">
+    <value>Task services mapping failed!</value>
+  </data>
+  <data name="CRMTab_TaskInsertSuccess" xml:space="preserve">
+    <value>Successfully added new task.</value>
+  </data>
+  <data name="CRMTab_ReadOnlyViewBody" xml:space="preserve">
+    <value>This task is already closed. Do you want to open it in read-only mode?</value>
+  </data>
+  <data name="CRMTab_ReadOnlyViewTitle" xml:space="preserve">
+    <value>Task completed.</value>
+  </data>
+  <data name="CRMTab_UpdateSuccess" xml:space="preserve">
+    <value>Successfully updated the task data.</value>
+  </data>
+  <data name="CRMTab_UpdateError" xml:space="preserve">
+    <value>Task data couldn't be updated!</value>
+  </data>
+  <data name="CRMTab_MissingSuperAdminPermissions" xml:space="preserve">
+    <value>You need to have Super-Admin rights for this action!</value>
+  </data>
+  <data name="CRMTab_DeleteConfirmOperationBody" xml:space="preserve">
+    <value>Do you really want to delete the selected task?</value>
+  </data>
+  <data name="CRMTab_DeleteConfirmOperationTitle" xml:space="preserve">
+    <value>Operation confirmation.</value>
+  </data>
+  <data name="CRMTab_DeleteTaskError" xml:space="preserve">
+    <value>Task deletion has failed!</value>
+  </data>
+  <data name="CRMTab_DeleteTaskMappingsError" xml:space="preserve">
+    <value>Task service mappings deletion has failed!</value>
+  </data>
+  <data name="CRMTab_DeleteSuccess" xml:space="preserve">
+    <value>Successfully deleted the selected task.</value>
+  </data>
+  <data name="CRMTab_ColumnMechanicFullName" xml:space="preserve">
+    <value>Task created by</value>
+  </data>
+  <data name="CRMTab_ColumnContractorFullName" xml:space="preserve">
+    <value>Contractor</value>
+  </data>
+  <data name="CRMTab_ColumnDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="CRMTab_ColumnVehicleData" xml:space="preserve">
+    <value>Vehicle details</value>
+  </data>
+  <data name="CRMTab_ColumnServices" xml:space="preserve">
+    <value>Services</value>
+  </data>
+  <data name="CRMTab_ColumnStartDate" xml:space="preserve">
+    <value>Creation date</value>
+  </data>
+  <data name="CRMTab_ColumnCloseDate" xml:space="preserve">
+    <value>Close date</value>
+  </data>
+  <data name="CRMTab_ColumnPrice" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="CRMTab_ColumnCompleted" xml:space="preserve">
+    <value>Completed</value>
+  </data>
+  <data name="CRMForm_ConfirmClosureBody" xml:space="preserve">
+    <value>Do you want to change the task status to closed?</value>
+  </data>
+  <data name="CRMForm_ConfirmClosureTitle" xml:space="preserve">
+    <value>Confirm operation.</value>
+  </data>
+  <data name="CRMForm_ConfirmReOpenBody" xml:space="preserve">
+    <value>Do you want to reopen this task?</value>
+  </data>
+  <data name="CRMForm_ConfirmReOpenTitle" xml:space="preserve">
+    <value>Confirm operation.</value>
+  </data>
+  <data name="CRMForm_SelectContractor" xml:space="preserve">
+    <value>Please select a contractor.</value>
+  </data>
+  <data name="CRMForm_Error" xml:space="preserve">
+    <value>Error!</value>
+  </data>
+  <data name="CRMForm_SelectVehicle" xml:space="preserve">
+    <value>Please select a vehicle.</value>
+  </data>
+  <data name="CRMForm_SelectService" xml:space="preserve">
+    <value>Please select at least one service.</value>
+  </data>
+  <data name="CRMForm_EmptyComment" xml:space="preserve">
+    <value>Do you want to leave the comment empty?</value>
+  </data>
+  <data name="CRMForm_Warning" xml:space="preserve">
+    <value>Warning.</value>
+  </data>
+  <data name="CRMForm_Yes" xml:space="preserve">
+    <value>Yes</value>
+  </data>
+  <data name="CRMForm_No" xml:space="preserve">
+    <value>No</value>
+  </data>
+  <data name="CRMForm_QuantityColumn" xml:space="preserve">
+    <value>Quantity</value>
+  </data>
+  <data name="CRMForm_NameColumn" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="CRMForm_PriceColumn" xml:space="preserve">
+    <value>Price</value>
+  </data>
+  <data name="CRMForm_ModelColumn" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="CRMForm_BrandColumn" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="CRMForm_EngineCapacityColumn" xml:space="preserve">
+    <value>Engine capacity</value>
+  </data>
+  <data name="CRMForm_FuelTypeColumn" xml:space="preserve">
+    <value>Fuel type</value>
+  </data>
+  <data name="CRMForm_LicensePlateColumn" xml:space="preserve">
+    <value>License plate</value>
+  </data>
+  <data name="CRMForm_MileageColumn" xml:space="preserve">
+    <value>Mileage</value>
+  </data>
+  <data name="CRMForm_ProductionYear" xml:space="preserve">
+    <value>Production year</value>
+  </data>
 </root>

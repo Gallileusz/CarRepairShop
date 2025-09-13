@@ -1,5 +1,16 @@
 [
   {
+    "version": "1.7.0",
+    "date": "2025-09-13",
+    "changes": [
+      "Refactored presenter in CRM tab",
+      "Refactored view in CRM tab",
+      "Fixed task closing error",
+      "Changed fonts in CRM tab and all sub-forms to 'Verdana'",
+      "Added translations to CRM tab and all sub-forms"
+    ]
+  },
+  {
     "version": "1.6.0",
     "date": "2025-09-7",
     "changes": [

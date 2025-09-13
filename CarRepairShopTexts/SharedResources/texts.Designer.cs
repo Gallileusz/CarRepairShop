@@ -133,6 +133,402 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Brand.
+        /// </summary>
+        internal static string CRMForm_BrandColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_BrandColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you want to change the task status to closed?.
+        /// </summary>
+        internal static string CRMForm_ConfirmClosureBody {
+            get {
+                return ResourceManager.GetString("CRMForm_ConfirmClosureBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Confirm operation..
+        /// </summary>
+        internal static string CRMForm_ConfirmClosureTitle {
+            get {
+                return ResourceManager.GetString("CRMForm_ConfirmClosureTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you want to reopen this task?.
+        /// </summary>
+        internal static string CRMForm_ConfirmReOpenBody {
+            get {
+                return ResourceManager.GetString("CRMForm_ConfirmReOpenBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Confirm operation..
+        /// </summary>
+        internal static string CRMForm_ConfirmReOpenTitle {
+            get {
+                return ResourceManager.GetString("CRMForm_ConfirmReOpenTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you want to leave the comment empty?.
+        /// </summary>
+        internal static string CRMForm_EmptyComment {
+            get {
+                return ResourceManager.GetString("CRMForm_EmptyComment", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Engine capacity.
+        /// </summary>
+        internal static string CRMForm_EngineCapacityColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_EngineCapacityColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Error!.
+        /// </summary>
+        internal static string CRMForm_Error {
+            get {
+                return ResourceManager.GetString("CRMForm_Error", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fuel type.
+        /// </summary>
+        internal static string CRMForm_FuelTypeColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_FuelTypeColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu License plate.
+        /// </summary>
+        internal static string CRMForm_LicensePlateColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_LicensePlateColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Mileage.
+        /// </summary>
+        internal static string CRMForm_MileageColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_MileageColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Model.
+        /// </summary>
+        internal static string CRMForm_ModelColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_ModelColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name.
+        /// </summary>
+        internal static string CRMForm_NameColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_NameColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu No.
+        /// </summary>
+        internal static string CRMForm_No {
+            get {
+                return ResourceManager.GetString("CRMForm_No", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Price.
+        /// </summary>
+        internal static string CRMForm_PriceColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_PriceColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Production year.
+        /// </summary>
+        internal static string CRMForm_ProductionYear {
+            get {
+                return ResourceManager.GetString("CRMForm_ProductionYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Quantity.
+        /// </summary>
+        internal static string CRMForm_QuantityColumn {
+            get {
+                return ResourceManager.GetString("CRMForm_QuantityColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please select a contractor..
+        /// </summary>
+        internal static string CRMForm_SelectContractor {
+            get {
+                return ResourceManager.GetString("CRMForm_SelectContractor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please select at least one service..
+        /// </summary>
+        internal static string CRMForm_SelectService {
+            get {
+                return ResourceManager.GetString("CRMForm_SelectService", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Please select a vehicle..
+        /// </summary>
+        internal static string CRMForm_SelectVehicle {
+            get {
+                return ResourceManager.GetString("CRMForm_SelectVehicle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Warning..
+        /// </summary>
+        internal static string CRMForm_Warning {
+            get {
+                return ResourceManager.GetString("CRMForm_Warning", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Yes.
+        /// </summary>
+        internal static string CRMForm_Yes {
+            get {
+                return ResourceManager.GetString("CRMForm_Yes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Close date.
+        /// </summary>
+        internal static string CRMTab_ColumnCloseDate {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnCloseDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Completed.
+        /// </summary>
+        internal static string CRMTab_ColumnCompleted {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnCompleted", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractor.
+        /// </summary>
+        internal static string CRMTab_ColumnContractorFullName {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnContractorFullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Description.
+        /// </summary>
+        internal static string CRMTab_ColumnDescription {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Task created by.
+        /// </summary>
+        internal static string CRMTab_ColumnMechanicFullName {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnMechanicFullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Price.
+        /// </summary>
+        internal static string CRMTab_ColumnPrice {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnPrice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Services.
+        /// </summary>
+        internal static string CRMTab_ColumnServices {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnServices", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Creation date.
+        /// </summary>
+        internal static string CRMTab_ColumnStartDate {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnStartDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Vehicle details.
+        /// </summary>
+        internal static string CRMTab_ColumnVehicleData {
+            get {
+                return ResourceManager.GetString("CRMTab_ColumnVehicleData", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the selected task?.
+        /// </summary>
+        internal static string CRMTab_DeleteConfirmOperationBody {
+            get {
+                return ResourceManager.GetString("CRMTab_DeleteConfirmOperationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Operation confirmation..
+        /// </summary>
+        internal static string CRMTab_DeleteConfirmOperationTitle {
+            get {
+                return ResourceManager.GetString("CRMTab_DeleteConfirmOperationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully deleted the selected task..
+        /// </summary>
+        internal static string CRMTab_DeleteSuccess {
+            get {
+                return ResourceManager.GetString("CRMTab_DeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Task deletion has failed!.
+        /// </summary>
+        internal static string CRMTab_DeleteTaskError {
+            get {
+                return ResourceManager.GetString("CRMTab_DeleteTaskError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Task service mappings deletion has failed!.
+        /// </summary>
+        internal static string CRMTab_DeleteTaskMappingsError {
+            get {
+                return ResourceManager.GetString("CRMTab_DeleteTaskMappingsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu You need to have Super-Admin rights for this action!.
+        /// </summary>
+        internal static string CRMTab_MissingSuperAdminPermissions {
+            get {
+                return ResourceManager.GetString("CRMTab_MissingSuperAdminPermissions", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu This task is already closed. Do you want to open it in read-only mode?.
+        /// </summary>
+        internal static string CRMTab_ReadOnlyViewBody {
+            get {
+                return ResourceManager.GetString("CRMTab_ReadOnlyViewBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Task completed..
+        /// </summary>
+        internal static string CRMTab_ReadOnlyViewTitle {
+            get {
+                return ResourceManager.GetString("CRMTab_ReadOnlyViewTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Task creation has failed!.
+        /// </summary>
+        internal static string CRMTab_TaskInsertFailed {
+            get {
+                return ResourceManager.GetString("CRMTab_TaskInsertFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully added new task..
+        /// </summary>
+        internal static string CRMTab_TaskInsertSuccess {
+            get {
+                return ResourceManager.GetString("CRMTab_TaskInsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Task services mapping failed!.
+        /// </summary>
+        internal static string CRMTab_TaskMappingsInsertFailed {
+            get {
+                return ResourceManager.GetString("CRMTab_TaskMappingsInsertFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Task data couldn&apos;t be updated!.
+        /// </summary>
+        internal static string CRMTab_UpdateError {
+            get {
+                return ResourceManager.GetString("CRMTab_UpdateError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully updated the task data..
+        /// </summary>
+        internal static string CRMTab_UpdateSuccess {
+            get {
+                return ResourceManager.GetString("CRMTab_UpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Technology: 
         ///
         ///    - Windows Forms

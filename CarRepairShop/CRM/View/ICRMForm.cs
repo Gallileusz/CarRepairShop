@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRepairShop.CRM.DTO;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -23,6 +24,7 @@ namespace CarRepairShop.CRM.View
         Dictionary<int, int> SelectedServiceQuantities { get; }
         DateTime CreationDate { get; set; }
         DateTime CloseDate { get; set; }
+        int MechanicID { get; set; }
         string MechanicName { get; set; }
         string MechanicSurname { get; set; }
         string TaskComment { get; set; }
@@ -30,10 +32,11 @@ namespace CarRepairShop.CRM.View
         bool TaskClosed { get; set; }
         DialogResult OperationConfirmed { get; set; }
 
-        void LoadContractors(List<Model.ContractorModel> contractors);
+        CRMFormResult Result { get; }
+        void LoadContractors(List<Models.ContractorModel> contractors);
         void LoadContractorVehicles(List<Domain.Entities.ContractorsCars> contractorsCars);
         void LoadRequiredServices(List<Domain.Entities.Services> services);
-        void LoadSelectedServices(List<Model.RequiredServicesModel> services);
+        void LoadSelectedServices(List<Models.RequiredServicesModel> services);
         void SelectAllSelectedServices();
         void ChangeTaskStatus(bool taskClosed);
         void CloseForm();

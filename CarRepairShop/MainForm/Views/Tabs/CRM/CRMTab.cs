@@ -1,4 +1,6 @@
 ﻿using CarRepairShop.AppSettings;
+using CarRepairShop.CRM.DTO;
+using CarRepairShop.CRM.View;
 using CarRepairShop.MainForm.Models.Tabs.CRM;
 using CarRepairShop.MainForm.Presenters.Tabs.CRM;
 using CarRepairShop.Repositories;
@@ -7,11 +9,19 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.MainForm.Views.Tabs.CRM
 {
     public partial class CRMTab : UserControl, ICRMTab
     {
+        public event EventHandler AddButtonClicked;
+        public event EventHandler EditButtonClicked;
+        public event EventHandler DeleteButtonClicked;
+        public event EventHandler FormIsLoaded;
+        public event EventHandler DebounceElapsed;
+        public event EventHandler FilterChanged;
+
         public int SelectedCRMTaskID => dgvCRM.SelectedRows
             .Cast<DataGridViewRow>()
             .Select(row => row.DataBoundItem as CRM_Model)
@@ -37,25 +47,27 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
 
         public bool FilterShowNotCompletedChecked => rbNotClosed.Checked;
 
-        public event EventHandler AddButtonClicked;
-        public event EventHandler EditButtonClicked;
-        public event EventHandler DeleteButtonClicked;
-        public event EventHandler FormIsLoaded;
-        public event EventHandler DebounceElapsed;
-        public event EventHandler FilterChanged;
+        private readonly CRMTabPresenter _presenter;
 
-        private CRMTabPresenter _presenter;
         public CRMTab()
         {
             InitializeComponent();
             _presenter = new CRMTabPresenter(this, new GenericRepository(), new CurrentUserService());
         }
 
+        public CRMFormResult OpenCRMForm(int? crmTaskID = null)
+        {
+            var form = new CRMForm(crmTaskID);
+            form.ShowDialog();
+
+            return form.Result;
+        }
+
         public void PopulateCRMTasksGrid(List<CRM_Model> crms)
         {
             dgvCRM.DataSource = null;
-
             dgvCRM.DataSource = crms;
+
             dgvCRM.Columns[nameof(CRM_Model.ID)].Visible = false;
             dgvCRM.Columns[nameof(CRM_Model.TaskCreatorFullname)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvCRM.Columns[nameof(CRM_Model.CustomerFullname)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
@@ -66,6 +78,16 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             dgvCRM.Columns[nameof(CRM_Model.EndDate)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvCRM.Columns[nameof(CRM_Model.Price)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvCRM.Columns[nameof(CRM_Model.Completed)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+
+            dgvCRM.Columns[nameof(CRM_Model.TaskCreatorFullname)].HeaderText = Translations.MainView.CRMTab.ColumnMechanic;
+            dgvCRM.Columns[nameof(CRM_Model.CustomerFullname)].HeaderText = Translations.MainView.CRMTab.ColumnContractor;
+            dgvCRM.Columns[nameof(CRM_Model.Description)].HeaderText = Translations.MainView.CRMTab.ColumnDescription;
+            dgvCRM.Columns[nameof(CRM_Model.VehicleDetails)].HeaderText = Translations.MainView.CRMTab.ColumnVehicleData;
+            dgvCRM.Columns[nameof(CRM_Model.Services)].HeaderText = Translations.MainView.CRMTab.ColumnServices;
+            dgvCRM.Columns[nameof(CRM_Model.StartDate)].HeaderText = Translations.MainView.CRMTab.ColumnStartDate;
+            dgvCRM.Columns[nameof(CRM_Model.EndDate)].HeaderText = Translations.MainView.CRMTab.ColumnCloseDate;
+            dgvCRM.Columns[nameof(CRM_Model.Price)].HeaderText = Translations.MainView.CRMTab.ColumnPrice;
+            dgvCRM.Columns[nameof(CRM_Model.Completed)].HeaderText = Translations.MainView.CRMTab.ColumnCompleted;
 
             dgvCRM.Rows.Cast<DataGridViewRow>().ToList().ForEach(row =>
             {
@@ -98,11 +120,13 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             btnDelete.Enabled = enabled;
         }
 
-        private void btnAdd_Click(object sender, EventArgs e) => AddButtonClicked?.Invoke(sender, e);
-
         private void CRMTab_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(sender, e);
 
-        private void btnShow_Click(object sender, EventArgs e) => EditButtonClicked?.Invoke(sender, e);
+        private void btnAdd_Click(object sender, EventArgs e) => AddButtonClicked?.Invoke(sender, e);
+
+        private void btnDelete_Click(object sender, EventArgs e) => DeleteButtonClicked?.Invoke(sender, e);
+
+        private void btnEdit_Click(object sender, EventArgs e) => EditButtonClicked?.Invoke(sender, e);
 
         private void Debounce_Tick(object sender, EventArgs e) => DebounceElapsed?.Invoke(sender, e);
 
