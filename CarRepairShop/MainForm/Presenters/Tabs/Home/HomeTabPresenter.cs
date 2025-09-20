@@ -31,25 +31,25 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Home
         private void OnFormIsLoaded(object sender, EventArgs e)
         {
             _view.SetVersion(_changelogHandler.GetNewestVersion(_changelogHandler.LoadChangelog()).Version);
-            _view.CurrentText = Library.Texts.MainView.HomeTab.AboutThisProject;
+            _view.CurrentText = Library.Texts.MainView.Home.AboutThisProject;
         }
 
         private void OnAboutThisProjectClicked(object sender, EventArgs e)
         {
             _view.HighlightButton(sender as Button);
-            _view.CurrentText = Library.Texts.MainView.HomeTab.AboutThisProject;
+            _view.CurrentText = Library.Texts.MainView.Home.AboutThisProject;
         }
 
         private void OnAcknowledgementsClicked(object sender, EventArgs e)
         {
             _view.HighlightButton(sender as Button);
-            _view.CurrentText = Library.Texts.MainView.HomeTab.Acknowledgements;
+            _view.CurrentText = Library.Texts.MainView.Home.Acknowledgements;
         }
 
         private void OnSourcesClicked(object sender, EventArgs e)
         {
             _view.HighlightButton(sender as Button);
-            _view.CurrentText = Library.Texts.MainView.HomeTab.Sources;
+            _view.CurrentText = Library.Texts.MainView.Home.Sources;
         }
 
         private void OnChangelogClicked(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Home
                 _view.CurrentText = sb.ToString();
             }
             else
-                _view.CurrentText = Library.Texts.MainView.HomeTab.ChangelogError;
+                _view.CurrentText = Library.Texts.MainView.Home.ChangelogError;
         }
 
         private async void OnGitHubClicked(object sender, EventArgs e)
@@ -83,7 +83,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Home
             var success = await _webBrowserHandler.OpenURL(_repoURL);
 
             if (!success)
-                _view.ShowMessage(Library.Texts.MainView.HomeTab.GitHubError);
+                _view.ShowMessage(Library.Texts.MainView.Home.GitHubError);
         }
     }
 }

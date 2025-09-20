@@ -1,6 +1,6 @@
 ﻿namespace CarRepairShop.Utilities.Permissions
 {
-    public enum Permissions
+    public enum PermissionType
     {
         AllowDisplay = 1,
         AllowEdit = 2

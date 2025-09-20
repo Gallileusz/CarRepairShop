@@ -28,144 +28,113 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gbName = new System.Windows.Forms.GroupBox();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.gbSurname = new System.Windows.Forms.GroupBox();
-            this.txtSurname = new System.Windows.Forms.TextBox();
-            this.gmEmail = new System.Windows.Forms.GroupBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.gbPhoneNumber = new System.Windows.Forms.GroupBox();
-            this.txtPhoneNumber = new System.Windows.Forms.TextBox();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.gbName.SuspendLayout();
-            this.gbSurname.SuspendLayout();
-            this.gmEmail.SuspendLayout();
-            this.gbPhoneNumber.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ContractorForm));
+            gbName = new System.Windows.Forms.GroupBox();
+            txtName = new System.Windows.Forms.TextBox();
+            gbSurname = new System.Windows.Forms.GroupBox();
+            txtSurname = new System.Windows.Forms.TextBox();
+            gmEmail = new System.Windows.Forms.GroupBox();
+            txtEmail = new System.Windows.Forms.TextBox();
+            gbPhoneNumber = new System.Windows.Forms.GroupBox();
+            txtPhoneNumber = new System.Windows.Forms.TextBox();
+            btnConfirm = new System.Windows.Forms.Button();
+            btnCancel = new System.Windows.Forms.Button();
+            gbName.SuspendLayout();
+            gbSurname.SuspendLayout();
+            gmEmail.SuspendLayout();
+            gbPhoneNumber.SuspendLayout();
+            SuspendLayout();
             // 
             // gbName
             // 
-            this.gbName.Controls.Add(this.txtName);
-            this.gbName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbName.Location = new System.Drawing.Point(12, 12);
-            this.gbName.Name = "gbName";
-            this.gbName.Size = new System.Drawing.Size(249, 58);
-            this.gbName.TabIndex = 17;
-            this.gbName.TabStop = false;
-            this.gbName.Text = "Name:";
+            gbName.Controls.Add(txtName);
+            resources.ApplyResources(gbName, "gbName");
+            gbName.ForeColor = System.Drawing.Color.SteelBlue;
+            gbName.Name = "gbName";
+            gbName.TabStop = false;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(6, 23);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(237, 24);
-            this.txtName.TabIndex = 0;
+            resources.ApplyResources(txtName, "txtName");
+            txtName.Name = "txtName";
             // 
             // gbSurname
             // 
-            this.gbSurname.Controls.Add(this.txtSurname);
-            this.gbSurname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbSurname.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbSurname.Location = new System.Drawing.Point(276, 12);
-            this.gbSurname.Name = "gbSurname";
-            this.gbSurname.Size = new System.Drawing.Size(249, 58);
-            this.gbSurname.TabIndex = 18;
-            this.gbSurname.TabStop = false;
-            this.gbSurname.Text = "Surname:";
+            gbSurname.Controls.Add(txtSurname);
+            resources.ApplyResources(gbSurname, "gbSurname");
+            gbSurname.ForeColor = System.Drawing.Color.SteelBlue;
+            gbSurname.Name = "gbSurname";
+            gbSurname.TabStop = false;
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(6, 23);
-            this.txtSurname.Name = "txtSurname";
-            this.txtSurname.Size = new System.Drawing.Size(237, 24);
-            this.txtSurname.TabIndex = 0;
+            resources.ApplyResources(txtSurname, "txtSurname");
+            txtSurname.Name = "txtSurname";
             // 
             // gmEmail
             // 
-            this.gmEmail.Controls.Add(this.txtEmail);
-            this.gmEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gmEmail.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gmEmail.Location = new System.Drawing.Point(12, 90);
-            this.gmEmail.Name = "gmEmail";
-            this.gmEmail.Size = new System.Drawing.Size(249, 58);
-            this.gmEmail.TabIndex = 19;
-            this.gmEmail.TabStop = false;
-            this.gmEmail.Text = "E-mail:";
+            gmEmail.Controls.Add(txtEmail);
+            resources.ApplyResources(gmEmail, "gmEmail");
+            gmEmail.ForeColor = System.Drawing.Color.SteelBlue;
+            gmEmail.Name = "gmEmail";
+            gmEmail.TabStop = false;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(6, 23);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(237, 24);
-            this.txtEmail.TabIndex = 0;
+            resources.ApplyResources(txtEmail, "txtEmail");
+            txtEmail.Name = "txtEmail";
             // 
             // gbPhoneNumber
             // 
-            this.gbPhoneNumber.Controls.Add(this.txtPhoneNumber);
-            this.gbPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbPhoneNumber.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbPhoneNumber.Location = new System.Drawing.Point(276, 90);
-            this.gbPhoneNumber.Name = "gbPhoneNumber";
-            this.gbPhoneNumber.Size = new System.Drawing.Size(249, 58);
-            this.gbPhoneNumber.TabIndex = 20;
-            this.gbPhoneNumber.TabStop = false;
-            this.gbPhoneNumber.Text = "Phone number:";
+            gbPhoneNumber.Controls.Add(txtPhoneNumber);
+            resources.ApplyResources(gbPhoneNumber, "gbPhoneNumber");
+            gbPhoneNumber.ForeColor = System.Drawing.Color.SteelBlue;
+            gbPhoneNumber.Name = "gbPhoneNumber";
+            gbPhoneNumber.TabStop = false;
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(6, 23);
-            this.txtPhoneNumber.Name = "txtPhoneNumber";
-            this.txtPhoneNumber.Size = new System.Drawing.Size(237, 24);
-            this.txtPhoneNumber.TabIndex = 0;
+            resources.ApplyResources(txtPhoneNumber, "txtPhoneNumber");
+            txtPhoneNumber.Name = "txtPhoneNumber";
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(151, 158);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(104, 40);
-            this.btnConfirm.TabIndex = 21;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            resources.ApplyResources(btnConfirm, "btnConfirm");
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(282, 158);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(104, 40);
-            this.btnCancel.TabIndex = 22;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            resources.ApplyResources(btnCancel, "btnCancel");
+            btnCancel.Name = "btnCancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // ContractorForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(539, 211);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.gbPhoneNumber);
-            this.Controls.Add(this.gmEmail);
-            this.Controls.Add(this.gbSurname);
-            this.Controls.Add(this.gbName);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "ContractorForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ContractorForm_FormClosing);
-            this.Load += new System.EventHandler(this.ContractorForm_Load);
-            this.gbName.ResumeLayout(false);
-            this.gbName.PerformLayout();
-            this.gbSurname.ResumeLayout(false);
-            this.gbSurname.PerformLayout();
-            this.gmEmail.ResumeLayout(false);
-            this.gmEmail.PerformLayout();
-            this.gbPhoneNumber.ResumeLayout(false);
-            this.gbPhoneNumber.PerformLayout();
-            this.ResumeLayout(false);
+            resources.ApplyResources(this, "$this");
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(btnCancel);
+            Controls.Add(btnConfirm);
+            Controls.Add(gbPhoneNumber);
+            Controls.Add(gmEmail);
+            Controls.Add(gbSurname);
+            Controls.Add(gbName);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "ContractorForm";
+            Load += ContractorForm_Load;
+            gbName.ResumeLayout(false);
+            gbName.PerformLayout();
+            gbSurname.ResumeLayout(false);
+            gbSurname.PerformLayout();
+            gmEmail.ResumeLayout(false);
+            gmEmail.PerformLayout();
+            gbPhoneNumber.ResumeLayout(false);
+            gbPhoneNumber.PerformLayout();
+            ResumeLayout(false);
 
         }
 

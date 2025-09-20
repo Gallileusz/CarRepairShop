@@ -600,4 +600,154 @@
   <data name="CRMForm_BrandColumn" xml:space="preserve">
     <value>Marka</value>
   </data>
+  <data name="ContractorForm_FillName" xml:space="preserve">
+    <value>Uzupełnij pole imię!</value>
+  </data>
+  <data name="ContractorForm_FillSurname" xml:space="preserve">
+    <value>Uzupełnij pole nazwisko!</value>
+  </data>
+  <data name="ContractorForm_FillPhoneNumber" xml:space="preserve">
+    <value>Uzupełnij pole numer telefonu!</value>
+  </data>
+  <data name="ContractorForm_IncorrectPhoneNumber" xml:space="preserve">
+    <value>Numer telefonu powinien mieć przynajmniej 9 cyfr!</value>
+  </data>
+  <data name="ContractorForm_FillEmail" xml:space="preserve">
+    <value>Uzupełnij pole email!</value>
+  </data>
+  <data name="ContractorForm_IncorrectEmail" xml:space="preserve">
+    <value>Niepoprawny format adresu email!</value>
+  </data>
+  <data name="CarForm_FillBrand" xml:space="preserve">
+    <value>Uzupełnij pole: marka!</value>
+  </data>
+  <data name="CarForm_FillModel" xml:space="preserve">
+    <value>Uzupełnij pole: model!</value>
+  </data>
+  <data name="CarForm_FillProductionYear" xml:space="preserve">
+    <value>Uzupełnij pole: rok produkcji!</value>
+  </data>
+  <data name="CarForm_FillVIN" xml:space="preserve">
+    <value>Uzupełnij pole: VIN!</value>
+  </data>
+  <data name="CarForm_FillLicensePlate" xml:space="preserve">
+    <value>Uzupełnij pole: tablica rejestracyjna!</value>
+  </data>
+  <data name="CarForm_FillEngineCapacity" xml:space="preserve">
+    <value>Uzupełnij pole: pojemność silnika!</value>
+  </data>
+  <data name="CarForm_FillMileage" xml:space="preserve">
+    <value>Uzupełnij pole: przebieg!</value>
+  </data>
+  <data name="CarForm_SelectFuelType" xml:space="preserve">
+    <value>Proszę wybrać typ paliwa!</value>
+  </data>
+  <data name="FuelTypesList_AddNewFuelType" xml:space="preserve">
+    <value>Dodaj nowy typ paliwa</value>
+  </data>
+  <data name="FuelTypesList_InsertSuccess" xml:space="preserve">
+    <value>Pomyślnie dodano nowy typ paliwa: {0}.</value>
+  </data>
+  <data name="FuelTypesList_InsertFailed" xml:space="preserve">
+    <value>Nie udało się dodać typu paliwa: {0}!</value>
+  </data>
+  <data name="FuelTypesList_EditSuccess" xml:space="preserve">
+    <value>Pomyślnie zmieniono nazwę typu paliwa.</value>
+  </data>
+  <data name="FuelTypesList_EditFuelType" xml:space="preserve">
+    <value>Edycja nazwy typu paliwa</value>
+  </data>
+  <data name="FuelTypesList_EditFailed" xml:space="preserve">
+    <value>Nie udało się zmienić nazwy typu paliwa!</value>
+  </data>
+  <data name="FuelTypesList_EditConfirmationTitle" xml:space="preserve">
+    <value>Potwierdź edycję</value>
+  </data>
+  <data name="FuelTypesList_EditConfirmationBody" xml:space="preserve">
+    <value>Czy chcesz zmienić nazwę typu paliwa z {0} na {1}?</value>
+  </data>
+  <data name="FuelTypesList_DeleteSuccess" xml:space="preserve">
+    <value>Pomyślnie usunięto typu paliwa: {0}.</value>
+  </data>
+  <data name="FuelTypesList_DeleteFailed" xml:space="preserve">
+    <value>Nie udało się usunąć typu paliwa: {0}!</value>
+  </data>
+  <data name="FuelTypesList_DeleteConfirmationBody" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć typ paliwa: {0}?</value>
+  </data>
+  <data name="FuelTypesList_DeleteConfirmationTitle" xml:space="preserve">
+    <value>Potwierdzenie usunięcia.</value>
+  </data>
+  <data name="FuelTypesList_Name" xml:space="preserve">
+    <value>Nazwa</value>
+  </data>
+  <data name="ContractorTab_ContractorsCarExistsError" xml:space="preserve">
+    <value>Wybrany kontrahent posiada już taki przypisany samochód. Operacja przerwana!</value>
+  </data>
+  <data name="ContractorTab_ContractorExistsError" xml:space="preserve">
+    <value>Taki kontrahent już istnieje. Operacja przerwana!</value>
+  </data>
+  <data name="ContractorTab_AddNewContractor" xml:space="preserve">
+    <value>Dodaj nowego kontrahenta</value>
+  </data>
+  <data name="ContractorTab_AddNewCar" xml:space="preserve">
+    <value>Dodaj nowy samochód dla {0} {1}</value>
+  </data>
+  <data name="ContractorTab_CarInsertError" xml:space="preserve">
+    <value>Nie udało się dodać nowego samochodu dla wybranego kontrahenta!</value>
+  </data>
+  <data name="ContractorTab_CarInsertSuccess" xml:space="preserve">
+    <value>Udało się dodać nowy samochód dla wybranego kontrahenta.</value>
+  </data>
+  <data name="ContractorTab_ContractorInsertError" xml:space="preserve">
+    <value>Udało się dodać nowego kontrahenta.</value>
+  </data>
+  <data name="ContractorTab_ContractorInsertSuccess" xml:space="preserve">
+    <value>Nie udało się dodać nowego kontrahenta!</value>
+  </data>
+  <data name="ContractorTab_DeleteCarConfirmationBody" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć samochód: {0} {1}? Operacja jest nieodwracalna!</value>
+  </data>
+  <data name="ContractorTab_DeleteCarConfirmationTitle" xml:space="preserve">
+    <value>Potwierdzenie usunięcia.</value>
+  </data>
+  <data name="ContractorTab_DeleteCarError" xml:space="preserve">
+    <value>Nie udało się usunąć wybranego samochodu!</value>
+  </data>
+  <data name="ContractorTab_DeleteCarSuccess" xml:space="preserve">
+    <value>Udało się usunąć wybrany samochód.</value>
+  </data>
+  <data name="ContractorTab_DeleteContractorConfirmationBody" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć kontrahenta: {0} {1} i wszystkie jego samochody? Operacja jest nieodwracalna!</value>
+  </data>
+  <data name="ContractorTab_DeleteContractorConfirmationTitle" xml:space="preserve">
+    <value>Potwierdzenie usunięcia.</value>
+  </data>
+  <data name="ContractorTab_DeleteContractorsCarsError" xml:space="preserve">
+    <value>Problem z usunięciem samochodów kontrahenta. Operacja została przerwana!</value>
+  </data>
+  <data name="ContractorTab_DeleteContractorError" xml:space="preserve">
+    <value>Nie udało się usunąć kontrahenta!</value>
+  </data>
+  <data name="ContractorTab_DeleteContractorSuccess" xml:space="preserve">
+    <value>Udało się usunąć kontrahenta.</value>
+  </data>
+  <data name="ContractorTab_EditCar" xml:space="preserve">
+    <value>Edytuj samochód {0} {1}</value>
+  </data>
+  <data name="ContractorTab_EditCarError" xml:space="preserve">
+    <value>Nie udało się zaktualizować danych samochodu dla wybranego kontrahenta!</value>
+  </data>
+  <data name="ContractorTab_EditCarSuccess" xml:space="preserve">
+    <value>Udało się zaktualizować dane samochodu dla wybranego kontrahenta.</value>
+  </data>
+  <data name="ContractorTab_EditContractor" xml:space="preserve">
+    <value>Edycja kontrahenta: {0} {1}</value>
+  </data>
+  <data name="ContractorTab_EditContractorError" xml:space="preserve">
+    <value>Nie udało się zaktualizować kontrahenta!</value>
+  </data>
+  <data name="ContractorTab_EditContractorSuccess" xml:space="preserve">
+    <value>Udało się zaktualizować dane kontrahenta.</value>
+  </data>
 </root>

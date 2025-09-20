@@ -1,27 +1,24 @@
-﻿using CarRepairShop.Domain.Entities;
+﻿using CarRepairShop.AppSettings;
+using CarRepairShop.Contractors.CarForm.DTO;
+using CarRepairShop.Contractors.CarForm.View;
+using CarRepairShop.Contractors.ContractorForm.DTO;
+using CarRepairShop.Contractors.ContractorForm.View;
+using CarRepairShop.Contractors.FuelTypesList.View;
+using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Views.Tabs.Contractors;
-using CarRepairShop.Utilities.Permissions;
+using CarRepairShop.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
-using Permissions = CarRepairShop.Utilities.Permissions.Permissions;
 
 namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
 {
     public partial class ContractorsTab : UserControl, IContractorsTab
     {
-        private Presenters.Tabs.Contractors.ContractorTabPresenter _presenter;
-
-        public int SelectedContractorID => dgvContractors.CurrentRow?.DataBoundItem is Domain.Entities.Contractors contractor ? contractor.ID : -1;
-        public int SelectedCarID => dgvCars.CurrentRow?.DataBoundItem is ContractorsCars car ? car.ID : -1;
-
-        public string SearchedContractorName => txtName.Text;
-        public string SearchedContractorSurname => txtSurname.Text;
-        public string SearchedCarBrandName => txtBrandName.Text;
-        public string SearchedCarModelName => txtModelName.Text;
-
         public event EventHandler FormIsLoaded;
+        public event EventHandler DebounceElapsed;
+        public event EventHandler FilterChanged;
         public event EventHandler AddContractorButtonClicked;
         public event EventHandler EditContractorButtonClicked;
         public event EventHandler DeleteContractorButtonClicked;
@@ -29,18 +26,26 @@ namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
         public event EventHandler EditCarButtonClicked;
         public event EventHandler DeleteCarButtonClicked;
         public event EventHandler ContractorSelectionChanged;
-        public event EventHandler DebounceTimerElapsed;
-        public event EventHandler SearchNameChanged;
-        public event EventHandler SearchSurameChanged;
-        public event EventHandler SearchBrandNameChanged;
-        public event EventHandler SearchModelNameChanged;
+        public event EventHandler FuelTypesButtonClicked;
+
+        private readonly Presenters.Tabs.Contractors.ContractorTabPresenter _presenter;
 
         public ContractorsTab()
         {
             InitializeComponent();
-            Debounce.Stop();
-            _presenter = new Presenters.Tabs.Contractors.ContractorTabPresenter(this);
+            _presenter = new Presenters.Tabs.Contractors.ContractorTabPresenter(this, new GenericRepository(), new CurrentUserService());
         }
+
+        public int SelectedContractorID => dgvContractors.CurrentRow?.DataBoundItem is Domain.Entities.Contractors contractor ? contractor.ID : 0;
+        public int SelectedCarID => dgvCars.CurrentRow?.DataBoundItem is ContractorsCars car ? car.ID : 0;
+
+        public string SearchedContractorName => txtName.Text;
+
+        public string SearchedContractorSurname => txtSurname.Text;
+
+        public string SearchedCarBrandName => txtBrandName.Text;
+
+        public string SearchedCarModelName => txtModelName.Text;
 
         public void ShowMessage(string message) => MessageBox.Show(message);
 
@@ -103,6 +108,60 @@ namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
             dgvContractors.Columns[nameof(Domain.Entities.Contractors.ID)].Visible = false;
         }
 
+        public void ChangeButtonAccess(bool hasPermission)
+        {
+            btnAddContractor.Enabled = hasPermission;
+            btnEditContractor.Enabled = hasPermission;
+            btnDeleteContractor.Enabled = hasPermission;
+            btnAddVehicle.Enabled = hasPermission;
+            btnEditVehicle.Enabled = hasPermission;
+            btnDeleteVehicle.Enabled = hasPermission;
+        }
+
+        public ContractorFormResult OpenContractorForm(int? id = null, string title = "")
+        {
+            var form = new ContractorForm(id);
+            form.FormTitle = title;
+
+            form.ShowDialog();
+
+            return form.ContractorFormResult;
+        }
+
+        public CarFormResult OpenCarForm(int? id = null, string title = "")
+        {
+            var form = new CarForm(id);
+            form.FormTitle = title;
+
+            form.ShowDialog();
+
+            return form.CarFormResult;
+        }
+
+        public DialogResult OpenFuelTypesDictionary()
+        {
+            var form = new FuelTypesList();
+            form.ShowDialog();
+
+            return form.ChangesAccured;
+        }
+
+        public void StopDebounce() => Debounce.Stop();
+
+        public void StartDebounce()
+        {
+            Debounce.Stop();
+            Debounce.Start();
+        }
+
+        public void ResetGridSelections()
+        {
+            dgvContractors.ClearSelection();
+            dgvCars.DataSource = null;
+        }
+
+        private void ContractorsTab_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(sender, e);
+
         private void btnAddContractor_Click(object sender, EventArgs e) => AddContractorButtonClicked?.Invoke(sender, e);
 
         private void btnEditContractor_Click(object sender, EventArgs e) => EditContractorButtonClicked?.Invoke(sender, e);
@@ -115,61 +174,18 @@ namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
 
         private void btnDeleteVehicle_Click(object sender, EventArgs e) => DeleteCarButtonClicked?.Invoke(sender, e);
 
-        private void ContractorsTab_Load(object sender, EventArgs e)
-        {
-            FormIsLoaded?.Invoke(sender, e);
-        }
+        private void btnFuelTypes_Click(object sender, EventArgs e) => FuelTypesButtonClicked?.Invoke(sender, e);
 
         private void dgvContractors_CellClick(object sender, DataGridViewCellEventArgs e) => ContractorSelectionChanged?.Invoke(sender, e);
 
-        private void Debounce_Tick(object sender, EventArgs e)
-        {
-            Debounce.Stop();
-            DebounceTimerElapsed?.Invoke(this, e);
-        }
+        private void Debounce_Tick(object sender, EventArgs e) => DebounceElapsed?.Invoke(this, e);
 
-        private void txtName_TextChanged(object sender, EventArgs e)
-        {
-            Debounce.Stop();
-            Debounce.Start();
+        private void txtName_TextChanged(object sender, EventArgs e) => FilterChanged?.Invoke(sender, e);
 
-            SearchNameChanged?.Invoke(sender, e);
-        }
+        private void txtSurname_TextChanged(object sender, EventArgs e) => FilterChanged?.Invoke(sender, e);
 
-        private void txtSurname_TextChanged(object sender, EventArgs e)
-        {
-            Debounce.Stop();
-            Debounce.Start();
+        private void txtBrandName_TextChanged(object sender, EventArgs e) => FilterChanged?.Invoke(sender, e);
 
-            SearchSurameChanged?.Invoke(sender, e);
-        }
-
-        private void txtBrandName_TextChanged(object sender, EventArgs e)
-        {
-            Debounce.Stop();
-            Debounce.Start();
-
-            SearchBrandNameChanged?.Invoke(sender, e);
-        }
-
-        private void txtModelName_TextChanged(object sender, EventArgs e)
-        {
-            Debounce.Stop();
-            Debounce.Start();
-
-            SearchModelNameChanged?.Invoke(sender, e);
-        }
-
-        public void UnableButtonsIfUserDoesntHavePermissions()
-        {
-            var shouldBeEnabled = AppSettings.CurrentUser.HasPermission(PermissionTabs.Contractors, Permissions.AllowEdit);
-
-            btnAddContractor.Enabled = shouldBeEnabled;
-            btnEditContractor.Enabled = shouldBeEnabled;
-            btnDeleteContractor.Enabled = shouldBeEnabled;
-            btnAddVehicle.Enabled = shouldBeEnabled;
-            btnEditVehicle.Enabled = shouldBeEnabled;
-            btnDeleteVehicle.Enabled = shouldBeEnabled;
-        }
+        private void txtModelName_TextChanged(object sender, EventArgs e) => FilterChanged?.Invoke(sender, e);
     }
 }

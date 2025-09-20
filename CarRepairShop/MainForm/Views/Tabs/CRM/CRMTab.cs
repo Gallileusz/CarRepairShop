@@ -79,15 +79,15 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             dgvCRM.Columns[nameof(CRM_Model.Price)].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
             dgvCRM.Columns[nameof(CRM_Model.Completed)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
 
-            dgvCRM.Columns[nameof(CRM_Model.TaskCreatorFullname)].HeaderText = Translations.MainView.CRMTab.ColumnMechanic;
-            dgvCRM.Columns[nameof(CRM_Model.CustomerFullname)].HeaderText = Translations.MainView.CRMTab.ColumnContractor;
-            dgvCRM.Columns[nameof(CRM_Model.Description)].HeaderText = Translations.MainView.CRMTab.ColumnDescription;
-            dgvCRM.Columns[nameof(CRM_Model.VehicleDetails)].HeaderText = Translations.MainView.CRMTab.ColumnVehicleData;
-            dgvCRM.Columns[nameof(CRM_Model.Services)].HeaderText = Translations.MainView.CRMTab.ColumnServices;
-            dgvCRM.Columns[nameof(CRM_Model.StartDate)].HeaderText = Translations.MainView.CRMTab.ColumnStartDate;
-            dgvCRM.Columns[nameof(CRM_Model.EndDate)].HeaderText = Translations.MainView.CRMTab.ColumnCloseDate;
-            dgvCRM.Columns[nameof(CRM_Model.Price)].HeaderText = Translations.MainView.CRMTab.ColumnPrice;
-            dgvCRM.Columns[nameof(CRM_Model.Completed)].HeaderText = Translations.MainView.CRMTab.ColumnCompleted;
+            dgvCRM.Columns[nameof(CRM_Model.TaskCreatorFullname)].HeaderText = Translations.MainView.CRM.ColumnMechanic;
+            dgvCRM.Columns[nameof(CRM_Model.CustomerFullname)].HeaderText = Translations.MainView.CRM.ColumnContractor;
+            dgvCRM.Columns[nameof(CRM_Model.Description)].HeaderText = Translations.MainView.CRM.ColumnDescription;
+            dgvCRM.Columns[nameof(CRM_Model.VehicleDetails)].HeaderText = Translations.MainView.CRM.ColumnVehicleData;
+            dgvCRM.Columns[nameof(CRM_Model.Services)].HeaderText = Translations.MainView.CRM.ColumnServices;
+            dgvCRM.Columns[nameof(CRM_Model.StartDate)].HeaderText = Translations.MainView.CRM.ColumnStartDate;
+            dgvCRM.Columns[nameof(CRM_Model.EndDate)].HeaderText = Translations.MainView.CRM.ColumnCloseDate;
+            dgvCRM.Columns[nameof(CRM_Model.Price)].HeaderText = Translations.MainView.CRM.ColumnPrice;
+            dgvCRM.Columns[nameof(CRM_Model.Completed)].HeaderText = Translations.MainView.CRM.ColumnCompleted;
 
             dgvCRM.Rows.Cast<DataGridViewRow>().ToList().ForEach(row =>
             {

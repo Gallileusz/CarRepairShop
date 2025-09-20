@@ -48,11 +48,11 @@ namespace CarRepairShop.MainForm.Views.Tabs.Services
             dgv.Columns[nameof(Domain.Entities.Services.Duration)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dgv.Columns[nameof(Domain.Entities.Services.WarrantyMonths)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
             dgv.Columns[nameof(Domain.Entities.Services.StandardCost)].AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dgv.Columns[nameof(Domain.Entities.Services.Name)].HeaderText = Translations.MainView.ServicesTab.NameHeaderText;
-            dgv.Columns[nameof(Domain.Entities.Services.IsActive)].HeaderText = Translations.MainView.ServicesTab.StatusHeaderText;
-            dgv.Columns[nameof(Domain.Entities.Services.Duration)].HeaderText = Translations.MainView.ServicesTab.DurationHeaderText;
-            dgv.Columns[nameof(Domain.Entities.Services.WarrantyMonths)].HeaderText = Translations.MainView.ServicesTab.WarrantyHeaderText;
-            dgv.Columns[nameof(Domain.Entities.Services.StandardCost)].HeaderText = Translations.MainView.ServicesTab.CostHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.Name)].HeaderText = Translations.MainView.Services.NameHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.IsActive)].HeaderText = Translations.MainView.Services.StatusHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.Duration)].HeaderText = Translations.MainView.Services.DurationHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.WarrantyMonths)].HeaderText = Translations.MainView.Services.WarrantyHeaderText;
+            dgv.Columns[nameof(Domain.Entities.Services.StandardCost)].HeaderText = Translations.MainView.Services.CostHeaderText;
         }
 
         public bool ConfirmAction(string message, string title) => MessageBox.Show(message, title, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes;

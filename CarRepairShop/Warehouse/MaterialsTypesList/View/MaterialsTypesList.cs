@@ -19,10 +19,8 @@ namespace CarRepairShop.Warehouse.MaterialsTypesList.View
 
         public int SelectedID => dgv.CurrentRow?.DataBoundItem is MaterialTypes materialType ? materialType.ID : 0;
 
-        private DialogResult _changesAccured;
-
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public DialogResult ChangesAccured { get => _changesAccured; set => _changesAccured = value; }
+        public DialogResult ChangesAccured { get => this.DialogResult; set => this.DialogResult = value; }
 
         private readonly Presenter.MaterialsTypesListPresenter _presenter;
 

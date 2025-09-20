@@ -56,9 +56,9 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             dgvWarehouse.Columns[nameof(ConsumableMaterialVM.Name)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvWarehouse.Columns[nameof(ConsumableMaterialVM.MaterialTypeName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
 
-            dgvWarehouse.Columns[nameof(ConsumableMaterialVM.Name)].HeaderText = Translations.MainView.WarehouseTab.MaterialName;
-            dgvWarehouse.Columns[nameof(ConsumableMaterialVM.MaterialTypeName)].HeaderText = Translations.MainView.WarehouseTab.MaterialTypeName;
-            dgvWarehouse.Columns[nameof(ConsumableMaterialVM.Quantity)].HeaderText = Translations.MainView.WarehouseTab.Quantity;
+            dgvWarehouse.Columns[nameof(ConsumableMaterialVM.Name)].HeaderText = Translations.MainView.Warehouse.MaterialName;
+            dgvWarehouse.Columns[nameof(ConsumableMaterialVM.MaterialTypeName)].HeaderText = Translations.MainView.Warehouse.MaterialTypeName;
+            dgvWarehouse.Columns[nameof(ConsumableMaterialVM.Quantity)].HeaderText = Translations.MainView.Warehouse.Quantity;
         }
 
         public void LoadMaterialTypesToCombobox(List<MaterialTypes> materialTypes)

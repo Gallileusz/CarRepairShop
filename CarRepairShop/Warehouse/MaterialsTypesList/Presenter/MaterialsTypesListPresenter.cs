@@ -48,7 +48,7 @@ namespace CarRepairShop.Warehouse.MaterialsTypesList.Presenter
 
         private void AddMaterialType(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             var name = _view.ShowInputDialog(Translations.MaterialsTypesList.AddMaterialTitle, string.Empty);
 
@@ -68,7 +68,7 @@ namespace CarRepairShop.Warehouse.MaterialsTypesList.Presenter
 
         private void EditMaterialType(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             if (_view.SelectedID <= 0) return;
 
@@ -96,7 +96,7 @@ namespace CarRepairShop.Warehouse.MaterialsTypesList.Presenter
 
         private void DeleteMaterialType(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             var materialType = _materialTypes.FirstOrDefault(mt => mt.ID == _view.SelectedID);
             var index = _materialTypes.FindIndex(x => x.ID == _view.SelectedID);

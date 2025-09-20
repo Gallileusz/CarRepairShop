@@ -8,7 +8,7 @@ namespace CarRepairShop.AppSettings
         Domain.Entities.UserCredentials Credentials { get; }
         bool IsAdmin { get; }
         string Language { get; set; }
-        bool HasPermission(PermissionTabs permissionType, Permissions permission);
+        bool HasPermission(PermissionTabs permissionType, PermissionType permission);
         void SetUser(Domain.Entities.Users user, Domain.Entities.UserCredentials credentials);
         void Initialize(PermissionService permissionService);
     }

@@ -28,257 +28,187 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.gbLicensePlate = new System.Windows.Forms.GroupBox();
-            this.txtLicensePlate = new System.Windows.Forms.TextBox();
-            this.gbVIN = new System.Windows.Forms.GroupBox();
-            this.txtVIN = new System.Windows.Forms.TextBox();
-            this.gbModelName = new System.Windows.Forms.GroupBox();
-            this.txtModelName = new System.Windows.Forms.TextBox();
-            this.gbBrandName = new System.Windows.Forms.GroupBox();
-            this.txtBrandName = new System.Windows.Forms.TextBox();
-            this.gbYear = new System.Windows.Forms.GroupBox();
-            this.txtYear = new System.Windows.Forms.TextBox();
-            this.gbEngineCapacity = new System.Windows.Forms.GroupBox();
-            this.txtEngineCapacity = new System.Windows.Forms.TextBox();
-            this.btnAddFuelType = new System.Windows.Forms.Button();
-            this.cmbFuelTypes = new System.Windows.Forms.ComboBox();
-            this.gbFuelType = new System.Windows.Forms.GroupBox();
-            this.gbMileage = new System.Windows.Forms.GroupBox();
-            this.txtMileage = new System.Windows.Forms.TextBox();
-            this.gbLicensePlate.SuspendLayout();
-            this.gbVIN.SuspendLayout();
-            this.gbModelName.SuspendLayout();
-            this.gbBrandName.SuspendLayout();
-            this.gbYear.SuspendLayout();
-            this.gbEngineCapacity.SuspendLayout();
-            this.gbFuelType.SuspendLayout();
-            this.gbMileage.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CarForm));
+            btnCancel = new System.Windows.Forms.Button();
+            btnConfirm = new System.Windows.Forms.Button();
+            gbLicensePlate = new System.Windows.Forms.GroupBox();
+            txtLicensePlate = new System.Windows.Forms.TextBox();
+            gbVIN = new System.Windows.Forms.GroupBox();
+            txtVIN = new System.Windows.Forms.TextBox();
+            gbModelName = new System.Windows.Forms.GroupBox();
+            txtModelName = new System.Windows.Forms.TextBox();
+            gbBrandName = new System.Windows.Forms.GroupBox();
+            txtBrandName = new System.Windows.Forms.TextBox();
+            gbYear = new System.Windows.Forms.GroupBox();
+            txtYear = new System.Windows.Forms.TextBox();
+            gbEngineCapacity = new System.Windows.Forms.GroupBox();
+            txtEngineCapacity = new System.Windows.Forms.TextBox();
+            cmbFuelTypes = new System.Windows.Forms.ComboBox();
+            gbFuelType = new System.Windows.Forms.GroupBox();
+            gbMileage = new System.Windows.Forms.GroupBox();
+            txtMileage = new System.Windows.Forms.TextBox();
+            gbLicensePlate.SuspendLayout();
+            gbVIN.SuspendLayout();
+            gbModelName.SuspendLayout();
+            gbBrandName.SuspendLayout();
+            gbYear.SuspendLayout();
+            gbEngineCapacity.SuspendLayout();
+            gbFuelType.SuspendLayout();
+            gbMileage.SuspendLayout();
+            SuspendLayout();
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(528, 150);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(104, 40);
-            this.btnCancel.TabIndex = 28;
-            this.btnCancel.Text = "Cancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            resources.ApplyResources(btnCancel, "btnCancel");
+            btnCancel.Name = "btnCancel";
+            btnCancel.UseVisualStyleBackColor = true;
+            btnCancel.Click += btnCancel_Click;
             // 
             // btnConfirm
             // 
-            this.btnConfirm.Location = new System.Drawing.Point(412, 150);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(104, 40);
-            this.btnConfirm.TabIndex = 27;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            resources.ApplyResources(btnConfirm, "btnConfirm");
+            btnConfirm.Name = "btnConfirm";
+            btnConfirm.UseVisualStyleBackColor = true;
+            btnConfirm.Click += btnConfirm_Click;
             // 
             // gbLicensePlate
             // 
-            this.gbLicensePlate.Controls.Add(this.txtLicensePlate);
-            this.gbLicensePlate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbLicensePlate.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbLicensePlate.Location = new System.Drawing.Point(777, 76);
-            this.gbLicensePlate.Name = "gbLicensePlate";
-            this.gbLicensePlate.Size = new System.Drawing.Size(249, 58);
-            this.gbLicensePlate.TabIndex = 26;
-            this.gbLicensePlate.TabStop = false;
-            this.gbLicensePlate.Text = "License plate:";
+            gbLicensePlate.Controls.Add(txtLicensePlate);
+            resources.ApplyResources(gbLicensePlate, "gbLicensePlate");
+            gbLicensePlate.ForeColor = System.Drawing.Color.SteelBlue;
+            gbLicensePlate.Name = "gbLicensePlate";
+            gbLicensePlate.TabStop = false;
             // 
             // txtLicensePlate
             // 
-            this.txtLicensePlate.Location = new System.Drawing.Point(6, 23);
-            this.txtLicensePlate.Name = "txtLicensePlate";
-            this.txtLicensePlate.Size = new System.Drawing.Size(237, 24);
-            this.txtLicensePlate.TabIndex = 0;
+            resources.ApplyResources(txtLicensePlate, "txtLicensePlate");
+            txtLicensePlate.Name = "txtLicensePlate";
             // 
             // gbVIN
             // 
-            this.gbVIN.Controls.Add(this.txtVIN);
-            this.gbVIN.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbVIN.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbVIN.Location = new System.Drawing.Point(777, 12);
-            this.gbVIN.Name = "gbVIN";
-            this.gbVIN.Size = new System.Drawing.Size(249, 58);
-            this.gbVIN.TabIndex = 25;
-            this.gbVIN.TabStop = false;
-            this.gbVIN.Text = "VIN:";
+            gbVIN.Controls.Add(txtVIN);
+            resources.ApplyResources(gbVIN, "gbVIN");
+            gbVIN.ForeColor = System.Drawing.Color.SteelBlue;
+            gbVIN.Name = "gbVIN";
+            gbVIN.TabStop = false;
             // 
             // txtVIN
             // 
-            this.txtVIN.Location = new System.Drawing.Point(6, 23);
-            this.txtVIN.Name = "txtVIN";
-            this.txtVIN.Size = new System.Drawing.Size(237, 24);
-            this.txtVIN.TabIndex = 0;
+            resources.ApplyResources(txtVIN, "txtVIN");
+            txtVIN.Name = "txtVIN";
             // 
             // gbModelName
             // 
-            this.gbModelName.Controls.Add(this.txtModelName);
-            this.gbModelName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbModelName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbModelName.Location = new System.Drawing.Point(267, 12);
-            this.gbModelName.Name = "gbModelName";
-            this.gbModelName.Size = new System.Drawing.Size(249, 58);
-            this.gbModelName.TabIndex = 24;
-            this.gbModelName.TabStop = false;
-            this.gbModelName.Text = "Model name:";
+            gbModelName.Controls.Add(txtModelName);
+            resources.ApplyResources(gbModelName, "gbModelName");
+            gbModelName.ForeColor = System.Drawing.Color.SteelBlue;
+            gbModelName.Name = "gbModelName";
+            gbModelName.TabStop = false;
             // 
             // txtModelName
             // 
-            this.txtModelName.Location = new System.Drawing.Point(6, 23);
-            this.txtModelName.Name = "txtModelName";
-            this.txtModelName.Size = new System.Drawing.Size(237, 24);
-            this.txtModelName.TabIndex = 0;
+            resources.ApplyResources(txtModelName, "txtModelName");
+            txtModelName.Name = "txtModelName";
             // 
             // gbBrandName
             // 
-            this.gbBrandName.Controls.Add(this.txtBrandName);
-            this.gbBrandName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbBrandName.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbBrandName.Location = new System.Drawing.Point(12, 12);
-            this.gbBrandName.Name = "gbBrandName";
-            this.gbBrandName.Size = new System.Drawing.Size(249, 58);
-            this.gbBrandName.TabIndex = 23;
-            this.gbBrandName.TabStop = false;
-            this.gbBrandName.Text = "Brand name:";
+            gbBrandName.Controls.Add(txtBrandName);
+            resources.ApplyResources(gbBrandName, "gbBrandName");
+            gbBrandName.ForeColor = System.Drawing.Color.SteelBlue;
+            gbBrandName.Name = "gbBrandName";
+            gbBrandName.TabStop = false;
             // 
             // txtBrandName
             // 
-            this.txtBrandName.Location = new System.Drawing.Point(6, 23);
-            this.txtBrandName.Name = "txtBrandName";
-            this.txtBrandName.Size = new System.Drawing.Size(237, 24);
-            this.txtBrandName.TabIndex = 0;
+            resources.ApplyResources(txtBrandName, "txtBrandName");
+            txtBrandName.Name = "txtBrandName";
             // 
             // gbYear
             // 
-            this.gbYear.Controls.Add(this.txtYear);
-            this.gbYear.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbYear.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbYear.Location = new System.Drawing.Point(522, 12);
-            this.gbYear.Name = "gbYear";
-            this.gbYear.Size = new System.Drawing.Size(249, 58);
-            this.gbYear.TabIndex = 29;
-            this.gbYear.TabStop = false;
-            this.gbYear.Text = "Year:";
+            gbYear.Controls.Add(txtYear);
+            resources.ApplyResources(gbYear, "gbYear");
+            gbYear.ForeColor = System.Drawing.Color.SteelBlue;
+            gbYear.Name = "gbYear";
+            gbYear.TabStop = false;
             // 
             // txtYear
             // 
-            this.txtYear.Location = new System.Drawing.Point(6, 23);
-            this.txtYear.Name = "txtYear";
-            this.txtYear.Size = new System.Drawing.Size(237, 24);
-            this.txtYear.TabIndex = 0;
+            resources.ApplyResources(txtYear, "txtYear");
+            txtYear.Name = "txtYear";
             // 
             // gbEngineCapacity
             // 
-            this.gbEngineCapacity.Controls.Add(this.txtEngineCapacity);
-            this.gbEngineCapacity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbEngineCapacity.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbEngineCapacity.Location = new System.Drawing.Point(267, 76);
-            this.gbEngineCapacity.Name = "gbEngineCapacity";
-            this.gbEngineCapacity.Size = new System.Drawing.Size(249, 58);
-            this.gbEngineCapacity.TabIndex = 31;
-            this.gbEngineCapacity.TabStop = false;
-            this.gbEngineCapacity.Text = "Engine capacity:";
+            gbEngineCapacity.Controls.Add(txtEngineCapacity);
+            resources.ApplyResources(gbEngineCapacity, "gbEngineCapacity");
+            gbEngineCapacity.ForeColor = System.Drawing.Color.SteelBlue;
+            gbEngineCapacity.Name = "gbEngineCapacity";
+            gbEngineCapacity.TabStop = false;
             // 
             // txtEngineCapacity
             // 
-            this.txtEngineCapacity.Location = new System.Drawing.Point(6, 23);
-            this.txtEngineCapacity.Name = "txtEngineCapacity";
-            this.txtEngineCapacity.Size = new System.Drawing.Size(237, 24);
-            this.txtEngineCapacity.TabIndex = 0;
-            // 
-            // btnAddFuelType
-            // 
-            this.btnAddFuelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAddFuelType.Location = new System.Drawing.Point(164, 15);
-            this.btnAddFuelType.Name = "btnAddFuelType";
-            this.btnAddFuelType.Size = new System.Drawing.Size(80, 38);
-            this.btnAddFuelType.TabIndex = 1;
-            this.btnAddFuelType.Text = "Add new fuel type";
-            this.btnAddFuelType.UseVisualStyleBackColor = true;
-            this.btnAddFuelType.Click += new System.EventHandler(this.btnAddFuelType_Click);
+            resources.ApplyResources(txtEngineCapacity, "txtEngineCapacity");
+            txtEngineCapacity.Name = "txtEngineCapacity";
             // 
             // cmbFuelTypes
             // 
-            this.cmbFuelTypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.cmbFuelTypes.FormattingEnabled = true;
-            this.cmbFuelTypes.Location = new System.Drawing.Point(6, 21);
-            this.cmbFuelTypes.Name = "cmbFuelTypes";
-            this.cmbFuelTypes.Size = new System.Drawing.Size(152, 26);
-            this.cmbFuelTypes.TabIndex = 0;
+            resources.ApplyResources(cmbFuelTypes, "cmbFuelTypes");
+            cmbFuelTypes.FormattingEnabled = true;
+            cmbFuelTypes.Name = "cmbFuelTypes";
             // 
             // gbFuelType
             // 
-            this.gbFuelType.Controls.Add(this.btnAddFuelType);
-            this.gbFuelType.Controls.Add(this.cmbFuelTypes);
-            this.gbFuelType.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbFuelType.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbFuelType.Location = new System.Drawing.Point(12, 76);
-            this.gbFuelType.Name = "gbFuelType";
-            this.gbFuelType.Size = new System.Drawing.Size(249, 58);
-            this.gbFuelType.TabIndex = 32;
-            this.gbFuelType.TabStop = false;
-            this.gbFuelType.Text = "Fuel type:";
+            gbFuelType.Controls.Add(cmbFuelTypes);
+            resources.ApplyResources(gbFuelType, "gbFuelType");
+            gbFuelType.ForeColor = System.Drawing.Color.SteelBlue;
+            gbFuelType.Name = "gbFuelType";
+            gbFuelType.TabStop = false;
             // 
             // gbMileage
             // 
-            this.gbMileage.Controls.Add(this.txtMileage);
-            this.gbMileage.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.gbMileage.ForeColor = System.Drawing.Color.SteelBlue;
-            this.gbMileage.Location = new System.Drawing.Point(522, 76);
-            this.gbMileage.Name = "gbMileage";
-            this.gbMileage.Size = new System.Drawing.Size(249, 58);
-            this.gbMileage.TabIndex = 33;
-            this.gbMileage.TabStop = false;
-            this.gbMileage.Text = "Mileage:";
+            gbMileage.Controls.Add(txtMileage);
+            resources.ApplyResources(gbMileage, "gbMileage");
+            gbMileage.ForeColor = System.Drawing.Color.SteelBlue;
+            gbMileage.Name = "gbMileage";
+            gbMileage.TabStop = false;
             // 
             // txtMileage
             // 
-            this.txtMileage.Location = new System.Drawing.Point(6, 23);
-            this.txtMileage.Name = "txtMileage";
-            this.txtMileage.Size = new System.Drawing.Size(237, 24);
-            this.txtMileage.TabIndex = 0;
+            resources.ApplyResources(txtMileage, "txtMileage");
+            txtMileage.Name = "txtMileage";
             // 
             // CarForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1037, 199);
-            this.Controls.Add(this.gbMileage);
-            this.Controls.Add(this.gbFuelType);
-            this.Controls.Add(this.gbEngineCapacity);
-            this.Controls.Add(this.gbYear);
-            this.Controls.Add(this.btnCancel);
-            this.Controls.Add(this.btnConfirm);
-            this.Controls.Add(this.gbLicensePlate);
-            this.Controls.Add(this.gbVIN);
-            this.Controls.Add(this.gbModelName);
-            this.Controls.Add(this.gbBrandName);
-            this.Name = "CarForm";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "CarForm";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.CarForm_FormClosing);
-            this.Load += new System.EventHandler(this.CarForm_Load);
-            this.gbLicensePlate.ResumeLayout(false);
-            this.gbLicensePlate.PerformLayout();
-            this.gbVIN.ResumeLayout(false);
-            this.gbVIN.PerformLayout();
-            this.gbModelName.ResumeLayout(false);
-            this.gbModelName.PerformLayout();
-            this.gbBrandName.ResumeLayout(false);
-            this.gbBrandName.PerformLayout();
-            this.gbYear.ResumeLayout(false);
-            this.gbYear.PerformLayout();
-            this.gbEngineCapacity.ResumeLayout(false);
-            this.gbEngineCapacity.PerformLayout();
-            this.gbFuelType.ResumeLayout(false);
-            this.gbMileage.ResumeLayout(false);
-            this.gbMileage.PerformLayout();
-            this.ResumeLayout(false);
+            resources.ApplyResources(this, "$this");
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            Controls.Add(gbMileage);
+            Controls.Add(gbFuelType);
+            Controls.Add(gbEngineCapacity);
+            Controls.Add(gbYear);
+            Controls.Add(btnCancel);
+            Controls.Add(btnConfirm);
+            Controls.Add(gbLicensePlate);
+            Controls.Add(gbVIN);
+            Controls.Add(gbModelName);
+            Controls.Add(gbBrandName);
+            FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            Name = "CarForm";
+            Load += CarForm_Load;
+            gbLicensePlate.ResumeLayout(false);
+            gbLicensePlate.PerformLayout();
+            gbVIN.ResumeLayout(false);
+            gbVIN.PerformLayout();
+            gbModelName.ResumeLayout(false);
+            gbModelName.PerformLayout();
+            gbBrandName.ResumeLayout(false);
+            gbBrandName.PerformLayout();
+            gbYear.ResumeLayout(false);
+            gbYear.PerformLayout();
+            gbEngineCapacity.ResumeLayout(false);
+            gbEngineCapacity.PerformLayout();
+            gbFuelType.ResumeLayout(false);
+            gbMileage.ResumeLayout(false);
+            gbMileage.PerformLayout();
+            ResumeLayout(false);
 
         }
 
@@ -298,7 +228,6 @@
         private System.Windows.Forms.TextBox txtYear;
         private System.Windows.Forms.GroupBox gbEngineCapacity;
         private System.Windows.Forms.TextBox txtEngineCapacity;
-        private System.Windows.Forms.Button btnAddFuelType;
         private System.Windows.Forms.ComboBox cmbFuelTypes;
         private System.Windows.Forms.GroupBox gbFuelType;
         private System.Windows.Forms.GroupBox gbMileage;

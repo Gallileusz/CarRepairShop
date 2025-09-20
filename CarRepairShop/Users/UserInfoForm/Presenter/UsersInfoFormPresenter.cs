@@ -65,7 +65,7 @@ namespace CarRepairShop.Users.UserInfoForm.Presenter
                 _view.Login = _userCredentials.Login;
                 _view.Password = _userCredentials.PasswordHash;
                 _view.SuperAdmin = _user.Admin;
-                _view.FormText = string.Format(Library.Texts.MainView.UsersTab.UserInfoFormTitle, _user.Name, _user.Surname);
+                _view.FormText = string.Format(Library.Texts.MainView.Users.UserInfoFormTitle, _user.Name, _user.Surname);
                 _view.ChangeControlAccessibility(false);
             }
 

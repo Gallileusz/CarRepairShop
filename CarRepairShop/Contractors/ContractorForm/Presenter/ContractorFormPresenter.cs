@@ -1,17 +1,29 @@
-﻿using System;
-using CarRepairShop.Contractors.ContractorForm.View;
+﻿using CarRepairShop.Contractors.ContractorForm.View;
+using CarRepairShop.Repositories;
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.Contractors.ContractorForm.Presenter
 {
     public class ContractorFormPresenter
     {
-        private IContractorForm _view;
-        private Domain.Entities.Contractors _contractor;
-        private bool _isConfirmed = false;
+        private readonly IContractorForm _view;
+        private readonly IGenericRepository _genericRepo;
 
-        public ContractorFormPresenter(IContractorForm view)
+        private int? _id;
+        private Domain.Entities.Contractors _contractor;
+        private readonly Regex _emailRegex;
+
+        public ContractorFormPresenter(IContractorForm view, IGenericRepository genericRepo, int? id)
         {
             _view = view;
+            _genericRepo = genericRepo;
+            _id = id;
+            _emailRegex = new Regex(@"^[^@\s]+@[^@\s]+\.[^@\s]+$", RegexOptions.Compiled);
+            _view.OperationConfirmed = System.Windows.Forms.DialogResult.No;
+
             SubscribeToEvents();
         }
 
@@ -20,13 +32,14 @@ namespace CarRepairShop.Contractors.ContractorForm.Presenter
             _view.FormIsLoaded += LoadData;
             _view.ConfirmButtonClicked += Confirm;
             _view.CancelButtonClicked += Cancel;
-            _view.FormIsClosing += Closing;
         }
 
         private void LoadData(object sender, EventArgs e)
         {
-            if (_contractor != null)
+            if (_id != null && _id.HasValue)
             {
+                _contractor = _genericRepo.GetAll<Domain.Entities.Contractors>().FirstOrDefault(x => x.ID == _id);
+
                 _view.ContractorName = _contractor.Name;
                 _view.ContractorSurname = _contractor.Surname;
                 _view.ContractorPhoneNumber = _contractor.PhoneNumber;
@@ -36,71 +49,42 @@ namespace CarRepairShop.Contractors.ContractorForm.Presenter
 
         private void Confirm(object sender, EventArgs e)
         {
-            if (_contractor == null)
-                _contractor = new Domain.Entities.Contractors();
+            if (IsContractorInvalid(_view.ContractorFormResult.Contractor)) return;
 
-            _contractor.Name = _view.ContractorName;
-            _contractor.Surname = _view.ContractorSurname;
-            _contractor.PhoneNumber = _view.ContractorPhoneNumber;
-            _contractor.Email = _view.ContractorEmail;
-
-            if (IsContractorInvalid(_contractor)) return;
-
-            _isConfirmed = true;
+            _view.OperationConfirmed = System.Windows.Forms.DialogResult.Yes;
             _view.CloseForm();
         }
 
-        private void Cancel(object sender, EventArgs e)
-        {
-            _contractor = null;
-            _view.CloseForm();
-        }
-
-        private void Closing(object sender, EventArgs e)
-        {
-            if (!_isConfirmed)
-                _contractor = null;
-        }
+        private void Cancel(object sender, EventArgs e) => _view.CloseForm();
 
         private bool IsContractorInvalid(Domain.Entities.Contractors contractor)
         {
-            if (string.IsNullOrEmpty(contractor.Name))
+            if (string.IsNullOrEmpty(contractor.Name.Trim()))
             {
-                _view.ShowMessage("Uzupełnij pole imię.");
-                return true;
+                _view.ShowMessage(Translations.ContractorForm.FillNameField); return true;
             }
-            if (string.IsNullOrEmpty(contractor.Surname))
+            if (string.IsNullOrEmpty(contractor.Surname.Trim()))
             {
-                _view.ShowMessage("Uzupełnij pole nazwisko.");
-                return true;
+                _view.ShowMessage(Translations.ContractorForm.FillSurnameField); return true;
             }
-            if (string.IsNullOrEmpty(contractor.PhoneNumber))
+            if (string.IsNullOrEmpty(contractor.PhoneNumber.Trim()))
             {
-                _view.ShowMessage("Uzupełnij pole number telefonu");
-                return true;
+                _view.ShowMessage(Translations.ContractorForm.FillPhoneNumberField); return true;
             }
-            if (contractor.PhoneNumber.Trim().Length > 9)
+            if (contractor.PhoneNumber.Trim().Length < 9)
             {
-                _view.ShowMessage("Numer telefonu powinien mieć przynajmniej 9 cyfr.");
-                return true;
+                _view.ShowMessage(Translations.ContractorForm.IncorrectPhoneNumber); return true;
             }
-            if (string.IsNullOrEmpty(contractor.Email))
+            if (string.IsNullOrEmpty(contractor.Email.Trim()))
             {
-                _view.ShowMessage("Uzupełnij pole email.");
-                return true;
+                _view.ShowMessage(Translations.ContractorForm.FillEmailField); return true;
             }
-            var emailPattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
-            if (!System.Text.RegularExpressions.Regex.IsMatch(contractor.Email, emailPattern))
+            if (!_emailRegex.IsMatch(contractor.Email))
             {
-                _view.ShowMessage("Niepoprawny format adresu email.");
-                return true;
+                _view.ShowMessage(Translations.ContractorForm.IncorrectEmail); return true;
             }
 
             return false;
         }
-
-        public void SetContractor(Domain.Entities.Contractors contractor) => _contractor = contractor;
-
-        public Domain.Entities.Contractors GetContractor() => _contractor;
     }
 }

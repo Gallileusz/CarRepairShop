@@ -10,5 +10,8 @@
         public static MaterialsTypesList MaterialsTypesList { get; } = new MaterialsTypesList();
         public static ServicesForm ServicesForm { get; } = new ServicesForm();
         public static CRMForm CRMForm { get; } = new CRMForm();
+        public static ContractorForm ContractorForm { get; } = new ContractorForm();
+        public static CarForm CarForm { get; } = new CarForm();
+        public static FuelTypesList FuelTypesList { get; } = new FuelTypesList();
     }
 }

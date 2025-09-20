@@ -44,7 +44,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Services
             _view.StopDebounce();
             _view.LoadServicesToGrid(GetModels());
             _view.UnableButtonsIfUserDoesntHavePermissions(
-                _currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit));
+                _currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.PermissionType.AllowEdit));
         }
 
         private void DebounceTimerElapsed(object sender, EventArgs e) => _view.LoadServicesToGrid(GetModels());
@@ -53,35 +53,35 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Services
 
         private void ChangeServiceStatus(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit))
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.PermissionType.AllowEdit))
             {
-                _view.ShowMessage(Translations.MainView.ServicesTab.MissingEditPermissions); return;
+                _view.ShowMessage(Translations.MainView.Services.MissingEditPermissions); return;
             }
 
             var service = _servicesList.FirstOrDefault(x => x.ID == _view.SelectedServiceID);
 
             if (service == null)
             {
-                _view.ShowMessage(Translations.MainView.ServicesTab.ServiceNotSelected); return;
+                _view.ShowMessage(Translations.MainView.Services.ServiceNotSelected); return;
             }
 
-            if (!_view.ConfirmAction(string.Format(Translations.MainView.ServicesTab.ConfirmServiceStatusChangeBody, service.Name), Translations.MainView.ServicesTab.ConfirmServiceStatusChangeTitle)) return;
+            if (!_view.ConfirmAction(string.Format(Translations.MainView.Services.ConfirmServiceStatusChangeBody, service.Name), Translations.MainView.Services.ConfirmServiceStatusChangeTitle)) return;
 
             service.IsActive = !service.IsActive;
 
             if (_genericRepo.Update(service))
             {
-                var status = service.IsActive ? Translations.MainView.ServicesTab.Active : Translations.MainView.ServicesTab.Inactive;
+                var status = service.IsActive ? Translations.MainView.Services.Active : Translations.MainView.Services.Inactive;
                 _view.LoadServicesToGrid(GetModels());
-                _view.ShowMessage(string.Format(Translations.MainView.ServicesTab.StatusChangeSuccess, service.Name, status));
+                _view.ShowMessage(string.Format(Translations.MainView.Services.StatusChangeSuccess, service.Name, status));
             }
             else
-                _view.ShowMessage(string.Format(Translations.MainView.ServicesTab.StatusChangeError, service.Name));
+                _view.ShowMessage(string.Format(Translations.MainView.Services.StatusChangeError, service.Name));
         }
 
         private void AddService(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             var serviceDto = _view.ShowServiceForm(null);
             if (serviceDto.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
@@ -94,21 +94,21 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Services
             {
                 _servicesList.Add(service);
                 _view.LoadServicesToGrid(GetModels());
-                _view.ShowMessage(Translations.MainView.ServicesTab.InsertSuccess);
+                _view.ShowMessage(Translations.MainView.Services.InsertSuccess);
             }
             else
-                _view.ShowMessage(Translations.MainView.ServicesTab.InsertError);
+                _view.ShowMessage(Translations.MainView.Services.InsertError);
         }
 
         private void EditService(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             var serviceBeforeUpdate = _servicesList.FirstOrDefault(x => x.ID == _view.SelectedServiceID);
 
             if (serviceBeforeUpdate == null)
             {
-                _view.ShowMessage(Translations.MainView.ServicesTab.ServiceNotSelected); return;
+                _view.ShowMessage(Translations.MainView.Services.ServiceNotSelected); return;
             }
 
             var serviceDto = _view.ShowServiceForm(serviceBeforeUpdate.ID);
@@ -125,33 +125,33 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Services
             {
                 _servicesList[serviceIndex] = service;
                 _view.LoadServicesToGrid(GetModels());
-                _view.ShowMessage(Translations.MainView.ServicesTab.UpdateSuccess);
+                _view.ShowMessage(Translations.MainView.Services.UpdateSuccess);
             }
             else
-                _view.ShowMessage(string.Format(Translations.MainView.ServicesTab.UpdateError, service.Name));
+                _view.ShowMessage(string.Format(Translations.MainView.Services.UpdateError, service.Name));
         }
 
         private void DeleteService(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Services, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             var service = _servicesList.FirstOrDefault(x => x.ID == _view.SelectedServiceID);
 
             if (service == null)
             {
-                _view.ShowMessage(Translations.MainView.ServicesTab.ServiceNotSelected); return;
+                _view.ShowMessage(Translations.MainView.Services.ServiceNotSelected); return;
             }
 
-            if (!_view.ConfirmAction(string.Format(Translations.MainView.ServicesTab.DeleteConfirmBody, service.Name), Translations.MainView.ServicesTab.DeleteConfirmTitle)) return;
+            if (!_view.ConfirmAction(string.Format(Translations.MainView.Services.DeleteConfirmBody, service.Name), Translations.MainView.Services.DeleteConfirmTitle)) return;
 
             if (_genericRepo.Delete(service))
             {
                 _servicesList.Remove(service);
                 _view.LoadServicesToGrid(GetModels());
-                _view.ShowMessage(Translations.MainView.ServicesTab.DeleteSuccess);
+                _view.ShowMessage(Translations.MainView.Services.DeleteSuccess);
             }
             else
-                _view.ShowMessage(string.Format(Translations.MainView.ServicesTab.DeleteError, service.Name));
+                _view.ShowMessage(string.Format(Translations.MainView.Services.DeleteError, service.Name));
         }
 
         private List<Domain.Entities.Services> GetModels()

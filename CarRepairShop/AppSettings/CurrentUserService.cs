@@ -12,7 +12,7 @@ namespace CarRepairShop.AppSettings
 
         public Domain.Entities.UserCredentials Credentials => CurrentUser.Credentials;
 
-        public bool HasPermission(PermissionTabs permissionType, Permissions permission) => CurrentUser.HasPermission(permissionType, permission);
+        public bool HasPermission(PermissionTabs permissionType, PermissionType permission) => CurrentUser.HasPermission(permissionType, permission);
 
         public void Initialize(PermissionService permissionService) => CurrentUser.Initialize(permissionService);
 

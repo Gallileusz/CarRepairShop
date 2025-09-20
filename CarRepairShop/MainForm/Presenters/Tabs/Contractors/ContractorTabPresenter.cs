@@ -1,48 +1,45 @@
-﻿using CarRepairShop.Contractors.CarForm.View;
-using CarRepairShop.Contractors.ContractorForm.View;
+﻿using CarRepairShop.AppSettings;
 using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Views.Tabs.Contractors;
 using CarRepairShop.Repositories;
+using CarRepairShop.Utilities.Permissions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 {
     public class ContractorTabPresenter
     {
         private IContractorsTab _view;
-        private GenericRepository _genericRepo;
-        private List<Domain.Entities.Contractors> _contractors;
-        private Domain.Entities.Contractors _selectedContractor = new Domain.Entities.Contractors();
-        private List<Domain.Entities.Contractors> _filteredContractors;
-        private List<ContractorsCars> _cars;
-        private List<ContractorsCars> _filteredCars;
+        private IGenericRepository _genericRepo;
+        private ICurrentUserService _currentUser;
 
-        public ContractorTabPresenter(IContractorsTab view)
+        private List<Domain.Entities.Contractors> _contractors;
+        private List<ContractorsCars> _cars;
+        private List<FuelTypes> _fuelTypes;
+
+        public ContractorTabPresenter(IContractorsTab view, IGenericRepository genericRepo, ICurrentUserService currentUser)
         {
             _view = view;
-            _genericRepo = new GenericRepository();
+            _genericRepo = genericRepo;
+            _currentUser = currentUser;
 
             _contractors = _genericRepo.GetAll<Domain.Entities.Contractors>().ToList();
-            _filteredContractors = _contractors;
-
             _cars = _genericRepo.GetAll<ContractorsCars>().ToList();
-            _filteredCars = _cars;
+            _fuelTypes = _genericRepo.GetAll<FuelTypes>().ToList();
 
             SubscribeToEvents();
         }
 
         private void SubscribeToEvents()
         {
-            _view.FormIsLoaded += FormLoaded;
-            _view.DebounceTimerElapsed += DebounceElapsed;
-
-            _view.SearchBrandNameChanged += FilterCars;
-            _view.SearchModelNameChanged += FilterCars;
-
-            _view.SearchNameChanged += FilterContractors;
-            _view.SearchSurameChanged += FilterContractors;
+            _view.FormIsLoaded += LoadData;
+            _view.DebounceElapsed += DebounceElapsed;
+            _view.FuelTypesButtonClicked += OpenFuelTypesDictionary;
+            _view.FilterChanged += FilterData;
 
             _view.AddContractorButtonClicked += AddContractor;
             _view.EditContractorButtonClicked += EditContractor;
@@ -54,115 +51,90 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
             _view.DeleteCarButtonClicked += DeleteCar;
         }
 
+        private void LoadData(object sender, EventArgs e)
+        {
+            _view.StopDebounce();
+
+            _view.FilterChanged -= FilterData;
+            _view.ContractorSelectionChanged -= ContractorChanged;
+
+            _view.LoadContractorsToGrid(GetFilteredContractors());
+            _view.LoadContractorsCarsToGrid(GetFilteredCars());
+            _view.ChangeButtonAccess(_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit));
+
+            if (_view is Control control)
+                control.BeginInvoke(new Action(() => _view.ResetGridSelections())); // Needs UI thread invoke on load
+
+            _view.ContractorSelectionChanged += ContractorChanged;
+            _view.FilterChanged += FilterData;
+        }
+
         private void DebounceElapsed(object sender, EventArgs e)
         {
-            _view.LoadContractorsToGrid(_filteredContractors);
+            _view.StopDebounce();
 
-            if (_filteredContractors.Any())
-            {
-                int selectedContractorID = _view.SelectedContractorID;
+            _view.LoadContractorsToGrid(GetFilteredContractors());
+            _view.LoadContractorsCarsToGrid(GetFilteredCars());
 
-                if (!_filteredContractors.Any(c => c.ID == selectedContractorID))
-                {
-                    selectedContractorID = _filteredContractors.First().ID;
-                    _view.SelectContractorByID(selectedContractorID);
-                }
-
-                _view.LoadContractorsCarsToGrid(_filteredCars.Where(x => x.ContractorID == selectedContractorID).ToList());
-
-                int selectedCarID = _view.SelectedCarID;
-
-                var filteredCarsForContractor = _filteredCars.Where(x => x.ContractorID == selectedContractorID).ToList();
-
-                if (!filteredCarsForContractor.Any(c => c.ID == selectedCarID) && filteredCarsForContractor.Any())
-                {
-                    selectedCarID = filteredCarsForContractor.First().ID;
-                    _view.SelectCarByID(selectedCarID);
-                }
-                else if (filteredCarsForContractor.Any())
-                    _view.SelectCarByID(selectedCarID);
-            }
-            else
-            {
-                _view.LoadContractorsCarsToGrid(new List<ContractorsCars>());
-            }
+            _view.ResetGridSelections();
         }
 
-        private void FilterCars(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrWhiteSpace(_view.SearchedCarBrandName))
-                _filteredCars = _filteredCars
-                    .Where(x => x.BrandName != null && x.BrandName.ToLower().Contains(_view.SearchedCarBrandName.ToLower()))
-                    .ToList();
+        private void FilterData(object sender, EventArgs e) => _view.StartDebounce();
 
-            if (!string.IsNullOrWhiteSpace(_view.SearchedCarModelName))
-                _filteredCars = _filteredCars
-                    .Where(x => x.ModelName != null && x.ModelName.ToLower().Contains(_view.SearchedCarModelName.ToLower()))
-                    .ToList();
-        }
-
-        private void FilterContractors(object sender, EventArgs e)
+        private List<Domain.Entities.Contractors> GetFilteredContractors()
         {
-            _filteredContractors = _contractors;
+            var filtered = _contractors;
 
             if (!string.IsNullOrEmpty(_view.SearchedContractorName))
-                _filteredContractors = _filteredContractors.Where(x => x.Name.ToLower().Contains(_view.SearchedContractorName.ToLower())).ToList();
+                filtered = filtered.Where(x => x.Name.ToLower().Contains(_view.SearchedContractorName.ToLower())).ToList();
 
             if (!string.IsNullOrEmpty(_view.SearchedContractorSurname))
-                _filteredContractors = _filteredContractors.Where(x => x.Surname.ToLower().Contains(_view.SearchedContractorSurname.ToLower())).ToList();
+                filtered = filtered.Where(x => x.Surname.ToLower().Contains(_view.SearchedContractorSurname.ToLower())).ToList();
+
+            return filtered;
+        }
+
+        private List<ContractorsCars> GetFilteredCars()
+        {
+            if (_view.SelectedContractorID <= 0) return new List<ContractorsCars>();
+
+            var filtered = _cars.Where(x => x.ContractorID == _view.SelectedContractorID).ToList();
+
+            if (!string.IsNullOrEmpty(_view.SearchedCarBrandName))
+                filtered = filtered.Where(x => x.BrandName != null && x.BrandName.ToLower().Contains(_view.SearchedCarBrandName.ToLower())).ToList();
+
+            if (!string.IsNullOrEmpty(_view.SearchedCarModelName))
+                filtered = filtered.Where(x => x.ModelName != null && x.ModelName.ToLower().Contains(_view.SearchedCarModelName.ToLower())).ToList();
+
+            return filtered;
         }
 
         private void ContractorChanged(object sender, EventArgs e)
         {
             if (_view.SelectedContractorID < 0) return;
 
-            _selectedContractor = _filteredContractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
-            _view.LoadContractorsCarsToGrid(_filteredCars.Where(x => x.ContractorID == _view.SelectedContractorID).ToList());
-        }
-
-        private void FormLoaded(object sender, EventArgs e)
-        {
-            _view.SearchBrandNameChanged -= FilterCars;
-            _view.SearchModelNameChanged -= FilterCars;
-            _view.SearchNameChanged -= FilterContractors;
-            _view.SearchSurameChanged -= FilterContractors;
-            _view.ContractorSelectionChanged -= ContractorChanged;
-
-            _view.LoadContractorsToGrid(_contractors);
-            _view.LoadContractorsCarsToGrid(_cars.Where(x => x.ContractorID == _contractors.FirstOrDefault().ID).ToList());
-            _view.UnableButtonsIfUserDoesntHavePermissions();
-
-            _view.ContractorSelectionChanged += ContractorChanged;
-            _view.SearchBrandNameChanged += FilterCars;
-            _view.SearchModelNameChanged += FilterCars;
-            _view.SearchNameChanged += FilterContractors;
-            _view.SearchSurameChanged += FilterContractors;
-        }
-
-        private void LoadContractorsCars(object sender, EventArgs e)
-        {
-            _selectedContractor = _filteredContractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
-            _view.LoadContractorsCarsToGrid(_filteredCars.Where(x => x.ContractorID == _view.SelectedContractorID).ToList());
+            _view.LoadContractorsCarsToGrid(GetFilteredCars());
         }
 
         private void AddContractor(object sender, EventArgs e)
         {
-            var form = new ContractorForm(null);
-            form.FormTitle = "Dodaj nowego kontrahenta";
-            form.ShowDialog();
+            var result = _view.OpenContractorForm(null, Translations.MainView.Contractors.AddNewContractor);
 
-            var newContractor = form.GetContractor();
+            if (result.OperationConfirmed != DialogResult.Yes) return;
+
+            var newContractor = result.Contractor;
 
             if (newContractor == null || IsContractorInvalid(newContractor)) return;
 
             if (_genericRepo.Insert(newContractor) > 0)
             {
                 _contractors.Add(newContractor);
-                _view.ShowMessage("Udało się dodać nowego kontrahenta.");
-                FormLoaded(sender, e);
+                _view.ShowMessage(Translations.MainView.Contractors.ContractorInsertSuccess);
+                _view.LoadContractorsToGrid(GetFilteredContractors());
+                _view.ResetGridSelections();
             }
             else
-                _view.ShowMessage("Nie udało się dodać nowego kontrahenta!");
+                _view.ShowMessage(Translations.MainView.Contractors.ContractorInsertError);
         }
 
         private void EditContractor(object sender, EventArgs e)
@@ -171,24 +143,26 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
             var contractor = _contractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
 
-            var form = new ContractorForm(contractor);
-            form.FormTitle = $"Edycja kontrahenta: {contractor.Name} {contractor.Surname}";
-            form.ShowDialog();
+            var result = _view.OpenContractorForm(contractor.ID, string.Format(Translations.MainView.Contractors.EditContractor, contractor.Name, contractor.Surname));
 
-            var editedContractor = form.GetContractor();
+            if (result.OperationConfirmed != DialogResult.Yes) return;
+
+            var editedContractor = result.Contractor;
+            editedContractor.ID = contractor.ID;
 
             if (editedContractor == null || IsContractorInvalid(editedContractor)) return;
 
             var contractorIndex = _contractors.IndexOf(contractor);
 
-            if (contractorIndex > 0 && _genericRepo.Update(editedContractor))
+            if (contractorIndex >= 0 && _genericRepo.Update(editedContractor))
             {
                 _contractors[contractorIndex] = editedContractor;
-                _view.ShowMessage("Udało się zaktualizować dane kontrahenta.");
-                FormLoaded(sender, e);
+                _view.ShowMessage(Translations.MainView.Contractors.EditContractorSuccess);
+                _view.LoadContractorsToGrid(GetFilteredContractors());
+                _view.ResetGridSelections();
             }
             else
-                _view.ShowMessage("Nie udało się zaktualizować kontrahenta!");
+                _view.ShowMessage(Translations.MainView.Contractors.EditContractorError);
         }
 
         private void DeleteContractor(object sender, EventArgs e)
@@ -198,7 +172,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
             var contractor = _contractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
             var contractorsCars = _cars.Where(x => x.ContractorID == _view.SelectedContractorID).ToList();
 
-            if (!_view.ConfirmAction($"Czy na pewno chcesz usunąć kontrahenta:\r\n{contractor.Name} {contractor.Surname}\r\ni wszystkie jego samochody?\r\nOperacja jest nieodwracalna!", "Usuwanie kontrahenta")) return;
+            if (!_view.ConfirmAction(string.Format(Translations.MainView.Contractors.DeleteContractorConfirmationBody, contractor.Name, contractor.Surname), Translations.MainView.Contractors.DeleteContractorConfirmationTitle)) return;
 
             if (contractorsCars.Any())
             {
@@ -206,18 +180,19 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
                     _cars.RemoveAll(car => car.ContractorID == _view.SelectedContractorID);
                 else
                 {
-                    _view.ShowMessage("Problem z usunięciem samochodów kontrahenta. Operacja została przerwana!"); return;
+                    _view.ShowMessage(Translations.MainView.Contractors.DeleteContractorsCarsError); return;
                 }
             }
 
             if (_genericRepo.Delete(contractor))
             {
                 _contractors.Remove(contractor);
-                _view.ShowMessage("Udało się usunąć kontrahenta.");
-                FormLoaded(sender, e);
+                _view.ShowMessage(Translations.MainView.Contractors.DeleteContractorSuccess);
+                _view.LoadContractorsToGrid(GetFilteredContractors());
+                _view.ResetGridSelections();
             }
             else
-                _view.ShowMessage("Nie udało się usunąć kontrahenta!");
+                _view.ShowMessage(Translations.MainView.Contractors.DeleteContractorError);
         }
 
         private void AddCar(object sender, EventArgs e)
@@ -226,26 +201,25 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
             var contractor = _contractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
 
-            var form = new CarForm(null);
-            form.FormTitle = $"Dodaj nowego samochód dla {contractor.Name} {contractor.Surname}";
-            form.ShowDialog();
+            var result = _view.OpenCarForm(null, string.Format(Translations.MainView.Contractors.AddNewCar, contractor.Name, contractor.Surname));
 
-            var newContractorsCar = form.GetCarData();
+            if (result.OperationConfirmed != DialogResult.Yes) return;
 
-            if (newContractorsCar == null) return;
+            if (result.Data == null) return;
 
-            newContractorsCar.ContractorID = _view.SelectedContractorID;
+            result.Data.ContractorID = _view.SelectedContractorID;
 
-            if (newContractorsCar == null || IsCarInvalid(newContractorsCar)) return;
+            if (result.Data == null || IsCarInvalid(result.Data)) return;
 
-            if (_genericRepo.Insert(newContractorsCar) > 0)
+            if (_genericRepo.Insert(result.Data) > 0)
             {
-                _cars.Add(newContractorsCar);
-                _view.ShowMessage("Udało się dodać nowy samochód dla wybranego kontrahenta.");
-                LoadContractorsCars(sender, e);
+                _cars.Add(result.Data);
+                _view.ShowMessage(Translations.MainView.Contractors.CarInsertSuccess);
+                _view.LoadContractorsToGrid(GetFilteredContractors());
+                _view.ResetGridSelections();
             }
             else
-                _view.ShowMessage("Nie udało się dodać nowego samochodu dla wybranego kontrahenta!");
+                _view.ShowMessage(Translations.MainView.Contractors.CarInsertError);
         }
 
         private void EditCar(object sender, EventArgs e)
@@ -255,28 +229,27 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
             var contractor = _contractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
             var car = _cars.FirstOrDefault(x => x.ID == _view.SelectedCarID);
 
-            var form = new CarForm(car);
-            form.FormTitle = $"Edytuj samochód {contractor.Name} {contractor.Surname}";
-            form.ShowDialog();
+            var result = _view.OpenCarForm(car.ID, string.Format(Translations.MainView.Contractors.EditCar, car.BrandName, car.ModelName));
 
-            var editedCar = form.GetCarData();
+            if (result.OperationConfirmed != DialogResult.Yes) return;
 
-            if (editedCar == null) return;
+            if (result.Data == null) return;
 
-            editedCar.ContractorID = _view.SelectedContractorID;
+            result.Data.ContractorID = _view.SelectedContractorID;
 
-            if (car == editedCar || IsCarInvalid(editedCar)) return;
+            if (car == result.Data || IsCarInvalid(result.Data)) return;
 
             var carIndex = _cars.IndexOf(car);
 
-            if (_genericRepo.Update(editedCar))
+            if (carIndex >= 0 && _genericRepo.Update(result.Data))
             {
-                _cars[carIndex] = editedCar; ;
-                _view.ShowMessage("Udało się zaktualizować dane samochodu dla wybranego kontrahenta.");
-                LoadContractorsCars(sender, e);
+                _cars[carIndex] = result.Data;
+                _view.ShowMessage(Translations.MainView.Contractors.EditCarSuccess);
+                _view.LoadContractorsToGrid(GetFilteredContractors());
+                _view.ResetGridSelections();
             }
             else
-                _view.ShowMessage("Nie udało się zaktualizować danych samochodu dla wybranego kontrahenta!");
+                _view.ShowMessage(Translations.MainView.Contractors.EditCarError);
         }
 
         private void DeleteCar(object sender, EventArgs e)
@@ -285,23 +258,38 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
             var car = _cars.FirstOrDefault(x => x.ID == _view.SelectedCarID);
 
-            if (!_view.ConfirmAction($"Czy na pewno chcesz usunąć samochód:\r\n{car.BrandName} {car.ModelName}\r\nOperacja jest nieodwracalna!", "Usuwanie samochodu")) return;
+            if (!_view.ConfirmAction(string.Format(Translations.MainView.Contractors.DeleteCarConfirmationBody, car.BrandName, car.ModelName), Translations.MainView.Contractors.DeleteCarConfirmationTitle)) return;
 
             if (_genericRepo.Delete(car))
             {
                 _cars.Remove(car);
-                _view.ShowMessage("Udało się usunąć samochód.");
-                LoadContractorsCars(sender, e);
+                _view.ShowMessage(Translations.MainView.Contractors.DeleteCarSuccess);
+                _view.LoadContractorsToGrid(GetFilteredContractors());
+                _view.ResetGridSelections();
             }
             else
-                _view.ShowMessage("Nie udało się usunąć samochodu!");
+                _view.ShowMessage(Translations.MainView.Contractors.DeleteCarError);
+        }
+
+        private void OpenFuelTypesDictionary(object sender, EventArgs e)
+        {
+            var providedChanges = _view.OpenFuelTypesDictionary();
+
+            if (providedChanges != DialogResult.Yes) return;
+
+            _fuelTypes = _genericRepo.GetAll<FuelTypes>().ToList();
+
+
+            //      TODO:
+            //      Change mapping from fueltypename to id add dto to grid, map id to name.
+            //      Refresh cars grid if changes were made.
         }
 
         private bool IsContractorInvalid(Domain.Entities.Contractors contractor)
         {
             if (_contractors.Contains(contractor))
             {
-                _view.ShowMessage("Taki kontrahent już istnieje."); return true;
+                _view.ShowMessage(Translations.MainView.Contractors.ContractorExistsError); return true;
             }
 
             return false;
@@ -313,7 +301,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
             if (contractorsCars.Any(existingCar => AreCarsEqualIgnoringId(existingCar, car)))
             {
-                _view.ShowMessage("Ten kontrahent ma już taki przypisany ten samochód."); return true;
+                _view.ShowMessage(Translations.MainView.Contractors.ContractorsCarExistsError); return true;
             }
 
             return false;

@@ -124,6 +124,33 @@
         public static string CRMTab_ColumnPrice => SharedResources.texts.CRMTab_ColumnPrice;
         public static string CRMTab_ColumnCompleted => SharedResources.texts.CRMTab_ColumnCompleted;
 
+        // Contractor Tab
+
+        public static string ContractorTab_AddNewCar => SharedResources.texts.ContractorTab_AddNewCar;
+        public static string ContractorTab_AddNewContractor => SharedResources.texts.ContractorTab_AddNewContractor;
+        public static string ContractorTab_CarInsertError => SharedResources.texts.ContractorTab_CarInsertError;
+        public static string ContractorTab_CarInsertSuccess => SharedResources.texts.ContractorTab_CarInsertSuccess;
+        public static string ContractorTab_ContractorExistsError => SharedResources.texts.ContractorTab_ContractorExistsError;
+        public static string ContractorTab_ContractorInsertError => SharedResources.texts.ContractorTab_ContractorInsertError;
+        public static string ContractorTab_ContractorInsertSuccess => SharedResources.texts.ContractorTab_ContractorInsertSuccess;
+        public static string ContractorTab_ContractorsCarExistsError => SharedResources.texts.ContractorTab_ContractorsCarExistsError;
+        public static string ContractorTab_DeleteCarConfirmationBody => SharedResources.texts.ContractorTab_DeleteCarConfirmationBody;
+        public static string ContractorTab_DeleteCarConfirmationTitle => SharedResources.texts.ContractorTab_DeleteCarConfirmationTitle;
+        public static string ContractorTab_DeleteCarError => SharedResources.texts.ContractorTab_DeleteCarError;
+        public static string ContractorTab_DeleteCarSuccess => SharedResources.texts.ContractorTab_DeleteCarSuccess;
+        public static string ContractorTab_DeleteContractorConfirmationBody => SharedResources.texts.ContractorTab_DeleteContractorConfirmationBody;
+        public static string ContractorTab_DeleteContractorConfirmationTitle => SharedResources.texts.ContractorTab_DeleteContractorConfirmationTitle;
+        public static string ContractorTab_DeleteContractorError => SharedResources.texts.ContractorTab_DeleteContractorError;
+        public static string ContractorTab_DeleteContractorsCarsError => SharedResources.texts.ContractorTab_DeleteContractorsCarsError;
+        public static string ContractorTab_DeleteContractorSuccess => SharedResources.texts.ContractorTab_DeleteContractorSuccess;
+        public static string ContractorTab_EditCar => SharedResources.texts.ContractorTab_EditCar;
+        public static string ContractorTab_EditCarError => SharedResources.texts.ContractorTab_EditCarError;
+        public static string ContractorTab_EditCarSuccess => SharedResources.texts.ContractorTab_EditCarSuccess;
+        public static string ContractorTab_EditContractor => SharedResources.texts.ContractorTab_EditContractor;
+        public static string ContractorTab_EditContractorError => SharedResources.texts.ContractorTab_EditContractorError;
+        public static string ContractorTab_EditContractorSuccess => SharedResources.texts.ContractorTab_EditContractorSuccess;
+
+
         #endregion
 
         // Permissions Form
@@ -211,5 +238,40 @@
         public static string CRMForm_EngineCapacityColumn => SharedResources.texts.CRMForm_EngineCapacityColumn;
         public static string CRMForm_ProductionYearColumn => SharedResources.texts.CRMForm_ProductionYear;
 
+        // ContractorForm
+
+        public static string ContractorForm_FillName => SharedResources.texts.ContractorForm_FillName;
+        public static string ContractorForm_FillSurname => SharedResources.texts.ContractorForm_FillSurname;
+        public static string ContractorForm_FillPhoneNumber => SharedResources.texts.ContractorForm_FillPhoneNumber;
+        public static string ContractorForm_IncorrectPhoneNumber => SharedResources.texts.ContractorForm_IncorrectPhoneNumber;
+        public static string ContractorForm_FillEmail => SharedResources.texts.ContractorForm_FillEmail;
+        public static string ContractorForm_IncorrectEmail => SharedResources.texts.ContractorForm_IncorrectEmail;
+
+        // CarForm
+
+        public static string CarForm_FillBrand => SharedResources.texts.CarForm_FillBrand;
+        public static string CarForm_FillModel => SharedResources.texts.CarForm_FillModel;
+        public static string CarForm_FillProductionYear => SharedResources.texts.CarForm_FillProductionYear;
+        public static string CarForm_FillVIN => SharedResources.texts.CarForm_FillVIN;
+        public static string CarForm_FillLicensePlate => SharedResources.texts.CarForm_FillLicensePlate;
+        public static string CarForm_FillEngineCapacity => SharedResources.texts.CarForm_FillEngineCapacity;
+        public static string CarForm_SelectFuelType => SharedResources.texts.CarForm_SelectFuelType;
+        public static string CarForm_FillMileage => SharedResources.texts.CarForm_FillMileage;
+
+        // FuelTypesList Form
+
+        public static string FuelTypesList_AddNewFuelType => SharedResources.texts.FuelTypesList_AddNewFuelType;
+        public static string FuelTypesList_DeleteConfirmationBody => SharedResources.texts.FuelTypesList_DeleteConfirmationBody;
+        public static string FuelTypesList_DeleteConfirmationTitle => SharedResources.texts.FuelTypesList_DeleteConfirmationTitle;
+        public static string FuelTypesList_DeleteFailed => SharedResources.texts.FuelTypesList_DeleteFailed;
+        public static string FuelTypesList_DeleteSuccess => SharedResources.texts.FuelTypesList_DeleteSuccess;
+        public static string FuelTypesList_EditConfirmationBody => SharedResources.texts.FuelTypesList_EditConfirmationBody;
+        public static string FuelTypesList_EditConfirmationTitle => SharedResources.texts.FuelTypesList_EditConfirmationTitle;
+        public static string FuelTypesList_EditFailed => SharedResources.texts.FuelTypesList_EditFailed;
+        public static string FuelTypesList_EditFuelType => SharedResources.texts.FuelTypesList_EditFuelType;
+        public static string FuelTypesList_EditSuccess => SharedResources.texts.FuelTypesList_EditSuccess;
+        public static string FuelTypesList_InsertFailed => SharedResources.texts.FuelTypesList_InsertFailed;
+        public static string FuelTypesList_InsertSuccess => SharedResources.texts.FuelTypesList_InsertSuccess;
+        public static string FuelTypesList_Name => SharedResources.texts.FuelTypesList_Name;
     }
 }

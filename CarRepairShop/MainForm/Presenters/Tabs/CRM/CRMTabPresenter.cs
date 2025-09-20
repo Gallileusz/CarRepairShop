@@ -84,12 +84,12 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
             _view.FilterDateFrom = currentWeekMonday;
             _view.StopDebounce();
             _view.PopulateCRMTasksGrid(GetModels());
-            _view.ChangeButtonAccess(_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit));
+            _view.ChangeButtonAccess(_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.PermissionType.AllowEdit));
         }
 
         private void OnAddButtonClicked(object sender, EventArgs e)
         {
-            if (!_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             var data = _view.OpenCRMForm();
 
@@ -97,7 +97,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
 
             if (_genericRepo.Insert(data.CRM_Task) < 0)
             {
-                _view.ShowMessage(Translations.MainView.CRMTab.TaskInsertFailed);
+                _view.ShowMessage(Translations.MainView.CRM.TaskInsertFailed);
                 return;
             }
 
@@ -105,7 +105,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
 
             if (_genericRepo.Insert(data.CRM_Services) < 0)
             {
-                _view.ShowMessage(Translations.MainView.CRMTab.TaskMappingsInsertFailed); return;
+                _view.ShowMessage(Translations.MainView.CRM.TaskMappingsInsertFailed); return;
             }
 
             _crms.Add(data.CRM_Task);
@@ -134,19 +134,19 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
             });
 
             _view.PopulateCRMTasksGrid(GetModels());
-            _view.ShowMessage(Translations.MainView.CRMTab.TaskInsertSuccess); return;
+            _view.ShowMessage(Translations.MainView.CRM.TaskInsertSuccess); return;
         }
 
         private void OnEditButtonClicked(object sender, EventArgs e)
         {
-            if (!_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUserService.HasPermission(Utilities.Permissions.PermissionTabs.CRM, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             var id = _view.SelectedCRMTaskID;
             var taskBeforeUpdate = _crms.Where(x => x.TaskID == id).FirstOrDefault();
             var taskMappingsBeforeUpdate = _crmServices.Where(x => x.TaskID == id).ToList();
 
             if (taskBeforeUpdate.EndDate != null
-                && !_view.ConfirmAction(Translations.MainView.CRMTab.ReadOnlyViewBody, Translations.MainView.CRMTab.ReadOnlyViewTitle)) return;
+                && !_view.ConfirmAction(Translations.MainView.CRM.ReadOnlyViewBody, Translations.MainView.CRM.ReadOnlyViewTitle)) return;
 
             var data = _view.OpenCRMForm(id);
 
@@ -186,11 +186,11 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
                 };
 
                 _view.PopulateCRMTasksGrid(GetModels());
-                _view.ShowMessage(Translations.MainView.CRMTab.UpdateSuccess); return;
+                _view.ShowMessage(Translations.MainView.CRM.UpdateSuccess); return;
             }
             else
             {
-                _view.ShowMessage(Translations.MainView.CRMTab.UpdateError); return;
+                _view.ShowMessage(Translations.MainView.CRM.UpdateError); return;
             }
         }
 
@@ -198,28 +198,28 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
         {
             if (!_currentUserService.IsAdmin)
             {
-                _view.ShowMessage(Translations.MainView.CRMTab.MissingSuperAdminPermissions); return;
+                _view.ShowMessage(Translations.MainView.CRM.MissingSuperAdminPermissions); return;
             }
 
-            if (!_view.ConfirmAction(Translations.MainView.CRMTab.DeleteConfirmBody, Translations.MainView.CRMTab.DeleteConfirmTitle)) return;
+            if (!_view.ConfirmAction(Translations.MainView.CRM.DeleteConfirmBody, Translations.MainView.CRM.DeleteConfirmTitle)) return;
 
             var crm = _crms.FirstOrDefault(c => c.TaskID == _view.SelectedCRMTaskID);
             var serviceMappings = _crmServices.Where(cs => cs.TaskID == _view.SelectedCRMTaskID).ToList();
 
             if (!_genericRepo.Delete(crm))
             {
-                _view.ShowMessage(Translations.MainView.CRMTab.DeleteTaskError); return;
+                _view.ShowMessage(Translations.MainView.CRM.DeleteTaskError); return;
             }
 
             if (!_genericRepo.Delete(serviceMappings))
             {
-                _view.ShowMessage(Translations.MainView.CRMTab.DeleteTaskMappingsError); return;
+                _view.ShowMessage(Translations.MainView.CRM.DeleteTaskMappingsError); return;
             }
 
             _models.RemoveAll(m => m.ID == _view.SelectedCRMTaskID);
             _view.PopulateCRMTasksGrid(GetModels());
 
-            _view.ShowMessage(Translations.MainView.CRMTab.DeleteSuccess);
+            _view.ShowMessage(Translations.MainView.CRM.DeleteSuccess);
         }
 
         private void StartDebounce(object sender, EventArgs e) => _view.StartDebounce();

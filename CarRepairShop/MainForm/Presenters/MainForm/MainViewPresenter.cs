@@ -51,58 +51,58 @@ namespace CarRepairShop.MainForm.Presenters.MainForm
 
         private void ShowServicesTab(object sender, EventArgs e)
         {
-            if (UserHasViewPermissions(PermissionTabs.Services, Permissions.AllowDisplay))
+            if (UserHasViewPermissions(PermissionTabs.Services, PermissionType.AllowDisplay))
             {
                 _view.ShowTab(new ServicesTab());
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.Services));
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.ServicesPermission));
         }
 
         private void ShowUsersTab(object sender, EventArgs e)
         {
-            if (UserHasViewPermissions(PermissionTabs.Services, Permissions.AllowDisplay))
+            if (UserHasViewPermissions(PermissionTabs.Services, PermissionType.AllowDisplay))
             {
                 _view.ShowTab(new UsersTab());
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.Users));
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.UsersPermission));
         }
 
         private void ShowWarehouseTab(object sender, EventArgs e)
         {
-            if (UserHasViewPermissions(PermissionTabs.Services, Permissions.AllowDisplay))
+            if (UserHasViewPermissions(PermissionTabs.Services, PermissionType.AllowDisplay))
             {
                 _view.ShowTab(new WarehouseTab());
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.Warehouse));
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.WarehousePermission));
         }
 
         private void ShowCRMTab(object sender, EventArgs e)
         {
-            if (UserHasViewPermissions(PermissionTabs.Services, Permissions.AllowDisplay))
+            if (UserHasViewPermissions(PermissionTabs.Services, PermissionType.AllowDisplay))
             {
                 _view.ShowTab(new CRMTab());
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.CRM));
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.CRMPermission));
         }
         private void ShowContractorsTab(object sender, EventArgs e)
         {
-            if (UserHasViewPermissions(PermissionTabs.Services, Permissions.AllowDisplay))
+            if (UserHasViewPermissions(PermissionTabs.Services, PermissionType.AllowDisplay))
             {
                 _view.ShowTab(new ContractorsTab());
                 _view.HighlightButton(sender as System.Windows.Forms.Button);
             }
             else
-                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.Contractors));
+                _view.ShowMessage(string.Format(Library.Texts.MainView.MissingPermissionsMessage, Library.Texts.MainView.ContractorsPermission));
         }
 
-        public bool UserHasViewPermissions(PermissionTabs permissionTab, Permissions permission) => _userService.HasPermission(permissionTab, permission);
+        public bool UserHasViewPermissions(PermissionTabs permissionTab, PermissionType permission) => _userService.HasPermission(permissionTab, permission);
     }
 }

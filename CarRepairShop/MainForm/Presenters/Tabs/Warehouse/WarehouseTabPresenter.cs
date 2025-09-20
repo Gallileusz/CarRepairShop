@@ -30,7 +30,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Warehouse
 
             _materialTypes = _genericRepo.GetAll<MaterialTypes>().ToList();
             if (!_materialTypes.Any(x => x.ID == 0))
-                _materialTypes.Add(new MaterialTypes() { ID = 0, Name = $"<-- {Translations.MainView.WarehouseTab.All} -->" });
+                _materialTypes.Add(new MaterialTypes() { ID = 0, Name = $"<-- {Translations.MainView.Warehouse.All} -->" });
 
             SubscribeToEvents();
         }
@@ -66,16 +66,16 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Warehouse
             _view.StopDebounce();
             _view.LoadMaterialsToGrid(GetModels());
             _view.LoadMaterialTypesToCombobox(_materialTypes.OrderBy(x => x.ID).ToList());
-            _view.SetButtonsAccesability(_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.Permissions.AllowEdit));
+            _view.SetButtonsAccesability(_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.PermissionType.AllowEdit));
 
             SubscribeToFilterEvents();
         }
 
         private void AddMaterial(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
-            var form = _view.ShowConsumableMaterialsForm(null, Translations.MainView.WarehouseTab.AddNewMaterial);
+            var form = _view.ShowConsumableMaterialsForm(null, Translations.MainView.Warehouse.AddNewMaterial);
 
             if (form.OperationConfirmed != DialogResult.Yes) return;
 
@@ -85,23 +85,23 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Warehouse
             {
                 UpdateMaterialTypesListIfNeeded(form.ConsumableMaterial);
 
-                _view.ShowMessage(Translations.MainView.WarehouseTab.InsertedSuccessfully);
+                _view.ShowMessage(Translations.MainView.Warehouse.InsertedSuccessfully);
                 _consumableMaterials.Add(form.ConsumableMaterial);
                 _view.LoadMaterialsToGrid(GetModels());
             }
             else
-                _view.ShowMessage(Translations.MainView.WarehouseTab.InsertError);
+                _view.ShowMessage(Translations.MainView.Warehouse.InsertError);
         }
 
         private void EditMaterial(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             if (_view.SelectedID < 0) return;
 
             var selectedMaterial = _consumableMaterials.FirstOrDefault(x => x.ID == _view.SelectedID);
 
-            var form = _view.ShowConsumableMaterialsForm(_view.SelectedID, string.Format(Translations.MainView.WarehouseTab.EditMaterial, selectedMaterial.Name));
+            var form = _view.ShowConsumableMaterialsForm(_view.SelectedID, string.Format(Translations.MainView.Warehouse.EditMaterial, selectedMaterial.Name));
 
             if (form.OperationConfirmed != DialogResult.Yes) return;
 
@@ -114,31 +114,31 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Warehouse
             if (materialIndex >= 0 && _genericRepo.Update(form.ConsumableMaterial))
             {
                 UpdateMaterialTypesListIfNeeded(form.ConsumableMaterial);
-                _view.ShowMessage(Translations.MainView.WarehouseTab.UpdatedSuccessfully);
+                _view.ShowMessage(Translations.MainView.Warehouse.UpdatedSuccessfully);
                 _consumableMaterials[materialIndex] = form.ConsumableMaterial;
                 _view.LoadMaterialsToGrid(GetModels());
             }
             else
-                _view.ShowMessage(Translations.MainView.WarehouseTab.UpdateError);
+                _view.ShowMessage(Translations.MainView.Warehouse.UpdateError);
         }
 
         private void DeleteMaterial(object sender, EventArgs e)
         {
-            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.Permissions.AllowEdit)) return;
+            if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Warehouse, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
             if (_view.SelectedID < 0) return;
             var selectedMaterial = _consumableMaterials.FirstOrDefault(x => x.ID == _view.SelectedID);
 
-            if (!_view.ConfirmAction($"{Translations.MainView.WarehouseTab.DeleteBody}\r\n{selectedMaterial.Name}?", Translations.MainView.WarehouseTab.DeleteHeader)) return;
+            if (!_view.ConfirmAction($"{Translations.MainView.Warehouse.DeleteBody}\r\n{selectedMaterial.Name}?", Translations.MainView.Warehouse.DeleteHeader)) return;
 
             if (_genericRepo.Delete(selectedMaterial))
             {
                 _consumableMaterials.Remove(selectedMaterial);
                 _view.LoadMaterialsToGrid(GetModels());
-                _view.ShowMessage(Translations.MainView.WarehouseTab.DeletedSuccessfully);
+                _view.ShowMessage(Translations.MainView.Warehouse.DeletedSuccessfully);
             }
             else
-                _view.ShowMessage(Translations.MainView.WarehouseTab.DeleteError);
+                _view.ShowMessage(Translations.MainView.Warehouse.DeleteError);
         }
 
         private List<ConsumableMaterialVM> GetModels()
@@ -178,7 +178,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Warehouse
 
             _materialTypes = _genericRepo.GetAll<MaterialTypes>().ToList();
             if (!_materialTypes.Any(x => x.ID == 0))
-                _materialTypes.Add(new MaterialTypes() { ID = 0, Name = $"<-- {Translations.MainView.WarehouseTab.All} -->" });
+                _materialTypes.Add(new MaterialTypes() { ID = 0, Name = $"<-- {Translations.MainView.Warehouse.All} -->" });
 
             _materialTypes = _materialTypes.OrderBy(x => x.ID).ToList();
 

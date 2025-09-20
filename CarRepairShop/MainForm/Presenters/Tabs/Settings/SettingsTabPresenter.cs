@@ -41,11 +41,11 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Settings
             var currentCultureCode = Thread.CurrentThread.CurrentUICulture.ToString();
             var currentLanguage = _languages.FirstOrDefault(x => x.CultureCode == currentCultureCode);
 
-            var language = _view.ShowComboboxForm(_languages, Translations.MainView.SettingsTab.SelectLanguage, nameof(Languages.Name), nameof(Languages.ID), currentLanguage);
+            var language = _view.ShowComboboxForm(_languages, Translations.MainView.Settings.SelectLanguage, nameof(Languages.Name), nameof(Languages.ID), currentLanguage);
 
             if (language == null || language.CultureCode == currentCultureCode) return;
 
-            if (!_view.ConfirmAction(Translations.MainView.SettingsTab.LanguageChangeConfirmationBody, Translations.MainView.SettingsTab.LanguageChangeConfirmationTitle)) return;
+            if (!_view.ConfirmAction(Translations.MainView.Settings.LanguageChangeConfirmationBody, Translations.MainView.Settings.LanguageChangeConfirmationTitle)) return;
 
             Properties.Settings.Default.Language = language.CultureCode;
             Properties.Settings.Default.Save();
@@ -57,36 +57,36 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Settings
         {
             var credentials = _currentUser.Credentials;
 
-            var newPassword = _view.ShowSingleInputForm(Translations.MainView.SettingsTab.ProvideNewPassword, string.Empty);
+            var newPassword = _view.ShowSingleInputForm(Translations.MainView.Settings.ProvideNewPassword, string.Empty);
 
             if (newPassword == null || IsPasswordInvalid(newPassword)) return;
 
             credentials.PasswordHash = BCrypt.Net.BCrypt.HashPassword(newPassword);
 
-            if (!_view.ConfirmAction(Translations.MainView.SettingsTab.PasswordChangeConfirmationBody, Translations.MainView.SettingsTab.PasswordChangeConfirmationTitle)) return;
+            if (!_view.ConfirmAction(Translations.MainView.Settings.PasswordChangeConfirmationBody, Translations.MainView.Settings.PasswordChangeConfirmationTitle)) return;
 
             if (_genericRepo.Update(credentials))
             {
                 _currentUser.SetUser(_currentUser.Data, credentials);
-                _view.ShowMessage(Translations.MainView.SettingsTab.PasswordChangeSuccess);
+                _view.ShowMessage(Translations.MainView.Settings.PasswordChangeSuccess);
             }
             else
-                _view.ShowMessage(Translations.MainView.SettingsTab.PasswordChangeError);
+                _view.ShowMessage(Translations.MainView.Settings.PasswordChangeError);
         }
 
         private bool IsPasswordInvalid(string password)
         {
             if (string.IsNullOrEmpty(password.Trim()))
             {
-                _view.ShowMessage(Translations.MainView.SettingsTab.EmptyPasswordError); return true;
+                _view.ShowMessage(Translations.MainView.Settings.EmptyPasswordError); return true;
             }
             if (password.Length < 5)
             {
-                _view.ShowMessage(Translations.MainView.SettingsTab.TooShortPasswordError); return true;
+                _view.ShowMessage(Translations.MainView.Settings.TooShortPasswordError); return true;
             }
             if (BCrypt.Net.BCrypt.HashPassword(password) == _currentUser.Credentials.PasswordHash)
             {
-                _view.ShowMessage(Translations.MainView.SettingsTab.ProvidedTheSamePasswordError); return true;
+                _view.ShowMessage(Translations.MainView.Settings.ProvidedTheSamePasswordError); return true;
             }
 
             return false;

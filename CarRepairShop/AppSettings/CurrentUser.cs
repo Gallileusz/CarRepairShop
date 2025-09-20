@@ -16,7 +16,7 @@ namespace CarRepairShop.AppSettings
         public static bool IsAdmin { get; private set; }
         public static string Language { get; set; }
 
-        public static bool HasPermission(PermissionTabs permissionType, Permissions permission) => _permissionService.HasPermission(permissionType, permission);
+        public static bool HasPermission(PermissionTabs permissionType, PermissionType permission) => _permissionService.HasPermission(permissionType, permission);
 
         public static void SetUser(Domain.Entities.Users user, Domain.Entities.UserCredentials credentials)
         {

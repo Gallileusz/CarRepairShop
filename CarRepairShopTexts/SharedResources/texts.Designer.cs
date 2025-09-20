@@ -61,6 +61,78 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the brand field!.
+        /// </summary>
+        internal static string CarForm_FillBrand {
+            get {
+                return ResourceManager.GetString("CarForm_FillBrand", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the engine capacity field!.
+        /// </summary>
+        internal static string CarForm_FillEngineCapacity {
+            get {
+                return ResourceManager.GetString("CarForm_FillEngineCapacity", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the license plate field!.
+        /// </summary>
+        internal static string CarForm_FillLicensePlate {
+            get {
+                return ResourceManager.GetString("CarForm_FillLicensePlate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the mileage field!.
+        /// </summary>
+        internal static string CarForm_FillMileage {
+            get {
+                return ResourceManager.GetString("CarForm_FillMileage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the model field!.
+        /// </summary>
+        internal static string CarForm_FillModel {
+            get {
+                return ResourceManager.GetString("CarForm_FillModel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the production year field!.
+        /// </summary>
+        internal static string CarForm_FillProductionYear {
+            get {
+                return ResourceManager.GetString("CarForm_FillProductionYear", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the VIN field!.
+        /// </summary>
+        internal static string CarForm_FillVIN {
+            get {
+                return ResourceManager.GetString("CarForm_FillVIN", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Select the fuel type!.
+        /// </summary>
+        internal static string CarForm_SelectFuelType {
+            get {
+                return ResourceManager.GetString("CarForm_SelectFuelType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name can&apos;t be empty!.
         /// </summary>
         internal static string ConsuambleMaterial_NameCannotBeEmpty {
@@ -129,6 +201,267 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string ConsumableMaterial_SelectMaterialType {
             get {
                 return ResourceManager.GetString("ConsumableMaterial_SelectMaterialType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the e-mail field!.
+        /// </summary>
+        internal static string ContractorForm_FillEmail {
+            get {
+                return ResourceManager.GetString("ContractorForm_FillEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the name field!.
+        /// </summary>
+        internal static string ContractorForm_FillName {
+            get {
+                return ResourceManager.GetString("ContractorForm_FillName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the phone number field!.
+        /// </summary>
+        internal static string ContractorForm_FillPhoneNumber {
+            get {
+                return ResourceManager.GetString("ContractorForm_FillPhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fill the surname field!.
+        /// </summary>
+        internal static string ContractorForm_FillSurname {
+            get {
+                return ResourceManager.GetString("ContractorForm_FillSurname", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Incorrect e-mail format!.
+        /// </summary>
+        internal static string ContractorForm_IncorrectEmail {
+            get {
+                return ResourceManager.GetString("ContractorForm_IncorrectEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The phone number should contain at least 9 numbers!.
+        /// </summary>
+        internal static string ContractorForm_IncorrectPhoneNumber {
+            get {
+                return ResourceManager.GetString("ContractorForm_IncorrectPhoneNumber", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add new car for {0} {1}.
+        /// </summary>
+        internal static string ContractorTab_AddNewCar {
+            get {
+                return ResourceManager.GetString("ContractorTab_AddNewCar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add new contractor.
+        /// </summary>
+        internal static string ContractorTab_AddNewContractor {
+            get {
+                return ResourceManager.GetString("ContractorTab_AddNewContractor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The car couldn&apos;t be added!.
+        /// </summary>
+        internal static string ContractorTab_CarInsertError {
+            get {
+                return ResourceManager.GetString("ContractorTab_CarInsertError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully added new car for selected contractor..
+        /// </summary>
+        internal static string ContractorTab_CarInsertSuccess {
+            get {
+                return ResourceManager.GetString("ContractorTab_CarInsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractor exists already. Operation cancelled!.
+        /// </summary>
+        internal static string ContractorTab_ContractorExistsError {
+            get {
+                return ResourceManager.GetString("ContractorTab_ContractorExistsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully added new contractor..
+        /// </summary>
+        internal static string ContractorTab_ContractorInsertError {
+            get {
+                return ResourceManager.GetString("ContractorTab_ContractorInsertError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The contractor couldn&apos;t be added!.
+        /// </summary>
+        internal static string ContractorTab_ContractorInsertSuccess {
+            get {
+                return ResourceManager.GetString("ContractorTab_ContractorInsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Selected contractor already has this car assigned. Operation cancelled!.
+        /// </summary>
+        internal static string ContractorTab_ContractorsCarExistsError {
+            get {
+                return ResourceManager.GetString("ContractorTab_ContractorsCarExistsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the car: {0} {1}? The operation won&apos;t be able to recover!.
+        /// </summary>
+        internal static string ContractorTab_DeleteCarConfirmationBody {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteCarConfirmationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Delete confirmation..
+        /// </summary>
+        internal static string ContractorTab_DeleteCarConfirmationTitle {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteCarConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Selected car couldn&apos;t be deleted!.
+        /// </summary>
+        internal static string ContractorTab_DeleteCarError {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteCarError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully deleted the selected car..
+        /// </summary>
+        internal static string ContractorTab_DeleteCarSuccess {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteCarSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the contractor: {0} {1} and all cars assigned to the contractor? Do you really want to delete the car: {0} {1}? The operation won&apos;t be able to recover!.
+        /// </summary>
+        internal static string ContractorTab_DeleteContractorConfirmationBody {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteContractorConfirmationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Delete confirmation..
+        /// </summary>
+        internal static string ContractorTab_DeleteContractorConfirmationTitle {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteContractorConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractor couldn&apos;t be deleted!.
+        /// </summary>
+        internal static string ContractorTab_DeleteContractorError {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteContractorError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractors cars couldn&apos;t be deleted. Operation cancelled!.
+        /// </summary>
+        internal static string ContractorTab_DeleteContractorsCarsError {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteContractorsCarsError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully deleted selected contracor..
+        /// </summary>
+        internal static string ContractorTab_DeleteContractorSuccess {
+            get {
+                return ResourceManager.GetString("ContractorTab_DeleteContractorSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Edit car {0} {1}.
+        /// </summary>
+        internal static string ContractorTab_EditCar {
+            get {
+                return ResourceManager.GetString("ContractorTab_EditCar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractors car data couldn&apos;t be updated!.
+        /// </summary>
+        internal static string ContractorTab_EditCarError {
+            get {
+                return ResourceManager.GetString("ContractorTab_EditCarError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractors car data has been updated..
+        /// </summary>
+        internal static string ContractorTab_EditCarSuccess {
+            get {
+                return ResourceManager.GetString("ContractorTab_EditCarSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Edit contractor: {0} {1}.
+        /// </summary>
+        internal static string ContractorTab_EditContractor {
+            get {
+                return ResourceManager.GetString("ContractorTab_EditContractor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractor couldn&apos;t be updated!.
+        /// </summary>
+        internal static string ContractorTab_EditContractorError {
+            get {
+                return ResourceManager.GetString("ContractorTab_EditContractorError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Contractors data has been updated..
+        /// </summary>
+        internal static string ContractorTab_EditContractorSuccess {
+            get {
+                return ResourceManager.GetString("ContractorTab_EditContractorSuccess", resourceCulture);
             }
         }
         
@@ -525,6 +858,123 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string CRMTab_UpdateSuccess {
             get {
                 return ResourceManager.GetString("CRMTab_UpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add new fuel type.
+        /// </summary>
+        internal static string FuelTypesList_AddNewFuelType {
+            get {
+                return ResourceManager.GetString("FuelTypesList_AddNewFuelType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to delete the fuel type: {0}?.
+        /// </summary>
+        internal static string FuelTypesList_DeleteConfirmationBody {
+            get {
+                return ResourceManager.GetString("FuelTypesList_DeleteConfirmationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Delete confirmation..
+        /// </summary>
+        internal static string FuelTypesList_DeleteConfirmationTitle {
+            get {
+                return ResourceManager.GetString("FuelTypesList_DeleteConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The fuel type: {0} couldn&apos;t be deleted!.
+        /// </summary>
+        internal static string FuelTypesList_DeleteFailed {
+            get {
+                return ResourceManager.GetString("FuelTypesList_DeleteFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully deleted fuel type: {0}..
+        /// </summary>
+        internal static string FuelTypesList_DeleteSuccess {
+            get {
+                return ResourceManager.GetString("FuelTypesList_DeleteSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Do you really want to change the fuel type name from {0} to {1}?.
+        /// </summary>
+        internal static string FuelTypesList_EditConfirmationBody {
+            get {
+                return ResourceManager.GetString("FuelTypesList_EditConfirmationBody", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Edit confirmation.
+        /// </summary>
+        internal static string FuelTypesList_EditConfirmationTitle {
+            get {
+                return ResourceManager.GetString("FuelTypesList_EditConfirmationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The fuel type name couldn&apos;t be changed!.
+        /// </summary>
+        internal static string FuelTypesList_EditFailed {
+            get {
+                return ResourceManager.GetString("FuelTypesList_EditFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Edit fuel type name.
+        /// </summary>
+        internal static string FuelTypesList_EditFuelType {
+            get {
+                return ResourceManager.GetString("FuelTypesList_EditFuelType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully edited the fuel type name..
+        /// </summary>
+        internal static string FuelTypesList_EditSuccess {
+            get {
+                return ResourceManager.GetString("FuelTypesList_EditSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The fuel type: {0} couldn&apos;t be added!.
+        /// </summary>
+        internal static string FuelTypesList_InsertFailed {
+            get {
+                return ResourceManager.GetString("FuelTypesList_InsertFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully added new fuel type: {0}..
+        /// </summary>
+        internal static string FuelTypesList_InsertSuccess {
+            get {
+                return ResourceManager.GetString("FuelTypesList_InsertSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name.
+        /// </summary>
+        internal static string FuelTypesList_Name {
+            get {
+                return ResourceManager.GetString("FuelTypesList_Name", resourceCulture);
             }
         }
         

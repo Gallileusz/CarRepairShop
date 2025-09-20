@@ -20,7 +20,7 @@ namespace CarRepairShop.AppSettings
                 _userPermissions = _genericRepo.GetAll<Domain.Entities.UserPermissions>().Where(x => x.UserID == CurrentUser.Data.ID).ToList();
         }
 
-        public bool HasPermission(PermissionTabs permissionTab, Permissions permission)
+        public bool HasPermission(PermissionTabs permissionTab, PermissionType permission)
         {
             if (CurrentUser.Data == null) return false;
 
@@ -35,9 +35,9 @@ namespace CarRepairShop.AppSettings
 
             switch (permission)
             {
-                case Permissions.AllowDisplay:
+                case PermissionType.AllowDisplay:
                     return userPermission.AllowDisplay;
-                case Permissions.AllowEdit:
+                case PermissionType.AllowEdit:
                     return userPermission.AllowEdit;
                 default:
                     return false;
