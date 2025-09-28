@@ -1,6 +1,5 @@
 ﻿using CarRepairShop.Contractors.CarForm.DTO;
 using CarRepairShop.Contractors.ContractorForm.DTO;
-using CarRepairShop.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -23,7 +22,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.Contractors
         event EventHandler EditCarButtonClicked;
         event EventHandler DeleteCarButtonClicked;
         void LoadContractorsToGrid(List<Domain.Entities.Contractors> contractors);
-        void LoadContractorsCarsToGrid(List<ContractorsCars> car);
+        void LoadContractorsCarsToGrid(List<Models.Tabs.Contractors.ContractorCarsVM> carVM);
         void ResetGridSelections();
         void SelectContractorByID(int contractorId);
         void SelectCarByID(int contractorId);

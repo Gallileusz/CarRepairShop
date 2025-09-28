@@ -700,10 +700,10 @@
     <value>Udało się dodać nowy samochód dla wybranego kontrahenta.</value>
   </data>
   <data name="ContractorTab_ContractorInsertError" xml:space="preserve">
-    <value>Udało się dodać nowego kontrahenta.</value>
+    <value>Nie udało się dodać nowego kontrahenta!</value>
   </data>
   <data name="ContractorTab_ContractorInsertSuccess" xml:space="preserve">
-    <value>Nie udało się dodać nowego kontrahenta!</value>
+    <value>Pomyślnie dodano nowego kontrahenta.</value>
   </data>
   <data name="ContractorTab_DeleteCarConfirmationBody" xml:space="preserve">
     <value>Czy na pewno chcesz usunąć samochód: {0} {1}? Operacja jest nieodwracalna!</value>
@@ -749,5 +749,11 @@
   </data>
   <data name="ContractorTab_EditContractorSuccess" xml:space="preserve">
     <value>Udało się zaktualizować dane kontrahenta.</value>
+  </data>
+  <data name="FuelTypesList_FuelTypeInUseError" xml:space="preserve">
+    <value>Wybrany typ paliwa: {0} jest przypisany do somochodów kontrahenta. Operacja przerwana!</value>
+  </data>
+  <data name="ContractorTab_CarHasTaskMappings" xml:space="preserve">
+    <value>Do wybranego samochodu są przypisane zadania CRM! Operacja przerwana!</value>
   </data>
 </root>

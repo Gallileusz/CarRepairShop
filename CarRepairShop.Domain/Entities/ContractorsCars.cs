@@ -28,8 +28,8 @@ namespace CarRepairShop.Domain.Entities
         [Column("LicensePlate")]
         public string LicensePlate { get; set; }
 
-        [Column("FuelType")]
-        public string FuelType { get; set; }
+        [Column("FuelTypeID")]
+        public int FuelTypeID { get; set; }
 
         [Column("EngineCapacity")]
         public float EngineCapacity { get; set; }

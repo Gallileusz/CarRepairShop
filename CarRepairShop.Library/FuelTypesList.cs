@@ -16,6 +16,7 @@ namespace CarRepairShop.Library
         public string EditSuccess => Translations.FuelTypesList_EditSuccess;
         public string InsertFailed => Translations.FuelTypesList_InsertFailed;
         public string InsertSuccess => Translations.FuelTypesList_InsertSuccess;
+        public string FuelTypeInUseError => Translations.FuelTypesList_FuelTypeInUseError;
         public string Name => Translations.FuelTypesList_Name;
     }
 }

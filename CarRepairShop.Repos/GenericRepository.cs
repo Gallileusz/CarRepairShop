@@ -19,6 +19,41 @@ namespace CarRepairShop.Repositories
             _connectionString = dbHandler.ConnectionString;
         }
 
+        public T GetSingle<T>(string querySuffix = "") where T : class
+        {
+            using (IDbConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    Type typeT = typeof(T);
+                    string sql = $"SELECT TOP 1 * FROM {typeT.Name} {querySuffix}";
+                    return connection.QueryFirstOrDefault<T>(sql, commandType: CommandType.Text);
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
+
+        public async Task<T> GetSingleAsync<T>(string querySuffix = "") where T : class
+        {
+            using (IDbConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    Type typeT = typeof(T);
+                    string sql = $"SELECT TOP 1 * FROM {typeT.Name} {querySuffix}";
+                    return await connection.QueryFirstOrDefaultAsync<T>(sql, commandType: CommandType.Text);
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
+            }
+        }
+
+
         public IEnumerable<T> GetAll<T>(string querySufix = "")
         {
             using (IDbConnection connection = new SqlConnection(_connectionString))

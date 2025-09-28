@@ -96,6 +96,14 @@ namespace CarRepairShop.Contractors.FuelTypesList.Presenter
             if (!_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit)) return;
 
             var fuelType = _fuelTypes.FirstOrDefault(x => x.ID == _view.SelectedID);
+
+            var isUsed = _genericRepo.GetSingle<ContractorsCars>($"WHERE {nameof(ContractorsCars.FuelTypeID)} = {fuelType.ID}");
+
+            if (isUsed != null)
+            {
+                _view.ShowMessage(string.Format(Translations.FuelTypesList.FuelTypeInUseError, fuelType.Name)); return;
+            }
+
             var index = _fuelTypes.FindIndex(x => x.ID == _view.SelectedID);
             if (fuelType == null || index < 0) return;
 

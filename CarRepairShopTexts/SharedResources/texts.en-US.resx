@@ -743,10 +743,10 @@ Application Features:
     <value>Successfully added new car for selected contractor.</value>
   </data>
   <data name="ContractorTab_ContractorInsertError" xml:space="preserve">
-    <value>Successfully added new contractor.</value>
+    <value>The contractor couldn't be added!</value>
   </data>
   <data name="ContractorTab_ContractorInsertSuccess" xml:space="preserve">
-    <value>The contractor couldn't be added!</value>
+    <value>Successfully added new contractor.</value>
   </data>
   <data name="ContractorTab_DeleteCarConfirmationBody" xml:space="preserve">
     <value>Do you really want to delete the car: {0} {1}? The operation won't be able to recover!</value>
@@ -792,5 +792,11 @@ Application Features:
   </data>
   <data name="ContractorTab_EditContractorSuccess" xml:space="preserve">
     <value>Contractors data has been updated.</value>
+  </data>
+  <data name="FuelTypesList_FuelTypeInUseError" xml:space="preserve">
+    <value>Selected fuel type: {0} is assigned to contractor cars. Operation cancelled!</value>
+  </data>
+  <data name="ContractorTab_CarHasTaskMappings" xml:space="preserve">
+    <value>Selected car has task mappings! Operation cancelled!</value>
   </data>
 </root>

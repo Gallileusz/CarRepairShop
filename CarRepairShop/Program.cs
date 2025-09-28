@@ -14,7 +14,6 @@ namespace CarRepairShop
         [STAThread]
         static void Main()
         {
-
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
@@ -30,10 +29,10 @@ namespace CarRepairShop
             {
                 var result = loginForm.ShowDialog();
 
-                if (result == DialogResult.OK)
-                    Application.Run(new MainView());
-            }
+                if (result != DialogResult.OK) return;
 
+                Application.Run(new MainView());
+            }
         }
     }
 }

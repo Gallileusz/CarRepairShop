@@ -58,7 +58,12 @@ namespace CarRepairShop.Contractors.CarForm.Presenter
         {
             if (IsCarDataInvalid(_view.CarFormResult.Data)) return;
 
-            _view.CarFormResult.OperationConfirmed = System.Windows.Forms.DialogResult.Yes;
+            _view.CarFormResult = new DTO.CarFormResult
+            {
+                Data = _view.CarFormResult.Data,
+                OperationConfirmed = System.Windows.Forms.DialogResult.Yes
+            };
+
             _view.CloseForm();
         }
 
@@ -90,7 +95,7 @@ namespace CarRepairShop.Contractors.CarForm.Presenter
             {
                 _view.ShowMessage(Translations.CarForm.FillEngineCapacityField); return true;
             }
-            if (string.IsNullOrEmpty(car.FuelType))
+            if (car.FuelTypeID < 0)
             {
                 _view.ShowMessage(Translations.CarForm.SelectFuelType); return true;
             }

@@ -1,5 +1,17 @@
 [
   {
+    "version": "1.8.0",
+    "date": "2025-09-28",
+    "changes": [
+      "Refactored presenter in Contractor tab",
+      "Refactored view in Contractor tab",
+      "Implemented new Fuel Types dictionary form for managing fuel type metadata  ",
+      "Updated contractor-car mappings to store Fuel ID references instead of fuel name strings ",
+      "Changed fonts in Contractor tab and all sub-forms to 'Verdana'",
+      "Added translations to Contractor tab and all sub-forms"
+    ]
+  },
+  {
     "version": "1.7.0",
     "date": "2025-09-13",
     "changes": [

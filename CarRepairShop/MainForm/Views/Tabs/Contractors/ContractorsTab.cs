@@ -5,6 +5,7 @@ using CarRepairShop.Contractors.ContractorForm.DTO;
 using CarRepairShop.Contractors.ContractorForm.View;
 using CarRepairShop.Contractors.FuelTypesList.View;
 using CarRepairShop.Domain.Entities;
+using CarRepairShop.MainForm.Models.Tabs.Contractors;
 using CarRepairShop.MainForm.Views.Tabs.Contractors;
 using CarRepairShop.Repositories;
 using System;
@@ -37,7 +38,7 @@ namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
         }
 
         public int SelectedContractorID => dgvContractors.CurrentRow?.DataBoundItem is Domain.Entities.Contractors contractor ? contractor.ID : 0;
-        public int SelectedCarID => dgvCars.CurrentRow?.DataBoundItem is ContractorsCars car ? car.ID : 0;
+        public int SelectedCarID => dgvCars.CurrentRow?.DataBoundItem is ContractorCarsVM car ? car.ID : 0;
 
         public string SearchedContractorName => txtName.Text;
 
@@ -79,21 +80,21 @@ namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
             }
         }
 
-        public void LoadContractorsCarsToGrid(List<ContractorsCars> cars)
+        public void LoadContractorsCarsToGrid(List<ContractorCarsVM> carVMs)
         {
             dgvCars.DataSource = null;
-            dgvCars.DataSource = cars;
+            dgvCars.DataSource = carVMs;
 
-            dgvCars.Columns[nameof(ContractorsCars.BrandName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvCars.Columns[nameof(ContractorsCars.ModelName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvCars.Columns[nameof(ContractorsCars.LicensePlate)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvCars.Columns[nameof(ContractorsCars.VIN)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvCars.Columns[nameof(ContractorsCars.FuelType)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvCars.Columns[nameof(ContractorsCars.Mileage)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvCars.Columns[nameof(ContractorsCars.Year)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvCars.Columns[nameof(ContractorsCars.EngineCapacity)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            dgvCars.Columns[nameof(ContractorsCars.ID)].Visible = false;
-            dgvCars.Columns[nameof(ContractorsCars.ContractorID)].Visible = false;
+            dgvCars.Columns[nameof(ContractorCarsVM.BrandName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCars.Columns[nameof(ContractorCarsVM.ModelName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCars.Columns[nameof(ContractorCarsVM.LicensePlate)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCars.Columns[nameof(ContractorCarsVM.VIN)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCars.Columns[nameof(ContractorCarsVM.FuelType)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCars.Columns[nameof(ContractorCarsVM.Mileage)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCars.Columns[nameof(ContractorCarsVM.Year)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCars.Columns[nameof(ContractorCarsVM.EngineCapacity)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dgvCars.Columns[nameof(ContractorCarsVM.ID)].Visible = false;
+            dgvCars.Columns[nameof(ContractorCarsVM.ContractorID)].Visible = false;
         }
 
         public void LoadContractorsToGrid(List<Domain.Entities.Contractors> contractors)

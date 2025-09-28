@@ -728,10 +728,10 @@ Application Features:
     <value>Add new contractor</value>
   </data>
   <data name="ContractorTab_ContractorInsertSuccess" xml:space="preserve">
-    <value>The contractor couldn't be added!</value>
+    <value>Successfully added new contractor.</value>
   </data>
   <data name="ContractorTab_ContractorInsertError" xml:space="preserve">
-    <value>Successfully added new contractor.</value>
+    <value>The contractor couldn't be added!</value>
   </data>
   <data name="ContractorTab_EditContractor" xml:space="preserve">
     <value>Edit contractor: {0} {1}</value>
@@ -792,5 +792,11 @@ Application Features:
   </data>
   <data name="ContractorTab_ContractorsCarExistsError" xml:space="preserve">
     <value>Selected contractor already has this car assigned. Operation cancelled!</value>
+  </data>
+  <data name="FuelTypesList_FuelTypeInUseError" xml:space="preserve">
+    <value>Selected fuel type: {0} is assigned to contractor cars. Operation cancelled!</value>
+  </data>
+  <data name="ContractorTab_CarHasTaskMappings" xml:space="preserve">
+    <value>Selected car has task mappings! Operation cancelled!</value>
   </data>
 </root>

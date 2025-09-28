@@ -49,7 +49,7 @@ namespace CarRepairShop.Contractors.CarForm.View
                         Year = int.TryParse(txtYear.Text, out int year) ? year : 0,
                         LicensePlate = txtLicensePlate.Text,
                         EngineCapacity = int.TryParse(txtEngineCapacity.Text, out int engineCapacity) ? engineCapacity : 0,
-                        FuelType = cmbFuelTypes.SelectedItem is FuelTypes selected ? selected.Name : string.Empty,
+                        FuelTypeID = cmbFuelTypes.SelectedItem is FuelTypes selected ? selected.ID : 0,
                         Mileage = int.TryParse(txtMileage.Text, out int mileage) ? mileage : 0
                     },
                     OperationConfirmed = this.OperationConfirmed
@@ -82,11 +82,11 @@ namespace CarRepairShop.Contractors.CarForm.View
 
                     if (cmbFuelTypes.DataSource is List<FuelTypes> fuelList)
                     {
-                        var fuel = fuelList.FirstOrDefault(f => f.Name == value.Data.FuelType);
+                        var fuel = fuelList.FirstOrDefault(f => f.ID == value.Data.FuelTypeID);
                         cmbFuelTypes.SelectedItem = fuel;
                     }
                     else
-                        cmbFuelTypes.Text = value.Data.FuelType ?? string.Empty;
+                        cmbFuelTypes.Text = string.Empty;
 
                     this.OperationConfirmed = value.OperationConfirmed;
                 }

@@ -5,6 +5,8 @@ namespace CarRepairShop.Repositories
 {
     public interface IGenericRepository
     {
+        T GetSingle<T>(string querySuffix = "") where T : class;
+        Task<T> GetSingleAsync<T>(string querySuffix = "") where T : class;
         IEnumerable<T> GetAll<T>(string querySufix = "");
         Task<IEnumerable<T>> GetAllAsync<T>(string querySufix = "");
         bool UseRawSql(string query, object param = null);

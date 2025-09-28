@@ -277,6 +277,15 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Selected car has task mappings! Operation cancelled!.
+        /// </summary>
+        internal static string ContractorTab_CarHasTaskMappings {
+            get {
+                return ResourceManager.GetString("ContractorTab_CarHasTaskMappings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu The car couldn&apos;t be added!.
         /// </summary>
         internal static string ContractorTab_CarInsertError {
@@ -304,7 +313,7 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully added new contractor..
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The contractor couldn&apos;t be added!.
         /// </summary>
         internal static string ContractorTab_ContractorInsertError {
             get {
@@ -313,7 +322,7 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu The contractor couldn&apos;t be added!.
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Successfully added new contractor..
         /// </summary>
         internal static string ContractorTab_ContractorInsertSuccess {
             get {
@@ -948,6 +957,15 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string FuelTypesList_EditSuccess {
             get {
                 return ResourceManager.GetString("FuelTypesList_EditSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Selected fuel type: {0} is assigned to contractor cars. Operation cancelled!.
+        /// </summary>
+        internal static string FuelTypesList_FuelTypeInUseError {
+            get {
+                return ResourceManager.GetString("FuelTypesList_FuelTypeInUseError", resourceCulture);
             }
         }
         

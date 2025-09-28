@@ -27,5 +27,6 @@ namespace CarRepairShop.Library
         public string EditContractor => Translations.ContractorTab_EditContractor;
         public string EditContractorError => Translations.ContractorTab_EditContractorError;
         public string EditContractorSuccess => Translations.ContractorTab_EditContractorSuccess;
+        public string CarHasTaskMappingsError => Translations.ContractorTab_CarHasTaskMappings;
     }
 }

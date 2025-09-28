@@ -149,7 +149,7 @@
         public static string ContractorTab_EditContractor => SharedResources.texts.ContractorTab_EditContractor;
         public static string ContractorTab_EditContractorError => SharedResources.texts.ContractorTab_EditContractorError;
         public static string ContractorTab_EditContractorSuccess => SharedResources.texts.ContractorTab_EditContractorSuccess;
-
+        public static string ContractorTab_CarHasTaskMappings => SharedResources.texts.ContractorTab_CarHasTaskMappings;
 
         #endregion
 
@@ -273,5 +273,6 @@
         public static string FuelTypesList_InsertFailed => SharedResources.texts.FuelTypesList_InsertFailed;
         public static string FuelTypesList_InsertSuccess => SharedResources.texts.FuelTypesList_InsertSuccess;
         public static string FuelTypesList_Name => SharedResources.texts.FuelTypesList_Name;
+        public static string FuelTypesList_FuelTypeInUseError => SharedResources.texts.FuelTypesList_FuelTypeInUseError;
     }
 }

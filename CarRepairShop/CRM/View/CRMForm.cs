@@ -185,14 +185,14 @@ namespace CarRepairShop.CRM.View
             dgvContractorCars.Columns[nameof(ContractorsCars.ModelName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvContractorCars.Columns[nameof(ContractorsCars.EngineCapacity)].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvContractorCars.Columns[nameof(ContractorsCars.BrandName)].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
-            dgvContractorCars.Columns[nameof(ContractorsCars.FuelType)].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dgvContractorCars.Columns[nameof(ContractorsCars.FuelTypeID)].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvContractorCars.Columns[nameof(ContractorsCars.LicensePlate)].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvContractorCars.Columns[nameof(ContractorsCars.Mileage)].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvContractorCars.Columns[nameof(ContractorsCars.Year)].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
             dgvContractorCars.Columns[nameof(ContractorsCars.ModelName)].HeaderText = Translations.CRMForm.ModelColumn;
             dgvContractorCars.Columns[nameof(ContractorsCars.EngineCapacity)].HeaderText = Translations.CRMForm.EngineCapacityColumn;
             dgvContractorCars.Columns[nameof(ContractorsCars.BrandName)].HeaderText = Translations.CRMForm.BrandColumn;
-            dgvContractorCars.Columns[nameof(ContractorsCars.FuelType)].HeaderText = Translations.CRMForm.FuelTypeColumn;
+            dgvContractorCars.Columns[nameof(ContractorsCars.FuelTypeID)].HeaderText = Translations.CRMForm.FuelTypeColumn;
             dgvContractorCars.Columns[nameof(ContractorsCars.LicensePlate)].HeaderText = Translations.CRMForm.LicensePlateColumn;
             dgvContractorCars.Columns[nameof(ContractorsCars.Mileage)].HeaderText = Translations.CRMForm.MileageColumn;
             dgvContractorCars.Columns[nameof(ContractorsCars.Year)].HeaderText = Translations.CRMForm.ProductionYearColumn;

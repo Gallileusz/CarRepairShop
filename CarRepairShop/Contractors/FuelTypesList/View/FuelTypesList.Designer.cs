@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FuelTypesList));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             btnClose = new System.Windows.Forms.Button();
             pnlButtonDelete = new System.Windows.Forms.Panel();
             btnDelete = new System.Windows.Forms.Button();
@@ -54,9 +54,9 @@
             // 
             // pnlButtonDelete
             // 
+            resources.ApplyResources(pnlButtonDelete, "pnlButtonDelete");
             pnlButtonDelete.BackColor = System.Drawing.SystemColors.Control;
             pnlButtonDelete.Controls.Add(btnDelete);
-            resources.ApplyResources(pnlButtonDelete, "pnlButtonDelete");
             pnlButtonDelete.ForeColor = System.Drawing.Color.Black;
             pnlButtonDelete.Name = "pnlButtonDelete";
             // 
@@ -70,9 +70,9 @@
             // 
             // pnlButtonEdit
             // 
+            resources.ApplyResources(pnlButtonEdit, "pnlButtonEdit");
             pnlButtonEdit.BackColor = System.Drawing.SystemColors.Control;
             pnlButtonEdit.Controls.Add(btnEdit);
-            resources.ApplyResources(pnlButtonEdit, "pnlButtonEdit");
             pnlButtonEdit.ForeColor = System.Drawing.Color.Black;
             pnlButtonEdit.Name = "pnlButtonEdit";
             // 
@@ -86,9 +86,9 @@
             // 
             // pnlButtonAdd
             // 
+            resources.ApplyResources(pnlButtonAdd, "pnlButtonAdd");
             pnlButtonAdd.BackColor = System.Drawing.SystemColors.Control;
             pnlButtonAdd.Controls.Add(btnAdd);
-            resources.ApplyResources(pnlButtonAdd, "pnlButtonAdd");
             pnlButtonAdd.ForeColor = System.Drawing.Color.Black;
             pnlButtonAdd.Name = "pnlButtonAdd";
             // 
@@ -102,24 +102,24 @@
             // 
             // dgv
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 238);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            dgv.DefaultCellStyle = dataGridViewCellStyle2;
             resources.ApplyResources(dgv, "dgv");
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 238);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Verdana", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 238);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            dgv.DefaultCellStyle = dataGridViewCellStyle4;
             dgv.MultiSelect = false;
             dgv.Name = "dgv";
             dgv.ReadOnly = true;

@@ -1,5 +1,6 @@
 ﻿using CarRepairShop.AppSettings;
 using CarRepairShop.Domain.Entities;
+using CarRepairShop.MainForm.Models.Tabs.Contractors;
 using CarRepairShop.MainForm.Views.Tabs.Contractors;
 using CarRepairShop.Repositories;
 using CarRepairShop.Utilities.Permissions;
@@ -59,7 +60,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
             _view.ContractorSelectionChanged -= ContractorChanged;
 
             _view.LoadContractorsToGrid(GetFilteredContractors());
-            _view.LoadContractorsCarsToGrid(GetFilteredCars());
+            _view.LoadContractorsCarsToGrid(GetFilteredCarsVMs());
             _view.ChangeButtonAccess(_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit));
 
             if (_view is Control control)
@@ -74,7 +75,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
             _view.StopDebounce();
 
             _view.LoadContractorsToGrid(GetFilteredContractors());
-            _view.LoadContractorsCarsToGrid(GetFilteredCars());
+            _view.LoadContractorsCarsToGrid(GetFilteredCarsVMs());
 
             _view.ResetGridSelections();
         }
@@ -94,30 +95,32 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
             return filtered;
         }
 
-        private List<ContractorsCars> GetFilteredCars()
+        private List<ContractorCarsVM> GetFilteredCarsVMs()
         {
-            if (_view.SelectedContractorID <= 0) return new List<ContractorsCars>();
+            if (_view.SelectedContractorID <= 0) return new List<ContractorCarsVM>();
 
-            var filtered = _cars.Where(x => x.ContractorID == _view.SelectedContractorID).ToList();
+            var filteredCars = _cars.Where(x => x.ContractorID == _view.SelectedContractorID).ToList();
 
             if (!string.IsNullOrEmpty(_view.SearchedCarBrandName))
-                filtered = filtered.Where(x => x.BrandName != null && x.BrandName.ToLower().Contains(_view.SearchedCarBrandName.ToLower())).ToList();
+                filteredCars = filteredCars.Where(x => x.BrandName.ToLower().Contains(_view.SearchedCarBrandName.ToLower())).ToList();
 
             if (!string.IsNullOrEmpty(_view.SearchedCarModelName))
-                filtered = filtered.Where(x => x.ModelName != null && x.ModelName.ToLower().Contains(_view.SearchedCarModelName.ToLower())).ToList();
+                filteredCars = filteredCars.Where(x => x.ModelName.ToLower().Contains(_view.SearchedCarModelName.ToLower())).ToList();
 
-            return filtered;
+            return filteredCars.Select(x => new ContractorCarsVM(x, _fuelTypes)).ToList();
         }
 
         private void ContractorChanged(object sender, EventArgs e)
         {
             if (_view.SelectedContractorID < 0) return;
 
-            _view.LoadContractorsCarsToGrid(GetFilteredCars());
+            _view.LoadContractorsCarsToGrid(GetFilteredCarsVMs());
         }
 
         private void AddContractor(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit)) return;
+
             var result = _view.OpenContractorForm(null, Translations.MainView.Contractors.AddNewContractor);
 
             if (result.OperationConfirmed != DialogResult.Yes) return;
@@ -139,6 +142,8 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
         private void EditContractor(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit)) return;
+
             if (_view.SelectedContractorID < 0) return;
 
             var contractor = _contractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
@@ -167,6 +172,8 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
         private void DeleteContractor(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit)) return;
+
             if (_view.SelectedContractorID < 0) return;
 
             var contractor = _contractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
@@ -197,6 +204,8 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
         private void AddCar(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit)) return;
+
             if (_view.SelectedContractorID < 0) return;
 
             var contractor = _contractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
@@ -224,6 +233,8 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
         private void EditCar(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit)) return;
+
             if (_view.SelectedContractorID < 0 || _view.SelectedCarID < 0) return;
 
             var contractor = _contractors.FirstOrDefault(x => x.ID == _view.SelectedContractorID);
@@ -254,9 +265,18 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
         private void DeleteCar(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowEdit)) return;
+
             if (_view.SelectedContractorID < 0 || _view.SelectedCarID < 0) return;
 
             var car = _cars.FirstOrDefault(x => x.ID == _view.SelectedCarID);
+
+            var taskMappings = _genericRepo.GetSingle<CRM_Task>($"WHERE {nameof(CRM_Task.CarID)} = {car.ID}");
+
+            if (taskMappings != null)
+            {
+                _view.ShowMessage(Translations.MainView.Contractors.CarHasTaskMappingsError); return;
+            }
 
             if (!_view.ConfirmAction(string.Format(Translations.MainView.Contractors.DeleteCarConfirmationBody, car.BrandName, car.ModelName), Translations.MainView.Contractors.DeleteCarConfirmationTitle)) return;
 
@@ -273,16 +293,16 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
 
         private void OpenFuelTypesDictionary(object sender, EventArgs e)
         {
+            if (!_currentUser.HasPermission(PermissionTabs.Contractors, PermissionType.AllowDisplay)) return;
+
             var providedChanges = _view.OpenFuelTypesDictionary();
 
             if (providedChanges != DialogResult.Yes) return;
 
             _fuelTypes = _genericRepo.GetAll<FuelTypes>().ToList();
 
-
-            //      TODO:
-            //      Change mapping from fueltypename to id add dto to grid, map id to name.
-            //      Refresh cars grid if changes were made.
+            _view.LoadContractorsToGrid(GetFilteredContractors());
+            _view.ResetGridSelections();
         }
 
         private bool IsContractorInvalid(Domain.Entities.Contractors contractor)
@@ -315,7 +335,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Contractors
                    firstCar.VIN == secondCar.VIN &&
                    firstCar.Year == secondCar.Year &&
                    firstCar.EngineCapacity == secondCar.EngineCapacity &&
-                   firstCar.FuelType == secondCar.FuelType &&
+                   firstCar.FuelTypeID == secondCar.FuelTypeID &&
                    firstCar.Mileage == secondCar.Mileage &&
                    firstCar.LicensePlate == secondCar.LicensePlate;
         }
