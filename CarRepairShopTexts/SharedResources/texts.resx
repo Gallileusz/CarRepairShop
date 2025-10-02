@@ -118,36 +118,37 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="HomeTabAcknowledgements" xml:space="preserve">
-    <value>I would like to express my sincere gratitude to my supervisor, Dr. Wiktoria Kalus, for her invaluable support, dedication, and insightful guidance throughout the realization of this engineering project.
+    <value>I wish to express my deepest gratitude to my Supervisor, Dr. Wiktoria Kalus, for her invaluable support, kindness, and profoundly insightful guidance throughout the realization of this engineering thesis. Her scholarly expertise, dedication, and patience were of fundamental importance to the successful completion of this endeavor.
 
-I also wish to thank the entire RS-Code team for my development as a software developer.</value>
+I also extend my sincere appreciation to the entire RS‑Code team for fostering a professional environment and for providing inspiring support, which significantly contributed to the development of my programming skills and to the enhancement of my practical knowledge in the field of software engineering.
+
+I am equally grateful to my family and friends for their unwavering patience, understanding, and emotional support, without which the completion of this project would not have been possible.
+
+The finalization of this thesis also marks the culmination of my studies and the conclusion of an important chapter in my academic journey, while at the same time opening the door to new professional challenges.</value>
   </data>
   <data name="HomeTabAboutThisProject" xml:space="preserve">
-    <value>Technology: 
+    <value>Technology:
+The application was developed using the Windows Forms framework, enabling the creation of intuitive and user-friendly graphical interfaces for the Windows operating system. This technology provides a robust foundation for building desktop applications, ensuring both high performance and stability.
 
-    - Windows Forms
-
-Programming Language: 
-
-    - C#
+Programming Language:
+The solution was implemented in C#, a versatile programming language offering extensive libraries, frameworks, and development tools, which efficiently support business application development as well as integration with various external services.
 
 MVP Architecture:
-
-    The application logic is separated from the user interface, allowing easy modifications without impacting the entire application.
+The system follows the Model-View-Presenter (MVP) architectural pattern, which introduces a clear separation between business logic and the presentation layer. This design significantly improves maintainability, facilitates modifications, and allows functionality to be extended without affecting other components of the application. As a result, the codebase remains modular, organized, and adaptable to change.
 
 Testability:
+All business logic within the system has been covered with unit tests, which makes it possible to verify all use cases comprehensively. This approach enables early detection of defects, ensures a high level of code quality, and contributes to the overall reliability of the system.
 
-    All business logic within the application is covered by unit tests, enabling verification of all use cases and maintaining high code quality.
-
-Database: 
-
-    The application data is stored in a relational SQL database hosted on Microsoft Azure, providing availability, security, and scalability regardless of the user’s location.
+Database:
+Application data is stored in a relational SQL database hosted in Microsoft Azure. This solution provides secure storage, scalability, and guaranteed availability, allowing users to access the system seamlessly, regardless of their location.
 
 Application Features:
 
-    - Registration and browsing of vehicles, clients, orders, and workshop services.
-    - Ability to edit and delete existing entries.
-    - Data synchronization and secure access through implementation of authentication and authorization.</value>
+    - Registration and browsing of vehicles, clients, workshop orders, and services.
+
+    - Editing and deletion of existing entries.
+
+    - Data synchronization combined with secure access through authentication and authorization mechanisms.</value>
   </data>
   <data name="HomeTabSources" xml:space="preserve">
     <value>Sources:

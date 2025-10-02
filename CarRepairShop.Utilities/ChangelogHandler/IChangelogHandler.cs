@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 
 namespace CarRepairShop.Utilities.ChangelogHandler
 {
@@ -6,5 +7,6 @@ namespace CarRepairShop.Utilities.ChangelogHandler
     {
         List<ChangelogEntry> LoadChangelog();
         ChangelogEntry GetNewestVersion(List<ChangelogEntry> changelog);
+        StringBuilder GetChangelogStringBuilder();
     }
 }

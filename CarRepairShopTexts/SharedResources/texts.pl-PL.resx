@@ -756,4 +756,48 @@
   <data name="ContractorTab_CarHasTaskMappings" xml:space="preserve">
     <value>Do wybranego samochodu są przypisane zadania CRM! Operacja przerwana!</value>
   </data>
+  <data name="HomeTabAcknowledgements" xml:space="preserve">
+    <value>Pragnę wyrazić najgłębszą wdzięczność mojej Promotorce, dr Wiktorii Kalus, za jej nieocenione wsparcie, życzliwość oraz niezwykle cenne wskazówki, które udzielała mi na każdym etapie realizacji niniejszej pracy inżynierskiej. Jej wiedza merytoryczna, zaangażowanie i cierpliwość miały fundamentalne znaczenie dla powodzenia tego przedsięwzięcia.
+
+Serdeczne podziękowania kieruję również do całego zespołu RS‑Code za stworzenie profesjonalnej atmosfery, jak również za inspirujące wsparcie, które umożliwiło mi rozwój umiejętności programistycznych oraz pogłębienie wiedzy praktycznej w zakresie inżynierii oprogramowania.
+
+Na szczególne wyrazy wdzięczności zasługują także moi najbliżsi – rodzina i przyjaciele – którzy nieprzerwanie okazywali mi cierpliwość, zrozumienie oraz wsparcie emocjonalne, dzięki czemu możliwe stało się sfinalizowanie niniejszego projektu.
+
+Zwieńczenie tej pracy stanowi również symboliczne zakończenie okresu studiów i tym samym zamknięcie ważnego etapu w mojej drodze akademickiej, stanowiąc jednocześnie początek nowych wyzwań zawodowych.</value>
+  </data>
+  <data name="HomeTabAboutThisProject" xml:space="preserve">
+    <value>Technologia:
+Aplikacja została opracowana w oparciu o platformę Windows Forms, co umożliwia tworzenie intuicyjnych i funkcjonalnych interfejsów graficznych dla systemu operacyjnego Windows. Wykorzystanie tej technologii pozwoliło na implementację klasycznego, ale wciąż popularnego modelu budowy aplikacji desktopowych, zapewniając jednocześnie stabilność oraz wysoką wydajność działania.
+
+Język programowania:
+Do implementacji całego rozwiązania wykorzystano język C#, którego bogate możliwości wraz z rozbudowanym ekosystemem bibliotek i narzędzi wspierają zarówno rozwój aplikacji biznesowych, jak i integrację z różnymi usługami zewnętrznymi.
+
+Architektura MVP:
+Aplikacja została zaprojektowana zgodnie z wzorcem architektonicznym Model-View-Presenter (MVP). Zapewnia on wyraźne rozdzielenie logiki biznesowej od warstwy prezentacji, co znacząco ułatwia utrzymanie kodu, wprowadzanie modyfikacji oraz rozszerzanie funkcjonalności bez ingerencji w pozostałe komponenty systemu. Tego rodzaju podejście wspiera czytelność i modularność kodu, a także zwiększa odporność aplikacji na zmiany.
+
+Testowalność:
+Cała logika biznesowa systemu została objęta testami jednostkowymi, dzięki czemu możliwe jest weryfikowanie wszystkich przypadków użycia oraz eliminowanie ewentualnych błędów na wczesnym etapie. Takie podejście gwarantuje utrzymanie wysokiej jakości kodu oraz zwiększa niezawodność całej aplikacji.
+
+Baza danych:
+Dane aplikacji są przechowywane w relacyjnej bazie danych SQL hostowanej w chmurze Microsoft Azure. Taka architektura zapewnia pełną dostępność oraz bezpieczeństwo danych, jak również elastyczną skalowalność, umożliwiającą korzystanie z systemu bez względu na lokalizację użytkownika.
+
+Funkcjonalności aplikacji:
+
+    - Rejestracja oraz przeglądanie pojazdów, klientów, zleceń i usług warsztatowych.
+
+    - Możliwość edycji i usuwania istniejących wpisów w bazie.
+
+    - Synchronizacja danych oraz bezpieczny dostęp realizowany poprzez mechanizmy uwierzytelniania i autoryzacji.</value>
+  </data>
+  <data name="HomeTabSources" xml:space="preserve">
+    <value>Źródła:
+
+- Icons: https://icons8.com/</value>
+  </data>
+  <data name="HomeTabChangelogLoadFailed" xml:space="preserve">
+    <value>Brak wpisów w dzienniku zmian lub plik dziennika zmian nie został odnaleziony.</value>
+  </data>
+  <data name="HomeTabGitHubLoadFailed" xml:space="preserve">
+    <value>Nie udało się otworzyć strony GitHub. Adres URL może być nieaktualny lub występują problemy z połączeniem internetowym.</value>
+  </data>
 </root>

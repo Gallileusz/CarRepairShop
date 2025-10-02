@@ -199,4 +199,7 @@
   <data name="groupBox5.Text" xml:space="preserve">
     <value>Samochody kontrahenta:</value>
   </data>
+  <data name="btnFuelTypes.Text" xml:space="preserve">
+    <value>        Typy paliw</value>
+  </data>
 </root>

@@ -6,9 +6,10 @@ using System.Linq;
 
 namespace CarRepairShop.Utilities.ChangelogHandler
 {
-    public static class Changelog
+    internal static class Changelog
     {
-        const string changelogFileName = "changelog.json";
+        const string _changelogFileName = "changelog.json";
+        const string _projectName = "CarRepairShop";
 
         public static List<ChangelogEntry> LoadChangelog()
         {
@@ -21,7 +22,7 @@ namespace CarRepairShop.Utilities.ChangelogHandler
             return JsonConvert.DeserializeObject<List<ChangelogEntry>>(jsonString);
         }
 
-        public static ChangelogEntry GetNewestVersion(List<ChangelogEntry> changelog) => changelog
+        internal static ChangelogEntry GetNewestVersion(List<ChangelogEntry> changelog) => changelog
             .OrderByDescending(entry => DateTime.Parse(entry.Date))
             .FirstOrDefault();
 
@@ -31,9 +32,9 @@ namespace CarRepairShop.Utilities.ChangelogHandler
 
             while (dir != null)
             {
-                if (string.Equals(dir.Name, "CarRepairShop", StringComparison.OrdinalIgnoreCase))
+                if (string.Equals(dir.Name, _projectName, StringComparison.OrdinalIgnoreCase))
                 {
-                    var candidate = Path.Combine(dir.FullName, changelogFileName);
+                    var candidate = Path.Combine(dir.FullName, _changelogFileName);
                     if (File.Exists(candidate))
                         return candidate;
                 }

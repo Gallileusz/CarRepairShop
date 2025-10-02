@@ -117,4 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="btnSources.Text" xml:space="preserve">
+    <value>Sources</value>
+  </data>
+  <data name="btnAcknowledgements.Text" xml:space="preserve">
+    <value>Acknowledgements</value>
+  </data>
+  <data name="btnChangelog.Text" xml:space="preserve">
+    <value>Changelog</value>
+  </data>
+  <data name="btnAboutThisProject.Text" xml:space="preserve">
+    <value>About this project</value>
+  </data>
+  <data name="lblTitle.Text" xml:space="preserve">
+    <value>Michał Galli - "Car repair shop" engineer project</value>
+  </data>
+  <data name="btnGitHub.Text" xml:space="preserve">
+    <value>Open github</value>
+  </data>
+  <data name="lblVersion.Text" xml:space="preserve">
+    <value>1.0.0</value>
+  </data>
+  <data name="lblVersionTitle.Text" xml:space="preserve">
+    <value>Version:</value>
+  </data>
 </root>

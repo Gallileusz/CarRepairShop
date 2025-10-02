@@ -2,7 +2,6 @@
 using CarRepairShop.Utilities.ChangelogHandler;
 using CarRepairShop.Utilities.WebBrowser;
 using System;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace CarRepairShop.MainForm.Presenters.Tabs.Home
@@ -20,70 +19,45 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.Home
             _webBrowserHandler = webHandler;
             _changelogHandler = changelogHandler;
 
-            _view.FormIsLoaded += OnFormIsLoaded;
-            _view.AboutThisProjectClicked += OnAboutThisProjectClicked;
-            _view.AcknowledgementsClicked += OnAcknowledgementsClicked;
-            _view.SourcesClicked += OnSourcesClicked;
-            _view.GitHubClicked += OnGitHubClicked;
-            _view.ChangelogClicked += OnChangelogClicked;
+            SubscribeToEvents();
         }
 
-        private void OnFormIsLoaded(object sender, EventArgs e)
+        private void SubscribeToEvents()
+        {
+            _view.FormIsLoaded += LoadData;
+            _view.AboutThisProjectClicked += ShowAboutProject;
+            _view.AcknowledgementsClicked += ShowAcknowledgements;
+            _view.SourcesClicked += ShowSources;
+            _view.GitHubClicked += OpenGitHubRepo;
+            _view.ChangelogClicked += ShowChangelog;
+        }
+
+        private void LoadData(object sender, EventArgs e)
         {
             _view.SetVersion(_changelogHandler.GetNewestVersion(_changelogHandler.LoadChangelog()).Version);
             _view.CurrentText = Library.Texts.MainView.Home.AboutThisProject;
         }
 
-        private void OnAboutThisProjectClicked(object sender, EventArgs e)
-        {
-            _view.HighlightButton(sender as Button);
-            _view.CurrentText = Library.Texts.MainView.Home.AboutThisProject;
-        }
+        private void ShowAboutProject(object sender, EventArgs e) => NavigationButtonClicked(sender, Library.Texts.MainView.Home.AboutThisProject);
 
-        private void OnAcknowledgementsClicked(object sender, EventArgs e)
-        {
-            _view.HighlightButton(sender as Button);
-            _view.CurrentText = Library.Texts.MainView.Home.Acknowledgements;
-        }
+        private void ShowAcknowledgements(object sender, EventArgs e) => NavigationButtonClicked(sender, Library.Texts.MainView.Home.Acknowledgements);
 
-        private void OnSourcesClicked(object sender, EventArgs e)
-        {
-            _view.HighlightButton(sender as Button);
-            _view.CurrentText = Library.Texts.MainView.Home.Sources;
-        }
+        private void ShowSources(object sender, EventArgs e) => NavigationButtonClicked(sender, Library.Texts.MainView.Home.Sources);
 
-        private void OnChangelogClicked(object sender, EventArgs e)
-        {
-            _view.HighlightButton(sender as Button);
-            var changelog = _changelogHandler.LoadChangelog();
+        private void ShowChangelog(object sender, EventArgs e) => NavigationButtonClicked(sender, _changelogHandler.GetChangelogStringBuilder()?.ToString() ?? Library.Texts.MainView.Home.ChangelogError);
 
-            if (changelog != null && changelog.Any())
-            {
-                var sb = new System.Text.StringBuilder();
-                foreach (var entry in changelog.OrderByDescending(x => DateTime.Parse(x.Date)))
-                {
-                    sb.AppendLine($"VERSION: {entry.Version}");
-                    sb.AppendLine($"DATE: {entry.Date}");
-
-                    sb.AppendLine("CHANGES:");
-                    foreach (var change in entry.Changes)
-                        sb.AppendLine($"- {change}");
-
-                    sb.AppendLine();
-                }
-
-                _view.CurrentText = sb.ToString();
-            }
-            else
-                _view.CurrentText = Library.Texts.MainView.Home.ChangelogError;
-        }
-
-        private async void OnGitHubClicked(object sender, EventArgs e)
+        private async void OpenGitHubRepo(object sender, EventArgs e)
         {
             var success = await _webBrowserHandler.OpenURL(_repoURL);
 
             if (!success)
                 _view.ShowMessage(Library.Texts.MainView.Home.GitHubError);
+        }
+
+        private void NavigationButtonClicked(object sender, string message)
+        {
+            _view.HighlightButton(sender as Button);
+            _view.CurrentText = message;
         }
     }
 }

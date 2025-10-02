@@ -997,25 +997,11 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Technology: 
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Technology:
+        ///The application was developed using the Windows Forms framework, enabling the creation of intuitive and user-friendly graphical interfaces for the Windows operating system. This technology provides a robust foundation for building desktop applications, ensuring both high performance and stability.
         ///
-        ///    - Windows Forms
-        ///
-        ///Programming Language: 
-        ///
-        ///    - C#
-        ///
-        ///MVP Architecture:
-        ///
-        ///    The application logic is separated from the user interface, allowing easy modifications without impacting the entire application.
-        ///
-        ///Testability:
-        ///
-        ///    All business logic within the application is covered by unit tests, enabling verification of all use cases and maintaining high code quality.
-        ///
-        ///Database: 
-        ///
-        ///    The application data is stored in a relational SQL database hosted on Microsoft Azure, providi [obcięto pozostałą część ciągu]&quot;;.
+        ///Programming Language:
+        ///The solution was implemented in C#, a versatile programming language offering extensive libraries, frameworks, and development tools, which efficiently support business appli [obcięto pozostałą część ciągu]&quot;;.
         /// </summary>
         internal static string HomeTabAboutThisProject {
             get {
@@ -1024,9 +1010,9 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
-        /// Wyszukuje zlokalizowany ciąg podobny do ciągu I would like to express my sincere gratitude to my supervisor, Dr. Wiktoria Kalus, for her invaluable support, dedication, and insightful guidance throughout the realization of this engineering project.
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu I wish to express my deepest gratitude to my Supervisor, Dr. Wiktoria Kalus, for her invaluable support, kindness, and profoundly insightful guidance throughout the realization of this engineering thesis. Her scholarly expertise, dedication, and patience were of fundamental importance to the successful completion of this endeavor.
         ///
-        ///I also wish to thank the entire RS-Code team for my development as a software developer..
+        ///I also extend my sincere appreciation to the entire RS‑Code team for fostering a professional environment and for providing inspiring support, which significantly contributed t [obcięto pozostałą część ciągu]&quot;;.
         /// </summary>
         internal static string HomeTabAcknowledgements {
             get {
