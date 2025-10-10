@@ -1,5 +1,17 @@
 [
   {
+    "version": "1.10.0",
+    "date": "2025-10-9",
+    "changes": [
+      "Added database connection settings",
+      "Added DEMO database connection type",
+      "Added connection progress form",
+      "Added Settings project to solution",
+      "Added the ability to cancel database connection",
+      "Added sql script to create missing database tables"
+    ]
+  },
+  {
     "version": "1.9.0",
     "date": "2025-10-2",
     "changes": [

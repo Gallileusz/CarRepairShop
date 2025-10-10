@@ -1,6 +1,6 @@
 ﻿using CarRepairShop.Utilities.Permissions;
 
-namespace CarRepairShop.AppSettings
+namespace CarRepairShop.AppSettings.CurrentUser.Service
 {
     public interface ICurrentUserService
     {
@@ -10,6 +10,6 @@ namespace CarRepairShop.AppSettings
         string Language { get; set; }
         bool HasPermission(PermissionTabs permissionType, PermissionType permission);
         void SetUser(Domain.Entities.Users user, Domain.Entities.UserCredentials credentials);
-        void Initialize(PermissionService permissionService);
+        void Initialize(PermissionService.PermissionService permissionService);
     }
 }

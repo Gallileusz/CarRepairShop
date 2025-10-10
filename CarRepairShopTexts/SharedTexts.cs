@@ -150,6 +150,18 @@
         public static string ContractorTab_EditContractorError => SharedResources.texts.ContractorTab_EditContractorError;
         public static string ContractorTab_EditContractorSuccess => SharedResources.texts.ContractorTab_EditContractorSuccess;
         public static string ContractorTab_CarHasTaskMappings => SharedResources.texts.ContractorTab_CarHasTaskMappings;
+        public static string ContractorsTab_BrandNameColumn => SharedResources.texts.ContractorsTab_BrandNameColumn;
+        public static string ContractorsTab_ModelNameColumn => SharedResources.texts.ContractorsTab_ModelNameColumn;
+        public static string ContractorsTab_LicensePlateColumn => SharedResources.texts.ContractorsTab_LicensePlateColumn;
+        public static string ContractorsTab_FuelTypeColumn => SharedResources.texts.ContractorsTab_FuelTypeColumn;
+        public static string ContractorsTab_MileageColumn => SharedResources.texts.ContractorsTab_MileageColumn;
+        public static string ContractorsTab_ProductionYearColumn => SharedResources.texts.ContractorsTab_ProductionYearColumn;
+        public static string ContractorsTab_EngineCapacityColumn => SharedResources.texts.ContractorsTab_EngineCapacityColumn;
+        public static string ContractorsTab_VINColumn => SharedResources.texts.ContractorsTab_VINColumn;
+        public static string ContractorsTab_ContractorNameColumn => SharedResources.texts.ContractorsTab_ContractorNameColumn;
+        public static string ContractorsTab_ContractorSurnameColumn => SharedResources.texts.ContractorsTab_ContractorSurnameColumn;
+        public static string ContractorsTab_EmailColumn => SharedResources.texts.ContractorsTab_EmailColumn;
+        public static string ContractorsTab_PhoneNumberColumn => SharedResources.texts.ContractorsTab_PhoneNumberColumn;
 
         #endregion
 
@@ -175,6 +187,7 @@
         public static string LoginForm_ProvideLoginAndPassword => SharedResources.texts.LoginForm_ProvideLoginAndPassword;
         public static string LoginForm_InvalidCredentials => SharedResources.texts.LoginForm_InvalidCredentials;
         public static string LoginForm_FollowingErrorsOccurred => SharedResources.texts.LoginForm_FollowingErrorsOccurred;
+        public static string LoginForm_ConnectionCancelled => SharedResources.texts.LoginForm_ConnectionCancelled;
 
         // ConsumableMaterial Form
 

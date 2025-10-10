@@ -1,6 +1,7 @@
 ﻿using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using System;
+using System.Data.SqlClient;
 using System.Threading.Tasks;
 
 namespace CarRepairShop.Repos
@@ -31,6 +32,22 @@ namespace CarRepairShop.Repos
             {
                 IsConnectionStringSet = false;
                 Console.WriteLine($"Error:\r\n{ex.Message}");
+            }
+        }
+
+        public static async Task<bool> TryDatabaseConnectionAsync()
+        {
+            try
+            {
+                using (var connection = new SqlConnection(ConnectionString))
+                {
+                    await connection.OpenAsync();
+                    return connection.State == System.Data.ConnectionState.Open;
+                }
+            }
+            catch
+            {
+                return false;
             }
         }
     }

@@ -9,5 +9,6 @@ namespace CarRepairShop.Library
         public string ProvideLoginAndPassword => SharedTexts.LoginForm_ProvideLoginAndPassword;
         public string InvalidCredentials => SharedTexts.LoginForm_InvalidCredentials;
         public string FollowingErrorsOccurred => SharedTexts.LoginForm_FollowingErrorsOccurred;
+        public string ConnectionCancelled => SharedTexts.LoginForm_ConnectionCancelled;
     }
 }

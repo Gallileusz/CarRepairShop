@@ -1,4 +1,5 @@
-﻿using CarRepairShop.MainForm.Views.MainView;
+﻿using CarRepairShop.Authentication.DataBaseConnector.View;
+using CarRepairShop.MainForm.Views.MainView;
 using System;
 using System.Globalization;
 using System.Threading;
@@ -22,10 +23,15 @@ namespace CarRepairShop
             Thread.CurrentThread.CurrentCulture = new CultureInfo(language);
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
 
-            var dbHandler = new Repos.DataBaseHandler();
-            dbHandler.SetConnectionStringAsync().GetAwaiter().GetResult();
+            var dbConnector = new DataBaseConnectorView();
+            dbConnector.ShowDialog();
 
-            using (var loginForm = new LoginForm.View.LoginForm())
+            if (dbConnector.ConnectionSettingsChanged == DialogResult.Yes)
+            {
+                Application.Restart(); return;
+            }
+
+            using (var loginForm = new LoginForm.View.LoginForm(dbConnector.ConnectionSet == DialogResult.Cancel))
             {
                 var result = loginForm.ShowDialog();
 

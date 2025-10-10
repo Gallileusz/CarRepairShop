@@ -28,5 +28,17 @@ namespace CarRepairShop.Library
         public string EditContractorError => Translations.ContractorTab_EditContractorError;
         public string EditContractorSuccess => Translations.ContractorTab_EditContractorSuccess;
         public string CarHasTaskMappingsError => Translations.ContractorTab_CarHasTaskMappings;
+        public string BrandNameColumn => Translations.ContractorsTab_BrandNameColumn;
+        public string ModelNameColumn => Translations.ContractorsTab_ModelNameColumn;
+        public string LicensePlateColumn => Translations.ContractorsTab_LicensePlateColumn;
+        public string FuelTypeColumn => Translations.ContractorsTab_FuelTypeColumn;
+        public string MileageColumn => Translations.ContractorsTab_MileageColumn;
+        public string ProductionYearColumn => Translations.ContractorsTab_ProductionYearColumn;
+        public string EngineCapacityColumn => Translations.ContractorsTab_EngineCapacityColumn;
+        public string VINColumn => Translations.ContractorsTab_VINColumn;
+        public string ContractorNameColumn => Translations.ContractorsTab_ContractorNameColumn;
+        public string ContractorSurnameColumn => Translations.ContractorsTab_ContractorSurnameColumn;
+        public string EmailColumn => Translations.ContractorsTab_EmailColumn;
+        public string PhoneNumberColumn => Translations.ContractorsTab_PhoneNumberColumn;
     }
 }

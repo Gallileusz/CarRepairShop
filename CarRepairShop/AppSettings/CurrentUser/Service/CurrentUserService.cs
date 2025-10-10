@@ -1,6 +1,6 @@
 ﻿using CarRepairShop.Utilities.Permissions;
 
-namespace CarRepairShop.AppSettings
+namespace CarRepairShop.AppSettings.CurrentUser.Service
 {
     public class CurrentUserService : ICurrentUserService
     {
@@ -14,7 +14,7 @@ namespace CarRepairShop.AppSettings
 
         public bool HasPermission(PermissionTabs permissionType, PermissionType permission) => CurrentUser.HasPermission(permissionType, permission);
 
-        public void Initialize(PermissionService permissionService) => CurrentUser.Initialize(permissionService);
+        public void Initialize(PermissionService.PermissionService permissionService) => CurrentUser.Initialize(permissionService);
 
         public void SetUser(Domain.Entities.Users user, Domain.Entities.UserCredentials credentials) => CurrentUser.SetUser(user, credentials);
     }

@@ -259,6 +259,114 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Brand.
+        /// </summary>
+        internal static string ContractorsTab_BrandNameColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_BrandNameColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name.
+        /// </summary>
+        internal static string ContractorsTab_ContractorNameColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_ContractorNameColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Surname.
+        /// </summary>
+        internal static string ContractorsTab_ContractorSurnameColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_ContractorSurnameColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu E-mail.
+        /// </summary>
+        internal static string ContractorsTab_EmailColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_EmailColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Engine capacity.
+        /// </summary>
+        internal static string ContractorsTab_EngineCapacityColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_EngineCapacityColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Fuel type.
+        /// </summary>
+        internal static string ContractorsTab_FuelTypeColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_FuelTypeColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu License plate.
+        /// </summary>
+        internal static string ContractorsTab_LicensePlateColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_LicensePlateColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Mileage.
+        /// </summary>
+        internal static string ContractorsTab_MileageColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_MileageColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Model.
+        /// </summary>
+        internal static string ContractorsTab_ModelNameColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_ModelNameColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Phone number.
+        /// </summary>
+        internal static string ContractorsTab_PhoneNumberColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_PhoneNumberColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Production year.
+        /// </summary>
+        internal static string ContractorsTab_ProductionYearColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_ProductionYearColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu VIN.
+        /// </summary>
+        internal static string ContractorsTab_VINColumn {
+            get {
+                return ResourceManager.GetString("ContractorsTab_VINColumn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Add new car for {0} {1}.
         /// </summary>
         internal static string ContractorTab_AddNewCar {
@@ -1046,6 +1154,15 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string HomeTabSources {
             get {
                 return ResourceManager.GetString("HomeTabSources", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Database connection has been cancelled!.
+        /// </summary>
+        internal static string LoginForm_ConnectionCancelled {
+            get {
+                return ResourceManager.GetString("LoginForm_ConnectionCancelled", resourceCulture);
             }
         }
         

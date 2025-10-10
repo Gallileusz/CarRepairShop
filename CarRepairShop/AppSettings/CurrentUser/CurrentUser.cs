@@ -1,6 +1,7 @@
-﻿using CarRepairShop.Utilities.Permissions;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service.PermissionService;
+using CarRepairShop.Utilities.Permissions;
 
-namespace CarRepairShop.AppSettings
+namespace CarRepairShop.AppSettings.CurrentUser
 {
     public static class CurrentUser
     {
@@ -24,7 +25,7 @@ namespace CarRepairShop.AppSettings
             IsAdmin = user.Admin;
             Credentials = credentials;
             Language = Properties.Settings.Default.Language;
-            CurrentUser.Initialize(new PermissionService());
+            Initialize(new PermissionService());
         }
     }
 

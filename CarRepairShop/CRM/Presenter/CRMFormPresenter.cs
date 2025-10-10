@@ -1,4 +1,4 @@
-﻿using CarRepairShop.AppSettings;
+﻿using CarRepairShop.AppSettings.CurrentUser;
 using CarRepairShop.CRM.View;
 using CarRepairShop.Domain.Entities;
 using CarRepairShop.Repositories;

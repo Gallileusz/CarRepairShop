@@ -1,4 +1,4 @@
-﻿using CarRepairShop.AppSettings;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service;
 using CarRepairShop.MainForm.Presenters.Tabs.User;
 using CarRepairShop.MainForm.Views.Tabs.Users;
 using CarRepairShop.Repositories;

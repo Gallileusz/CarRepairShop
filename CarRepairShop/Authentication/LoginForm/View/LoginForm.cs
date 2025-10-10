@@ -1,5 +1,6 @@
-﻿using CarRepairShop.AppSettings;
-using CarRepairShop.LoginForm.Presenter;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service;
+using CarRepairShop.Authentication.LoginForm.Presenter;
+using CarRepairShop.Authentication.LoginForm.View;
 using CarRepairShop.Repos;
 using CarRepairShop.Repositories;
 using System;
@@ -14,6 +15,7 @@ namespace CarRepairShop.LoginForm.View
         public event EventHandler FormIsLoaded;
         public event EventHandler<KeyPressEventArgs> EnterButtonClicked;
         public event EventHandler ConnectionErrorPictureBoxClicked;
+        public event EventHandler SettingsClicked;
 
         [System.ComponentModel.Browsable(false)]
         [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
@@ -37,10 +39,10 @@ namespace CarRepairShop.LoginForm.View
 
         private LoginFormPresenter _presenter;
 
-        public LoginForm()
+        public LoginForm(bool connectionCancelled)
         {
             InitializeComponent();
-            _presenter = new LoginFormPresenter(this, new GenericRepository(), new DataBaseHandler(), new CurrentUserService());
+            _presenter = new LoginFormPresenter(connectionCancelled, this, new GenericRepository(), new DataBaseHandler(), new CurrentUserService());
         }
 
         public void CloseForm() => this.Close();
@@ -69,6 +71,8 @@ namespace CarRepairShop.LoginForm.View
             toolTip.SetToolTip(lblError, error);
         }
 
+        public void ChangeLoginButtonAccessibility(bool accessible) => btnLogin.Enabled = accessible;
+
         private void btnLogin_Click(object sender, EventArgs e) => LoginButtonClicked?.Invoke(sender, e);
 
         private void LoginForm_Load(object sender, EventArgs e) => FormIsLoaded?.Invoke(sender, e);
@@ -78,5 +82,15 @@ namespace CarRepairShop.LoginForm.View
         private void btnQuit_Click(object sender, EventArgs e) => QuitButtonClicked?.Invoke(sender, e);
 
         private void pbConnectionError_Click(object sender, EventArgs e) => ConnectionErrorPictureBoxClicked?.Invoke(sender, e);
+
+        private void pbSettings_Click(object sender, EventArgs e) => SettingsClicked?.Invoke(sender, e);
+
+        public DialogResult OpenConnectionSettingsForm()
+        {
+            var form = new Authentication.ConnectionSettings.View.ConnectionSettingsView();
+            form.ShowDialog();
+
+            return form.ChangesAccured;
+        }
     }
 }

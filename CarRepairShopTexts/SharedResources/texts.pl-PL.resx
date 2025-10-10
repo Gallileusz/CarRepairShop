@@ -800,4 +800,43 @@ Funkcjonalności aplikacji:
   <data name="HomeTabGitHubLoadFailed" xml:space="preserve">
     <value>Nie udało się otworzyć strony GitHub. Adres URL może być nieaktualny lub występują problemy z połączeniem internetowym.</value>
   </data>
+  <data name="LoginForm_ConnectionCancelled" xml:space="preserve">
+    <value>Połączenie z bazą danych zostało anulowane!</value>
+  </data>
+  <data name="ContractorsTab_BrandNameColumn" xml:space="preserve">
+    <value>Marka</value>
+  </data>
+  <data name="ContractorsTab_ModelNameColumn" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="ContractorsTab_LicensePlateColumn" xml:space="preserve">
+    <value>Rejestracja</value>
+  </data>
+  <data name="ContractorsTab_FuelTypeColumn" xml:space="preserve">
+    <value>Typ paliwa</value>
+  </data>
+  <data name="ContractorsTab_MileageColumn" xml:space="preserve">
+    <value>Przebieg</value>
+  </data>
+  <data name="ContractorsTab_ProductionYearColumn" xml:space="preserve">
+    <value>Rok produkcji</value>
+  </data>
+  <data name="ContractorsTab_EngineCapacityColumn" xml:space="preserve">
+    <value>Pojemność silnika</value>
+  </data>
+  <data name="ContractorsTab_VINColumn" xml:space="preserve">
+    <value>VIN</value>
+  </data>
+  <data name="ContractorsTab_ContractorNameColumn" xml:space="preserve">
+    <value>Imię</value>
+  </data>
+  <data name="ContractorsTab_ContractorSurnameColumn" xml:space="preserve">
+    <value>Nazwisko</value>
+  </data>
+  <data name="ContractorsTab_EmailColumn" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ContractorsTab_PhoneNumberColumn" xml:space="preserve">
+    <value>Numer telefonu</value>
+  </data>
 </root>

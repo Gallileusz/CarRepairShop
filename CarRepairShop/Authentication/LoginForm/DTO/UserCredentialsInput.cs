@@ -1,4 +1,4 @@
-﻿namespace CarRepairShop.LoginForm.DTO
+﻿namespace CarRepairShop.Authentication.LoginForm.DTO
 {
     public class UserCredentialsInput
     {

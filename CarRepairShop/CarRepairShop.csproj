@@ -42,6 +42,11 @@
     <Compile Update="MainForm\Views\Tabs\Warehouse\WarehouseTab.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <PackageReference Include="BCrypt.Net-Core" Version="1.6.0" />
     <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
@@ -53,7 +58,9 @@
   <ItemGroup>
     <ProjectReference Include="..\CarRepairShop.Domain\CarRepairShop.Domain.csproj" />
     <ProjectReference Include="..\CarRepairShop.Library\CarRepairShop.Library.csproj" />
+    <ProjectReference Include="..\CarRepairShop.Queries\CarRepairShop.Queries.csproj" />
     <ProjectReference Include="..\CarRepairShop.Repos\CarRepairShop.Repositories.csproj" />
+    <ProjectReference Include="..\CarRepairShop.Settings\CarRepairShop.Settings.csproj" />
     <ProjectReference Include="..\CarRepairShop.Utilities\CarRepairShop.Utilities.csproj" />
   </ItemGroup>
   <ItemGroup>
@@ -67,5 +74,11 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 </Project>

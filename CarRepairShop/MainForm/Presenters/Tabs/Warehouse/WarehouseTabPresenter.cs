@@ -1,4 +1,4 @@
-﻿using CarRepairShop.AppSettings;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service;
 using CarRepairShop.Domain.Entities;
 using CarRepairShop.MainForm.Models.Tabs.Warehouse;
 using CarRepairShop.MainForm.Views.Tabs.Warehouse;

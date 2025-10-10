@@ -104,6 +104,22 @@ namespace CarRepairShop.Repositories
             }
         }
 
+        public async Task<bool> UseRawSqlAsync(string query, object param = null)
+        {
+            using (IDbConnection connection = new SqlConnection(_connectionString))
+            {
+                try
+                {
+                    await connection.ExecuteAsync(query, param: param);
+                    return true;
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+            }
+        }
+
         public bool Update<T>(T objectToUpdate) where T : class
         {
             using (IDbConnection connection = new SqlConnection(_connectionString))

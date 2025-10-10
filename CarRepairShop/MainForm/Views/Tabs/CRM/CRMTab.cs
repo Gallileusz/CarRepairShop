@@ -1,4 +1,4 @@
-﻿using CarRepairShop.AppSettings;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service;
 using CarRepairShop.CRM.DTO;
 using CarRepairShop.CRM.View;
 using CarRepairShop.MainForm.Models.Tabs.CRM;

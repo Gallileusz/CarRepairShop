@@ -1,4 +1,5 @@
 ﻿using CarRepairShop.Domain.Entities;
+using CarRepairShop.Repositories;
 using CarRepairShop.Utilities.SingleInputForm.View;
 using System;
 using System.Collections.Generic;
@@ -27,7 +28,7 @@ namespace CarRepairShop.Warehouse.MaterialsTypesList.View
         public MaterialsTypesList()
         {
             InitializeComponent();
-            _presenter = new Presenter.MaterialsTypesListPresenter(this, new Repositories.GenericRepository(), new AppSettings.CurrentUserService());
+            _presenter = new Presenter.MaterialsTypesListPresenter(this, new GenericRepository(), new AppSettings.CurrentUser.Service.CurrentUserService());
         }
 
         public void LoadMaterialTypesToGrid(List<MaterialTypes> materialTypes)

@@ -7,5 +7,6 @@ namespace CarRepairShop.Repos
         public string ConnectionString => DataBase.ConnectionString;
         public bool IsConnectionStringSet => DataBase.IsConnectionStringSet;
         public Task SetConnectionStringAsync() => DataBase.SetConnectionStringAsync();
+        public Task<bool> TryDatabaseConnectionAsync() => DataBase.TryDatabaseConnectionAsync();
     }
 }

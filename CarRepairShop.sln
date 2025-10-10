@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRepairShop.Texts", "CarR
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRepairShop.Library", "CarRepairShop.Library\CarRepairShop.Library.csproj", "{5D51A628-18F9-42B5-A473-413D2CAC16DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarRepairShop.Settings", "CarRepairShop.Settings\CarRepairShop.Settings.csproj", "{00B72DE4-4D78-46D6-92C1-678BFCB8C009}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -56,6 +58,10 @@ Global
 		{5D51A628-18F9-42B5-A473-413D2CAC16DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D51A628-18F9-42B5-A473-413D2CAC16DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D51A628-18F9-42B5-A473-413D2CAC16DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{00B72DE4-4D78-46D6-92C1-678BFCB8C009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00B72DE4-4D78-46D6-92C1-678BFCB8C009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00B72DE4-4D78-46D6-92C1-678BFCB8C009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00B72DE4-4D78-46D6-92C1-678BFCB8C009}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,4 @@
-﻿using CarRepairShop.AppSettings;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service;
 using CarRepairShop.Repositories;
 using CarRepairShop.Users.PermissionsForm.Model;
 using CarRepairShop.Users.PermissionsForm.Presenter;

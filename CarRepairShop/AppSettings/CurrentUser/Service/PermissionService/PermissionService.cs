@@ -3,7 +3,7 @@ using CarRepairShop.Utilities.Permissions;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CarRepairShop.AppSettings
+namespace CarRepairShop.AppSettings.CurrentUser.Service.PermissionService
 {
     public class PermissionService
     {

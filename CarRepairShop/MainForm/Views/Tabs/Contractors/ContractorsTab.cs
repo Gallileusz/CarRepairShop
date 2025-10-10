@@ -1,4 +1,4 @@
-﻿using CarRepairShop.AppSettings;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service;
 using CarRepairShop.Contractors.CarForm.DTO;
 using CarRepairShop.Contractors.CarForm.View;
 using CarRepairShop.Contractors.ContractorForm.DTO;
@@ -12,6 +12,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
 {
@@ -95,6 +96,15 @@ namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
             dgvCars.Columns[nameof(ContractorCarsVM.EngineCapacity)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvCars.Columns[nameof(ContractorCarsVM.ID)].Visible = false;
             dgvCars.Columns[nameof(ContractorCarsVM.ContractorID)].Visible = false;
+
+            dgvCars.Columns[nameof(ContractorCarsVM.BrandName)].HeaderText = Translations.MainView.Contractors.BrandNameColumn;
+            dgvCars.Columns[nameof(ContractorCarsVM.ModelName)].HeaderText = Translations.MainView.Contractors.ModelNameColumn;
+            dgvCars.Columns[nameof(ContractorCarsVM.LicensePlate)].HeaderText = Translations.MainView.Contractors.LicensePlateColumn;
+            dgvCars.Columns[nameof(ContractorCarsVM.VIN)].HeaderText = Translations.MainView.Contractors.VINColumn;
+            dgvCars.Columns[nameof(ContractorCarsVM.FuelType)].HeaderText = Translations.MainView.Contractors.FuelTypeColumn;
+            dgvCars.Columns[nameof(ContractorCarsVM.Mileage)].HeaderText = Translations.MainView.Contractors.MileageColumn;
+            dgvCars.Columns[nameof(ContractorCarsVM.Year)].HeaderText = Translations.MainView.Contractors.ProductionYearColumn;
+            dgvCars.Columns[nameof(ContractorCarsVM.EngineCapacity)].HeaderText = Translations.MainView.Contractors.EngineCapacityColumn;
         }
 
         public void LoadContractorsToGrid(List<Domain.Entities.Contractors> contractors)
@@ -107,6 +117,11 @@ namespace CarRepairShop.MainForm.Views.Tabs.ContractorsTab
             dgvContractors.Columns[nameof(Domain.Entities.Contractors.Email)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvContractors.Columns[nameof(Domain.Entities.Contractors.PhoneNumber)].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             dgvContractors.Columns[nameof(Domain.Entities.Contractors.ID)].Visible = false;
+
+            dgvContractors.Columns[nameof(Domain.Entities.Contractors.Name)].HeaderText = Translations.MainView.Contractors.ContractorNameColumn;
+            dgvContractors.Columns[nameof(Domain.Entities.Contractors.Surname)].HeaderText = Translations.MainView.Contractors.ContractorSurnameColumn;
+            dgvContractors.Columns[nameof(Domain.Entities.Contractors.Email)].HeaderText = Translations.MainView.Contractors.EmailColumn;
+            dgvContractors.Columns[nameof(Domain.Entities.Contractors.PhoneNumber)].HeaderText = Translations.MainView.Contractors.PhoneNumberColumn;
         }
 
         public void ChangeButtonAccess(bool hasPermission)

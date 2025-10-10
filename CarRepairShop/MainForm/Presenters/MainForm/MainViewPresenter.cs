@@ -1,4 +1,4 @@
-﻿using CarRepairShop.AppSettings;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service;
 using CarRepairShop.MainForm.Views.MainView;
 using CarRepairShop.MainForm.Views.Tabs.ContractorsTab;
 using CarRepairShop.MainForm.Views.Tabs.CRM;

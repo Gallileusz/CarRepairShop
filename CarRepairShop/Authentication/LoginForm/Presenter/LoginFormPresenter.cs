@@ -1,15 +1,16 @@
-﻿using CarRepairShop.AppSettings;
+﻿using CarRepairShop.AppSettings.CurrentUser.Service;
+using CarRepairShop.Authentication.LoginForm.View;
 using CarRepairShop.Domain.Entities;
-using CarRepairShop.LoginForm.View;
 using CarRepairShop.Repos;
 using CarRepairShop.Repositories;
+using CarRepairShop.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Windows.Forms;
 
-namespace CarRepairShop.LoginForm.Presenter
+namespace CarRepairShop.Authentication.LoginForm.Presenter
 {
     public class LoginFormPresenter
     {
@@ -17,13 +18,17 @@ namespace CarRepairShop.LoginForm.Presenter
         private readonly IGenericRepository _genericRepo;
         private readonly IDataBaseHandler _dbHandler;
         private readonly ICurrentUserService _currentUserService;
+
         private IEnumerable<UserCredentials> _userCredentials;
         private IEnumerable<Domain.Entities.Users> _users;
+
         private string _errorMessage;
         private const char EnterKey = '\r';
+        private bool _connectionCancelled;
 
-        public LoginFormPresenter(ILoginView view, IGenericRepository genericRepo, IDataBaseHandler dbHandler, ICurrentUserService currentUser)
+        public LoginFormPresenter(bool connectionCancelled, ILoginView view, IGenericRepository genericRepo, IDataBaseHandler dbHandler, ICurrentUserService currentUser)
         {
+            _connectionCancelled = connectionCancelled;
             _view = view;
             _dbHandler = dbHandler;
             _currentUserService = currentUser;
@@ -42,11 +47,11 @@ namespace CarRepairShop.LoginForm.Presenter
             _view.FormIsLoaded += Load;
             _view.EnterButtonClicked += LoginByEnterClick;
             _view.ConnectionErrorPictureBoxClicked += ShowError;
+            _view.SettingsClicked += OpenSettings;
         }
 
         private async void Load(object sender, EventArgs e)
         {
-            _view.ChangeConnectionErrorIconVisibility(false);
             var databaseIsActive = false;
 
             if (!string.IsNullOrEmpty(Properties.Settings.Default.CachedLogin))
@@ -55,12 +60,23 @@ namespace CarRepairShop.LoginForm.Presenter
                 _view.Login = Properties.Settings.Default.CachedLogin;
             }
 
-            if (!_dbHandler.IsConnectionStringSet)
+            if (_connectionCancelled)
+            {
+                _errorMessage += Library.Texts.LoginForm.ConnectionCancelled;
+                _view.ChangeLoginButtonAccessibility(!_connectionCancelled);
+                _view.SetErrorToolTip(_errorMessage);
+                _view.ChangeConnectionErrorIconVisibility(_connectionCancelled);
+
+                return;
+            }
+
+            if (string.IsNullOrEmpty(_dbHandler.ConnectionString) && ConnectionProvider.ProductionConnection)
             {
                 _errorMessage += $"{Library.Texts.LoginForm.LoggedOutFromAzureService}\r\n";
 
                 _view.ChangeConnectionErrorIconVisibility(true);
                 _view.SetErrorToolTip(_errorMessage);
+
                 return;
             }
 
@@ -77,6 +93,7 @@ namespace CarRepairShop.LoginForm.Presenter
                 _errorMessage += Library.Texts.LoginForm.DatabaseNeedsToRestart;
                 _view.ChangeConnectionErrorIconVisibility(true);
                 _view.SetErrorToolTip(_errorMessage);
+
                 return;
             }
 
@@ -85,6 +102,8 @@ namespace CarRepairShop.LoginForm.Presenter
                 _view.ChangeConnectionErrorIconVisibility(false);
                 _view.SetErrorToolTip(string.Empty);
             }
+
+            _view.ChangeLoginButtonAccessibility(databaseIsActive);
         }
 
         private async void Login(object sender, EventArgs e)
@@ -94,13 +113,14 @@ namespace CarRepairShop.LoginForm.Presenter
                 _view.ShowMessage(Library.Texts.LoginForm.LoggedOutFromAzureService); return;
             }
 
-            if (_userCredentials == null || _users == null || !_userCredentials.Any() || !_users.Any())
+            if (_userCredentials?.Any() == false || _users?.Any() == false)
             {
                 _view.ShowMessage(Library.Texts.LoginForm.DatabaseNeedsToRestart);
                 _view.ChangeConnectionErrorIconVisibility(true);
                 _view.SetErrorToolTip(_errorMessage);
                 _userCredentials = await _genericRepo.GetAllAsync<UserCredentials>();
                 _users = await _genericRepo.GetAllAsync<Domain.Entities.Users>();
+
                 return;
             }
 
@@ -141,6 +161,16 @@ namespace CarRepairShop.LoginForm.Presenter
             _currentUserService.Language = Thread.CurrentThread.CurrentUICulture.ToString();
 
             Properties.Settings.Default.Save();
+        }
+
+        private void OpenSettings(object sender, EventArgs e)
+        {
+            var needsRestart = _view.OpenConnectionSettingsForm();
+
+            if (needsRestart != DialogResult.Yes) return;
+
+            _view.CloseForm();
+            Application.Restart();
         }
     }
 }

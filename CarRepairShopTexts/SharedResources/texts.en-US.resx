@@ -800,4 +800,43 @@ Application Features:
   <data name="ContractorTab_CarHasTaskMappings" xml:space="preserve">
     <value>Selected car has task mappings! Operation cancelled!</value>
   </data>
+  <data name="LoginForm_ConnectionCancelled" xml:space="preserve">
+    <value>Database connection has been cancelled!</value>
+  </data>
+  <data name="ContractorsTab_BrandNameColumn" xml:space="preserve">
+    <value>Brand</value>
+  </data>
+  <data name="ContractorsTab_ModelNameColumn" xml:space="preserve">
+    <value>Model</value>
+  </data>
+  <data name="ContractorsTab_LicensePlateColumn" xml:space="preserve">
+    <value>License plate</value>
+  </data>
+  <data name="ContractorsTab_FuelTypeColumn" xml:space="preserve">
+    <value>Fuel type</value>
+  </data>
+  <data name="ContractorsTab_MileageColumn" xml:space="preserve">
+    <value>Mileage</value>
+  </data>
+  <data name="ContractorsTab_ProductionYearColumn" xml:space="preserve">
+    <value>Production year</value>
+  </data>
+  <data name="ContractorsTab_EngineCapacityColumn" xml:space="preserve">
+    <value>Engine capacity</value>
+  </data>
+  <data name="ContractorsTab_VINColumn" xml:space="preserve">
+    <value>VIN</value>
+  </data>
+  <data name="ContractorsTab_ContractorNameColumn" xml:space="preserve">
+    <value>Name</value>
+  </data>
+  <data name="ContractorsTab_ContractorSurnameColumn" xml:space="preserve">
+    <value>Surname</value>
+  </data>
+  <data name="ContractorsTab_EmailColumn" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="ContractorsTab_PhoneNumberColumn" xml:space="preserve">
+    <value>Phone number</value>
+  </data>
 </root>
