@@ -198,6 +198,28 @@ BEGIN
 END
 ";
 
+        const string _demoUser = @"
+IF NOT EXISTS (SELECT TOP 1 * FROM Users)
+BEGIN
+    SET IDENTITY_INSERT Users ON;
+    
+    INSERT INTO Users (ID, Name, Surname, Admin) VALUES (1, 'Demo', 'Account', 1);
+    
+    SET IDENTITY_INSERT Users OFF;
+END
+";
+
+        const string _demoCredentials = @"
+IF NOT EXISTS (SELECT TOP 1 * FROM UserCredentials)
+BEGIN
+    SET IDENTITY_INSERT UserCredentials ON;
+
+    INSERT INTO UserCredentials (ID, UserID, Login, PasswordHash) VALUES (1, 1, 'Demo', '$2b$10$pT43RFMjfN9tn2XIDB4I7eoqPx5d49oSMUj970KbkXz9QiOJOYzo2');
+
+    SET IDENTITY_INSERT UserCredentials OFF;
+END
+";
+
         public static string GetTableChecksQuery()
         {
             var sb = new System.Text.StringBuilder();
@@ -231,6 +253,10 @@ END
             sb.AppendLine(_crmMappingsTable);
             sb.AppendLine();
             sb.AppendLine(_servicesTable);
+            sb.AppendLine();
+            sb.AppendLine(_demoUser);
+            sb.AppendLine();
+            sb.AppendLine(_demoCredentials);
 
             return sb.ToString();
         }

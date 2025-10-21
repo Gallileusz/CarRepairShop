@@ -117,6 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="HomeTabAcknowledgements" xml:space="preserve">
+    <value>Pragnę wyrazić najgłębszą wdzięczność mojej Promotorce, dr Wiktorii Kalus, za jej nieocenione wsparcie, życzliwość oraz niezwykle cenne wskazówki, które udzielała mi na każdym etapie realizacji niniejszej pracy inżynierskiej. Jej wiedza merytoryczna, zaangażowanie i cierpliwość miały fundamentalne znaczenie dla powodzenia tego przedsięwzięcia.
+
+Serdeczne podziękowania kieruję również do całego zespołu RS‑Code za stworzenie profesjonalnej atmosfery, jak również za inspirujące wsparcie, które umożliwiło mi rozwój umiejętności programistycznych oraz pogłębienie wiedzy praktycznej w zakresie inżynierii oprogramowania.
+
+Na szczególne wyrazy wdzięczności zasługują także moi najbliżsi – rodzina i przyjaciele – którzy nieprzerwanie okazywali mi cierpliwość, zrozumienie oraz wsparcie emocjonalne, dzięki czemu możliwe stało się sfinalizowanie niniejszego projektu.
+
+Zwieńczenie tej pracy stanowi również symboliczne zakończenie okresu studiów i tym samym zamknięcie ważnego etapu w mojej drodze akademickiej, stanowiąc jednocześnie początek nowych wyzwań zawodowych.</value>
+  </data>
+  <data name="HomeTabAboutThisProject" xml:space="preserve">
+    <value>Technologia:
+Aplikacja została opracowana w oparciu o platformę Windows Forms, co umożliwia tworzenie intuicyjnych i funkcjonalnych interfejsów graficznych dla systemu operacyjnego Windows. Wykorzystanie tej technologii pozwoliło na implementację klasycznego, ale wciąż popularnego modelu budowy aplikacji desktopowych, zapewniając jednocześnie stabilność oraz wysoką wydajność działania.
+
+Język programowania:
+Do implementacji całego rozwiązania wykorzystano język C#, którego bogate możliwości wraz z rozbudowanym ekosystemem bibliotek i narzędzi wspierają zarówno rozwój aplikacji biznesowych, jak i integrację z różnymi usługami zewnętrznymi.
+
+Architektura MVP:
+Aplikacja została zaprojektowana zgodnie z wzorcem architektonicznym Model-View-Presenter (MVP). Zapewnia on wyraźne rozdzielenie logiki biznesowej od warstwy prezentacji, co znacząco ułatwia utrzymanie kodu, wprowadzanie modyfikacji oraz rozszerzanie funkcjonalności bez ingerencji w pozostałe komponenty systemu. Tego rodzaju podejście wspiera czytelność i modularność kodu, a także zwiększa odporność aplikacji na zmiany.
+
+Testowalność:
+Cała logika biznesowa systemu została objęta testami jednostkowymi, dzięki czemu możliwe jest weryfikowanie wszystkich przypadków użycia oraz eliminowanie ewentualnych błędów na wczesnym etapie. Takie podejście gwarantuje utrzymanie wysokiej jakości kodu oraz zwiększa niezawodność całej aplikacji.
+
+Baza danych:
+Dane aplikacji są przechowywane w relacyjnej bazie danych SQL hostowanej w chmurze Microsoft Azure. Taka architektura zapewnia pełną dostępność oraz bezpieczeństwo danych, jak również elastyczną skalowalność, umożliwiającą korzystanie z systemu bez względu na lokalizację użytkownika.
+
+Funkcjonalności aplikacji:
+
+    - Rejestracja oraz przeglądanie pojazdów, klientów, zleceń i usług warsztatowych.
+
+    - Możliwość edycji i usuwania istniejących wpisów w bazie.
+
+    - Synchronizacja danych oraz bezpieczny dostęp realizowany poprzez mechanizmy uwierzytelniania i autoryzacji.</value>
+  </data>
+  <data name="HomeTabSources" xml:space="preserve">
+    <value>Źródła:
+
+- Icons: https://icons8.com/</value>
+  </data>
+  <data name="HomeTabChangelogLoadFailed" xml:space="preserve">
+    <value>Brak wpisów w dzienniku zmian lub plik dziennika zmian nie został odnaleziony.</value>
+  </data>
+  <data name="HomeTabGitHubLoadFailed" xml:space="preserve">
+    <value>Nie udało się otworzyć strony GitHub. Adres URL może być nieaktualny lub występują problemy z połączeniem internetowym.</value>
+  </data>
   <data name="MainForm_MissingPermissionsToOpenTab" xml:space="preserve">
     <value>Nie masz uprawnień do wyświetlania zakładki: {0}!</value>
   </data>
@@ -186,14 +230,14 @@
   <data name="UsersTab_ColumnSurname" xml:space="preserve">
     <value>Nazwisko</value>
   </data>
-  <data name="PermissionsForm_ChangesSaved" xml:space="preserve">
-    <value>Zmiany zostały zapisane.</value>
-  </data>
   <data name="PermissionsForm_AskToSaveBody" xml:space="preserve">
     <value>Chcesz zapisać zmiany?</value>
   </data>
   <data name="PermissionsForm_AskToSaveTitle" xml:space="preserve">
     <value>Potwierdzenie zmian uprawnień</value>
+  </data>
+  <data name="PermissionsForm_ChangesSaved" xml:space="preserve">
+    <value>Zmiany zostały zapisane.</value>
   </data>
   <data name="PermissionsForm_DatagridviewColumnAllowEdit" xml:space="preserve">
     <value>Edycja</value>
@@ -213,8 +257,8 @@
   <data name="PermissionsForm_PermissionServices" xml:space="preserve">
     <value>Usługi</value>
   </data>
-  <data name="PermissionsForm_PermissionSettings" xml:space="preserve">
-    <value>Ustawienia</value>
+  <data name="PermissionsForm_PermissionWarehouse" xml:space="preserve">
+    <value>Magazyn</value>
   </data>
   <data name="PermissionsForm_PermissionStatistics" xml:space="preserve">
     <value>Statystyka</value>
@@ -222,8 +266,8 @@
   <data name="PermissionsForm_PermissionUsers" xml:space="preserve">
     <value>Użytkownicy</value>
   </data>
-  <data name="PermissionsForm_PermissionWarehouse" xml:space="preserve">
-    <value>Magazyn</value>
+  <data name="PermissionsForm_PermissionSettings" xml:space="preserve">
+    <value>Ustawienia</value>
   </data>
   <data name="UsersTab_UserCredentialsDataCannotBeEmpty" xml:space="preserve">
     <value>Pole login oraz hasło nie może być puste!</value>
@@ -540,11 +584,11 @@
   <data name="CRMForm_ConfirmClosureTitle" xml:space="preserve">
     <value>Potwierdzenie operacji.</value>
   </data>
-  <data name="CRMForm_ConfirmReOpenTitle" xml:space="preserve">
-    <value>Potwierdzenie operacji.</value>
-  </data>
   <data name="CRMForm_ConfirmReOpenBody" xml:space="preserve">
     <value>Czy chcesz zmienić status zadania na otwarty?</value>
+  </data>
+  <data name="CRMForm_ConfirmReOpenTitle" xml:space="preserve">
+    <value>Potwierdzenie operacji.</value>
   </data>
   <data name="CRMForm_SelectContractor" xml:space="preserve">
     <value>Proszę wybrać kontrahenta.</value>
@@ -579,26 +623,26 @@
   <data name="CRMForm_PriceColumn" xml:space="preserve">
     <value>Cena</value>
   </data>
-  <data name="CRMForm_ProductionYear" xml:space="preserve">
-    <value>Rok produkcji</value>
-  </data>
   <data name="CRMForm_ModelColumn" xml:space="preserve">
     <value>Model</value>
   </data>
-  <data name="CRMForm_MileageColumn" xml:space="preserve">
-    <value>Przebieg</value>
-  </data>
-  <data name="CRMForm_LicensePlateColumn" xml:space="preserve">
-    <value>Tablica rejestracyjna</value>
-  </data>
-  <data name="CRMForm_FuelTypeColumn" xml:space="preserve">
-    <value>Typ paliwa</value>
+  <data name="CRMForm_BrandColumn" xml:space="preserve">
+    <value>Marka</value>
   </data>
   <data name="CRMForm_EngineCapacityColumn" xml:space="preserve">
     <value>Pojemność silnika</value>
   </data>
-  <data name="CRMForm_BrandColumn" xml:space="preserve">
-    <value>Marka</value>
+  <data name="CRMForm_FuelTypeColumn" xml:space="preserve">
+    <value>Typ paliwa</value>
+  </data>
+  <data name="CRMForm_LicensePlateColumn" xml:space="preserve">
+    <value>Tablica rejestracyjna</value>
+  </data>
+  <data name="CRMForm_MileageColumn" xml:space="preserve">
+    <value>Przebieg</value>
+  </data>
+  <data name="CRMForm_ProductionYear" xml:space="preserve">
+    <value>Rok produkcji</value>
   </data>
   <data name="ContractorForm_FillName" xml:space="preserve">
     <value>Uzupełnij pole imię!</value>
@@ -636,11 +680,11 @@
   <data name="CarForm_FillEngineCapacity" xml:space="preserve">
     <value>Uzupełnij pole: pojemność silnika!</value>
   </data>
-  <data name="CarForm_FillMileage" xml:space="preserve">
-    <value>Uzupełnij pole: przebieg!</value>
-  </data>
   <data name="CarForm_SelectFuelType" xml:space="preserve">
     <value>Proszę wybrać typ paliwa!</value>
+  </data>
+  <data name="CarForm_FillMileage" xml:space="preserve">
+    <value>Uzupełnij pole: przebieg!</value>
   </data>
   <data name="FuelTypesList_AddNewFuelType" xml:space="preserve">
     <value>Dodaj nowy typ paliwa</value>
@@ -651,26 +695,20 @@
   <data name="FuelTypesList_InsertFailed" xml:space="preserve">
     <value>Nie udało się dodać typu paliwa: {0}!</value>
   </data>
-  <data name="FuelTypesList_EditSuccess" xml:space="preserve">
-    <value>Pomyślnie zmieniono nazwę typu paliwa.</value>
-  </data>
   <data name="FuelTypesList_EditFuelType" xml:space="preserve">
     <value>Edycja nazwy typu paliwa</value>
-  </data>
-  <data name="FuelTypesList_EditFailed" xml:space="preserve">
-    <value>Nie udało się zmienić nazwy typu paliwa!</value>
-  </data>
-  <data name="FuelTypesList_EditConfirmationTitle" xml:space="preserve">
-    <value>Potwierdź edycję</value>
   </data>
   <data name="FuelTypesList_EditConfirmationBody" xml:space="preserve">
     <value>Czy chcesz zmienić nazwę typu paliwa z {0} na {1}?</value>
   </data>
-  <data name="FuelTypesList_DeleteSuccess" xml:space="preserve">
-    <value>Pomyślnie usunięto typu paliwa: {0}.</value>
+  <data name="FuelTypesList_EditConfirmationTitle" xml:space="preserve">
+    <value>Potwierdź edycję</value>
   </data>
-  <data name="FuelTypesList_DeleteFailed" xml:space="preserve">
-    <value>Nie udało się usunąć typu paliwa: {0}!</value>
+  <data name="FuelTypesList_EditSuccess" xml:space="preserve">
+    <value>Pomyślnie zmieniono nazwę typu paliwa.</value>
+  </data>
+  <data name="FuelTypesList_EditFailed" xml:space="preserve">
+    <value>Nie udało się zmienić nazwy typu paliwa!</value>
   </data>
   <data name="FuelTypesList_DeleteConfirmationBody" xml:space="preserve">
     <value>Czy na pewno chcesz usunąć typ paliwa: {0}?</value>
@@ -678,44 +716,32 @@
   <data name="FuelTypesList_DeleteConfirmationTitle" xml:space="preserve">
     <value>Potwierdzenie usunięcia.</value>
   </data>
+  <data name="FuelTypesList_DeleteSuccess" xml:space="preserve">
+    <value>Pomyślnie usunięto typu paliwa: {0}.</value>
+  </data>
+  <data name="FuelTypesList_DeleteFailed" xml:space="preserve">
+    <value>Nie udało się usunąć typu paliwa: {0}!</value>
+  </data>
   <data name="FuelTypesList_Name" xml:space="preserve">
     <value>Nazwa</value>
-  </data>
-  <data name="ContractorTab_ContractorsCarExistsError" xml:space="preserve">
-    <value>Wybrany kontrahent posiada już taki przypisany samochód. Operacja przerwana!</value>
-  </data>
-  <data name="ContractorTab_ContractorExistsError" xml:space="preserve">
-    <value>Taki kontrahent już istnieje. Operacja przerwana!</value>
   </data>
   <data name="ContractorTab_AddNewContractor" xml:space="preserve">
     <value>Dodaj nowego kontrahenta</value>
   </data>
-  <data name="ContractorTab_AddNewCar" xml:space="preserve">
-    <value>Dodaj nowy samochód dla {0} {1}</value>
-  </data>
-  <data name="ContractorTab_CarInsertError" xml:space="preserve">
-    <value>Nie udało się dodać nowego samochodu dla wybranego kontrahenta!</value>
-  </data>
-  <data name="ContractorTab_CarInsertSuccess" xml:space="preserve">
-    <value>Udało się dodać nowy samochód dla wybranego kontrahenta.</value>
+  <data name="ContractorTab_ContractorInsertSuccess" xml:space="preserve">
+    <value>Pomyślnie dodano nowego kontrahenta.</value>
   </data>
   <data name="ContractorTab_ContractorInsertError" xml:space="preserve">
     <value>Nie udało się dodać nowego kontrahenta!</value>
   </data>
-  <data name="ContractorTab_ContractorInsertSuccess" xml:space="preserve">
-    <value>Pomyślnie dodano nowego kontrahenta.</value>
+  <data name="ContractorTab_EditContractor" xml:space="preserve">
+    <value>Edycja kontrahenta: {0} {1}</value>
   </data>
-  <data name="ContractorTab_DeleteCarConfirmationBody" xml:space="preserve">
-    <value>Czy na pewno chcesz usunąć samochód: {0} {1}? Operacja jest nieodwracalna!</value>
+  <data name="ContractorTab_EditContractorSuccess" xml:space="preserve">
+    <value>Udało się zaktualizować dane kontrahenta.</value>
   </data>
-  <data name="ContractorTab_DeleteCarConfirmationTitle" xml:space="preserve">
-    <value>Potwierdzenie usunięcia.</value>
-  </data>
-  <data name="ContractorTab_DeleteCarError" xml:space="preserve">
-    <value>Nie udało się usunąć wybranego samochodu!</value>
-  </data>
-  <data name="ContractorTab_DeleteCarSuccess" xml:space="preserve">
-    <value>Udało się usunąć wybrany samochód.</value>
+  <data name="ContractorTab_EditContractorError" xml:space="preserve">
+    <value>Nie udało się zaktualizować kontrahenta!</value>
   </data>
   <data name="ContractorTab_DeleteContractorConfirmationBody" xml:space="preserve">
     <value>Czy na pewno chcesz usunąć kontrahenta: {0} {1} i wszystkie jego samochody? Operacja jest nieodwracalna!</value>
@@ -726,79 +752,53 @@
   <data name="ContractorTab_DeleteContractorsCarsError" xml:space="preserve">
     <value>Problem z usunięciem samochodów kontrahenta. Operacja została przerwana!</value>
   </data>
+  <data name="ContractorTab_DeleteContractorSuccess" xml:space="preserve">
+    <value>Udało się usunąć kontrahenta.</value>
+  </data>
   <data name="ContractorTab_DeleteContractorError" xml:space="preserve">
     <value>Nie udało się usunąć kontrahenta!</value>
   </data>
-  <data name="ContractorTab_DeleteContractorSuccess" xml:space="preserve">
-    <value>Udało się usunąć kontrahenta.</value>
+  <data name="ContractorTab_AddNewCar" xml:space="preserve">
+    <value>Dodaj nowy samochód dla {0} {1}</value>
+  </data>
+  <data name="ContractorTab_CarInsertSuccess" xml:space="preserve">
+    <value>Udało się dodać nowy samochód dla wybranego kontrahenta.</value>
+  </data>
+  <data name="ContractorTab_CarInsertError" xml:space="preserve">
+    <value>Nie udało się dodać nowego samochodu dla wybranego kontrahenta!</value>
   </data>
   <data name="ContractorTab_EditCar" xml:space="preserve">
     <value>Edytuj samochód {0} {1}</value>
   </data>
-  <data name="ContractorTab_EditCarError" xml:space="preserve">
-    <value>Nie udało się zaktualizować danych samochodu dla wybranego kontrahenta!</value>
-  </data>
   <data name="ContractorTab_EditCarSuccess" xml:space="preserve">
     <value>Udało się zaktualizować dane samochodu dla wybranego kontrahenta.</value>
   </data>
-  <data name="ContractorTab_EditContractor" xml:space="preserve">
-    <value>Edycja kontrahenta: {0} {1}</value>
+  <data name="ContractorTab_EditCarError" xml:space="preserve">
+    <value>Nie udało się zaktualizować danych samochodu dla wybranego kontrahenta!</value>
   </data>
-  <data name="ContractorTab_EditContractorError" xml:space="preserve">
-    <value>Nie udało się zaktualizować kontrahenta!</value>
+  <data name="ContractorTab_DeleteCarConfirmationTitle" xml:space="preserve">
+    <value>Potwierdzenie usunięcia.</value>
   </data>
-  <data name="ContractorTab_EditContractorSuccess" xml:space="preserve">
-    <value>Udało się zaktualizować dane kontrahenta.</value>
+  <data name="ContractorTab_DeleteCarConfirmationBody" xml:space="preserve">
+    <value>Czy na pewno chcesz usunąć samochód: {0} {1}? Operacja jest nieodwracalna!</value>
+  </data>
+  <data name="ContractorTab_DeleteCarError" xml:space="preserve">
+    <value>Nie udało się usunąć wybranego samochodu!</value>
+  </data>
+  <data name="ContractorTab_DeleteCarSuccess" xml:space="preserve">
+    <value>Udało się usunąć wybrany samochód.</value>
+  </data>
+  <data name="ContractorTab_ContractorExistsError" xml:space="preserve">
+    <value>Taki kontrahent już istnieje. Operacja przerwana!</value>
+  </data>
+  <data name="ContractorTab_ContractorsCarExistsError" xml:space="preserve">
+    <value>Wybrany kontrahent posiada już taki przypisany samochód. Operacja przerwana!</value>
   </data>
   <data name="FuelTypesList_FuelTypeInUseError" xml:space="preserve">
     <value>Wybrany typ paliwa: {0} jest przypisany do somochodów kontrahenta. Operacja przerwana!</value>
   </data>
   <data name="ContractorTab_CarHasTaskMappings" xml:space="preserve">
     <value>Do wybranego samochodu są przypisane zadania CRM! Operacja przerwana!</value>
-  </data>
-  <data name="HomeTabAcknowledgements" xml:space="preserve">
-    <value>Pragnę wyrazić najgłębszą wdzięczność mojej Promotorce, dr Wiktorii Kalus, za jej nieocenione wsparcie, życzliwość oraz niezwykle cenne wskazówki, które udzielała mi na każdym etapie realizacji niniejszej pracy inżynierskiej. Jej wiedza merytoryczna, zaangażowanie i cierpliwość miały fundamentalne znaczenie dla powodzenia tego przedsięwzięcia.
-
-Serdeczne podziękowania kieruję również do całego zespołu RS‑Code za stworzenie profesjonalnej atmosfery, jak również za inspirujące wsparcie, które umożliwiło mi rozwój umiejętności programistycznych oraz pogłębienie wiedzy praktycznej w zakresie inżynierii oprogramowania.
-
-Na szczególne wyrazy wdzięczności zasługują także moi najbliżsi – rodzina i przyjaciele – którzy nieprzerwanie okazywali mi cierpliwość, zrozumienie oraz wsparcie emocjonalne, dzięki czemu możliwe stało się sfinalizowanie niniejszego projektu.
-
-Zwieńczenie tej pracy stanowi również symboliczne zakończenie okresu studiów i tym samym zamknięcie ważnego etapu w mojej drodze akademickiej, stanowiąc jednocześnie początek nowych wyzwań zawodowych.</value>
-  </data>
-  <data name="HomeTabAboutThisProject" xml:space="preserve">
-    <value>Technologia:
-Aplikacja została opracowana w oparciu o platformę Windows Forms, co umożliwia tworzenie intuicyjnych i funkcjonalnych interfejsów graficznych dla systemu operacyjnego Windows. Wykorzystanie tej technologii pozwoliło na implementację klasycznego, ale wciąż popularnego modelu budowy aplikacji desktopowych, zapewniając jednocześnie stabilność oraz wysoką wydajność działania.
-
-Język programowania:
-Do implementacji całego rozwiązania wykorzystano język C#, którego bogate możliwości wraz z rozbudowanym ekosystemem bibliotek i narzędzi wspierają zarówno rozwój aplikacji biznesowych, jak i integrację z różnymi usługami zewnętrznymi.
-
-Architektura MVP:
-Aplikacja została zaprojektowana zgodnie z wzorcem architektonicznym Model-View-Presenter (MVP). Zapewnia on wyraźne rozdzielenie logiki biznesowej od warstwy prezentacji, co znacząco ułatwia utrzymanie kodu, wprowadzanie modyfikacji oraz rozszerzanie funkcjonalności bez ingerencji w pozostałe komponenty systemu. Tego rodzaju podejście wspiera czytelność i modularność kodu, a także zwiększa odporność aplikacji na zmiany.
-
-Testowalność:
-Cała logika biznesowa systemu została objęta testami jednostkowymi, dzięki czemu możliwe jest weryfikowanie wszystkich przypadków użycia oraz eliminowanie ewentualnych błędów na wczesnym etapie. Takie podejście gwarantuje utrzymanie wysokiej jakości kodu oraz zwiększa niezawodność całej aplikacji.
-
-Baza danych:
-Dane aplikacji są przechowywane w relacyjnej bazie danych SQL hostowanej w chmurze Microsoft Azure. Taka architektura zapewnia pełną dostępność oraz bezpieczeństwo danych, jak również elastyczną skalowalność, umożliwiającą korzystanie z systemu bez względu na lokalizację użytkownika.
-
-Funkcjonalności aplikacji:
-
-    - Rejestracja oraz przeglądanie pojazdów, klientów, zleceń i usług warsztatowych.
-
-    - Możliwość edycji i usuwania istniejących wpisów w bazie.
-
-    - Synchronizacja danych oraz bezpieczny dostęp realizowany poprzez mechanizmy uwierzytelniania i autoryzacji.</value>
-  </data>
-  <data name="HomeTabSources" xml:space="preserve">
-    <value>Źródła:
-
-- Icons: https://icons8.com/</value>
-  </data>
-  <data name="HomeTabChangelogLoadFailed" xml:space="preserve">
-    <value>Brak wpisów w dzienniku zmian lub plik dziennika zmian nie został odnaleziony.</value>
-  </data>
-  <data name="HomeTabGitHubLoadFailed" xml:space="preserve">
-    <value>Nie udało się otworzyć strony GitHub. Adres URL może być nieaktualny lub występują problemy z połączeniem internetowym.</value>
   </data>
   <data name="LoginForm_ConnectionCancelled" xml:space="preserve">
     <value>Połączenie z bazą danych zostało anulowane!</value>
@@ -838,5 +838,11 @@ Funkcjonalności aplikacji:
   </data>
   <data name="ContractorsTab_PhoneNumberColumn" xml:space="preserve">
     <value>Numer telefonu</value>
+  </data>
+  <data name="DataBaseConnector_Demo" xml:space="preserve">
+    <value>Demo</value>
+  </data>
+  <data name="ConnectionSettings_ProvideDemoConnectionString" xml:space="preserve">
+    <value>Proszę podać prawidłowy łańcuch połączeniowy bazy demo!</value>
   </data>
 </root>

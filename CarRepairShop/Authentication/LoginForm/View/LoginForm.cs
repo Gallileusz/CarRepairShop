@@ -35,7 +35,11 @@ namespace CarRepairShop.LoginForm.View
 
         [System.ComponentModel.Browsable(false)]
         [System.ComponentModel.DesignerSerializationVisibility(System.ComponentModel.DesignerSerializationVisibility.Hidden)]
-        public string Password => txtPassword.Text;
+        public string Password
+        {
+            get => txtPassword.Text;
+            set => txtPassword.Text = value;
+        }
 
         private LoginFormPresenter _presenter;
 

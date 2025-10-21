@@ -13,7 +13,7 @@ namespace CarRepairShop.Authentication.LoginForm.View
         event EventHandler SettingsClicked;
         bool CacheLogin { get; set; }
         string Login { get; set; }
-        string Password { get; }
+        string Password { get; set; }
 
         void ChangeLoginButtonAccessibility(bool accessible);
         void ChangeConnectionErrorIconVisibility(bool visible);

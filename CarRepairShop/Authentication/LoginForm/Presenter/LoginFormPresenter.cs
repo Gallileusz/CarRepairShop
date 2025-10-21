@@ -25,6 +25,8 @@ namespace CarRepairShop.Authentication.LoginForm.Presenter
         private string _errorMessage;
         private const char EnterKey = '\r';
         private bool _connectionCancelled;
+        private const string _demoLogin = "Demo";
+        private const string _demoPassword = "demo";
 
         public LoginFormPresenter(bool connectionCancelled, ILoginView view, IGenericRepository genericRepo, IDataBaseHandler dbHandler, ICurrentUserService currentUser)
         {
@@ -56,8 +58,17 @@ namespace CarRepairShop.Authentication.LoginForm.Presenter
 
             if (!string.IsNullOrEmpty(Properties.Settings.Default.CachedLogin))
             {
-                _view.CacheLogin = true;
-                _view.Login = Properties.Settings.Default.CachedLogin;
+                if (ConnectionProvider.ProductionConnection)
+                {
+                    _view.CacheLogin = true;
+                    _view.Login = Properties.Settings.Default.CachedLogin;
+                }
+            }
+
+            if (!ConnectionProvider.ProductionConnection)
+            {
+                _view.Login = _demoLogin;
+                _view.Password = _demoPassword;
             }
 
             if (_connectionCancelled)
@@ -85,7 +96,7 @@ namespace CarRepairShop.Authentication.LoginForm.Presenter
                 _userCredentials = await _genericRepo.GetAllAsync<UserCredentials>();
                 _users = await _genericRepo.GetAllAsync<Domain.Entities.Users>();
 
-                if (_userCredentials != null && _userCredentials.Any() && _users != null && _users.Any())
+                if (_userCredentials?.Any() == true && _users?.Any() == true)
                     databaseIsActive = true;
             }
             catch (Exception)
@@ -156,11 +167,14 @@ namespace CarRepairShop.Authentication.LoginForm.Presenter
 
         private void Cache()
         {
-            Properties.Settings.Default.CachedLogin = _view.CacheLogin ? _view.Login : string.Empty;
-            Properties.Settings.Default.Language = Thread.CurrentThread.CurrentUICulture.ToString();
-            _currentUserService.Language = Thread.CurrentThread.CurrentUICulture.ToString();
+            if (ConnectionProvider.ProductionConnection)
+            {
+                Properties.Settings.Default.CachedLogin = _view.CacheLogin ? _view.Login : string.Empty;
+                Properties.Settings.Default.Language = Thread.CurrentThread.CurrentUICulture.ToString();
+                _currentUserService.Language = Thread.CurrentThread.CurrentUICulture.ToString();
 
-            Properties.Settings.Default.Save();
+                Properties.Settings.Default.Save();
+            }
         }
 
         private void OpenSettings(object sender, EventArgs e)

@@ -8,7 +8,8 @@
       "Added connection progress form",
       "Added Settings project to solution",
       "Added the ability to cancel database connection",
-      "Added sql script to create missing database tables"
+      "Added sql script to create missing database tables and demo user with credentials",
+      "Added automatic login with demo user credentials if DEMO connection type is selected"
     ]
   },
   {

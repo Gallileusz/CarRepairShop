@@ -271,6 +271,7 @@
         public static string CarForm_SelectFuelType => SharedResources.texts.CarForm_SelectFuelType;
         public static string CarForm_FillMileage => SharedResources.texts.CarForm_FillMileage;
 
+
         // FuelTypesList Form
 
         public static string FuelTypesList_AddNewFuelType => SharedResources.texts.FuelTypesList_AddNewFuelType;
@@ -287,5 +288,13 @@
         public static string FuelTypesList_InsertSuccess => SharedResources.texts.FuelTypesList_InsertSuccess;
         public static string FuelTypesList_Name => SharedResources.texts.FuelTypesList_Name;
         public static string FuelTypesList_FuelTypeInUseError => SharedResources.texts.FuelTypesList_FuelTypeInUseError;
+
+        // DataBaseConnector
+
+        public static string DataBaseConnector_Demo => SharedResources.texts.DataBaseConnector_Demo;
+
+        // ConnectionSettings
+
+        public static string ConnectionSettings_ProvideDemoConnectionString => SharedResources.texts.ConnectionSettings_ProvideDemoConnectionString;
     }
 }

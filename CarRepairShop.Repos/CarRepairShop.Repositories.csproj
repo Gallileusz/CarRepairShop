@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFramework>net90</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>CarRepairShop.Repos</RootNamespace>
     <AssemblyName>CarRepairShop.Repos</AssemblyName>
@@ -35,5 +35,8 @@
     <PackageReference Include="System.Text.Encodings.Web" Version="9.0.8" />
     <PackageReference Include="System.Text.Json" Version="9.0.8" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.6.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CarRepairShop.Settings\CarRepairShop.Settings.csproj" />
   </ItemGroup>
 </Project>

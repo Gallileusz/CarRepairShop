@@ -3,8 +3,10 @@ using CarRepairShop.Authentication.DataBaseConnector.Consts;
 using CarRepairShop.Authentication.DataBaseConnector.View;
 using CarRepairShop.Repos;
 using CarRepairShop.Repositories;
+using CarRepairShop.Settings;
 using System;
 using System.Threading.Tasks;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.Authentication.DataBaseConnector.Presenter
 {
@@ -45,6 +47,9 @@ namespace CarRepairShop.Authentication.DataBaseConnector.Presenter
         {
             _connectionSetter.SetConnectionProvider();
             await _dbHandler.SetConnectionStringAsync();
+
+            if (!ConnectionProvider.ProductionConnection)
+                _view.DatabaseTypeName = Translations.DataBaseConnector.DemoTitle;
 
             if (await DataBaseReponses())
             {

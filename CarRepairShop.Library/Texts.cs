@@ -13,5 +13,7 @@
         public static ContractorForm ContractorForm { get; } = new ContractorForm();
         public static CarForm CarForm { get; } = new CarForm();
         public static FuelTypesList FuelTypesList { get; } = new FuelTypesList();
+        public static DataBaseConnector DataBaseConnector { get; } = new DataBaseConnector();
+        public static ConnectionSettings ConnectionSettings { get; } = new ConnectionSettings();
     }
 }

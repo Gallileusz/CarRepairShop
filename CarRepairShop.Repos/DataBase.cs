@@ -1,5 +1,6 @@
 ﻿using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
+using CarRepairShop.Settings;
 using System;
 using System.Data.SqlClient;
 using System.Threading.Tasks;
@@ -19,20 +20,37 @@ namespace CarRepairShop.Repos
         {
             try
             {
-                var client = new SecretClient(_keyVaultUri, new AzureCliCredential());
-                KeyVaultSecret secret = await client.GetSecretAsync(_secretName);
-                ConnectionString = secret.Value;
-
-                if (!string.IsNullOrEmpty(secret.Value))
-                    IsConnectionStringSet = true;
+                if (ConnectionProvider.ProductionConnection)
+                    await SetProductionConnection();
                 else
-                    IsConnectionStringSet = false;
+                    SetDemoConnection();
             }
             catch (Exception ex)
             {
                 IsConnectionStringSet = false;
                 Console.WriteLine($"Error:\r\n{ex.Message}");
             }
+        }
+
+        private static async Task SetProductionConnection()
+        {
+            var client = new SecretClient(_keyVaultUri, new AzureCliCredential());
+            KeyVaultSecret secret = await client.GetSecretAsync(_secretName);
+            ConnectionString = secret.Value;
+
+            if (!string.IsNullOrEmpty(secret.Value))
+                IsConnectionStringSet = true;
+            else
+                IsConnectionStringSet = false;
+        }
+
+        private static void SetDemoConnection()
+        {
+            ConnectionString = ConnectionProvider.DemoConnectionString;
+            if (!string.IsNullOrEmpty(ConnectionString))
+                IsConnectionStringSet = true;
+            else
+                IsConnectionStringSet = false;
         }
 
         public static async Task<bool> TryDatabaseConnectionAsync()

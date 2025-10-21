@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using Translations = CarRepairShop.Library.Texts;
 
 namespace CarRepairShop.Authentication.ConnectionSettings.Presenter
 {
@@ -82,7 +83,7 @@ namespace CarRepairShop.Authentication.ConnectionSettings.Presenter
         {
             if (!_productionConnection && !IsConnectionStringFormatValid(_view.DemoConnectionString))
             {
-                _view.ShowErrorMessage("Provide correct demo connection string for database connection!"); return;
+                _view.ShowErrorMessage(Translations.ConnectionSettings.InvalidDemoConnectionString); return;
             }
 
             if (_initialSettings != GetCurrentSettings())

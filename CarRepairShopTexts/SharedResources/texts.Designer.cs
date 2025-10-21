@@ -133,6 +133,15 @@ namespace CarRepairShop.Texts.SharedResources {
         }
         
         /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Provide correct demo connection string for database connection!.
+        /// </summary>
+        internal static string ConnectionSettings_ProvideDemoConnectionString {
+            get {
+                return ResourceManager.GetString("ConnectionSettings_ProvideDemoConnectionString", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         /// Wyszukuje zlokalizowany ciąg podobny do ciągu Name can&apos;t be empty!.
         /// </summary>
         internal static string ConsuambleMaterial_NameCannotBeEmpty {
@@ -975,6 +984,15 @@ namespace CarRepairShop.Texts.SharedResources {
         internal static string CRMTab_UpdateSuccess {
             get {
                 return ResourceManager.GetString("CRMTab_UpdateSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        /// Wyszukuje zlokalizowany ciąg podobny do ciągu Demo.
+        /// </summary>
+        internal static string DataBaseConnector_Demo {
+            get {
+                return ResourceManager.GetString("DataBaseConnector_Demo", resourceCulture);
             }
         }
         
