@@ -84,7 +84,7 @@ BEGIN
 END
 ";
 
-        const string _languages = @"
+        private const string _languages = @"
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Languages]') AND type in (N'U'))
 BEGIN
     CREATE TABLE [dbo].[Languages] (
@@ -110,7 +110,7 @@ END
 SET IDENTITY_INSERT [dbo].[Languages] OFF;";
 
 
-        const string _permissionsTable = @"
+        private const string _permissionsTable = @"
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Permissions]') AND type in (N'U'))
 BEGIN
     CREATE TABLE [dbo].[Permissions] (
@@ -141,7 +141,7 @@ IF NOT EXISTS (SELECT 1 FROM [dbo].[Permissions] WHERE [Name] = 'Users')
 IF NOT EXISTS (SELECT 1 FROM [dbo].[Permissions] WHERE [Name] = 'Settings')
     INSERT INTO [dbo].[Permissions] ([Name]) VALUES ('Settings');";
 
-        const string _userPermissionsTable = @"
+        private const string _userPermissionsTable = @"
 IF NOT EXISTS (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[UserPermissions]') AND type in (N'U'))
 BEGIN
     CREATE TABLE [dbo].[UserPermissions] (
@@ -155,7 +155,7 @@ BEGIN
     );
 END";
 
-        const string _crmTable = @"
+        private const string _crmTable = @"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CRM_Task' AND xtype='U')
 BEGIN
     CREATE TABLE [dbo].[CRM_Task] (
@@ -172,7 +172,7 @@ BEGIN
 END
 ";
 
-        const string _crmMappingsTable = @"
+        private const string _crmMappingsTable = @"
 IF NOT EXISTS (SELECT * FROM sysobjects WHERE name='CRM_Services' AND xtype='U')
 BEGIN
     CREATE TABLE [dbo].[CRM_Services] (
@@ -184,7 +184,7 @@ BEGIN
 END
 ";
 
-        const string _servicesTable = @"
+        private const string _servicesTable = @"
 IF NOT EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_NAME = 'Services')
 BEGIN
     CREATE TABLE [Services] (
@@ -198,7 +198,7 @@ BEGIN
 END
 ";
 
-        const string _demoUser = @"
+        private const string _demoUser = @"
 IF NOT EXISTS (SELECT TOP 1 * FROM Users)
 BEGIN
     SET IDENTITY_INSERT Users ON;
@@ -209,7 +209,7 @@ BEGIN
 END
 ";
 
-        const string _demoCredentials = @"
+        private const string _demoCredentials = @"
 IF NOT EXISTS (SELECT TOP 1 * FROM UserCredentials)
 BEGIN
     SET IDENTITY_INSERT UserCredentials ON;
