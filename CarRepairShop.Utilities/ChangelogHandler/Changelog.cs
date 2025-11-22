@@ -24,23 +24,15 @@ namespace CarRepairShop.Utilities.ChangelogHandler
 
         internal static ChangelogEntry GetNewestVersion(List<ChangelogEntry> changelog) => changelog
             .OrderByDescending(entry => DateTime.Parse(entry.Date))
-            .FirstOrDefault();
+            .FirstOrDefault()
+            ?? new ChangelogEntry { Version = "N/A" };
 
         private static string FindChangelogPath()
         {
             var dir = new DirectoryInfo(AppContext.BaseDirectory);
-
-            while (dir != null)
-            {
-                if (string.Equals(dir.Name, _projectName, StringComparison.OrdinalIgnoreCase))
-                {
-                    var candidate = Path.Combine(dir.FullName, _changelogFileName);
-                    if (File.Exists(candidate))
-                        return candidate;
-                }
-
-                dir = dir.Parent;
-            }
+            var candidate = Path.Combine(dir.FullName, _changelogFileName);
+            if (File.Exists(candidate))
+                return candidate;
 
             return null;
         }

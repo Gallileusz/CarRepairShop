@@ -178,10 +178,9 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
                 string.Format(Library.Texts.MainView.Users.AskToDeleteUserBody, selectedUser.Name, selectedUser.Surname),
                 Library.Texts.MainView.Users.AskToDeleteUserTitle)) return;
 
-            if (_genericRepo.Delete(selectedUser))
+            if (_genericRepo.Delete(_genericRepo.GetAll<UserCredentials>().FirstOrDefault(x => x.UserID == selectedUser.ID)) && _genericRepo.Delete(selectedUser))
             {
                 _usersList.Remove(selectedUser);
-                _genericRepo.Delete(_genericRepo.GetAll<UserCredentials>().FirstOrDefault(x => x.UserID == selectedUser.ID));
                 _view.LoadUsersToGrid(_usersList);
                 _view.ShowMessage(Library.Texts.MainView.Users.UserHasBeenDeleted);
             }
