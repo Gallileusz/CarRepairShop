@@ -1,5 +1,12 @@
 [
   {
+    "version": "1.11.0",
+    "date": "2025-11-24",
+    "changes": [
+      "Fixed CRM tab 'Create task' and 'Edit task functions'"
+    ]
+  },
+  {
     "version": "1.10.0",
     "date": "2025-10-9",
     "changes": [
