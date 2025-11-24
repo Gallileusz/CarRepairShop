@@ -117,7 +117,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
                 StartDate = data.CRM_Task.StartDate.ToString(_dateFormat),
                 Completed = data.CRM_Task.Completed,
                 EndDate = null,
-                TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Name} {_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Surname}",
+                TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Name} {_mechanics.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Surname}",
                 CustomerFullname = $"{_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.ContractorID).Name} {_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.ContractorID).Surname}",
                 Price = (decimal)data.CRM_Task.Price,
                 VehicleDetails = $"{_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).BrandName} {_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).ModelName} {_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).Year}",
@@ -169,7 +169,7 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
                     StartDate = data.CRM_Task.StartDate.ToString(_dateFormat),
                     Completed = data.CRM_Task.Completed,
                     EndDate = data.CRM_Task.EndDate?.ToString(_dateFormat) ?? string.Empty,
-                    TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Name} {_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Surname}",
+                    TaskCreatorFullname = $"{_mechanics.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Name} {_mechanics.FirstOrDefault(c => c.ID == data.CRM_Task.MechanicID).Surname}",
                     CustomerFullname = $"{_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.ContractorID).Name} {_contractors.FirstOrDefault(c => c.ID == data.CRM_Task.ContractorID).Surname}",
                     Price = (decimal)data.CRM_Task.Price,
                     VehicleDetails = $"{_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).BrandName} {_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).ModelName} {_contractorsCars.FirstOrDefault(c => c.ID == data.CRM_Task.CarID).Year}",
@@ -211,12 +211,9 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
                 _view.ShowMessage(Translations.MainView.CRM.DeleteTaskError); return;
             }
 
-            if (!_genericRepo.Delete(serviceMappings))
-            {
-                _view.ShowMessage(Translations.MainView.CRM.DeleteTaskMappingsError); return;
-            }
-
-            _models.RemoveAll(m => m.ID == _view.SelectedCRMTaskID);
+            _genericRepo.Delete(serviceMappings);
+            if (serviceMappings?.Any() == true)
+                _models.RemoveAll(m => m.ID == _view.SelectedCRMTaskID);
             _view.PopulateCRMTasksGrid(GetModels());
 
             _view.ShowMessage(Translations.MainView.CRM.DeleteSuccess);
@@ -230,45 +227,52 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.CRM
             _view.PopulateCRMTasksGrid(GetModels());
         }
 
-
         private List<CRM_Model> GetModels()
         {
-            if (_view.FilterDateFrom.Date > _view.FilterDateTo.Date) return new List<CRM_Model>();
+            if (_view.FilterDateFrom.Date > _view.FilterDateTo.Date)
+                return new List<CRM_Model>();
 
             var filteredModels = _models
                 .Where(crm =>
                 {
-                    DateTime startDate;
-                    if (!DateTime.TryParseExact(crm.StartDate, _dateFormat, System.Globalization.CultureInfo.CurrentCulture, System.Globalization.DateTimeStyles.None, out startDate))
+                    if (!DateTime.TryParseExact(
+                            crm.StartDate,
+                            _dateFormat,
+                            System.Globalization.CultureInfo.CurrentCulture,
+                            System.Globalization.DateTimeStyles.None,
+                            out DateTime startDate))
                         return false;
-                    return startDate >= _view.FilterDateFrom && startDate.Date <= _view.FilterDateTo.Date;
+
+                    var date = startDate.Date;
+                    return date >= _view.FilterDateFrom.Date &&
+                           date <= _view.FilterDateTo.Date;
                 })
                 .ToList();
 
             if (!string.IsNullOrEmpty(_view.FilterContractorFullName))
                 filteredModels = filteredModels
-                    .Where(
-                        crm => crm.CustomerFullname != null && crm.CustomerFullname.Contains(_view.FilterContractorFullName))
+                    .Where(crm =>
+                        crm.CustomerFullname != null &&
+                        crm.CustomerFullname.Contains(_view.FilterContractorFullName))
                     .ToList();
 
             if (!string.IsNullOrEmpty(_view.FilterMechanicFullName))
                 filteredModels = filteredModels
-                    .Where(
-                        crm => crm.TaskCreatorFullname != null && crm.TaskCreatorFullname.Contains(_view.FilterMechanicFullName))
+                    .Where(crm =>
+                        crm.TaskCreatorFullname != null &&
+                        crm.TaskCreatorFullname.Contains(_view.FilterMechanicFullName))
                     .ToList();
 
             if (_view.FilterShowAllChecked) return filteredModels;
 
             if (_view.FilterShowCompletedChecked)
                 filteredModels = filteredModels
-                    .Where(
-                        crm => crm.Completed)
+                    .Where(crm => crm.Completed)
                     .ToList();
 
             if (_view.FilterShowNotCompletedChecked)
                 filteredModels = filteredModels
-                    .Where(
-                        crm => !crm.Completed)
+                    .Where(crm => !crm.Completed)
                     .ToList();
 
             return filteredModels;
