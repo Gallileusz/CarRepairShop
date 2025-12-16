@@ -66,7 +66,8 @@ namespace CarRepairShop.Users.UserInfoForm.View
             UserSurname = this.UserSurname,
             Login = this.Login,
             Password = this.Password,
-            SuperAdmin = this.SuperAdmin
+            SuperAdmin = this.SuperAdmin,
+            OperationConfirmed = this.OperationConfirmed
         };
 
         public void CloseForm() => this.Close();

@@ -62,14 +62,14 @@
             // 
             // panel2
             // 
-            panel2.Controls.Add(btnLogin);
             resources.ApplyResources(panel2, "panel2");
+            panel2.Controls.Add(btnLogin);
             panel2.Name = "panel2";
             // 
             // btnLogin
             // 
-            btnLogin.BackColor = System.Drawing.Color.SteelBlue;
             resources.ApplyResources(btnLogin, "btnLogin");
+            btnLogin.BackColor = System.Drawing.Color.SteelBlue;
             btnLogin.ForeColor = System.Drawing.Color.White;
             btnLogin.Name = "btnLogin";
             btnLogin.UseVisualStyleBackColor = false;
@@ -77,31 +77,31 @@
             // 
             // pbConnectionError
             // 
+            resources.ApplyResources(pbConnectionError, "pbConnectionError");
             pbConnectionError.BackColor = System.Drawing.Color.White;
             pbConnectionError.Image = Properties.Resources.warning;
-            resources.ApplyResources(pbConnectionError, "pbConnectionError");
             pbConnectionError.Name = "pbConnectionError";
             pbConnectionError.TabStop = false;
             pbConnectionError.Click += pbConnectionError_Click;
             // 
             // txtLogin
             // 
-            txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(txtLogin, "txtLogin");
+            txtLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtLogin.ForeColor = System.Drawing.Color.SteelBlue;
             txtLogin.Name = "txtLogin";
             // 
             // txtPassword
             // 
-            txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             resources.ApplyResources(txtPassword, "txtPassword");
+            txtPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             txtPassword.ForeColor = System.Drawing.Color.SteelBlue;
             txtPassword.Name = "txtPassword";
             // 
             // panel4
             // 
-            panel4.BackColor = System.Drawing.Color.SteelBlue;
             resources.ApplyResources(panel4, "panel4");
+            panel4.BackColor = System.Drawing.Color.SteelBlue;
             panel4.Name = "panel4";
             // 
             // cbCacheLogin
@@ -114,37 +114,37 @@
             // 
             // pbPassword
             // 
-            pbPassword.Image = Properties.Resources.key;
             resources.ApplyResources(pbPassword, "pbPassword");
+            pbPassword.Image = Properties.Resources.key;
             pbPassword.Name = "pbPassword";
             pbPassword.TabStop = false;
             // 
             // pbLogin
             // 
-            pbLogin.Image = Properties.Resources.users;
             resources.ApplyResources(pbLogin, "pbLogin");
+            pbLogin.Image = Properties.Resources.users;
             pbLogin.Name = "pbLogin";
             pbLogin.TabStop = false;
             // 
             // panel1
             // 
+            resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = System.Drawing.Color.SteelBlue;
             panel1.BackgroundImage = Properties.Resources.mechanicGif;
-            resources.ApplyResources(panel1, "panel1");
             panel1.Controls.Add(panel6);
             panel1.ForeColor = System.Drawing.Color.White;
             panel1.Name = "panel1";
             // 
             // panel6
             // 
-            panel6.Controls.Add(btnQuit);
             resources.ApplyResources(panel6, "panel6");
+            panel6.Controls.Add(btnQuit);
             panel6.Name = "panel6";
             // 
             // btnQuit
             // 
-            btnQuit.BackColor = System.Drawing.Color.White;
             resources.ApplyResources(btnQuit, "btnQuit");
+            btnQuit.BackColor = System.Drawing.Color.White;
             btnQuit.ForeColor = System.Drawing.Color.SteelBlue;
             btnQuit.Name = "btnQuit";
             btnQuit.UseVisualStyleBackColor = false;
@@ -152,8 +152,8 @@
             // 
             // panel3
             // 
-            panel3.BackColor = System.Drawing.Color.SteelBlue;
             resources.ApplyResources(panel3, "panel3");
+            panel3.BackColor = System.Drawing.Color.SteelBlue;
             panel3.Name = "panel3";
             // 
             // lblError
@@ -165,9 +165,9 @@
             // 
             // pbSettings
             // 
+            resources.ApplyResources(pbSettings, "pbSettings");
             pbSettings.BackColor = System.Drawing.Color.Transparent;
             pbSettings.Image = Properties.Resources.settings;
-            resources.ApplyResources(pbSettings, "pbSettings");
             pbSettings.Name = "pbSettings";
             pbSettings.TabStop = false;
             pbSettings.Click += pbSettings_Click;

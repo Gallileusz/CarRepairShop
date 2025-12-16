@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarRepairShop.Users.UserInfoForm.Model;
+using System;
 using System.Collections.Generic;
 
 namespace CarRepairShop.MainForm.Views.Tabs.Users
@@ -20,5 +21,6 @@ namespace CarRepairShop.MainForm.Views.Tabs.Users
         void ShowMessage(string message);
         bool ConfirmAction(string message, string title);
         void UnableButtonsIfNoPermissions(bool hasEditPermission);
+        UsersInfoModel OpenUsersForm(int? userID);
     }
 }

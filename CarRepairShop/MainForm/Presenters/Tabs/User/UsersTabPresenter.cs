@@ -4,7 +4,6 @@ using CarRepairShop.MainForm.Views.Tabs.Users;
 using CarRepairShop.Repositories;
 using CarRepairShop.Users.PermissionsForm.View;
 using CarRepairShop.Users.UserInfoForm.Model;
-using CarRepairShop.Users.UserInfoForm.View;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -90,12 +89,9 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
         {
             if (!_currentUser.HasPermission(Utilities.Permissions.PermissionTabs.Users, Utilities.Permissions.PermissionType.AllowEdit)) return;
 
-            var form = new UsersInfoForm(null);
-            form.ShowDialog();
+            var newUserModel = _view.OpenUsersForm(null);
 
-            if (form.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
-
-            var newUserModel = form.GetUserModel();
+            if (newUserModel.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
 
             if (IsUserInvalid(newUserModel, false)) return;
 
@@ -139,12 +135,9 @@ namespace CarRepairShop.MainForm.Presenters.Tabs.User
                 _view.ShowMessage(Library.Texts.MainView.Users.SelectUserToEdit); return;
             }
 
-            var form = new UsersInfoForm(selectedUser.ID);
-            form.ShowDialog();
+            var updatedUser = _view.OpenUsersForm(selectedUser.ID);
 
-            if (form.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
-
-            var updatedUser = form.GetUserModel();
+            if (updatedUser.OperationConfirmed != System.Windows.Forms.DialogResult.Yes) return;
 
             if (IsUserInvalid(updatedUser, true)) return;
 

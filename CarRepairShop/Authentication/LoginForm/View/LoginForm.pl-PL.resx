@@ -145,7 +145,4 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Zaloguj się</value>
   </data>
-  <data name="btnQuit.Text" xml:space="preserve">
-    <value>X</value>
-  </data>
 </root>

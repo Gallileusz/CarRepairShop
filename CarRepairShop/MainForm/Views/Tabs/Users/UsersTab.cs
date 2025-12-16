@@ -2,6 +2,7 @@
 using CarRepairShop.MainForm.Presenters.Tabs.User;
 using CarRepairShop.MainForm.Views.Tabs.Users;
 using CarRepairShop.Repositories;
+using CarRepairShop.Users.UserInfoForm.Model;
 using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
@@ -97,6 +98,14 @@ namespace CarRepairShop.MainForm.Views.Tabs.CRM
             Debounce.Start();
 
             SearchSurameChanged?.Invoke(this, e);
+        }
+
+        public UsersInfoModel OpenUsersForm(int? userID)
+        {
+            var form = new CarRepairShop.Users.UserInfoForm.View.UsersInfoForm(userID);
+            form.ShowDialog();
+
+            return form.GetUserModel();
         }
     }
 }

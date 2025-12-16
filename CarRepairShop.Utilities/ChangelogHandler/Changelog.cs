@@ -8,12 +8,11 @@ namespace CarRepairShop.Utilities.ChangelogHandler
 {
     internal static class Changelog
     {
-        const string _changelogFileName = "changelog.json";
-        const string _projectName = "CarRepairShop";
+        private const string _changelogFileName = "changelog.json";
 
         public static List<ChangelogEntry> LoadChangelog()
         {
-            string filePath = FindChangelogPath();
+            var filePath = FindChangelogPath();
 
             if (string.IsNullOrEmpty(filePath) || !File.Exists(filePath))
                 return new List<ChangelogEntry>();
